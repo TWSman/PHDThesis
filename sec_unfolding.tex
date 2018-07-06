@@ -1,0 +1,109 @@
+% !TEX root = thesis.tex
+
+\section{Flow fluctuations and unfolding}
+The flow coefficients are not constant event-by-event, because of the fluctuations. The $v_n$ distributions are important observables in heavy-ion collisions. However the experimental methods have their own uncertainties and they smear the distribution. To get the true distribution one must be able to remove these effects.
+
+The process of removing the smearing from experimental methods is known as unfolding. Unfolding can be used to get the true distribution from the observed distribution. In this thesis I am using a Bayesian unfolding method from~\cite{dagostini1995} which I first apply to a Toy Monte Carlo simulation and afterwards to AMPT data.
+
+\FloatBarrier
+\subsection{Unfolding in AMPT}
+I applied the same unfolding method to AMPT. I calculated $\bar v_n^{obs}=\left(v_{n,x}^{obs},v_{n,y}^{obs}\right)$ for particles in mid-rapidity $|\eta|<0.8$ and $p_T>0.1\gevc$. Statistics used for each centrality bin as well as average $v_n$ coefficients are shown in Table \ref{tab:amptunfold}. The unfolding results for $v_2$ and $v_3$ are shown in Fig.~\ref{fig:AMPTunfoldvn}. For $v_2$ the average value for peripheral collisions is large enough to provide accurate unfolding based on the toy monte carlo simulation. Also for the central collisions the multiplicity is high enough even though the average $v_2$ is in the range with worse unfolding performance. The unfolded $v_2$ distributions should therefore match the true distribution well. 
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{ l  | c | c | c | c | c | c}
+\small Centrality 					&	0-5\%	&5-10\%	&10-20\%	&20-30\%	&30-40\%	&40-50\% \\
+\hline
+Events	& 56733	& 66579	 & 71023 & 84566	& 80033	& 415425 \\
+$\left<N_{ch}\right>(|\eta|<0.8,$ & 2423  & $1971$ & 1471 & 990 & 647 & 401 \\
+$\,p_T>0.1\gevc )$ & & & & & & \\
+
+%Unfolding $ \left<v_2\right>$	&	0.0289641pm8,81685e-6		&0.040642 pm 9.6979e-06	& 0.0544602 pm 1.10077e-05	&0.071013 pm 1.16004e-05	&0.0849903 pm 1.29229e-05	& 0.0912794 pm 5.80083e-06 \\
+Unfolding $ \left<v_2\right>$&	0.028 & 0.041 & 0.058 & 0.072 & 0.078 & 0.077\\
+Unfolding $ \left<v_3\right>$ & 	0.016 & 0.018 & 0.018 & 0.016 & 0.012 & 0.0078\\
+\hline
+\end{tabular}
+\caption{Number of events used in AMPT study and the average multiplicity used to calculate $v_2$ and $v_3$. Also shown are the average values of unfolded $v_2$ and $v_3$ distributions.}
+\label{tab:amptunfold}
+\end{table}
+
+\begin{figure}[htp]
+	\centering
+        \begin{subfigure}[b]{0.95\textwidth}
+                \centering
+          	\includegraphics[width=\textwidth]{pics/AMPTunfoldedv2cents}
+		\caption{Unfolded $v_2$ in AMPT}
+	        	\label{fig:AMPTunfoldv2}
+           \end{subfigure}
+        \begin{subfigure}[b]{0.95\textwidth}
+                \centering
+          	\includegraphics[width=\textwidth]{pics/AMPTunfoldedv3cents}
+		\caption{Unfolded $v_3$ in AMPT}
+			        	\label{fig:AMPTunfoldv3}
+           \end{subfigure}
+           \caption{Unfolding results in AMPT}
+             \label{fig:AMPTunfoldvn}
+\end{figure}
+
+It can be seen that the $v_2$ distributions in peripheral collisions do not look like the radial projection of a two dimensional gaussian shown in Eq.~(\ref{eq:gaussproj1}). This was the distribution used in the toy Monte Carlo and as an initial guess. 
+
+The average value for $v_3$ stays at a relatively constant value of $~0.16$ between the different centrality bins until it drops at centralities larger than 40\%. In central collisions the multiplicity is however higher than the one used in the toy monte carlo. This might be enough for the method to provide accurate results. However in peripheral collisions the multiplicity is even below the values that were tested in the toy monte carlo simulation. At these values the unfolding method can not be expected to give accurate results.
+
+The $v_n$ coefficients calculated with the unfolding are compared to corresponding values from the event plane method. This is shown in Fig.~\ref{fig:AMPTvnvsCent}. It can be seen that compared to the event plane method, unfolding gives higher values. In the toy monte carlo there was no difference between these methods.
+
+For $v_3$ in peripheral collisions the distributions seem to agree. However this is expected in these events. In events with low multiplicity and low $v_3$ values the initial guess dominates the unfolding results and the initial guess is based on the event plane results. 
+
+To get an estimate of the performance of unfolding in AMPT I ran the Toy Monte Carlo simulation using detected multiplicities and $ \left<v_n\right>$ values. The ratios of unfolded and input distributions are shown in Fig.~\ref{fig:AMPTcheck}. It can be seen that for $v_2$ the method seems to give accurate results, but for $v_3$ the agreement is only moderate in central collisions and fails completely in peripheral collisions.
+
+
+
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.65\textwidth]{pics/AMPTvnvsCent}
+	\caption{Unfolding and Event plane method $v_2$ in AMPT versus centrality. The error bars are too small to be seen in this figure.}
+	\label{fig:AMPTvnvsCent}
+	\end{figure}
+
+%\begin{figure}[htpb]
+%	\centering
+%        \begin{subfigure}{0.49\textwidth}
+%                \centering
+%          	\includegraphics[width=\textwidth]{pics/AMPTv2unfolding}
+%		\caption{$\left<v_2\right>=0.03$ }
+%	        	\label{fig:amptunfoldv2}
+%           \end{subfigure}
+%           \hfill
+%                   \begin{subfigure}{0.49\textwidth}
+%                \centering
+%          	\includegraphics[width=\textwidth]{pics/AMPTv2unfolding}
+%		\caption{$\left<v_2\right>=0.02$ }
+%	        	\label{fig:amptunfoldv3}
+%           \end{subfigure}
+%
+%
+%           
+%           \caption{Unfolding results in AMPT for centrality 0-5\%}
+%             \label{fig:amptunfold}
+%\end{figure} 
+
+
+
+\begin{figure}[htp]
+	\centering
+	        \begin{subfigure}[b]{0.49\textwidth}
+	        \centering
+	\includegraphics[width=\textwidth]{pics/v2inputRatios}
+			\caption{$v_2$ }
+	        	\label{fig:AMPTcheckv2}
+           \end{subfigure}
+           \hfill
+           	        \begin{subfigure}[b]{0.49\textwidth}
+	\includegraphics[width=\textwidth]{pics/v3inputRatios}
+			\caption{$v_2$ }
+	        	\label{fig:AMPTcheckv3}
+           \end{subfigure}
+           
+	\caption{$v_n$ Unfolding results of the Toy Monte Carlo using parameters from AMPT study}
+	\label{fig:AMPTcheck}
+	\end{figure}
