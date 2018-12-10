@@ -5,7 +5,6 @@
 \def\sec#1{Sec.~\ref{#1}}
 
 \def\tev{\mbox{~TeV}}
-\def\gev{\mbox{~GeV}}
 \def\gevc{\mbox{~GeV/$c$}}
 \def\gevcc{\mbox{~GeV/$c^2$}}
 \def\mevc{\mbox{~MeV/$c$}}
@@ -25,6 +24,27 @@
 \def\eg{{\it e.g.}}
 \def\etc{{\it etc}}
 
+
+
+\newcommand{\sqrtS}{\ensuremath{\sqrt{s}}}
+\newcommand{\sqrtSnn}{\ensuremath{\sqrt{s_{\mathrm{NN}}}}}
+\newcommand{\sqrtSE}[2][TeV]{\ensuremath{\sqrtS = #2~\mathrm{#1}}}
+\newcommand{\sqrtSnnE}[2][TeV]{\ensuremath{\sqrtSnn = #2~\mathrm{#1}}}
+\newcommand{\GeVc}{\ensuremath{\mathrm{GeV}\kern-0.05em/\kern-0.02em c}}
+\newcommand{\gev}{\ensuremath{\mathrm{GeV}\kern-0.05em}}
+\def\pt#1{\ensuremath{p_{\rm T#1}}} 
+\def\jt#1{\ensuremath{j_{\rm T#1}}}
+\def\vjt#1{\ensuremath{\vec{j}_{\rm T#1}}}
+\def\kt#1{\ensuremath{k_{\rm T#1}}}
+\newcommand{\xlong} {\ensuremath{x_{\parallel}}}
+\def\mean#1{\left<#1\right>}
+\def\rms#1{\ensuremath{\sqrt{\left<#1^2\right>}}}
+\def\fig#1{Fig.~\ref{#1}}
+\def\eq#1{Eq.~\eqref{#1}}
+\DeclareUnicodeCharacter{00A0}{ }
+
+
+
 \newcommand{\sign} {\ensuremath{\sigma_{\rm N}}}
 \newcommand{\siga} {\ensuremath{\sigma_{\rm A}}}
 \newcommand{\yn} {\ensuremath{Y_{\rm N}}}
@@ -41,10 +61,14 @@
 
 \newcommand{\auau} {\ensuremath{Au+Au}}
 \newcommand{\dau} {\ensuremath{d+Au}}
-\newcommand{\pp} {\ensuremath{p+p}}
+\newcommand{\pp}{\ensuremath{\mbox{p\kern-0.05em p}}}
+\newcommand{\ppbar}{\ensuremath{\mathrm{p\kern-0.05em \bar{p}}}}
 \newcommand{\ee} {\ensuremath{e^+ + e^-}}
 \newcommand{\pbpb} {\ensuremath{Pb+Pb}}
 \newcommand{\ppb} {\ensuremath{p+Pb}}
+\newcommand{\pPb}{\ensuremath{\mbox{p--Pb}}}
+\newcommand{\PbPb}{\ensuremath{\mbox{Pb--Pb}}}
+
 
 \def\ptq#1{\ensuremath{\hat{p}_{\rm T#1}}} 
 \def\ptqkv#1{\ensuremath{\hat{p}^2_{\rm T#1}}} 
