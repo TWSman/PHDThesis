@@ -1,0 +1,104 @@
+\documentclass{beamer}
+%\usetheme{Berlin}
+\usetheme{Copenhagen}
+%\usetheme{Dresden}
+%\usetheme{Darmstadt}
+\usecolortheme{whale}
+\useoutertheme{infolines}
+\usepackage{listings}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{1 on 1 with notes}[a4paper,border shrink=5mm]
+\usepackage{sansmathaccent}
+\usepackage{verbatim}
+\usepackage{etoolbox}
+\usepackage{tikz} 
+\usepackage{pgffor}
+\pdfmapfile{+sansmathaccent.map}
+\title[Jet $j_{T}$]{Jet transverse momentum distribution in p-Pb collisions at ALICE}
+\subtitle{Status}
+\author{Tomas Snellman} % (optional, for multiple authors)
+\institute{University of Jyvaskyla}%
+ % (optional)
+
+\include{defs}
+
+%\date[x.4.2013] % (optional)
+
+\newtoggle{Summed}
+\toggletrue{Summed}
+%\togglefalse{Summed}
+
+%\newcommand{\figDir}{figs2}
+\newcommand{\figDir}{figs3}
+
+\newcommand{\figComment}{LHC13total}
+%\newcommand{\figDir}{figs_linx_Pythia}
+
+\begin{document}
+
+
+\titlepage
+
+\begin{frame}
+\frametitle{Systematic Errors - Signal}
+\begin{columns}
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt02_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt05_triggered} \\
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt03_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt06_triggered} \\
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt04_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsChargedR04JetPt07_triggered} \\
+\column{0.25\textwidth}
+\begin{itemize}
+\item All data is Emcal triggered
+\item Include fits and put ratio to fits?
+\item Alternatively remove bottom panel
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparison to pythia}
+\begin{columns}
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt02_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt05_triggered} \\
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt03_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt06_triggered} \\
+\column{0.25\textwidth}
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt04_triggered} \\
+\includegraphics[width=0.95\textwidth]{JetConejtWithSystematicsWithPythiaChargedR04JetPt07_triggered} \\
+\column{0.25\textwidth}
+\begin{itemize}
+\item Errors on ratios are wrong
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{JetConejtWithSystematicsChargedR04_triggered} \\
+\column{0.5\textwidth}
+\begin{itemize}
+\item Combine jet $p_T$ bins in one figure
+\item All data is emcal triggered
+\item No systematic errors on ratios
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Todo}
+\begin{itemize}
+\item Systematic errors on fit parameters
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

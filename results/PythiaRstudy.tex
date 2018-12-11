@@ -1,0 +1,65 @@
+\documentclass{beamer}
+%\usetheme{Berlin}
+\usetheme{Copenhagen}
+%\usetheme{Dresden}
+%\usetheme{Darmstadt}
+\usecolortheme{whale}
+\useoutertheme{infolines}
+\usepackage{listings}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{1 on 1 with notes}[a4paper,border shrink=5mm]
+\usepackage{sansmathaccent}
+\usepackage{verbatim}
+\usepackage{etoolbox}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows}
+\usepackage{amsmath}
+\usepackage{pgffor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{hyperref}
+\usepackage{anyfontsize}
+\pdfmapfile{+sansmathaccent.map}
+\title[Jet $j_{T}$]{Jet transverse momentum distribution in p-Pb collisions at ALICE}
+%\subtitle{PWG JE presentation}
+\author{Tomas Snellman} % (optional, for multiple authors)
+\institute{University of Jyv\"askyl\"a, Helsinki Institute of Physics}%
+ % (optional)
+
+\include{defs}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{$j_T$ signal}
+\includegraphics[width=0.90\textwidth]{RcomparisonSignal.pdf} 
+\end{frame}
+
+\begin{frame}
+\frametitle{RMS}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=0.90\textwidth]{RcomparisonRMS.pdf} 
+\column{0.5\textwidth}
+\begin{itemize}
+\item Wide component increases with increasing jet $p_T$ and with increasing $R$ 
+\item Narrow component RMS stays constant with increasing jet $p_T$
+\item At low jet $p_T$ narrow component has similar behaviour with respect to $R$ as the wide component
+\item At high jet $p_T$ narrow component values are reversed for different $R$
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Yield}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=0.90\textwidth]{RcomparisonYield.pdf} 
+\column{0.5\textwidth}
+\begin{itemize}
+\item Wide component
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\end{document}
