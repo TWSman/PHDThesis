@@ -19,6 +19,11 @@
 \usepackage{cite}
 \usepackage{nicefrac}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\newcommand \dd[1]  { \,\textrm d{#1}   }
+
 
 \usepackage{hyperref}
 \usepackage{url}
@@ -46,7 +51,7 @@
 \begin{document}
 \include{cover1}
 %\maketitle
-\include{sec_Introduction_extended}
+\include{sec_introduction}
 \include{sec_experimental}
 \include{sec_analysis}
 \include{sec_tpc}
