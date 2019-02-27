@@ -25,16 +25,147 @@ In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite
 
 \section{Experimental Details}
 \label{sec:exp}
+\subsection{CERN}
+The European Organization for Nuclear Research (CERN) is the largest particle physics laboratory in the world. CERN was founded in 1954. In 2019 CERN consists of 22 member states. Additionally CERN has contacts with a number of associate member states and various individual institutions. Some 12000 visiting scientists from over 600 institutions in over 70 countries come to CERN for their research. CERN itself is located near Geneva at the border of France and Switzerland and  itself employs about 2500 people.
 
-\subsection{LHC}
+The laboratory includes a series of accelerators, which are used to accelerate the particle beams used. A schematic view of the complex as of 2019 is shown in Figure~\ref{CernComplex}. In the framework of this thesis the main component is the Large Hadron Collider (LHC), the largest collider at CERN. LHC will be discussed in the chapter in more detail. Other accelerators in the series are used to inject the particle beam into LHC, but they are also used in itself for various experimental studies. 
+
+The second largest accelerator is the super proton synchrotron (SPS). It is final step before the particle beam is injected into LHC. Commissioned in 1976, it was the largest accelerator at CERN until the the Large Electron-Positron Collider (LEP) was finished in 1989. Originally it was used as a proton-antiproton collider and as such provided the data for the UA1 and UA2 experiments, which resulted in the discovery of the W and Z bosons. At the moment there are several fixed target experiments utilising the beam from SPS. These study the structure (COMPASS) and properties (NA61/SHINE) of hadrons, rare decays of kaons (NA62) and radiation processes in strong electromagnetic fields (NA63). Additionally the AWAKE and UA9 experiments are used for accelerator research and development. 
+
+-PS
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{pics/CernCollidersSmall}
+\caption[CERN collider complex]{ A schematic view of the accelerator complex at CERN. Before particles can be injected into the LHC they require a series of preliminary? acceletarors. Until 2018 protons start their journey in LINAC2 (Linear Accelerator) and continue through the Booster, Proton Synchrotron (PS) and Super Proton Synchrotron (SPS). Between 2019 and 2020 LINAC2 will be replaced by LINAC4~\cite{CernComplex}}
+
+\label{fig:CernComplex}
+\end{figure}
+\subsection{Large Hadron Collider}
 \label{sec:lhc}
+The Large Hadron Collider (LHC) is the largest accelerator at CERN and the largest particle collider ever built. The LHC is designed to accelerate protons up to an energy of 8\tev and lead ions up to 2.76\tev per nucleon~\cite{LHC}. The design luminosity of the LHC is $10^34 \unit{cm^{-2}s^{-1}}$. In 20xx it achieved a record peak luminosity of xxx. For lead beams the design luminosity is xxx. All this is achieved with a ring of 26.7 km, that consists of 1232 superconducting dipole magnets that keep particles in orbit. 
+
+The particles are accelerated through the use of radio-frequency (RF) cavities. The RF are build such that the electromagnetic waves become resonant and build up inside the cavity. Charges passing through the cavity feel the overall force and are pushed forward along the accelerator. As they consist of electromagnetic waves, the field in the RF cavity oscillates. Thus particles must enter the cavity at the correct phase of oscillation to receive a forward push. When timed correctly, the particles will feel zero accelerating voltage when they have exactly the correct energy. Particles with higher energies will be decelerated  and particles with lower energies will be accelerated. This focuses particles in distinct bunches. The RF oscillation frequency at the LHC is 400.8 MHz. Thus  RF "buckets" are separated by 2.5 ns. However only 10 \% are actually filled with particles, so the bunch spacing in the LHC is 25 ns, at a bunch frequency of 40 MHz.
+
+With 7 TeV proton beams the dipole magnets used to bend the beam must produce a magnetic field of 8.33 T. This can be only achieved through making the magnets superconducting, which requires cooling them down with helium to a temperature of 1.9 K. The 1232 dipole magnets make up roughly 2/3 of the LHC circumference. The remaining part is made up of RF cavities, various sensors and higher multipole magnets used to keep the beam focused. The most notable of these are the 392 quadrupole magnets.
+
+The LHC is divided into octants, where each octant has a distinct function. Octants 2 and 8 are used to inject beam into the LHC from SPS. The 2 beams are crossed in octants 1,2,5 and 8. The main experiments are built around these crossing points. Octants 3 and 7 are used for beam cleansing. This is achieved through collimators that scatter particles with too high momentum or position offsets off from the beam. The RF cavities used for acceleration are located in octant 4 and octant 6 is used for dumping the beam. The beam dump is made up of two iron septum magnets, one for each beam, that will kick the beam away from machine components into an absorber when needed. 
+
+
+\subsubsection{LHC experiments}
+As of 2018 there are four main experiments at the LHC; ALICE, ATLAS, CMS and LHCb and three smaller ones LHCf, TOTEM and MoEDAL. ALICE will be covered in section ~\ref{sec:alice}. 
+
+ATLAS (A Toroidal LHC ApparatuS) and CMS (Compact Muon Solenoid) are the two largest experiments at the LHC. They are both multipurpose experiments designed to be sensitive to many different possible new physics signals. The biggest discovery made by these so far is the discovery of the Standard Model Higgs boson, which was simultaneously published by the experiments in 2012 ~\cite{Atlashiggs, CMShiggs}.
+
+The LHCb (LHC beauty) experiment ~\cite{LHCb} is made for studying the bottom (beauty) quark. Main physics goals include measurement of the parameters of CP violation with decays of hadron containing the bottom quark. One of the most important results published by LHCb is the first measurement of $B_s^0\rightarrow \mu^+ \mu^-$ decay, which was found to be in line with the Standard Model.
+
+In addition to the four large experiments there are three smaller experiments along the LHC ring. LHCf (LHC forward) is located at interaction point 1 with ATLAS. It aims to simulate cosmic rays by the particles thrown forwards by the collisions in ATLAS.
+
+TOTEM (TOTal Elastic and diffractive cross section Measurement) is located near the CMS experiment at point 5. This allows it to measure particles emerging from CMS with small angles. The main goals is to measure the total, elastic and inelastic cross-sections in pp collisions~\cite{TOTEM}.
+
+The MoEDAL (Monopole and Exotics Detector At the LHC) experiment is located at the interaction point 8 together with the LHCb experiment. MoEDAL tries to measure signatures of hypothetical particles with magnetic charge, magnetic monopoles.
+
+
+
+
 \subsection{ALICE}
 \label{sec:alice}
+ALICE (A Large Ion Collider Experiment)~\cite{ALICE} is the dedicated heavy ion experiment at the LHC. ALICE was designed to cope with the expected very high multiplicity environment of heavy ion collisions. The design allows measurement of a large number of low momentum tracks. The different detector subsystems are optimised to provide high momentum resolution and excellent particle identification capabilities over a broad range of momentum.
+
+A schematic view of the ALICE detector in 2018 is presented in Figure ~\ref{fig:alice}. This section will go through the composition of ALICE as it has been during run 2 between 2014 and 2018. The detector will go through significant upgrades during Long Shutdown 2 in 2019-2020. As in all the major high energy physics experiments the positioning of the detectors follows a layered structure. Closest to the interaction point are the tracking detectors. The main task of these detectors is to locate the position of the primary interaction vertex accurately and to record the tracks of charged particles. To achieve this they need a very good spatial resolution close to the interaction point. Tracking detectors do not significantly alter the tracks of traversing particles. Thus they can be located in the innermost layers.
+
+Calorimeters are designed to stop any particles hitting them and use the absorption to measure the energy of the particles. Thus they must be located behind the tracking detectors. ALICE has two separate calorimeter systems, the electromagnetic calorimeters measure mainly electrons and photons, while the muon detection system measures muons.
+
+
 \subsubsection{Tracking}
+The main design guideline for the tracking detectors in ALICE was the requirement to have good track separation and high granularity in the high multiplicity environment of heavy ion collisions. Before LHC was built the wildest estimates put the particle density at 8000 charged particles per unit of rapidity~\cite{}. In reality the particle density turned out to be significantly smaller, about 1600 charged particles per rapidity unit.~\cite{}
+
+The main tracking detector in ALICE is the Time Projection Chamber (TPC), discussed in more detail in section ~\ref{sec:TPC}
+
+Between TPC and the beam pipe there is an array of six layers of silicon detectors, called the inner tracking system (ITS)~\cite{ITS}. The main tasks of the ITS are to locate the primary vertex with a resolution better than 100 $\mu m$, to reconstruct the secondary vertices from decaying particles, to track and identify particles with momenta below 200 $\mev$ and to compliment the momentum and angle measurements of TPC. During long shutdown 2 in 2019-2020 the entire ITS will be replaced~\cite{ITSupgrage}. As of 2018 the two innermost layers are made of the silicon pixel detector (SPD). As it's the closest detector to the interaction point it requires are very high spatial resolution. Thus the choice of pixel technology is natural. In heavy ion collisions the particle density is around 50 particles per $cm^2$. 
+
+The next two layers are the silicon drift detector (SDD), which is made out of homogeneous neutron transmutation doped silicon. It is ionized when a charged particle goes through the material. The generated charge then drifts to the collection anodes, where it is measured. The maximum drift time in SDD is about 5 $\mu s$ This design gives very good multitrack capabilities and provides two out of the four $\nicefrac{dE}{dx}$ samples in the ITS.
+
+The two remaining layers in the ITS are the silicon strip detector (SSD). The strips work in a similar way as silicon pixels, but by itself one layer only provides good resolution in one direction. Combining two crossing grids of strips provides 2 dimensional detection. Each charged particle will hit two intervening strips. The position of the hit can be deduced from the place where the strips cross each other.
+
 \subsubsection{TPC}
-\subsubsection{TPC upgrage}
-\subsubsection{Particle identification?}
-\subsubsection{Calorimeters}
+\label{sec:TPC}
+Time projection chamber (TPC) is a cylindrical detector filled with $ 88 m^3$ of $\mathrm{Ne-CO_2}$ (90/10 \%) gas mixture. The gas is contained in a field cage that provides an uniform electric field of $400 \nicefrac{V}{cm}$ along the z-axis (along the beam direction). Charged particles traversing through the TPC volume will ionise the gas along their path. This liberates electors that drift towards the end plates of the cylinder. 
+
+The field cage is separated into two detection volumes by the central high voltage electrode. Both sides have a drift length of 2.5 m and inner/outer diameters of 1.2/5 m. This means the central electrode must provide a maximum potential of 100 kV to achieve the design field magnitude. The maximum time required for electrons to drift through the chamber is about 90 $\mu s$.
+
+When electrons reach the end of the main cylinder they enter the readout chambers. The readout section of both sides consists of 18 outer chambers and 18 inner chambers. Each of them are made of multiwire proportional chambers with cathode pad readout. This design is used in many TPCs before. During Long Shutdown 2 in 2019-2020, the multiwire chambers will be replaced by Gas Electron Multipliers (GEMs, see section \ref{sec:tpcupgrade}).
+
+The relatively slow drift time of 90 $\mu s$ is the limiting factor for the luminosity ALICE can take. The occupancy of the TPC must be kept in a manageable level. 
+
+
+\subsubsection{TPC upgrade}
+\label{sec:tpcupgrade}
+During long shutdown 2 in 2019-2020 ALICE will go through significant modifications. The goal is to be able have continuous readout ~\cite{aliceupgrade} in heavy ion collisions at an interaction rate of 50 kHz. I have made a personal contribution to the quality assurance of the new GEM readout of TPC.
+
+ALICE will add a new Forward Interaction trigger (FIT) to replace the V0 and T0 detectors. 
+
+Additionally the current inner tracking system (ITS) will be completely replaced. The current layered structure with three different technologies will be replaced by an all pixel detector with significantly reduced pixel size. Additionally the first layer will be brought closer to the beam pipe. The new ITS will have better tracking efficiency and  better impact parameter resolution. 
+
+The muon detection will be complimented by the Muon Forward Tracker (MFT)~\cite{mft}. Based on the same technology as the new ITS, MFT will be placed before the hadron absorber that sits in front of the existing muon spectrometer. MFT should significantly increase the signal/background ratio in heavy quark measurements.
+
+Many subdetectors will make small improvements to enhance the readout rate. The central trigger processor will be replaced and ALICE will introduce a new framework $O^2$ that combines both online data acquisition and offline analysis.
+
+The detector restricting the readout the most at the moment is the TPC. The current wire chamber based system  limits the readout rate to 3.5 kHz. To achieve the 50 kHz readout rate goal the wire chambers will be replaced by a Gas Electron Multiplier (GEM) based system.
+
+TPC has a total of 36 inner and 36 outer readout chambers. Each of these will consist of 4 layers of GEM foils. The inner chambers will only have one foil for each layer. The outer chambers are separated into three sections, each with its own layer of foils. Each gem foil is made up of a 50 $\mathrm{\mu m}$ thick resistive capton layer, coated on both sides by $5 \mathrm{\mu m}$ thick layers of copper. Each foils is separated into a number (20-24) of distinct active areas. The active areas are pierced quite densely, they have 50-100 holes in the area of a single $\mathrm{mm^2}$. The density of holes changes from layer to layer. The two middle layers of foils have a larger (double) pitch (smaller hole density) while the top and bottom layers have a smaller (normal) pitch (larger hole density).
+
+The holes have a conical shape which they acquire during a two step chemical etching process. 
+
+The working principle of these foils is based on electrodynamics. {\color{red} elaborate}There is a large potential difference (140-400 V) applied to the two sides of the foil, which results in large field in each hole. This acts both as a lens and an amplifier for the electrons. The amplification happens inside the holes where the field is the strongest. 
+
+The GEMs are designed to minimize ion backflow to allow continuous, ungated and untriggered readout.
+
+
+\subsubsection{Particle identification}
+One guiding principle in the design of ALICE was to achieve good particle identification over  a large part of phases space and for several different particle types. In ALICE there are several detectors taking part in the identification of particles. 
+
+One of the particle identification detectors is the transition radiation detector (TRD)~\cite{trd}. Its main task is identifying electors with momenta larger than 1 \gev. Transition radiation is produced when highly relativistic particles traverse the boundary between to media having different dielectric constants. The average energy of the emitted photon is approximately proportional to the Lorentz factor $\gamma$ of the particle, which provides an excellent way of discriminating between electrons and pion. ALICE TRD is made of a composite layer of foam and fibres. The emitted photons are then measured in six layers of Xe/CO2 filled time expansion wire chambers. 
+
+The time of flight  (TOF) detector uses a very simple physics principle, i.e. calculating the velocity of the particle using the time of flight between two points. Combining this with the momentum of particle, obtained from the tracking detectors, one can calculate the mass of the particle, which identifies particles. The TOF detector consists of multigap resistive wire chambers. These are stacks of resistive plates spaced equally. They allow time of flight measurements in large acceptance with high efficiency and with a resolution better than 100 ps. 
+
+The third specific particle identification detector is the high momentum particle identification (HMPID) detector. The HMPID uses a ring imaging Cherenkov counter to identify particles with momenta larger than 1 \gev. Particles moving through a material faster than the speed of light in the material will produce Cherenkov radiation. The velocity of the particle determines the angle at which the radiation is emitted. Measuring this angle gives the velocity of the particle. This can be again used to calculate the mass of the particle, if the momentum is known. In HMPID the material is a liquid radiator and the photons are measured with multiwire proportional chambers in conjunction with photocathodes. 
+
+-TRD
+
+-TOF
+
+-HMPID
+
+-TPC and dE/dx
+
+
+\subsubsection{Electromagnetic Calorimeter}
+Calorimeters are designed to measure the energy of particles. Electromagnetic calorimeters specialise in detecting particles that interact primarily through the electromagnetic interaction, namely photons and electrons. They are required in many neutral meson and direct photon analyses. In addition the energy information enhance jet measurements.
+
+ALICE has two electromagnetic calorimeters, the photon spectrometer (PHOS)~\cite{phos} and the electromagnetic calorimeter (EMCal)~\cite{emcal}. PHOS is a homogeneous calorimeter that consists of scintillating $\mathrm{PbWO_4}$ crystals, which generate a bremsstrahlung  shower and produce scintillation light. The energy of the particle determines the amount of light produced. To improve the charged particle rejection, PHOS includes a charged particle veto detector (CPV)~\cite{cpv}. PHOS is built to have a very fine granularity, making it well suited for measuring direct photons and neutral mesons.
+
+EMCal is a sampling calorimeter. It consists of layers of lead and scintillator tiles. The lead tiles produce the shower and scintillator tiles the light. The signal is then read with wavelength shifting fibres. The acceptance of EMCal in the azimuthal angle is $ 80\deg < \phi < 187 \deg$. During long shutdown 1 in 2013-2015, EMCal was extended with the di-jet calorimeter (DCal) ~\cite{dcal}, giving an additional acceptance region of $ 260\deg < \phi < 320 \deg$. This provides partial back-to-back coverage. In comparison to PHOS, EMCal has coarser granularity, but a significantly larger acceptance, making it suitable for jet physics.
+
 \subsubsection{Forward detectors}
+ALICE includes a few small and specialised detectors of importance. The event time is determined with very good precision (< 25 ns) by the T0 detector~\cite{T0}. T0 consists of two sets of Cherenkov counters that are mounted around the beam pipe on both sides of the interaction point. T0 gives the luminosity measurement in ALICE.
+
+Another small detector in the forward direction is the V0 detector~\cite{V0}. This consists of two arrays of segmented scintillator counters located at $-3.7 < \eta < -1.7$ and $ 2.8 < \eta < 5.1$. V0 is used as a minimum bias trigger and for rejection of beam-gas background. Particle multiplicity in the forward direction can be related to the event centrality. Thus V0 is the main detector used in centrality determination in PbPb collisions.
+
+The multiplicity measurement of V0 is complimented by the forward multiplicity detector (FMD)~\cite{FMD}. FMD includes five rings of silicon strip detectors that make up the FMD. FMD gives acceptance in the range $-3.4 < \eta < -1.7$ and $ 1.7 < \eta < 5.0$.
+
+During long shutdown 2 in 2019-2020, V0 and T0 will be replaced by the Fast Interaction Trigger (FIT) detector~\cite{FIT}. For historical reasons elements of FIT are also referred to as V0+ and T0+. FIT will allow centrality, event plane, luminosity and interaction time determination in the continuous readout mode, that ALICE will operate in after 2020.
+
+For photon multiplicity measurement ALICE has the photon multiplicity detector (PMD) ~\cite{PMD}. PMD uses two planes of gas proportional counters with a cellular honeycomb structure. PMD gives the multiplicity and spatial distribution of photons in the region $2.3 < \eta < 3.7$.
+
+On top of the ALICE magnet there is an array of 60 large scintillators called the ALICE cosmic ray detector (ACORDE) ~\cite{acorde}. ACORDE is used as a trigger for cosmic rays for calibration and alignment. 
+
+The only hadronic calorimeters in ALICE are the zero degree calorimeters (ZDC)~\cite{zdc}, which are located next to the beam pipe in the machine tunnel about 116 m from the interaction point. There are two sets of calorimeters. One is made of tungsten, specialising in measuring neutrons, while the other, made of brass, is specialised in measuring protons. In heavy ion and especially in proton-lead collisions, ZDC gives information about the centrality of the event. ZDC is meant to detect spectators, i.e. parts of the colliding ions that do not take part in the interaction. If there are more spectators, the collisions is likely to be more peripheral.
+
+A new detector installed during the long shutdown 1 is the ALICE diffractive detector (AD)~\cite{AD}. AD consists of two assemblies, one in each side of the interaction point, both made of two layers of scintillators. These assemblies are situated about 17 m and 19.5 m away from the interaction points. The pseudorapidity coverage is $-6.96 < \eta < -4.92 $ and $4.78 < \eta < 6.31$. AD greatly enhances ALICE's capability for diffractive physics measurements that require a large pseudorapidity gap.
+
 \subsubsection{Muon spectrometer}
+Outside the main magnet, ALICE has a spectrometer dedicated to measuring muons~\cite{MuonSpectro}. In heavy ion physics muons are mainly used to measure the production of the heavy quark resonances $\nicefrac{J}{\psi}, \Psi^{'}, \Upsilon, \Upsilon^{'}$ and $\Upsilon^{''}$.
+
+The muon spectrometer consists of three parts, the absorber, the muon tracker and the muon trigger. The absorber is meant to remove the hadronic background as efficiently as possible. After the absorber there are ten plates of thin cathode strip tracking stations with high granularity, the muon tracker. After the muon tracker there is a layer of iron to filter out any remaining particles, other than muons. The muon trigger is located behind this layer. The trigger consists of four resistive plate chambers. 
 \subsubsection{Trigger}
