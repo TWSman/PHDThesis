@@ -557,8 +557,13 @@ Some of these initial clusters are too heavy to reasonably describe an excited s
 split before they are allowed to decay. The cluster $C$ is split if its mass fulfils the condition~\cite{}
 
 \begin{equation}
-
+M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
+\label{eq:clustermass}
 \end{equation}
+
+where $m_{1,2}$ are the masses of the constituents partons of the cluster and $M_\mathrm{max}$ and $p$ are the main parameters of the model. These have to be chosen separately for clusters containing light, charmed and bottom quarks. When a cluster is split, a pair of light quarks is generated from the vacuum and two new clusters are made, both containing one quark from the original cluster and one from the newly generated pair. The splitting is continued until no clusters with masses $M_C$ fulfilling the equation ~\ref{eq:clustermass} remains.
+
+When are clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{} 
 
 \subsubsection{Jet energy loss}
 \begin{figure}
