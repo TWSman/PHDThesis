@@ -70,6 +70,15 @@ The MoEDAL (Monopole and Exotics Detector At the LHC) experiment is located at t
 
 \subsection{ALICE}
 \label{sec:alice}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.95\textwidth]{pics/2012-Aug-02-ALICE_3D_v0_with_Text.jpg}
+\caption[ALICE]{Schematic view of ALICE}
+\label{fig:alice}
+\end{figure}
+
 ALICE (A Large Ion Collider Experiment)~\cite{ALICE} is the dedicated heavy ion experiment at the LHC. ALICE was designed to cope with the expected very high multiplicity environment of heavy ion collisions. The design allows measurement of a large number of low momentum tracks. The different detector subsystems are optimised to provide high momentum resolution and excellent particle identification capabilities over a broad range of momentum.
 
 A schematic view of the ALICE detector in 2018 is presented in Figure ~\ref{fig:alice}. This section will go through the composition of ALICE as it has been during run 2 between 2014 and 2018. The detector will go through significant upgrades during Long Shutdown 2 in 2019-2020. As in all the major high energy physics experiments the positioning of the detectors follows a layered structure. Closest to the interaction point are the tracking detectors. The main task of these detectors is to locate the position of the primary interaction vertex accurately and to record the tracks of charged particles. To achieve this they need a very good spatial resolution close to the interaction point. Tracking detectors do not significantly alter the tracks of traversing particles. Thus they can be located in the innermost layers.
@@ -78,6 +87,14 @@ Calorimeters are designed to stop any particles hitting them and use the absorpt
 
 
 \subsubsection{Tracking}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.95\textwidth]{pics/AliceITS}
+\caption[ITS]{Schematic view of ALICE Inner Tracking System}
+\label{fig:its}
+\end{figure}
+
+
 The main design guideline for the tracking detectors in ALICE was the requirement to have good track separation and high granularity in the high multiplicity environment of heavy ion collisions. Before LHC was built the wildest estimates put the particle density at 8000 charged particles per unit of rapidity~\cite{}. In reality the particle density turned out to be significantly smaller, about 1600 charged particles per rapidity unit.~\cite{}
 
 The main tracking detector in ALICE is the Time Projection Chamber (TPC), discussed in more detail in section ~\ref{sec:TPC}
@@ -101,6 +118,12 @@ The relatively slow drift time of 90 $\mu s$ is the limiting factor for the lumi
 
 \subsubsection{TPC upgrade}
 \label{sec:tpcupgrade}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.95\textwidth]{pics/alice-tpc-schematic}
+\caption[TPC]{Schematic view of ALICE Time Projection Chamber}
+\label{fig:tpc}
+\end{figure}
 During long shutdown 2 in 2019-2020 ALICE will go through significant modifications. The goal is to be able have continuous readout ~\cite{aliceupgrade} in heavy ion collisions at an interaction rate of 50 kHz. I have made a personal contribution to the quality assurance of the new GEM readout of TPC.
 
 ALICE will add a new Forward Interaction trigger (FIT) to replace the V0 and T0 detectors. 
@@ -123,7 +146,7 @@ The GEMs are designed to minimize ion backflow to allow continuous, ungated and 
 
 
 \subsubsection{Particle identification}
-One guiding principle in the design of ALICE was to achieve good particle identification over  a large part of phases space and for several different particle types. In ALICE there are several detectors taking part in the identification of particles. 
+One guiding principle in the design of ALICE was to achieve good particle identification (PID) over  a large part of phases space and for several different particle types. In ALICE there are several detectors taking part in the identification of particles. 
 
 One of the particle identification detectors is the transition radiation detector (TRD)~\cite{trd}. Its main task is identifying electors with momenta larger than 1 \gev. Transition radiation is produced when highly relativistic particles traverse the boundary between to media having different dielectric constants. The average energy of the emitted photon is approximately proportional to the Lorentz factor $\gamma$ of the particle, which provides an excellent way of discriminating between electrons and pion. ALICE TRD is made of a composite layer of foam and fibres. The emitted photons are then measured in six layers of Xe/CO2 filled time expansion wire chambers. 
 
@@ -131,13 +154,9 @@ The time of flight  (TOF) detector uses a very simple physics principle, i.e. ca
 
 The third specific particle identification detector is the high momentum particle identification (HMPID) detector. The HMPID uses a ring imaging Cherenkov counter to identify particles with momenta larger than 1 \gev. Particles moving through a material faster than the speed of light in the material will produce Cherenkov radiation. The velocity of the particle determines the angle at which the radiation is emitted. Measuring this angle gives the velocity of the particle. This can be again used to calculate the mass of the particle, if the momentum is known. In HMPID the material is a liquid radiator and the photons are measured with multiwire proportional chambers in conjunction with photocathodes. 
 
--TRD
+In addition to the specific particle identification detectors, the general purpose tracking detectors can be used for identification through the use of specific energy loss of charged particles traversing through a medium and the transition radiation emitted by charged particles when crossing the boundary between two materials. 
 
--TOF
-
--HMPID
-
--TPC and dE/dx
+$\nicefrac{\mathrm{d}E}{\mathrm{d}x}$ measurements are provided by the last four layers of the ITS detector, i.e. the SDD and the SSD, thanks to their analog readout.~\cite{ALICEpid} ITS provides particle identification in the low $\pt{}$ region, up to $~ 1 \gev$, and pions reconstructed in the standalone mode can be identified down to $~100 \mev$. Similar to ITS the TPC detector provides specific energy loss measurements. TPC can identify charged hadrons up to $p_T ~ 1-2 \gev$ as well as light nuclei, He3 and He4.
 
 
 \subsubsection{Electromagnetic Calorimeter}
