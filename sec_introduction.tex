@@ -76,7 +76,7 @@ On the other hand, at very small distances the coupling constant approaches 0. T
 \begin{figure}[htbp]
 \centering
 %\includegraphics[width=0.9\textwidth]{pics/qcd_ms_high}
-\includegraphics[width=0.5\textwidth]{pics/QCDphase2}
+\includegraphics[width=0.5\textwidth]{pics/QCDphase2.pdf}
 \caption[QCD phase diagram]{A schematic outline for the phase diagram of QCD matter at ultra-high density and temperature. The quark chemical potential $\mu$ that is on the x-axis represents the imbalance between quarks and antiquarks. At zero temperature this corresponds to the number of quarks but at higher temperatures there are also additional pairs of quarks and antiquarks. Along the horizontal axis the temperature is zero, and the density is zero up to the onset transition where it jumps to nuclear density, and then rises with increasing $\mu$.  Neutron stars are in this region of the phase diagram, although it is not known whether their cores are dense enough to reach the quark matter phase. Along the vertical axis the temperature rises, taking us through the crossover from a hadronic gas to the quark-gluon plasma. This is the regime explored by high-energy heavy-ion colliders.~\cite{Rajagopal:2001}}
 \label{fig:QCDphase}
 \end{figure}
@@ -98,8 +98,9 @@ The $\nicefrac{\eta}{s}$ value for the matter created in Au-Au collisions at RHI
 	is assumed for nuclear matter. The lines are drawn to guide the eye.~\cite{PhysRevLett.98.092301}
 }
 \label{fig:etas}
-
 \end{figure}
+
+
 
 \FloatBarrier
 \pagebreak
@@ -118,10 +119,10 @@ The Relativistic Heavy Ion Collider (RHIC) at BNL in New York, USA started its  
 
 \pagebreak
 \FloatBarrier
-\pagebreak
-\section{Features of Heavy-Ion Collisions}
+%\pagebreak
+\subsection{Features of Heavy-Ion Collisions}
 \label{sec:features}
-\subsection{Collision Geometry}
+\subsubsection{Collision Geometry}
 In contrast to protons atomic nuclei are objects with considerable transverse size. The properties of a heavy-ion collision depend strongly on the impact parameter $b$ which is the vector connecting the centers of the two colliding nuclei at their closest approach. One illustration of a heavy-ion collision is shown in Fig.~\ref{fig:planes}.
 
 
@@ -176,7 +177,7 @@ Usually centrality is defined by dividing collision events into percentile bins 
 \begin{figure}[htb]
 \centering
 
-               \includegraphics[width=0.9\textwidth]{pics/centrality}
+               \includegraphics[width=0.9\textwidth]{pics/centrality.png}
         \caption[An illustration of the multiplicity distribution in ALICE measurement with centrality classes.]{An illustration of the multiplicity distribution in ALICE measurements. The red line shows
 the fit of the Glauber calculation to the measurement. The data is divided into centrality bins~\cite{PhysRevC.88.044909}. The size of the bins corresponds to the indicated percentile.}
         	\label{fig:centrality}
@@ -285,7 +286,7 @@ d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 
 
 
-\subsection{Hydrodynamical Modelling}
+\subsubsection{Hydrodynamical Modelling}
 \label{sec:hydro}
 The relativistic version of hydrodynamics has been used to model the deconfined phase of a heavy-ion collision with success. Heavy-ion collisions produce many hadrons going into all directions. It is expected that tools from statistical physics would be applicable to this complexity~\cite{Ollitrault:2007du}. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest~\cite{Romatschke:2009im}.
 
@@ -377,6 +378,200 @@ Some parts of the Fourier composition approach were used for Au-Au collisions at
 \subsubsection{High $\pt{}$ Phenomena}
 The measurement of anisotropic flow coefficients can be extended to very high transverse momenta $\pt{}$. High $\pt{}$ measurements of $v_2$ from CMS~\cite{Chatrchyan:2012xq} are shown in Fig. \ref{fig:highpt}. For high transverse momenta $v_2$ values are positive and they decrease slowly as a function of $\pt{}$. At high transverse momentum the $v_2$ values don't, however, represent flow. 
 
+\FloatBarrier
+%\subsubsection{Fluctuations and Event-by-Event Flow}
+%The colliding nuclei are not static objects but the distribution of nucleons fluctuates over time. The arrangement of the nucleons at the time of the collision is random, which leads to fluctuations in the initial conditions. The shape of the collision zone is not a perfect almond and it can have a more complex shape. Also the density of the created medium is not homogenous but it can have dense hot spots. The initial density distribution of the created medium is the main reason for anisotropic flow. Because of fluctuations the strength of anisotropic flow is not constant event-by-event.
+%
+%The existence of more complex density profiles also leads to odd flow harmonics. The basic hydrodynamical approach could only explain elliptic flow and even-harmonics. For a long time it was believed that the odd harmonics would be negligible. In 2007 Mishra {\emph et al.}~\cite{Mishra:2007tw} argued that density inhomogeneities in the initial state would lead to non-zero $v_n$ values for higher harmonics including $v_3$.  It was later noted that higher harmonics of $v_n$ would be suppressed by viscous effects and that the shape of $v_n$ as a function of $n$ would provide another valuable tool for studying $\eta/s$~\cite{Mocsy:2010um}. 
+%
+%In 2010 significant $v_3$ components were also observed in RHIC data~\cite{Alver:2010gr}. The AMPT model that is also studied in this thesis was able to quantitatively describe the centrality dependence of $v_3$ at RHIC and LHC energies, $\snn=200 \gev$ and $2.76\tev$~\cite{Xu:2011fe}.
+%
+%%Initial state fluctuations can be modelled using the Glauber model~\cite{Alver:2008zza}. However, so far all models fail to describe the experimental $v_n$ distributions consistently over the whole centrality range~\cite{Jia:2012ve}.
+%
+%Contrary to elliptic flow higher harmonics are not strongly affected by the centrality of the collision. This supports the theory of higher harmonics being the result of fluctuations. Also $v_2$ measurements of ultra-central collisions give non-zero results for flow, even though the traditional approach based on the anisotropy of the overlap zone gives no prediction of anisotropic flow. This is also the result of fluctuations. Measurement of distributions of $v_n$ coefficients has been performed at ATLAS~\cite{Jia:2012ve}. Their measurements of distributions for $v_2$ in central collisions and for $v_3$ and $v_4$ in general are consistent with a pure Gaussian fluctuation scenario~\cite{Jia:2012ve}.
+%
+%\begin{figure}[tb]
+%	\centering
+%	\begin{subfigure}[t]{0.5\textwidth}
+%                \includegraphics[width=\textwidth]{pics/alice_vn_figa.pdf}
+%        \caption[ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$]{ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$ as a function of transverse momentum. The flow coefficients are determined by two-particle correlations using different rapidity separations. 
+%        The full and open symbols are for $\Delta\eta > 0.2$ and $\Delta\eta > 1.0$. 
+%        The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv} with different values of $\eta/s$~\cite{PRL107032301}.}
+%        \label{fig:higherharmonics}
+%        \end{subfigure}
+%        \quad
+%        \begin{subfigure}[t]{0.45\textwidth}
+%        \includegraphics[width=\textwidth]{pics/2012-Jun-06-fig02b}
+%        \caption{Amplitude of $v_n$ harmonics as a function of $n$ for the 2\% most central collisions as  measured by ALICE~\cite{Aamodt2012249}.}
+%        \label{fig:alicepowers}
+%
+%        \end{subfigure} 
+%        
+%%        \begin{subfigure}[t]{\textwidth}
+% %               \includegraphics[width=\textwidth]{pics/atlas_powerspectra.png}
+%%        \caption{Power spectra of $v_n$ for the 1\% most central collisions measured by ATLAS~\cite{PhysRevC.86.014907}.}
+%%        \label{fig:atlaspowers}
+% %       \end{subfigure}
+%                \caption[Flow measurements of higher harmonics]{Flow measurements of higher harmonics}
+%                \label{fig:vnpowers}
+%
+%\end{figure}
+%
+%Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}.
+%
+%
+%
+%Measurement of event-by-event flow and higher harmonics has growing importance in the field. Triangular flow is useful also for studying jet quenching and in-medium energy loss since anisotropies of flow are related to the path lengths of partons traversing through the medium. Path-lengths and medium density in turn are related the energy loss. An interesting topic of future research would be studying jet properties like $R_{AA}$ separately in events with strong and weak anisotropy.
+
+\subsection{Hard processes}
+\subsubsection{pQCD factorization}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/QCDLO}
+\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
+\label{fig:qcdlo}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/ink}
+\caption[Hard scattering]{Schematic view of hard scattering process of $\mathrm{p+p\rightarrow 2\,jets}$}
+\label{fig:scattering}
+\end{figure}
+The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{sig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, reffered to as jets
+
+Jet fragmentation can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elemantary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
+
+$$\frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2p_T} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c}$$
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{pics/Showering}
+\caption[Jet showering]{REPLACE FIGURE An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
+\label{fig:highpt}
+\end{figure}
+
+$$x_a = \frac{\left| p_a \right|}{\left| p_{proton} \right|}$$
+
+
+\subsubsection*{Parton Distribution Function}
+Parton Distribution Functions (PDFs) are essential to calculate the scattering cross section. They are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments. PDFs $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. 
+
+PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales at LHC using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{DGLAP}  ~\ref{eq:dglap}.
+
+\begin{equation}
+\mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
+\label{eq:dglap}
+\end{equation}
+
+
+where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. 
+
+The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of particles radiated from the outgoing parton. Fragmentation function are given with respect to the momentum fraction $z$ which is defined as the longitudinal momentum fraction of jet momentum $p_{\mathrm{jet}}$ carried away by the jet fragment $p_{\mathrm{part}}$
+
+
+\begin{equation}
+z = \frac{\bar p_{\mathrm{part}} \cdot \bar p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\bar{p}_\mathrm{part} \times \bar{p}_\mathrm{jet}=0}
+\end{equation}
+
+Fragmentation function $D\left(z\right)$ then gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{}. 
+
+\begin{equation}
+m\left(z_0\right) = \int_{z_0}^1 D\left(z\right) \mathrm{d} z \Rightarrow m\left(0\right) \equiv \left< m \right> = \int_0^1 D\left(z\right) \mathrm{d}z
+\end{equation}
+
+Because of momentum conservation the sum of all jet fragments must be equal to the jet momentum, i.e. 
+
+\begin{equation}
+\sum p_{i,\mathrm{part}} = p_\mathrm{jet} \Rightarrow \sum z_i = 1 \Rightarrow \int_0^1 z D\left(z\right) \mathrm{d} z = 1
+\end{equation}
+
+A natural consequence is that the average momentum fraction is the inverse of the average multiplicity
+
+\begin{equation}
+\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}
+\end{equation}
+
+
+\subsubsection{Jet hadronisation}
+When the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$, the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. One simple scenario that is used in several theory calculations is the so-called local parton-hadron duality~\cite{Azimov1985}. In the local parton-hadron duality hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons are transformed into hadrons, assuming that the flow of momentum and quantum numbers for the hadrons can be directly obtained from those of partons introducing only small normalising constants. 
+
+Hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
+
+\subsubsection*{Lund string model}
+
+One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair.The tube is assumed to have a uniform fixed transverse size of about 1 fm along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx 1 \mathrm{\nicefrac{GeV}{fm}} \approx 0.2 \mathrm{GeV^2}$ can be obtained from hadron mass spectroscopy.
+
+The evolution of string fragmentation is illustrated schematically on the right side of Fig.~\ref{fig:fluxtube}. This figure is drawn in a light cone presentation, so the initial quark and antiquark are going to separate directions at the speed of light, which assumes them as massless. The string between them, illustrated in the figure by the red line, stretches until its potential energy becomes high enough that it can break, forming a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the new pair $\mathrm{q'\bar q'}$, now two new pairs $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$ have formed. As these particles are also moving away from each other, the strings between them can stretch and break, creating yet more pairs. The process continues until the invariant mass of the system connected by the string becomes small enough and a final state meson is formed. 
+
+To mathematically model the string one can use a massless relativistic string with no transverse degrees of freedom. The gluons are represented as energy and momentum carrying kinks on the string with incoherent sums of one colour charge and one anticolour charge. When this string breaks, it is classically required that the created quark and antiquark are produced at a certain distance if they are to have any mass or transverse momentum. However, taking into account quantum mechanics, the pair must be created at one point and then tunnel out to the classically allowed region. Thus the probability to create a new quark-antiquark pair becomes proportional to the tunnelling probability~\cite{ANDERSSON198331}.
+
+
+\begin{equation}
+P_\mathrm{tunnelling} \propto \exp \left(\frac{-\pi m_\perp^2}{\kappa} \right) = \exp \left(\frac{-\pi m^2}{\kappa} \right) \left(\frac{-\pi p_\perp^2}{\kappa} \right),
+\end{equation}
+
+where the transverse mass $m_\perp$ is defined as $m_\perp^2 = m^2 + p_\perp ^2$. The transverse momentum is now defined to be transverse to the string axis. This formula gives flavour-independent Gaussian $p_\perp$-distribution for the created $\mathrm{q \bar q}$ pairs.
+
+As explained above the string fragmentation would only produce mesons in the final state, but we know that also baryons are created in the process. In the string fragmentation model baryon production is included by adding a probability that a diquark-antidiquark pair is created instead of a quark-antiquark pair when a string breaks.
+
+The kinematics of each string breaking are determined iteratively. Since there is no natural ordering, the string breaking can be considered in any order and the answer obtained must be the same. One can start from the q leg and work one's way to the $\bar \mathrm{q}$ leg, or vice versa. This give a left-right symmetry of the string fragmentation. In the Lund model this is taken into account by defining a symmetric fragmentation function
+
+\begin{equation}
+f\left(z\right) \propto \frac{1}{z} \left(1-z\right)^a \exp \left(-\frac{b m_\perp ^2}{z} \right)
+\label{eq:symmetric}
+\end{equation}
+
+to break the string into a hadron and a remainder system. In the function $z$ is the fraction of light-cone momentum $p^+$ given to the hadron in the string breaking, $m_\perp$ is the transverse mass of the hadron and $a$ and $b$ are tuneable parameters of the model. For heavy quarks this has to be modified as 
+
+\begin{equation}
+f\left(z\right) \propto \frac{1}{z^{1+bm_Q^2}} \left(1-z\right)^a \exp \left(-\frac{b m_\perp ^2}{z} \right)
+\label{eq:symmetric2}
+\end{equation}
+
+The process can be thought as follows: first start from the q-leg of a $\mathrm{q \bar q}$ system and choose to consider the breaking to new $\mathrm{q' \bar q'}$ pair closest to this leg. Now the breaking will produce a hadron $\mathrm{q \bar q'}$ and a remainder system spanning from $\mathrm{q' \bar q}$. Then the process is continued until the $\bar \mathrm{q} $-leg is reached. A small detail here is that in equation (\ref{eq:symmetric}) it is assumed that the mass of the remainder system is large. Thus some patching up is needed for the last two hadrons coming from a string. The patching up is done such that the place where it happens looks as closely like any other string break as possible.
+
+
+One additional possibility one must consider is that a string can have such a low mass that it cannot break at all. In this case a single hadron is generated out of the string and if necessary  energy and momentum are exchanged with other partons in the event.
+
+After all the hadrons are produced, the short-lived ones can still decay before the set of final state particles in the simulation is obtained~\cite{}
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{pics/stringone.pdf}
+\caption[]{ (a) A flux tube spanned between a quark and an antiquark. (b) The motion
+and breakup of a string system, with the two transverse degrees of freedom suppressed
+(diagonal lines are (anti)quarks, horizontal ones snapshots of the string field).
+\cite{eventGenerators} }
+\label{fig:fluxtube}
+\end{figure}
+
+\subsubsection*{Cluster model}
+Instead of a string model HERWIG~\cite{} uses a cluster model~\cite{herwigManual} for hadronisation. The model is based on the preconfinement property of parton showers, i.e. the colour structure of the shower at any evolution scale $Q_0$ is such that colour singlet combinations of partons can be formed with an asymptotically 
+universal invariant mass distribution. The invariant mass does not depend on the initial hard process scale $Q$, but only on $Q_0$ and the QCD scale $\Lambda _ \mathrm{QCD}$, when $Q \gg Q_0$.
+
+The cluster model starts from transforming all gluons non-perturbatively into $\mathrm{q \bar q}$ pairs, which requires that the gluons get a mass, which must be at least twice the lightest quark mass. After the gluons are transformed into quarks, the adjacent colour lines can be clustered together to colour singlet states with mesonic quantum numbers. The momentum of these clusters is defined to be the sum of the momenta of the clustering partons. According to preconfinement, the mass distribution of these clusters is independent of the details of the hard scattering. Additionally the clusters can be regarded as highly excited hadron resonances and decayed into the final state hadrons.
+
+Some of these initial clusters are too heavy to reasonably describe an excited state of a hadron. These must be
+split before they are allowed to decay. The cluster $C$ is split if its mass fulfils the condition~\cite{}
+
+\begin{equation}
+
+\end{equation}
+
+\subsubsection{Jet energy loss}
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{figures/regions4.eps}
+\caption[]{Parametrically accurate picture of how a medium-modified parton cascade fills the phase space. At time $t$, quanta can be formed up to momentum scale $k_{\rm form}$ and they are formed with $O(1)$ probability per $\log p$ at lower scale $k_{\rm split}$. Quanta below $k_{\rm split}$ split further and their energy cascades to the thermal scale $T$ in less than an epoch $t$. Transverse Brownian motion moves quanta up to the angle $\theta_{\rm BR}(p)$ denoted by the thick purple line.  The Moli\`ere region at larger $\theta$ is dominated by rare large angle scattering. At even larger angle, there are $O(\alpha_s)$ quanta per double logarithmic phase space  from DGLAP 'vacuum' radiation, and for momenta below $k_{\rm split}$ these cascade within time $t$ to $T$. After the jet escapes the medium, the jet and the emitted fragments will undergo vacuum radiation. This late time vacuum radiation emitted by the original parton dominates at sufficiently small $\log \theta$  (regions marked ``late DGLAP'' and bounded by $\theta_{\rm vac}$ and $\theta_\alpha$),  whereas the late time radiation of the fragments dominates in the region  denoted by ``Vacuum cascade of the medium induced quanta''. ~\cite{Kurkela:2014tla}. }
+\label{fig:cascades}
+\end{figure}
+
+''Jet quenching in heavy-ion collisions evolves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of color flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
+''
+
+
 High momentum particles are very rare and they are only produced in the initial collisions. After they are created they escape the medium before a thermal equilibrium is reached. Thus they are not part of the pressure-driven collective expansion. Instead high momentum yield is suppressed because of energy loss in the medium. When propagating through the medium these partons lose energy as they pass through the medium. This is referred to as jet quenching. Jet quenching depends on the path lengths through the medium. Thus anisotropy in this region is mainly dependent on the collision geometry and density of medium.
 
 \begin{figure}
@@ -389,21 +584,37 @@ High momentum particles are very rare and they are only produced in the initial 
 
 The energy loss of partons in medium is mainly due to QCD bremsstrahlung and to elastic scatterings between the parton and the medium. 
 
-In elastic scatterings the recoil energy of the scattered partons are absorbed by the thermal medium, which reduces the energy of the initial parton. The mean energy loss from elastic scatterings can be estimated by
+
+The radiative energy loss mechanism is given in terms of the transport coefficient $\left<\hat q\right>$, which describes the average momentum transfer between the medium and parton~\cite{jetBroadeningPpb1}. The exact definition of this depends on the theoretical formalism used to describe the energy loss mechanism. 
+
+Many of the energy loss models exploit the analogy between the QCD interaction of parton propagating through the colored medium and the QED energy loss of electron propagating through material. An electron propagating through matter loses its energy by photon Bremsstrahlung radiation. In the simplest case, each individual scattering center results in a single emission of a photon. This is known as the Bethe-Heitler regime~\cite{BetheHeitler}. The energy spectrum of radiated photons $\nicefrac{dN}{dE}$ is, in this case, proportional to $\nicefrac{1}{E}$. However, the Bremsstrahlung photon, can be radiated only when the distance between the scattering centers is larger than the formation length. In the limit, when the scattering centers are closer than the formation length, the Bremsstrahlung process is suppressed. This phenomenon is known as the Landau-Pomeranchuk-Migdal (LPM)~\cite{Landau:1953um,Migdal:1956tc} suppression. The radiated spectrum in this regime is proportional to $\nicefrac{1}{\sqrt{E}}$.
+
+Lower energy photons are further suppressed by the destructive interference leading to the suppression of Bremsstrahlung photons of $E < \gamma \omega_p$, where $\omega_p$ is the plasma frequency of the radiator. This is knows as Dielectric suppression. The photon energy distribution in this regime is proportional to the energy of the photon. A schematic view of the effect of these three regimes is shown in Fig.~\ref{fig:bremsstrahlung}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{pics/BremsstrahlungElectron}
+\caption[Photon spectrum]{ The expected bremsstrahlung spectrum for a electron propagating through material.  ~\cite{Bosted1993QuantummechanicalSO}. }
+\label{fig:bremsstrahlung}
+\end{figure}
+
+The simplest energy loss process is elastic QCD scattering off the medium partons. In elastic scatterings the recoil energy of the scattered partons are absorbed by the thermal medium, which reduces the energy of the initial parton. The mean energy loss from elastic scatterings can be estimated by
 
 \begin{equation}
-\left<\Delta E\right>_{el}=\sigma \rho L \left<E\right>_{1 scatt}\propto L,
+\left<\Delta E\right>_{\mathrm{el}}=\sigma \rho L \left<E\right>_{\mathrm{1\,scatt}}\propto L,
+\label{eq:elastic}
 \end{equation}
 
-\noindent where $\sigma$ is the interaction cross section and $\left<E\right>_{1 scatt}$ is the mean energy transfer of one individual scattering~\cite{Majumder:2010qh}.
+\noindent where $\sigma$ is the interaction cross section and $\left<E\right>_{1 scatt}$ is the mean energy transfer of one individual scattering~\cite{Majumder:2010qh}. This assumption holds if the mean energy is independent of the total energy of the parton ($E$). The transport coefficient of elastic scattering, $\left< \hat q_\mathrm{el}\right> = \nicefrac{\left< \Delta E\right>}{L}$, is defined as the mean energy los per unit path length.
 
 Another energy loss mechanism is medium-induced radiation. In QCD this radiation is mainly due to the elementary splitting processes, $q\rightarrow qg_r$ and $g\rightarrow gg_r$. Assuming that the parton is moving with the speed of light radiation energy loss can be estimated by
 
 \begin{equation}
 \left<\Delta E\right>_{rad}\propto T^3L^2,
+\label{eq:radiative}
 \end{equation}
 
-\noindent where $L$ is the length of the medium and $T$ is its temperature~\cite{Dominguez:2008vd}.
+\noindent where $L$ is the length of the medium and $T$ is its temperature~\cite{Dominguez:2008vd}. The different exponents of $L$ in equations \ref{eq:elastic} and \ref{eq:radiative} indicate that radiative energy loss is dominant over elastic energy loss.
 
 
 %\subsubsection*{Different models}
@@ -470,56 +681,8 @@ The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in
 At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process.
 
 Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium.
+\subsubsection{Monte Carlo Implementations}
 
-\FloatBarrier
-%\subsubsection{Fluctuations and Event-by-Event Flow}
-%The colliding nuclei are not static objects but the distribution of nucleons fluctuates over time. The arrangement of the nucleons at the time of the collision is random, which leads to fluctuations in the initial conditions. The shape of the collision zone is not a perfect almond and it can have a more complex shape. Also the density of the created medium is not homogenous but it can have dense hot spots. The initial density distribution of the created medium is the main reason for anisotropic flow. Because of fluctuations the strength of anisotropic flow is not constant event-by-event.
-%
-%The existence of more complex density profiles also leads to odd flow harmonics. The basic hydrodynamical approach could only explain elliptic flow and even-harmonics. For a long time it was believed that the odd harmonics would be negligible. In 2007 Mishra {\emph et al.}~\cite{Mishra:2007tw} argued that density inhomogeneities in the initial state would lead to non-zero $v_n$ values for higher harmonics including $v_3$.  It was later noted that higher harmonics of $v_n$ would be suppressed by viscous effects and that the shape of $v_n$ as a function of $n$ would provide another valuable tool for studying $\eta/s$~\cite{Mocsy:2010um}. 
-%
-%In 2010 significant $v_3$ components were also observed in RHIC data~\cite{Alver:2010gr}. The AMPT model that is also studied in this thesis was able to quantitatively describe the centrality dependence of $v_3$ at RHIC and LHC energies, $\snn=200 \gev$ and $2.76\tev$~\cite{Xu:2011fe}.
-%
-%%Initial state fluctuations can be modelled using the Glauber model~\cite{Alver:2008zza}. However, so far all models fail to describe the experimental $v_n$ distributions consistently over the whole centrality range~\cite{Jia:2012ve}.
-%
-%Contrary to elliptic flow higher harmonics are not strongly affected by the centrality of the collision. This supports the theory of higher harmonics being the result of fluctuations. Also $v_2$ measurements of ultra-central collisions give non-zero results for flow, even though the traditional approach based on the anisotropy of the overlap zone gives no prediction of anisotropic flow. This is also the result of fluctuations. Measurement of distributions of $v_n$ coefficients has been performed at ATLAS~\cite{Jia:2012ve}. Their measurements of distributions for $v_2$ in central collisions and for $v_3$ and $v_4$ in general are consistent with a pure Gaussian fluctuation scenario~\cite{Jia:2012ve}.
-%
-%\begin{figure}[tb]
-%	\centering
-%	\begin{subfigure}[t]{0.5\textwidth}
-%                \includegraphics[width=\textwidth]{pics/alice_vn_figa.pdf}
-%        \caption[ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$]{ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$ as a function of transverse momentum. The flow coefficients are determined by two-particle correlations using different rapidity separations. 
-%        The full and open symbols are for $\Delta\eta > 0.2$ and $\Delta\eta > 1.0$. 
-%        The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv} with different values of $\eta/s$~\cite{PRL107032301}.}
-%        \label{fig:higherharmonics}
-%        \end{subfigure}
-%        \quad
-%        \begin{subfigure}[t]{0.45\textwidth}
-%        \includegraphics[width=\textwidth]{pics/2012-Jun-06-fig02b}
-%        \caption{Amplitude of $v_n$ harmonics as a function of $n$ for the 2\% most central collisions as  measured by ALICE~\cite{Aamodt2012249}.}
-%        \label{fig:alicepowers}
-%
-%        \end{subfigure} 
-%        
-%%        \begin{subfigure}[t]{\textwidth}
-% %               \includegraphics[width=\textwidth]{pics/atlas_powerspectra.png}
-%%        \caption{Power spectra of $v_n$ for the 1\% most central collisions measured by ATLAS~\cite{PhysRevC.86.014907}.}
-%%        \label{fig:atlaspowers}
-% %       \end{subfigure}
-%                \caption[Flow measurements of higher harmonics]{Flow measurements of higher harmonics}
-%                \label{fig:vnpowers}
-%
-%\end{figure}
-%
-%Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}.
-%
-%
-%
-%Measurement of event-by-event flow and higher harmonics has growing importance in the field. Triangular flow is useful also for studying jet quenching and in-medium energy loss since anisotropies of flow are related to the path lengths of partons traversing through the medium. Path-lengths and medium density in turn are related the energy loss. An interesting topic of future research would be studying jet properties like $R_{AA}$ separately in events with strong and weak anisotropy.
-
-
-\subsection{Jet fragmentation}
-
-\subsection{Jet hadronisation}
 
 \subsection{QGP in Small systems}
 After the existence of QGP in heavy ion collisions has been established, attention has been turned to small systems. Proton-proton (pp) and proton-Lead (pPb) collisions have been studied at LHC and RHIC has studied a host of different collision systems; namely proton-Gold (pAu), deuteron-Gold (dAu) and Helium$^3$-Gold (He$^3$Au) collisions starting in 2000. %At LHC small systems have been studied in proton-Lead (pPb) collisions. First observations seemed to indicate that the signals taken to confirm the existence of QGP in Heavy Ion collisions disappear in these small systems.
