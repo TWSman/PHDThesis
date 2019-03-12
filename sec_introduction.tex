@@ -581,6 +581,88 @@ When are clusters are light enough, they decay into final state hadrons. If the 
 \label{fig:cascades}
 \end{figure}
 
+
+Figure~\ref{fig:cascades} shows the relevant medium modification phenomena for different regions of the phase space at time $t$, when a jet propagates through a thermal cloud of temperature $T$. As in a practice jets propagate over a finite path-length $L$ in QCD matter, Fig.~\ref{fig:cascades} can be taken as a representation of the distribution of partonic jet fragments at moment $t \approx L$, when the jet escapes the medium.
+
+The region marked as DGLAP is dominated by the primary vacuum splittings. This region is determined by $\theta > \theta_\mathrm{vac}$ with
+
+\begin{equation}
+\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{pt}}.
+\end{equation}
+
+
+Medium-induced parton branching fills the $\log p$-$\log$-$\theta$-plane from the bottom up (in $p$) and from the inside out (in $\theta$). This is because transverse momentum is acquired by Brownian motion in the medium, $k_\perp^2 \propto \hat q t$. Then the formation time constaint $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{p}{\hat q t}$ implies that medium-induced quanta can be formed in the region $p \leq k_\mathrm{form}$ where
+
+$$k_\mathrm{form}\left(t\right) = \hat q t^2$$.
+
+The probability of finding a splittee with a momentum $p$ with $p < k_\mathrm{form}$ is 
+
+\begin{equation}
+\frac{\mathrm d P_\mathrm{find}\left(t\right)}{\mathrm d \log p} \propto \alpha_s \nicefrac{t}{t_\mathrm{form}}\left(p\right) \propto \alpha_s \hat q ^{nicefrac{1}{2}} p^{-\nicefrac{1}{2}} t
+\end{equation} 
+
+Not all quanta will stay where they were created. Those modes that have time to lose a significant fraction of their energy will cascade to a significantly lower scale $p$. For LPM-type radiation, the splitting that degrades energy the most is the hardest splitting. 
+
+The $\log p $ distribution has the same $\frac{1}{\sqrt{p}}$ dependence as in the LPM region
+
+\begin{equation}
+\frac{\mathrm{d}n}{\mathrm{d}\log p} = \frac{1}{p}\frac{\mathrm{d}\epsilon}{\mathrm{d}\log p} \approx \alpha_s \frac{\sqrt{\hat q t}}{\sqrt{p}}
+\end{equation}
+
+Also the quanta originating from the DGLAP region will undergo medium interactions that will make the quanta radiate and split. The distribution of radiation is the same as from any other mode. Above a certain momentum scale $k_\mathrm{split}$ the distribution of originating daughters is 
+
+
+\begin{equation}
+\frac{\mathrm d P_\mathrm{find}}{\mathrm d \log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)},
+\end{equation} 
+
+Note that the ratio $\nicefrac{t}{t_\mathrm{split}}$ is smaller than 1 for nodes above $k_\mathrm{split}$ and therefore the number of daughters is smaller than the number of vacuum splitted quanta. Below $k_\mathrm{split}$ the cascade is similar to the medium cascade and the number of quanta become
+
+\begin{equation}
+\frac{\mathrm{d}n}{\mathrm{d}\log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)}, \text{ for } p < k_\mathrm{split}\left(p\right)
+\end{equation}
+
+
+The angular distribution is driven by two mechanisms; Multiple soft scatterings give rise to transverse Brownian motion, which determines the distribution at small angles. The typical angle reached in the LPM region is 
+
+\begin{equation}
+\theta_\mathrm{BR}\left(p\right) \approx \frac{\sqrt{\hat q t}}{p}, \text{ for } k_\mathrm{form} > p > k_\mathrm{split},
+\end{equation}
+
+while in the medium cascade region of the phase space this becomes
+
+\begin{equation}
+\theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}
+\end{equation}
+
+Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings, described by Molière~\cite{}.
+
+
+
+%\subsubsection*{DGLAP}
+%
+%Quantum mechanical formation time prevents emission faster than a time it takes to separate the wave packets of the splitter and the splittee. In general, splittees at a scale $p < Q$ can form at a time $t  \geq \nicefrac{p}{k_\perp^2}$ set by their inverse transverse energy. For jet evolution in the vacuum the angular distribution is determined by the primary decay kinematics of the splittee, $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{1}{p \theta^2}$. Therefore, the logarithmically ordered DGLAP 'vacuum' parton shower fills the $\log p$-$\log\theta$-plane from the outside in. In the entire region determined by $\theta > \theta_\mathrm{vac}$ with
+%
+%\begin{equation}
+%\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{pt}},
+%\end{equation}
+%
+%one finds with a probability $O\left(\alpha_s\right)$ per logarithmic phase space quanta due to vacuum radiation, 
+%
+%\begin{equation}
+%\frac{\mathrm{d} P_\mathrm{find}}{\mathrm{d} \log p \mathrm{d}\log \theta} \propto \alpha_s
+%\end{equation}
+%
+%The region where this primary splitting gives the dominant contribution in the $\log p$-$\log \theta$-plane is marked as DGLAP in Fig.~\ref{fig:cascades}.
+%
+%\subsubsection*{LPM}
+%
+%
+%
+%\subsubsection*{Medium cascade}
+
+
+\subsubsection*{...}
 ''Jet quenching in heavy-ion collisions evolves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of color flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
 ''
 
