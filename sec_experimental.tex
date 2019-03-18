@@ -193,7 +193,28 @@ Calorimeters are designed to measure the energy of particles. Electromagnetic ca
 
 ALICE has two electromagnetic calorimeters, the photon spectrometer (PHOS)~\cite{PHOS} and the electromagnetic calorimeter (EMCal)~\cite{emcal}. PHOS is a homogeneous calorimeter that consists of scintillating $\mathrm{PbWO_4}$ crystals, which generate a bremsstrahlung  shower and produce scintillation light. The energy of the particle determines the amount of light produced. To improve the charged particle rejection, PHOS includes a charged particle veto detector (CPV)~\cite{cpv}. PHOS is built to have a very fine granularity, making it well suited for measuring direct photons and neutral mesons.
 
-EMCal is a sampling calorimeter. It consists of layers of lead and scintillator tiles. The lead tiles produce the shower and scintillator tiles the light. The signal is then read with wavelength shifting fibres. The acceptance of EMCal in the azimuthal angle is $ 80\deg < \phi < 187 \deg$. During long shutdown 1 in 2013-2015, EMCal was extended with the di-jet calorimeter (DCal) ~\cite{DCAL}, giving an additional acceptance region of $ 260\deg < \phi < 320 \deg$. This provides partial back-to-back coverage. In comparison to PHOS, EMCal has coarser granularity, but a significantly larger acceptance, making it suitable for jet physics.
+
+
+EMcal is segmented into 10 full size super modules (SM), 5 for A side and 5 for C side, and two 1/3 sized SMs, one for each side. This segmentation can be seen in Fig.~\ref{fig:emcal}. Each SM is divided into 24 strips, each covering full $\eta$ (24 towers) and 2 towers in $\eta$. Each strip is composed of $2\times2$ tower modules. Thus each full size super module includes 1152 towers and in total the EMCal is made up of 12288 towers.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fullemcal}
+\caption{The EMCal detector arc, where the segmentation into 10 full size and 2 $\nicefrac{1}{3}$-sized (5 and 1 per side) supermodules can be seen.}
+\label{fig:emcal}
+\end{figure}
+
+The build of individual towers is shown in Fig.~\ref{fig:emcaltower}. Each tower is built up from 76 alternating layers of 1.44 \unit{mm} Pb and 77 layers of 1.76 \unit{mm} polystyrene base injection moulded scintillator. The lead tiles produce the shower and scintillator tiles the light. Each tower scintillator is equipped with reflectors on all sides to provide better gain and keep the four towers inside one module isolated. The scintillation photons produced in the active volume of the tower are collected by 36 longitudinally placed wave length shifting light guide fibers. The light is eventually directed to the Avalanche Photo Diodes (APD) for readout. 
+
+
+\begin{figure}[htb]
+\includegraphics[width=0.9\textwidth]{pics/EMCAL_components}
+\caption{The exploded EMCal tower view}
+\label{fig:emcaltower}
+\end{figure}
+
+
+The acceptance of EMCal in the azimuthal angle is $ 80\deg < \phi < 187 \deg$. During long shutdown 1 in 2013-2015, EMCal was extended with the di-jet calorimeter (DCal) ~\cite{DCAL}, giving an additional acceptance region of $ 260\deg < \phi < 320 \deg$. This provides partial back-to-back coverage. In comparison to PHOS, EMCal has coarser granularity, but a significantly larger acceptance, making it suitable for jet physics.
 
 \subsubsection{Forward detectors}
 ALICE includes a few small and specialised detectors of importance. The event time is determined with very good precision (< 25 ns) by the T0 detector~\cite{T0}. T0 consists of two sets of Cherenkov counters that are mounted around the beam pipe on both sides of the interaction point. T0 gives the luminosity measurement in ALICE.
@@ -216,32 +237,38 @@ A new detector installed during the long shutdown 1 is the ALICE diffractive det
 Outside the main magnet, ALICE has a spectrometer dedicated to measuring muons~\cite{MuonSpectro}. In heavy ion physics muons are mainly used to measure the production of the heavy quark resonances $\nicefrac{J}{\psi}, \Psi^{'}, \Upsilon, \Upsilon^{'}$ and $\Upsilon^{''}$.
 
 The muon spectrometer consists of three parts, the absorber, the muon tracker and the muon trigger. The absorber is meant to remove the hadronic background as efficiently as possible. After the absorber there are ten plates of thin cathode strip tracking stations with high granularity, the muon tracker. After the muon tracker there is a layer of iron to filter out any remaining particles, other than muons. The muon trigger is located behind this layer. The trigger consists of four resistive plate chambers. 
+
 \subsubsection{Trigger}
-High energy physics experiments need triggers to select interesting physics. Experiments such as CMS and ATLAS at CERN look for extremely rare events with up to 40 million events each second. Such amounts can't be recorded real-time as many detectors require some time for the readout. Thus one uses triggers, i.e. a set of very fast hardware based decisions on which events are to be saved.
+High energy physics experiments need triggers to select interesting physics. Experiments such as CMS and ATLAS at CERN look for extremely rare events with up to 40 million events each second. Such amounts can't be recorded real-time as many detectors require some time for the readout, up to 1 ms/event in ALICE. Thus one uses triggers, i.e. a set of very fast hardware based decisions on which events are to be saved. Additionally one needs some confirmation that an event has even occurred. 
 
 For ALICE the target event rates are \unit[1]{MHz} for \pp collisions, 0.1-2 \unit{kHz} for \PbPb collisions and 200 \unit{kHz} for the 2013 \pPb collisions.
 
 At ALICE the main system responsible for the trigger decisions is the ALICE Central Trigger Processor (CTP)~\cite{ctp}. The CTP generates three levels of hierarchical hardware triggers - Level 0, Level 1 and Level 2, (L0, L1 and L2 respectively) before an event is accepted and transmitted to the Data Acquisition system (DAQ). Afterwards additional software assessments are performed by the High Level Trigger (HLT).
-\subsubsection*{Minimum bias trigger}
 
+Triggers can roughly put into two classes, minimum bias triggers that make sure no empty events are recorded, and rare triggers that require specific signatures in ALICE detectors, such as large energy deposits in EMCal or two muons in the muon arm acceptance.
+
+\subsubsection*{Minimum bias trigger}
+Several of the ALICE detectors are used to make the initial minimum bias trigger decisions. These include the SPD layers of ITS, V0 and T0. SPD can count the number of hits in the first two layers of ITS. Minimum bias \pp collisions typically require at least one hit in either SPD or V0A/V0C
+
+Similarly \PbPb triggers looks at both V0 and SPD hits. The \pPb data has been mainly triggered using V0 information.
 
 
 \subsubsection*{EMCal trigger}
 In addition to the minimum bias triggers, the most relevant trigger for this thesis is the EMCal trigger. 
 
-ALICE EMCal provides two levels of trigger signal, L0 and L1, which allows triggering on either single shower deposits or integrated energy deposits in larger ares, i.e. jets.
+ALICE EMCal provides two levels of trigger signal, L0 and L1, which allows triggering on either single shower deposits or integrated energy deposits in larger ares, i.e. jets~\cite{KRAL2012261}.
 
-As inputs the trigger gets exclusive sets of $2\times2$ EMCal towers, to limit the number of channels that need to be processed. The L0 trigger then checks for energy deposits within a rolling window of $2\times2$ trigger channels ($4\times4$ towers). For L0 this is done in units of ($?\times?$) towers. A single bit OR decision of all individual L0 units is forwarded to the CTP as the EMCal L0 trigger decision.
+As inputs the trigger gets exclusive sets of $2\times2$ EMCal towers, to limit the number of channels that need to be processed. The L0 trigger then checks for energy deposits within a rolling window of $2\times2$ trigger channels ($4\times4$ towers). Areas of $4\times4$ towers most probably will contain only a single shower (or two adjacent showers coming from a single decayed $\pi^0$. Thus the trigger can be called the single shower trigger. 
 
-Areas of $4\times4$ towers most probably will contain only a single shower (or two adjacent showers coming from a single decayed $\pi^0$. Thus the trigger can be called the single shower trigger.
+For L0 the trigger decision is done in Trigger Region Units (TRU) that each cover $4\times42$ channels ($8\times48$ towers). The amplitude from the sliding window is compared to a constant threshold. Additionally a peak finding algorithm is implemented to define correctly the time of the signal maximum. A single bit OR decision of all individual TRUs is forwarded to the CTP as the EMCal L0 trigger decision.
 
 The L0 information is additionally forwarded to the Level 1 trigger, which recomputes similar $2\times2$ channel decisions to produce the single shower trigger, but L1 can perform the calculation also on the borders between trigger units. In addition the L1 trigger can  check for energy deposits inside a larger $16\times16$ channel ($32\times32$ towers) window, which is considered to be the jet trigger.
 
 The L1 trigger can compare up to two thresholds for each single shower and jet trigger. There is a dedicated link in between the V0 detector and EMCal STU, which can provide centrality information, used to compute a dynamical threshold as a function of the V0 multiplicity.
 
 The trigger subsystem provides both the L0 and L1 decisions to the CTP and DAQ. 
-
-\begin{figure}
-\includegraphics[0.9\textwidth]{}
-\caption{Level 0 trigger rejection factor for clusters and jets}
-\end{figure}
+%
+%\begin{figure}
+%\includegraphics[0.9\textwidth]{}
+%\caption{Level 0 trigger rejection factor for clusters and jets}
+%\end{figure}
