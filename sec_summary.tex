@@ -4,7 +4,7 @@
 \label{sec:disc}
 \cite{Chatrchyan:2014gia,Dasgupta:2007wa}
 
-\subsection{Dihadron $j_T$}
+\subsection{Dihadron $\jt{}$}
 The jet fragmentation transverse momentum $\jt{}$ has been studied previously at ALICE with dihadron correlations~\cite{ALICEjt}. The study took the leading hadron in each event and calculated $\jt{}$ for any near-side tracks with respect to the leading hadron. Thus there is no kinematical limit to $\jt{}$ from the jet cone. In the analysis the background shape is estimated using pairs with large $\Delta \eta$. The normalisation of the background is done when fitting the $\jt{}$ distribution. The inclusive and signal distributions from the analysis are shown in Fig.~\ref{fig:dihadron}. The inclusive distribution is fitted with a three component function, 
 
 \begin{figure}[htp]
@@ -25,7 +25,7 @@ The jet fragmentation transverse momentum $\jt{}$ has been studied previously a
 %B_0 \times\:\mathrm{background} + \frac{B_2}{B_1\sqrt{2\pi}}e^{-\frac{\jt{}^2}{2B_1^2}}+\frac{B_3B_5^{B_4}}{\Gamma\left(B_4\right)}\frac{e^{-\frac{B_5}{\jt{}}}}{\jt{}^{B_4+1}}.
 %\end{multline
 
-The analysis was the first to introduce this factorisation of $j_T$ into components.
+The analysis was the first to introduce this factorisation of $\jt{}$ into components.
 
 At $\jt{} \approx 0.4 \gev$ there is a small bump in the distribution to fit ratio. This was attributed to cases where the trigger particle decayed after hadronisation. As it is difficult to correct for, this bump is included in the systematic errors of the results.  
 
@@ -43,15 +43,15 @@ The RMS results from the fitting in both \pp and \pPb collisions are shown in Fi
 
 
 \subsection{Comparing to dihadron and jet $\jt{}$ results}
-Comparison to RMS values in dihadron analysis~\cite{jussi} are shown in figure \ref{fig:dihadroncomparison} Dihadron results from~\cite{jussi}. For comparison the dihadron trigger $p_T$ bins are converted to jet $p_T$ bins and vice versa. Bin-by-bin comparison is still not possible, but dihadron analysis gives systematically larger RMS values. This could be caused by several kinematical factors. In jet $j_T$ analysis the jet cone limits possible $j_T$ values and thus the width and RMS of the $j_T$ distributions. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}. 
+Comparison to RMS values in dihadron analysis~\cite{jussi} are shown in figure \ref{fig:dihadroncomparison} Dihadron results from~\cite{jussi}. For comparison the dihadron trigger $\pt{}$ bins are converted to jet $\pt{}$ bins and vice versa. Bin-by-bin comparison is still not possible, but dihadron analysis gives systematically larger RMS values. This could be caused by several kinematical factors. In jet $\jt{}$ analysis the jet cone limits possible $\jt{}$ values and thus the width and RMS of the $\jt{}$ distributions. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}. 
 
-Comparison to $j_T$ results from dihadron analysis ~\cite{jussi} is shown in figure \ref{fig:DihadronComparison}. Trigger $p_T$ bins used in dihadron analysis are converted to jet $p_T$ bins using observed average jet $p_T$ values in leading track momentum bins. Simlarly jet $p_T$ bins are converted to $p_{T,\mathrm{trigger}}$ bins using average leading track $p_T$ values in $p_{T,\mathrm{jet}}$ bins.
+Comparison to $\jt{}$ results from dihadron analysis ~\cite{jussi} is shown in figure \ref{fig:DihadronComparison}. Trigger $\pt{}$ bins used in dihadron analysis are converted to jet $\pt{}$ bins using observed average jet $\pt{}$ values in leading track momentum bins. Simlarly jet $\pt{}$ bins are converted to $p_{T,\mathrm{trigger}}$ bins using average leading track $\pt{}$ values in $\pt{jet}$ bins.
 
-The trends are similar in dihadron and jet $j_T$ results. Wide component RMS values tend to increase with increasing $p_{T,\mathrm{trigger}}$/$p_{T,\mathrm{jet}}$. Narrow component RMS increases slightly in dihadron analysis but not in jet $j_T$, WHY? (Depends on $x_{||}$ bin in dihadron)
+The trends are similar in dihadron and jet $\jt{}$ results. Wide component RMS values tend to increase with increasing $p_{T,\mathrm{trigger}}$/$\pt{jet}$. Narrow component RMS increases slightly in dihadron analysis but not in jet $\jt{}$, WHY? (Depends on $x_{||}$ bin in dihadron)
 
-In general dihadron $j_T$ gives wider distributions with larger RMS values. In jet analysis the cone size limits width and thus the RMS values. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}.
+In general dihadron $\jt{}$ gives wider distributions with larger RMS values. In jet analysis the cone size limits width and thus the RMS values. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}.
 
-Additionally the leading track is an imperfect estimate of the jet/original parton. Because the leading track in general is at an angle compared to the jet axis, the resulting $j_T$ values are different. In practice the jet axis found by the jet finding algrorithm tends to minimize the average $j_T$ of jet constituents. Thus the yield at high $j_T$ is limited and the RMS values are smaller. The effect of having the leading hadron as reference instead of the jet axis is discussed in section ~\ref{sec:reference}
+Additionally the leading track is an imperfect estimate of the jet/original parton. Because the leading track in general is at an angle compared to the jet axis, the resulting $\jt{}$ values are different. In practice the jet axis found by the jet finding algrorithm tends to minimize the average $\jt{}$ of jet constituents. Thus the yield at high $\jt{}$ is limited and the RMS values are smaller. The effect of having the leading hadron as reference instead of the jet axis is discussed in section ~\ref{sec:reference}
 
 Lastly the results from the dihadron analysis are done in \pt{trigger} bins. This favours hard jets, i.e. jets where the leading hadron carries a large momentum fraction and the jet multiplicity is small. In \pt{jet} bins jets are more likely to be soft, i.e. small leading momentum fraction and high multiplicity jets.
 
@@ -64,7 +64,7 @@ Lastly the results from the dihadron analysis are done in \pt{trigger} bins. Thi
 \begin{subfigure}{0.5\textwidth}
 \includegraphics[width=0.99\textwidth]{figures/summary/RMSWithSystematics_DihadronJetPt.pdf}
 \end{subfigure}
-\caption{Jet $j_T$ results are compared to results obtained in the dihadron analysis. Dihadron trigger $\pt{}$ bins are converted to jet $\pt{}$  bins  using observed mean  $\pt{jet}$ values in $\pt{trigger}$ bins. Dihadron results are for $0.2 < x_{||} < 0.4$}
+\caption{Jet $\jt{}$ results are compared to results obtained in the dihadron analysis. Dihadron trigger $\pt{}$ bins are converted to jet $\pt{}$  bins  using observed mean  $\pt{jet}$ values in $\pt{trigger}$ bins. Dihadron results are for $0.2 < x_{||} < 0.4$}
 \label{fig:dihadroncomparison}
 \end{figure}
 
@@ -79,15 +79,15 @@ The size of the jet cone gives a limit for $\jt{}$. For a track with a fixed mom
 Thus for tracks with $\pt{track} < \pt{0} $, $\jt{} < \pt{0} \times R$.
  
 
-In practice the effect of cone sizes on $j_T$ distribution is studied in a \pythia simulation. Results of the individual distributions and resulting RMS values from this simulation are shown in Fig.~\ref{fig:RcomparisonjT} and Fig.~\ref{fig:RcomparisonRMS} respectively. Increasing the cone size of jets gives more room for high $j_T$ tracks. This is seen in the individual $j_T$ distributions as increased high $j_t$ production. At low $j_T$ there is no change.
+In practice the effect of cone sizes on $\jt{}$ distribution is studied in a \pythia simulation. Results of the individual distributions and resulting RMS values from this simulation are shown in Fig.~\ref{fig:RcomparisonjT} and Fig.~\ref{fig:RcomparisonRMS} respectively. Increasing the cone size of jets gives more room for high $\jt{}$ tracks. This is seen in the individual $\jt{}$ distributions as increased high $\jt{}$ production. At low $\jt{}$ there is no change.
 
 When looking at RMS values from wide component we see an increase/decrease of about 10\% when going from $R=0.4$ to $R=0.5$/$R=0.3$.
 
-The message from narrow component RMS values is less clear. At low jet $p_T$ the behaviour is similar, but at high $p_T$ the order is reversed.
+The message from narrow component RMS values is less clear. At low jet $\pt{}$ the behaviour is similar, but at high $\pt{}$ the order is reversed.
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.8\textwidth]{results/RcomparisonSignal.pdf}
-\caption[Pythia $R$ parameters $j_T$]{Effect of changing $R$ parameter in jet finding on $j_T$ distributions}
+\caption[Pythia $R$ parameters $\jt{}$]{Effect of changing $R$ parameter in jet finding on $\jt{}$ distributions}
 \label{fig:RcomparisonjT}
 \end{figure}
 

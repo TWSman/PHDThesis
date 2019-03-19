@@ -45,7 +45,7 @@ The different source of the systematic uncertainty are considered as uncorrelate
 \begin{subfigure}{0.24\textwidth}
 \includegraphics[width=0.95\textwidth]{results/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt07randomBgBayes}
 \end{subfigure}
-\caption{$j_T$ signal with random bacgkround subtraction fits in different jet $p_T$ bins}
+\caption{$\jt{}$ signal with random bacgkround subtraction fits in different jet $\pt{}$ bins}
 \label{fig:fitsrandombg}
 \end{figure}
 
@@ -91,20 +91,20 @@ The iterative unfolding algorithm permits the change of number of iterations. Th
 
 \subsubsection{Effect of different prior}
 \label{sec:prior}
-The iterative algorithm requires a prior estimate of the shape of the distribution. As a default prior the truth (particle level) distribution is used. To test the effect of changing the prior we instead use the unfolded $j_T$ distribution as prior. The results are compared to the unfolding algorithm with the default prior. This is shown in Fig.~\ref{fig:prior} The difference in results between the different cases is mostly less than 2.5\%. 
+The iterative algorithm requires a prior estimate of the shape of the distribution. As a default prior the truth (particle level) distribution is used. To test the effect of changing the prior we instead use the unfolded $\jt{}$ distribution as prior. The results are compared to the unfolding algorithm with the default prior. This is shown in Fig.~\ref{fig:prior} The difference in results between the different cases is mostly less than 2.5\%. 
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/systematics/PtCutComparison10.pdf}
-\caption{Effect of changing minimum jet $p_T$ used in unfolding from 5 to 10 \gev}
+\caption{Effect of changing minimum jet $\pt{}$ used in unfolding from 5 to 10 \gev}
 \label{fig:prior}
 \end{figure}
 
-\subsubsection{Effect of $p_T$ truncation}
+\subsubsection{Effect of $\pt{}$ truncation}
 \label{sec:truncation}
 As an additional check the unfolding is carried out with different $\pt{jet}$ truncation values. By default the full range of $\pt{jet} > 5 \gev$ is used. As an option the we test the unfolding by only using the response matrix for $\pt{jet} > 10 \gev$. The results of this test are shown in Fig.~\ref{fig:truncation}
 
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/systematics/PtCutComparison10.pdf}
-\caption{Effect of changing minimum jet $p_T$ used in unfolding from 5 to 10 \gev}
+\caption{Effect of changing minimum jet $\pt{}$ used in unfolding from 5 to 10 \gev}
 \label{fig:truncation}
 \end{figure}
 
@@ -116,7 +116,7 @@ As an additional check the unfolding is carried out with different $\pt{jet}$ tr
   \subsection{EMCAL}
   The analysis uses EMCAL clusters only in the reconstruction of jets. Thus the only way uncertainty in EMCAL performance can affect the results is through modification of jet momentum or axis.
   
-  Uncertainty related to the EMCAL energy scale was estimated by scaling cluster energies up and down by 2 \% in a PYTHIA particle level simulation. Similarly the jet momentum was scaled by $\pm 2\%$ when determining the jet $p_T$ bin. In the analysis EMCAL is used only in jet reconstruction, not for calculating $j_T$. The only ways EMCAL uncertainty can affect the analysis are changes in jet energy and jet axis. Jet axis shouldn't significantly change, so the main contribution should be changes in jet $p_T$ bin.
+  Uncertainty related to the EMCAL energy scale was estimated by scaling cluster energies up and down by 2 \% in a PYTHIA particle level simulation. Similarly the jet momentum was scaled by $\pm 2\%$ when determining the jet $\pt{}$ bin. In the analysis EMCAL is used only in jet reconstruction, not for calculating $\jt{}$. The only ways EMCAL uncertainty can affect the analysis are changes in jet energy and jet axis. Jet axis shouldn't significantly change, so the main contribution should be changes in jet $\pt{}$ bin.
 
 The results are shown in Fig.~\ref{fig:systemcal}. The resulting systematic uncertainties are shown in Fig.~\ref{fig:systemcal2}. The uncertainty is taken to be 1\%. 
 
@@ -128,7 +128,7 @@ The results are shown in Fig.~\ref{fig:systemcal}. The resulting systematic unce
 %\begin{subfigure}{0.24\textwidth}
 %\includegraphics[width=0.95\textwidth]{RooUnfold/PythonFigures/TrackingSystematicsRMS.pdf}
 %\end{subfigure}
-\caption{Results from PYTHIA simulations with Cluster energies scale up/down by 2 \%. Additionally jet momenta were scaled by 2 \% when determining the jet $p_T$ bin.}
+\caption{Results from PYTHIA simulations with Cluster energies scale up/down by 2 \%. Additionally jet momenta were scaled by 2 \% when determining the jet $\pt{}$ bin.}
 \label{fig:systemcal}
 \end{figure}
 
@@ -151,7 +151,7 @@ There is no tracking and no unfolding uncertainty in the Monte Carlo simulations
 
 
 \subsection{Comparison between A and C side}
-In 2013 there were issues with tracking. To rule out effects on $\jt{}$ distributions a study was performed comparing $j_T$ distributions between A and C side. {\color{red}Which is lead going side and which is proton going} No systematic differences were observed. Figure~\ref{fig:signalbg} shows the comparison between inclusive distributions between the different sides, both for minimum bias and EMCAL triggered datasets.
+In 2013 there were issues with tracking. To rule out effects on $\jt{}$ distributions a study was performed comparing $\jt{}$ distributions between A and C side. {\color{red}Which is lead going side and which is proton going} No systematic differences were observed. Figure~\ref{fig:signalbg} shows the comparison between inclusive distributions between the different sides, both for minimum bias and EMCAL triggered datasets.
 
 \begin{figure}
 \centering
@@ -161,7 +161,7 @@ In 2013 there were issues with tracking. To rule out effects on $\jt{}$ distribu
 \includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom4To8LHC13EMCAL.pdf}
 %Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
 \end{subfigure}
-\caption{Comparison of inclusive $j_T$ distributions between A and C side for minimum bias and EMCAL triggered data.}
+\caption{Comparison of inclusive $\jt{}$ distributions between A and C side for minimum bias and EMCAL triggered data.}
 \label{fig:signalbg}
 \end{figure}
 
@@ -173,7 +173,7 @@ Results in figure \ref{fig:signal}. Comparison between signals with different ba
 \includegraphics[width=\textwidth]{results/MixedFullJetsR04JetConeJtSignal.pdf}
 %Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
 \end{subfigure}
-\caption{$j_T$ signal with background subtracted}
+\caption{$\jt{}$ signal with background subtracted}
 \label{fig:signal}
 \end{figure}
 
@@ -183,7 +183,7 @@ Results in figure \ref{fig:signal}. Comparison between signals with different ba
 \includegraphics[width=\textwidth]{results/MixedFullJetsR04SignalBackgroundComparison.pdf}
 %Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
 \end{subfigure}
-\caption{Comparison of the effect of background method on $j_T$ signal.}
+\caption{Comparison of the effect of background method on $\jt{}$ signal.}
 \label{fig:signalbg}
 \end{figure}
 
