@@ -274,7 +274,7 @@ The observed distributions are unfolded using RooUnfold's 2D Bayesian (iterative
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/PythonCode/PythonUnfolding/ToyMCUnfolder_300k_events.pdf}
+\includegraphics[width=0.9\textwidth]{figures/analysis/ToyMCUnfolder_300k_events.pdf}
 \caption{Results from unfolding in Toy Monte Carlo}
 \label{fig:toymc}
 \end{figure}
@@ -320,12 +320,12 @@ Pythia set is divided in 2 halves. First is used to fill the response matrices, 
  
  \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
-\includegraphics[width=0.7\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/PythonCode/PythonUnfolding/JetPtUnfolded.pdf}
+\includegraphics[width=0.7\textwidth]{figures/analysis/JetPtUnfolded.pdf}
 \caption{Unfolded jet $p_T$ distribution in \pythia~closure test}
 \label{fig:jetptunf}
 \end{subfigure}
 \begin{subfigure}[b]{0.5\textwidth}
-\includegraphics[width=0.8\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/PythonCode/PythonUnfolding/JetPtResponse.pdf} 
+\includegraphics[width=0.8\textwidth]{figures/analysis/JetPtResponse.pdf} 
 \caption{Jet $p_T$ response matrix from unfolding closure test}
 \label{fig:jetptresponse}
 \end{subfigure}
@@ -337,14 +337,14 @@ Response matrices within single jet $p_T$ bins are shown in figure \ref{fig:resp
 
 Above jet $p_T$ 30-40 \gev the distribution is recovered well in the mid $j_T$ region. At $j_T < 0.1$ there is clear discrepancy. The final results are shown only for $j_T > 0.1$. Additionally there is some discrepancy at very high $j_T$. This is taken into account in the unfolding systematics. {\color{red}(TODO: Show this) }
 \begin{figure}
-\includegraphics[width=0.99\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/Unfolding/RooUnfold/PythonFigures/ResponseMatrixNFin00.pdf}
+\includegraphics[width=0.99\textwidth]{figures/analysis/ResponseMatrixNFin00.pdf}
 \caption{$j_T$ Response matrices in single jet $p_T$ bins}
 \label{fig:response}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.99\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/PythonCode/PythonUnfolding/PythiaTest.pdf}
-\includegraphics[width=0.99\textwidth]{/Users/tuomas/OneDrive/work/032.JTAnalysis/PythonCode/PythonUnfolding/PythiaTest_Extra.pdf}
+\includegraphics[width=0.99\textwidth]{figures/analysis/PythiaTest.pdf}
+\includegraphics[width=0.99\textwidth]{figures/analysis/PythiaTest_Extra.pdf}
 \caption{Pythia closure test results. Fake tracks include also tracks that do exist in the true dataset, but for one reason or another were not given $j_T$ values. $j_T$ is only calculated for tracks that are associated with jets}
 \label{fig:closure}
 \end{figure}
