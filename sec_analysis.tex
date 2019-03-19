@@ -2,79 +2,180 @@
 \section{Event and track selection}
 The $\sqrtSnnE{5.02}$ $\pPb$ ($1.3 \cdot 10^{8}$ events, $\mathcal{L}_{\mathrm{int}} = \unit[620]{nb^{-1}}$) collisions were recorded in 2013 by the ALICE detector~\cite{aliceDetector}. The details of the performance of the ALICE detector during LHC Run~1 (2009-2013) are presented in Ref.~\cite{alicePerformance}.
 
-The analysis uses charged tracks that are reconstructed with the Inner Tracking System (ITS)~\cite{aliceITS} and the Time Projection Chamber (TPC)~\cite{aliceTPC}. These detectors are located inside the large solenoidal magnet, that provides a homogeneous magnetic field of \unit[0.5]{T}. Tracks within a pseudorapidity range $|\eta| < 0.9$ over the full azimuth can be reconstructed. The ITS is made up of the innermost Silicon Pixel Detector (SPD), the Silicon Drift Detector (SDD) and the outermost Silicon Strip Detector (SSD). Each of these consists of two layers. The TPC is a cylinder filled with gas. Gas is ionised along the path of charged particles. Liberated electrons drift towards the end plates of the cylinder where they are detected. Combining the information from the ITS and the TPC provides a resolution ranging from $1$ to $10\,\%$ for charged particles with momenta from $0.15$ to $\unit[100]{\GeVc}$. For tracks without the ITS information, the momentum resolution is comparable to that of ITS+TPC tracks below transverse momentum $\pt{} = \unit[10]{\GeVc}$, but for higher momenta the resolution reaches $20\,\%$ at $\pt{} = \unit[50]{\GeVc}$~\cite{alicePerformance,aliceBackgroundFluctuation}. 
-
-Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCAL)~\cite{Cortese:2008zza}. The EMCAL covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCAL is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCAL in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
-
-The combination of charged tracks with  $\pt{} > \unit[0.15]{\GeVc}$ and neutral particles with $\pt{} > \unit[0.30]{\GeVc}$ is used to construct jets. 
-
-The V0 detector~\cite{forwarddetectorsTdr} provides the information for event triggering. The V0 detector consists of two scintillator hodoscopes that are located on either side of the interaction point along the beam direction. It covers the pseudorapidity region $-3.7 < \eta < -1.7$ (V0C) and $2.8 < \eta < 5.1$ (V0A). For the 2013 $\pPb$ collisions events are required to have signals in both V0A and V0C. This condition is used later offline to reduce the contamination of the data sample from beam-gas events by using the timing difference of the signal between the two stations~\cite{alicePerformance}.
-
 %For the 2010 $\pp$ collisions, the minimum bias (MB) triggered events are required to have at least one hit from a charged particle traversing the SPD or either side of the V0. 
 %The pseudorapidity coverage of the SPD is $|\eta| < 2$ in the first layer and $|\eta| < 1.5$ in the second layer. %Combining this with the acceptance of the V0, the particles are detected in the range $-3.7 < \eta < 5.1$. The minimum %bias trigger definition 
 
-EMCAL is also used to provide the jet trigger used in triggered datasets. EMCAL can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCAL trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size.
+
 
 %For the $\pp$ collisions, similar track cuts as in Ref.~\cite{ALICE:2011ac} are used: at least two hits in the ITS are required, one of which needs to be in the three innermost layers, and 70 hits out of 159 are required in the TPC. In addition, the distance of the closest approach (DCA) of the track to the primary vertex is required to be smaller than $\unit{2}{cm}$ in the beam direction. In the transverse direction, a $\pt{}$ dependent cut DCA $< \unit{0.0105}{cm} + \unit{0.035}{cm} \cdot \pt{}^{-1.1}$ is used, where $\pt{}$ is measured in units of $\GeVc$. These track cuts are tuned to minimize the contamination from secondary particles.
 
 %In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite{hybridExplanation}. In this method tracks with at least one hit in the SPD and at least two hits in the whole ITS are always accepted. In addition, tracks with fewer than two hits in the ITS or no hits in the SPD are accepted, but only if an additional vertex constraint is fulfilled. In addition, the distance of the closest approach (DCA) of the track to the primary vertex is required to be smaller than $\unit{3.2}{cm}$ in the beam direction and smaller than $\unit{2.4}{cm}$ in the transverse direction. This approach is not affected by dead regions ins SPD. Thus it produces an azimuthal angle ($\varphi$) distribution that is as uniform as possible. The momentum resolutions of the two classes of particles are comparable up to $\pt{} \approx 10\;\GeVc$, but after that, tracks without ITS requirements have a worse resolution~\cite{alicePerformance,aliceBackgroundFluctuation}.
-In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite{hybridExplanation} which ensures a uniform distribution of tracks as a function of azimuthal angle ($\varphi$). The momentum resolutions of the two classes of particles are comparable up to $\pt{} \approx 10\;\GeVc$, but after that, tracks without ITS requirements have a worse resolution~\cite{alicePerformance,aliceBackgroundFluctuation}.
 
 
 
-\subsection{statistics}
-Number of jets in different datasets and with different jet finders is shown in table \ref{tab:stats}. Background statistics for number of background cones (number of jets minus number of discarded cones) are shown in table \ref{tab:bgstats}. Ratio of background cones to number of jets is shown in table \ref{tab:bgratio}. The likelihood of having to discard a jet from background calculation is about 1-2\%.
-\begin{table}[h]
-\caption{Number of found jets by dataset and jet $p_T$ bin}
-\tiny
-\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
-Jet $p_T$   &     5-10 & 10-20  & 20-30 & 30-40 & 40-60 & 60-80 & 80-100 & 100-150 & 150-500 \\
-MBFullR04 & 4969393 & 621753 & 32552 & 5584 & 1974 & 310 & 90 & 37 & 5 \\
-MBFullR05 & 4750567 & 826598 & 42373 & 5543 & 1719 & 276 & 73 & 29 & 3 \\
-MBChargedR04 & 3144538 & 673419 & 37783 & 4121 & 1009 & 148 & 36 & 12 & 1 \\
-MBChargedR05 & 2229247 & 175763 & 7961 & 1270 & 410 & 61 & 12 & 3 \\
-TriggeredFullR04 & 187557 & 115927 & 78138 & 51317 & 39262 & 8621 & 2409 & 1167 & 171 \\
-TriggeredFullR05 & 99991 & 77147 & 48612 & 34325 & 28104 & 6342 & 1726 & 794 & 104 \\
-TriggeredChargedR04 & 37411 & 29945 & 18186 & 13148 & 11142 & 2517 & 675 & 326 & 44 \\
-TriggeredChargedR05 & 433155 & 175031 & 54789 & 19776 & 10626 & 1983 & 457 & 194 & 15 \\
+
+\subsection{Event selection}
+This analysis uses both a minimum bias trigger and an EMCal based trigger to select the analysed events. 
+%The V0 detector~\cite{forwarddetectorsTdr} provides the information for event triggering. The V0 detector consists of two scintillator hodoscopes that are located on either side of the interaction point along the beam direction. It covers the pseudorapidity region $-3.7 < \eta < -1.7$ (V0C) and $2.8 < \eta < 5.1$ (V0A).
+ For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both V0A and V0C. This condition is used later offline to reduce the contamination of the data sample from beam-gas events by using the timing difference of the signal between the two stations~\cite{alicePerformance}. 
+
+EMCal is also used to provide the jet trigger used in triggered datasets. EMCal can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCal trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size. The EMCal 
+
+Triggers, V0 and EMCal are discussed in more detail in sections~\ref{sec:forward},~\ref{sec:trigger} and~\ref{sec:emcal}. 
+
+\subsection{Track selection}
+{\color{red} track reconstruction}
+The analysis uses charged tracks that are reconstructed with the Inner Tracking System (ITS)~\cite{aliceITS} and the Time Projection Chamber (TPC)~\cite{aliceTPC}. These are discussed in sections~\ref{sec:tracking} and~\ref{sec:tpc}. A detailed overview of track reconstruction in ALICE can be found from~\cite{alicePerformance}. 
+
+The main reconstruction of tracks starts in TPC. There are 159 tangential pad rows in the TPC readout chambers. The track reconstruction starts from the outermost layer and the clusters are paired with clusters in the next layer inwards, taking into account a proximity cut. When this track finding procedure hits the innermost pad row in TPC, this information is used as an initial seed for the track finding in ITS. Similar procedure of pairing adjacent layers with a proximity cut is repeated in ITS.
+
+After the reconstruction of tracks in ITS is completed, all the tracks are extrapolated to their point of closest approach to the preliminary interaction vertex. Then the second track fitting step begins, this time starting from the interaction point and proceeding outwards. A Kalman filter~\cite{Fruhwirth:1987fm} technique is used to do the new fit using the clusters found in the previous stage. This time the tracks are matched also to the other detectors in the central barrel beyond TPC. When this step is complete, a final refit from the outermost TPC pad rows towards the interaction point is performed. The final track parameters come from this refit. 
+
+With the final track parameters the primary vertex can be determined with better accuracy than with only SPD information. The tracks are extrapolated to the nominal beam line and a weighted average of the points of closest approach determines the accurate primary vertex position.
+
+The final step of the track reconstruction is the determination of the secondary vertices. For this, all the tracks whose distance of closest approach (DCA) to the primary vertex is larger than a defined minimum value (?? \unit{mm} in \pPb) are selected. For these tracks, points of closest approaches are determined for pairs of tracks. If the tracks are sufficiently close to each other and show characteristics of short lived particle decays, these points are identified as secondary vertices. 
+
+Combining the information from the ITS and the TPC provides a resolution ranging from $1$ to $10\,\%$ for charged particles with momenta from $0.15$ to $\unit[100]{\GeVc}$. For tracks without the ITS information, the momentum resolution is comparable to that of ITS+TPC tracks below transverse momentum $\pt{} = \unit[10]{\GeVc}$, but for higher momenta the resolution reaches $20\,\%$ at $\pt{} = \unit[50]{\GeVc}$~\cite{alicePerformance,aliceBackgroundFluctuation}. 
+
+In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite{hybridExplanation} which ensures a uniform distribution of tracks as a function of azimuthal angle ($\varphi$). The parameters in the approach are summarised in table~\ref{tab:hybrid}. 
+
+The first requirements are on the quality of the track fit in ITS and TPC. The ITS requirement only removes tracks that are clear outliers. For TPC the requirement is much more strict. For step 1 it is required that a track has 3 out of the 6 possible hits in ITS, one of which must be in SPD. In step 2 this is replaced by an additional vertex constraint, where the primary vertex itself is added as a point to the track to improve the momentum resolution.
+
+For the TPC, 70 crossed pad rows out of the maximum 159 is required. This measures the effective track length inside the TPC. This takes into account the possibility of having pad rows missing in the middle of the track due to charge in these clusters being below the threshold for some reason. Additionally it is required that the ratio between crossed rows and findable clusters is at least 0.8. Findable clusters are defined as the number of geometrically possible clusters which can be assigned to a track, taking into account dead zones due to chamber boundaries and limited $\eta$-acceptance. For both steps of the hybrid cut is is required that the fraction of clusters shared with several tracks is less than 40\%.
+
+%Additionally we only accept tracks with $\left| \eta \right| < 0.8$ to avoid border effects ot the TPC acceptance $\left| \eta \right| < 0.9$ 
+
+The remaining cuts are meant to make sure that the measured tracks are really produced in the primary collision. A track might gain a kink due to a particle scattering decay. After this, it is no longer describing the properties of the primary collisions. The particle after such a kink, a kink daughter, is rejected in the cuts. The final cuts are on the distance of closest approach (DCA) of the track to primary vertex. To have confidence that the track comes from the primary collision, the track must be close enough to the primary vertex. The cuts are different for the distance along ($\mathrm{DCA}_{z}$) and perpendicular to ($\mathrm{DCA}_{xy}$) the beam axis.
+
+
+\begin{table}
+\caption{Parameters in the hybrid track cut}
+\label{tab:hybrid}
+\begin{tabular}{c | c | c}
+Track Cut & Step 1 & Step 2 \\
+\hline
+$\chi^2$ / ITS cluster & < 36 & < 36 \\
+$\chi^2$ / ITS cluster & < 4 & < 4 \\
+Hits in ITS & 3 & 0 \\
+ITS hit requirements & 1 in SPD & No requirement \\
+Vertex constraint & No & Yes \\
+Number of crossed rows in TPC  & 70 & 70 \\
+TPC crossed rows over findable clusters & > 0.8 & > 0.8 \\
+Fraction of shared TPC clusters & < 0.4 & < 0.4 \\
+Kink daughters & Rejected & Rejected \\
+$\mathrm{DCA}_{xy}$ & < \unit[3.2]{cm} & < \unit[3.2]{cm} \\
+$\mathrm{DCA}_{z}$ & < \unit[2.4]{cm} & < \unit[2.4]{cm} \\
+Other & & Rejected by step 1 \\
 \end{tabular}
-\label{tab:stats}
 \end{table}
 
-\begin{table}[h]
-\caption{Number of background cones used in perpendicular cone background calculation}
-\label{tab:bgstats}
-\tiny
-\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
-Jet $p_T$     &   5-10 & 10-20  & 20-30 & 30-40 & 40-60 & 60-80 & 80-100 & 100-150 & 150-500 \\
-MBFullR04 & 4947583 & 617895 & 32357 & 5548 & 1965 & 310 & 90 & 37 & 5 \\
-MBFullR05 & 4710217 & 815461 & 41584 & 5439 & 1698 & 273 & 73 & 29 & 3 \\
-MBChargedR04 & 3117495 & 661106 & 36739 & 4014 & 988 & 144 & 36 & 12 & 1 \\
-MBChargedR05 & 2195286 & 172919 & 7860 & 1249 & 406 & 61 & 12 & 3 \\
-TriggeredFullR04 & 186574 & 115376 & 77949 & 51216 & 39196 & 8603 & 2405 & 1167 & 171 \\
-TriggeredFullR05 & 99102 & 76462 & 48320 & 34216 & 28038 & 6334 & 1722 & 794 & 103 \\
-TriggeredChargedR04 & 37160 & 29543 & 17988 & 13099 & 11129 & 2515 & 675 & 326 & 44 \\
-TriggeredChargedR05 & 313421 & 140707 & 45229 & 16243 & 8709 & 1604 & 377 & 154 & 14 \\
+
+
+The momentum resolutions of the two classes of particles are comparable up to $\pt{} \approx 10\;\GeVc$, but after that, tracks without ITS requirements have a worse resolution~\cite{alicePerformance,aliceBackgroundFluctuation}.
+
+
+
+%These detectors are located inside the large solenoidal magnet, that provides a homogeneous magnetic field of \unit[0.5]{T}. Tracks within a pseudorapidity range $|\eta| < 0.9$ over the full azimuth can be reconstructed. 
+
+%The ITS is made up of the innermost Silicon Pixel Detector (SPD), the Silicon Drift Detector (SDD) and the outermost Silicon Strip Detector (SSD). Each of these consists of two layers. The TPC is a cylinder filled with gas. Gas is ionised along the path of charged particles. Liberated electrons drift towards the end plates of the cylinder where they are detected. 
+
+
+
+\subsection{Cluster selection}
+{\color{red} Extend cluster reconstruction}
+Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCAL)~\cite{Cortese:2008zza}. The EMCAL covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCAL is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCAL in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
+
+
+The clusters used in the analysis were obtained from EMCal by the v2 clusteriser. Clusters matched to charged tracks are removed from the analysis as well as clusters being identified as fake. The parameters used in the clusteriser are summarised in table~\ref{tab:clusters}
+
+
+The clusteriser  searches for a tower with energy deposit greater than a defined seed energy and merges all surrounding (sharing a side) towers with energy deposit higher than a defined threshold. In the next step all towers sharing a side with already included towers are added, again requiring that the energy deposits exceeds the threshold. The algorithm can identify local minima and halts the clustering in case that the neighbouring tower energy is higher. Already clustered towers are removed from the pool, so one tower can only be clustered once.
+
+Highly energetic calorimeter hits should spread into several towers as the electromagnetic shower evolves. However, some clusters with high energy have their energy located in a single tower. These are believed to come from slow neutron hitting the APD readout of the towers. These are called exotic clusters. The measure of exoticity is denoted as 
+\begin{equation}
+1 -\frac{E_\mathrm{cross}}{E_\mathrm{max}},
+\end{equation}
+
+where $E_\mathrm{max}$ is the energy in the most energetic tower and $E_\mathrm{cross}$ is the sum of the four towers neighbouring the most energetic one. The closer to 1, the more exotic the cluster is and the more probability that it is fake. Cut of 0.97 has been adopted as default for EMCal analyses, including this one.
+
+A method of matching the cluster position to TPC track extrapolation is used to suppress charged hadron contribution to hits in EMCal. Tracks identified by the tracking detectors are extrapolated close to the EMCal surface, where the closest cluster is found and the track extrapolation is continued until reaching the same depth as the cluster. The remaining distance in between the extrapolated track and the cluster is then used to reject hadronic hits.
+
+
+
+
+\begin{table}[htb] 
+\caption{Settings used in the EMCAL corrections framework}
+\label{tab:clusters}
+\begin{tabular}{| c | c | c |}
+Setting & Value & Description \\
+Clusteriser seed & 0.2 \unit{\mev} \\
+Clusteriser cutoff & 0.05 \unit{\mev} \\
+Cells in cluster & > 1 \\
+Track matching radius & 0.025 \\
+Fiducial cut & 1 tower \\
+Exotic cut & 0.97 \\
+Minimal cluster Energy & 0.3 \unit{\gev}
+%Maximum pair asymmetry & 0.8 \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
-\caption{Ratio of background cone number to number of jets}
-\label{tab:bgratio}
-\tiny
-\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
-MBFullR04 & 99.56\% & 99.38\% & 99.40\% & 99.36\% & 99.54\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\
-MBFullR05 & 99.15\% & 98.65\% & 98.14\% & 98.12\% & 98.78\% & 98.91\% & 100.00\% & 100.00\% & 100.00\% \\
-MBChargedR04 & 99.14\% & 98.17\% & 97.24\% & 97.40\% & 97.92\% & 97.30\% & 100.00\% & 100.00\% & 100.00\% \\
-MBChargedR05 & 98.48\% & 98.38\% & 98.73\% & 98.35\% & 99.02\% & 100.00\% & 100.00\% & 100.00\% \\
-TriggeredFullR04 & 99.48\% & 99.52\% & 99.76\% & 99.80\% & 99.83\% & 99.79\% & 99.83\% & 100.00\% & 100.00\% \\
-TriggeredFullR05 & 99.11\% & 99.11\% & 99.40\% & 99.68\% & 99.77\% & 99.87\% & 99.77\% & 100.00\% & 99.04\% \\
-TriggeredChargedR04 & 99.33\% & 98.66\% & 98.91\% & 99.63\% & 99.88\% & 99.92\% & 100.00\% & 100.00\% & 100.00\% \\
-TriggeredChargedR05 & 72.36\% & 80.39\% & 82.55\% & 82.13\% & 81.96\% & 80.89\% & 82.49\% & 79.38\% & 93.33\% \\
-\end{tabular}
-\end{table}
+
+%The combination of charged tracks with  $\pt{} > \unit[0.15]{\GeVc}$ and neutral particles with $\pt{} > \unit[0.30]{\GeVc}$ is used to construct jets. 
 
 
+%\subsection{statistics}
+%Number of jets in different datasets and with different jet finders is shown in table \ref{tab:stats}. Background statistics for number of background cones (number of jets minus number of discarded cones) are shown in table \ref{tab:bgstats}. Ratio of background cones to number of jets is shown in table \ref{tab:bgratio}. The likelihood of having to discard a jet from background calculation is about 1-2\%.
+%\begin{table}[h]
+%\caption{Number of found jets by dataset and jet $\pt{}$ bin}
+%\tiny
+%\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
+%Jet $\pt{}$   &     5-10 & 10-20  & 20-30 & 30-40 & 40-60 & 60-80 & 80-100 & 100-150 & 150-500 \\
+%MBFullR04 & 4969393 & 621753 & 32552 & 5584 & 1974 & 310 & 90 & 37 & 5 \\
+%MBFullR05 & 4750567 & 826598 & 42373 & 5543 & 1719 & 276 & 73 & 29 & 3 \\
+%MBChargedR04 & 3144538 & 673419 & 37783 & 4121 & 1009 & 148 & 36 & 12 & 1 \\
+%MBChargedR05 & 2229247 & 175763 & 7961 & 1270 & 410 & 61 & 12 & 3 \\
+%TriggeredFullR04 & 187557 & 115927 & 78138 & 51317 & 39262 & 8621 & 2409 & 1167 & 171 \\
+%TriggeredFullR05 & 99991 & 77147 & 48612 & 34325 & 28104 & 6342 & 1726 & 794 & 104 \\
+%TriggeredChargedR04 & 37411 & 29945 & 18186 & 13148 & 11142 & 2517 & 675 & 326 & 44 \\
+%TriggeredChargedR05 & 433155 & 175031 & 54789 & 19776 & 10626 & 1983 & 457 & 194 & 15 \\
+%\end{tabular}
+%\label{tab:stats}
+%\end{table}
+%
+%\begin{table}[h]
+%\caption{Number of background cones used in perpendicular cone background calculation}
+%\label{tab:bgstats}
+%\tiny
+%\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
+%Jet $\pt{}$     &   5-10 & 10-20  & 20-30 & 30-40 & 40-60 & 60-80 & 80-100 & 100-150 & 150-500 \\
+%MBFullR04 & 4947583 & 617895 & 32357 & 5548 & 1965 & 310 & 90 & 37 & 5 \\
+%MBFullR05 & 4710217 & 815461 & 41584 & 5439 & 1698 & 273 & 73 & 29 & 3 \\
+%MBChargedR04 & 3117495 & 661106 & 36739 & 4014 & 988 & 144 & 36 & 12 & 1 \\
+%MBChargedR05 & 2195286 & 172919 & 7860 & 1249 & 406 & 61 & 12 & 3 \\
+%TriggeredFullR04 & 186574 & 115376 & 77949 & 51216 & 39196 & 8603 & 2405 & 1167 & 171 \\
+%TriggeredFullR05 & 99102 & 76462 & 48320 & 34216 & 28038 & 6334 & 1722 & 794 & 103 \\
+%TriggeredChargedR04 & 37160 & 29543 & 17988 & 13099 & 11129 & 2515 & 675 & 326 & 44 \\
+%TriggeredChargedR05 & 313421 & 140707 & 45229 & 16243 & 8709 & 1604 & 377 & 154 & 14 \\
+%\end{tabular}
+%\end{table}
+%
+%\begin{table}[h]
+%\caption{Ratio of background cone number to number of jets}
+%\label{tab:bgratio}
+%\tiny
+%\begin{tabular}{c | c | c | c | c | c | c | c | c | c}
+%MBFullR04 & 99.56\% & 99.38\% & 99.40\% & 99.36\% & 99.54\% & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\
+%MBFullR05 & 99.15\% & 98.65\% & 98.14\% & 98.12\% & 98.78\% & 98.91\% & 100.00\% & 100.00\% & 100.00\% \\
+%MBChargedR04 & 99.14\% & 98.17\% & 97.24\% & 97.40\% & 97.92\% & 97.30\% & 100.00\% & 100.00\% & 100.00\% \\
+%MBChargedR05 & 98.48\% & 98.38\% & 98.73\% & 98.35\% & 99.02\% & 100.00\% & 100.00\% & 100.00\% \\
+%TriggeredFullR04 & 99.48\% & 99.52\% & 99.76\% & 99.80\% & 99.83\% & 99.79\% & 99.83\% & 100.00\% & 100.00\% \\
+%TriggeredFullR05 & 99.11\% & 99.11\% & 99.40\% & 99.68\% & 99.77\% & 99.87\% & 99.77\% & 100.00\% & 99.04\% \\
+%TriggeredChargedR04 & 99.33\% & 98.66\% & 98.91\% & 99.63\% & 99.88\% & 99.92\% & 100.00\% & 100.00\% & 100.00\% \\
+%TriggeredChargedR05 & 72.36\% & 80.39\% & 82.55\% & 82.13\% & 81.96\% & 80.89\% & 82.49\% & 79.38\% & 93.33\% \\
+%\end{tabular}
+%\end{table}
+%
+%
 
 
 
@@ -83,42 +184,47 @@ TriggeredChargedR05 & 72.36\% & 80.39\% & 82.55\% & 82.13\% & 81.96\% & 80.89\% 
 \subsection{Jet Finding}
 The analysis uses reconstructed jets as estimates of the original parton. Essentially when reconstructing jets, nearby tracks are combined into jets. Collisions between hadrons are never as clean as electron-electron collisions. Even for a proton-proton collision there are participant partons, that will produce a soft background in addition to the hard scattering products. Jet reconstruction must deal with this soft background. The reconstruction is never perfect, one can have uncorrelated tracks that get included in the jet and some tracks originating from the parton are missed by the reconstruction. There are several methods to perform the reconstruction, all of which require some kind of size parameter, which cuts out jet participants too far from the jet axis. The tracks that are grouped into a jet are referred to as jet constituents. 
 
-The analysis is performed by analysing jet constituents. In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. In the analysis, results are presented in terms of the jet transverse momentum $\pt{jet}$.
+The analysis is performed by analysing jet constituents. In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. In the analysis, results are presented in terms of the jet transverse momentum $\pt{jet}$. 
 
-\subsubsection{Anti $k_T$ algorithm}
-Jets are reconsructed using the anti-$\kt{}$ algorithm~\cite{antikt}. The algorithm works by trying to undo the splittings through combining protojets. The algorithm creates a list of protojets. At the beginning the list is populated by converting each track in the event into a protojet. Then the algorithm proceeds by combining these protojets.
+\subsubsection{Anti $\kt{}$ algorithm}
+Jets are reconstructed using the anti-$\kt{}$ algorithm~\cite{antikt}. The algorithm works by trying to undo the splittings through combining protojets. The algorithm creates a list of protojets. At the beginning the list is populated by converting each track in the event into a protojet. Then the algorithm proceeds by combining these protojets. A simplified picture of the process for a limited number of tracks is shown in Fig.~\ref{fig:ktalg}
 
 The algorithm calculates distance measures for each individual protojet and for each possible pair of protojets. For individual protojets this depends only on the transverse momentum of the track.
 
-$$k_{T,i}^2=p_{T,i}^{2p}$$
+\begin{equation}
+\kt{i}^2=\pt{i}^{2p}
+\end{equation}
 
-For each pair of protojets the distance measure is calculated as
+\noindent For each pair of protojets the distance measure is calculated as
 
-$$k_{T,\left(i,j\right)}^{2}=\min\left(p_{T,i}^{2p},p_{T,j}^{2p}\right)\frac{\Delta R^2_{i,j}}
-{D^2},$$
+\begin{equation}
+\kt{i,j}^{2}=\min\left(\pt{i}^{2p},\pt{j}^{2p}\right)\frac{\Delta R^2_{i,j}}{D^2},
+\end{equation}
+\nopagebreak
+\noindent where
+ \nopagebreak
+ \begin{equation}
+ R_{i,j}=\left(\phi_i-\phi_j\right)^2+\left(y_i-y_j\right)^2.
+ \end{equation}
 
-where
- 
- $$R_{i,j}=\left(\phi_i-\phi_j\right)^2+\left(y_i-y_j\right)^2$$
-
-If $k_{T,i}$ is the smallest quantity then the protojet is a jet and it is removed from further consideration. If $k_{T,\left(i,j\right)}$ is the smallest quantity the two protojets are merged. This is iterated until no protojets are left.
+If $\kt{i}$ is the smallest quantity then the protojet is a jet and it is removed from further consideration. If \kt{i,j} is the smallest quantity the two protojets are merged. This is iterated until no protojets are left.
 
 The choice of the power $p$ in the distance measure depends on the algorithm used
 \begin{itemize}
-\item $p=1$:~$k_T$ algorithm
+\item $p=1$:~$\kt{}$ algorithm
 \item $p=0$:~Cambridge Aachen algorithm
-\item $p=-1$:~anti-$k_T$ algorithm
+\item $p=-1$:~anti-$\kt{}$ algorithm
 \end{itemize}
 
-With the choice $p=-1$ in anti-$k_T$ algorithm, the softest splittings are undone first. One consequence of the power choice in the anti-$k_T$ algorithm is that reconstructed jets have a shape close to circular.
-%   \begin{figure}
-%    \begin{center}
-%\includegraphics[width=1.0\textwidth]{pics/ktalg.pdf}
-%    \caption{Antil-$k_T$ algorithm}
-%    \label{fig:ktalg}
-%  \end{figure}
+With the choice $p=-1$ in anti-$\kt{}$ algorithm, the softest splittings are undone first. One consequence of the power choice in the anti-$\kt{}$ algorithm is that reconstructed jets have a shape close to circular.
+   \begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{pics/ktalg.pdf}
+    \caption{A simple example of the antil-$\kt{}$ algorithm in progress. The red tracks in the leftmost figure are identified to have the smallest $k_{T,i}$ in the event and are combined into the red track of the middle figure. As this continues the remaining tracks are added to this or other jets. One tracks was deemed to be isolated enough to be counted as a protojet by itself. Note that the rightmost figure is zoomed out.}
+    \label{fig:ktalg}
+  \end{figure}
 
-\subsection{$j_T$ }
+\subsection{Definition of $\jt{}$ }
 The jet fragmentation transverse momentum, $\jt{}$, is defined as the component of the constituent particle momentum, $\vec{p}_{\mathrm{a}}$, transverse to the jet momentum, $\vec{p}_{\mathrm{jet}}$. The resulting $\vjt{}$ is illustrated in~\fig{fig:jtdefinition}. The length of the $\vjt{}$ vector is
   \begin{equation}
     \jt{} = \frac{|\vec{p}_{\mathrm{jet}} \times \vec{p}_{\mathrm{track}}|}{|\vec{p}_{\mathrm{jet}}|} \,.
@@ -137,11 +243,11 @@ It is commonly interpreted as a transverse kick with respect to the initial hard
 
 The reconstructed jet axis is used for $\jt{}$ reference. Any charged track within a fixed cone with radius $R$ is taken as a jet constituent, as opposed to using the constituent list provided by the jet algorithm. Anti-$\kt{}$ produces jets that are very circular in shape. Thus this doesn't change the constituent list considerably. Neutral tracks are used only in jet reconstruction.
  
-$j_T$ results are shown as 
+$\jt{}$ results are shown as 
 \begin{equation}
 \frac{1}{\jt{}}\frac{\mathrm{d}N}{\mathrm{d}\jt{}}
 \end{equation}
-distributions. The logic behind this is that $j_T$ is inherently a two-dimensional observable, comprised of $\jt{x}$ and $\jt{y}$ components. So the actual physical observable would be 
+distributions. The logic behind this is that $\jt{}$ is inherently a two-dimensional observable, comprised of $\jt{x}$ and $\jt{y}$ components. So the actual physical observable would be 
  
  \begin{equation}
  \frac{\mathrm{d}^2N}{\mathrm{d} \jt{x} \mathrm{d} \jt{y}}
@@ -165,28 +271,36 @@ Results of the raw inclusive $\jt{}$ distribution in four $\pt{jet}$ bins with b
 \includegraphics[width=\textwidth]{results/MixedFullJetsR04JetConeJtInclusive.pdf}
 %Tag 20170810 python2.7 Python/InclusiveWithBackground.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
 \end{subfigure}
-\caption{Inclusive $j_T$ with background}
+\caption{Inclusive $\jt{}$ with background}
 \label{fig:inclusive}
 \end{figure}
  
  
  
- \subsection{Unfolding}
+\subsection{Unfolding detector effects}
 {\color{red} Extend unfolding}
  
 The raw inclusive $\jt{}$ distributions are corrected for the detector inefficiency using the unfolding method. The response matrix for the unfolding is obtained from a \textsc{Pythia}~\cite{introPythia81} simulation.
- 
+
  
 Measured distributions are affected by two main factors; Limited acceptance - The probability to observe a given event is less than one and limited resolution - Quantity $x$ cannot be determined exactly, but there is a measurement error. True $f(x)$ and measured $g(y)$ distributions are connected by a convolution integral. Including statistical fluctuations this becomes
-$$\hat g(y) = \int_a^b A\left(y,x\right) f(x) dx + \epsilon(y),$$
+\begin{equation}
+\hat g(y) = \int_a^b A\left(y,x\right) f(x) dx + \epsilon(y),
+\end{equation}
 
-where A is the detector response obtained by (for example) Monte Carlo simulations and $\epsilon(y)$ is the term coming from statistical fluctuations.
+\noindent where A is the detector response obtained by (for example) Monte Carlo simulations and $\epsilon(y)$ is the term coming from statistical fluctuations.
 If $x$ and $y$~ are discrete variables we have
-$$\hat g_i = \sum_{j=1}^m A_{ij}f_j+\epsilon_i,$$
-Or in matrix form
-$$\hat g = Af+\epsilon$$
+\begin{equation}
+\hat g_i = \sum_{j=1}^m A_{ij}f_j+\epsilon_i,
+\end{equation}
+\noindent Or in matrix form
+\begin{equation}
+\hat g = Af+\epsilon
+\end{equation}
 If the only detector effect is limited acceptance, $A$ is a diagonal matrix. In a general discrete case the (naive) solution is obtained by the inverse matrix
-$$\hat f = A^{-1}\hat g $$
+\begin{equation}
+\hat f = A^{-1}\hat g 
+\end{equation}
 However this usually leads to oscillating solutions and determining the inverse matrix can be difficult.
 
 Two common methods to perform this inversion are Bayesian and SVD unfolding methods. Often the solution requires some additional {\emph{ a priori}} information. For example the solution should be smooth in most cases.
@@ -199,10 +313,10 @@ i.e. the probability of Cause ("truth") $C_i$ given Effect ("observed") $E_j$ is
 
 At first $P_0$ is given some starting distribution, either a uniform distribution or some guess of the final distribution. Taking into account the inefficiency this gives $$\hat n\left(C_i\right) = \frac{1}{\epsilon_i} \sum_{j=1}^{n_E}n\left(E_j\right)P\left(C_i | E_j\right), $$
 %\item First calculate $P\left(C_i |E_j\right)$ with the uniform distribution
-where 
+\noindent where 
 $$P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},$$
 
-and 
+\noindent and 
 \begin{equation}
 \hat n\left(C_i\right) = \frac{1}{\epsilon_i} \sum_{j=1}^{n_E}n\left(E_j\right)P\left(C_i | E_j\right).
 \label{eq:unfolded}
@@ -225,19 +339,19 @@ For errors originating from the measured distribution RooUnfold uses the error p
  
  where $\hat n \left(C_i\right)$ is the unfolded result from Eq.~\ref{eq:unfolded}. This depends upon the matrix $\frac{\partial n_0\left(C_i\right)}{\partial n\left(E_j\right) }$, which is $\frac{\partial \hat n\left(C_i\right) }{\partial n\left(E_j\right) }$ from the previous iteration. In the first iteration, $\frac{\partial n_0\left(C_i\right) }{\partial n\left(E_j\right) }=0$ and $\frac{\partial \hat n\left(C_i\right) }{\partial n\left(E_j\right) } = M_{ij}$.
  
- The error propagation matrix $V$ is used to obtain the covariance matrix on the unfolded distribution 
+ \noindent The error propagation matrix $V$ is used to obtain the covariance matrix on the unfolded distribution 
  
  \begin{equation}
  V\left(\hat n\left(C_k\right), \hat n\left(C_l\right)\right) = \sum_{i,j=1}^{n_E} \frac{\partial \hat n\left(C_k\right) }{\partial n\left(E_i\right) }  V\left(\hat n\left(E_i\right), \hat n\left(E_j\right)\right)  \frac{\partial \hat n\left(C_l\right) }{\partial n\left(E_j\right) },
  \end{equation}
  
- where $V\left(\hat n\left(E_i\right), \hat n\left(E_j\right)\right)$ is the covariance matrix of the measurements. In counting experiments common in particle physics, each bin is independently Poisson distributed, with
+\noindent where $V\left(\hat n\left(E_i\right), \hat n\left(E_j\right)\right)$ is the covariance matrix of the measurements. In counting experiments common in particle physics, each bin is independently Poisson distributed, with
  
  \begin{equation}
  V\left(\hat n\left(E_i\right), \hat n\left(E_j\right)\right) = n\left(E_i\right) \delta_{ij}
  \end{equation}
  
- The error propagation matrix for the response matrix is 
+ \noindent The error propagation matrix for the response matrix is 
  
  \begin{multline}
  \frac{\partial \hat n\left(C_i\right)}{\partial P \left(E_j| C_k\right)} = \frac{1}{\epsilon_i}\left(\frac{n_0 \left(C_i\right) n\left(E_j\right)}{f_j} - \hat n \left(C_i\right) \right) \delta_{ik} - \frac{n_0 \left(C_k\right) n\left(E_j\right)}{f_j} M_{ij} + \\
@@ -253,24 +367,29 @@ For errors originating from the measured distribution RooUnfold uses the error p
  V\left(\hat n\left(C_k\right), \hat n\left(C_l\right)\right) = \sum_{j,s=1}^{n_E} \sum_{i,r=1}^{n_C} \frac{\partial \hat n\left(C_k\right) }{\partial P\left(E_j | C_i\right) }  V\left(P\left(E_j | C_i\right), P\left(E_s | C_r\right) \right)  \frac{\partial \hat n\left(C_l\right) }{\partial P\left(E_s | C_r\right) },
  \end{equation}
  
- where $V\left(P\left(E_j | C_i\right), P\left(E_s | C_r\right) \right)$ can be taken as multinomial, Poisson or other distribution.
+\noindent where $V\left(P\left(E_j | C_i\right), P\left(E_s | C_r\right) \right)$ can be taken as multinomial, Poisson or other distribution.
  
 \subsubsection{Toy Monte Carlo} 
  {\color{red} remove?}
  A toy Monte Carlo simulation was performed to see the performance in an ideal case.
-Sample jet $p_T$ values from observed $p_T$ distribution. Starting from this $p_T$ start creating tracks with 
-$$p_{\mathrm{track}} = z_\mathrm{track} p_{T,\mathrm{jet}}$$
-where $z_\mathrm{track} $ is sampled from the observed $z$ distribution. All tracks below $0.15\gev$ are discarded. Sampling is continued until the sum of the track transverse momenta exceeds the jet transverse momentum. Jet is then defined as the sum of the track momenta.
+The simulations samples jet $\pt{}$ values from the observed $\pt{}$ distribution. Starting from this $\pt{}$ the simulations starts creating tracks with 
+\begin{equation}
+p_{\mathrm{track}} = z_\mathrm{track} \pt{jet}
+\end{equation}
 
-Simultaneously a $p_T$ dependant observation efficiency is applied to the tracks and a separate observed jet is calculated using only the observed tracks. Additionally a set of fake tracks is added to the observed jet. Tracks are always either observed or not at the true momentum. No smearing is added to the observed momentum.
+\noindent where $z_\mathrm{track} $ is sampled from the observed $z$ distribution. All tracks below \unit[0.15]{\gev} are discarded. Sampling is continued until the sum of the track transverse momenta exceeds the jet transverse momentum. Jet is then defined as the sum of the track momenta.
 
-Afterwards the tracks are looped over for $j_T$ calculation. For observed tracks we calculate $j_T$ with respect to both the true jet axis and the observed jet. 2D Response matrix is filled with $$\left(j_{T,\mathrm{obs}},p_{T,\mathrm{jet,obs}}, j_{T,\mathrm{true}},p_{T,\mathrm{jet,true}}\right)$$
+Simultaneously a $\pt{}$ dependant observation efficiency is applied to the tracks and a separate observed jet is calculated using only the observed tracks. Additionally a set of fake tracks is added to the observed jet. Tracks are always either observed or not at the true momentum. No smearing is added to the observed momentum.
 
-In practice this is done with a set of 3D histograms, where $p_{T,\mathrm{jet,true}}$ determines the histogram index and the remaining three values the bin in the 3D histogram.
+Afterwards the tracks are looped over for $\jt{}$ calculation. For observed tracks we calculate $\jt{}$ with respect to both the true jet axis and the observed jet. 2D Response matrix is filled with \begin{equation}
+\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}, \jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)
+\end{equation}
 
-After creating the response matrices, an identical procedure is carried out the create testing data. Now instead of filling response matrices, 2D histograms are filled with $\left(j_{T,\mathrm{obs}},p_{T,\mathrm{jet,obs}}\right)$ and $\left(j_{T,\mathrm{true}},p_{T,\mathrm{jet,true}}\right)$
+In practice this is done with a set of 3D histograms, where \pt{jet,true} determines the histogram index and the remaining three values the bin in the 3D histogram.
 
-The observed distributions are unfolded using RooUnfold's 2D Bayesian (iterative) algorithm. Results are shown in figure \ref{fig:toymc}.
+After creating the response matrices, an identical procedure is carried out to the create testing data. Now instead of filling response matrices, 2D histograms are filled with $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}\right)$ and $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$
+
+The observed distributions are unfolded using RooUnfold's 2D Bayesian (iterative) algorithm. Results are shown in figure \ref{fig:toymc}. Aside from some discrepancy at very low \jt{} the true distribution is retrieved well. 
 
 \begin{figure}
 \centering
@@ -287,7 +406,7 @@ A \pythia 6 simulation was carried out to determine the response matrices.
 \caption{$\jt{}$ and $\pt{}$ ranges used in unfolding. The same ranges are used for detector and truth level.}
 \label{tab:unfranges}
 \begin{tabular}{c | c | c}
- & $j_T$ & $\pt{jet}$ \\
+ & $\jt{}$ & $\pt{jet}$ \\
  \hline
 Min & 0.01 & 5 \\
 Max & 20 & 500 \\
@@ -299,53 +418,53 @@ Response matrices are filled through correlation between MC detector and particl
 
 The ranges of both $\jt{}$ and $\pt{jet}$ extend the ranges in end results. These are shown in Tab.~\ref{tab:unfranges}. The ranges are the same in detector and particle level.
 
-When calculating $j_T$ for MC particles the code checks whether a corresponding detector level track exists and if that track had a $j_T$ value. Additionally the code checks for detector level tracks that don't have corresponding particle level track or that track does not have $j_T$ value.
+When calculating \jt{} for MC particles the code checks whether a corresponding detector level track exists and if that track had a \jt{} value. Additionally the code checks for detector level tracks that don't have corresponding particle level track with a \jt{} value.
 
-Possible cases:
+There are several possibilities that have to be taken into account:
 \begin{itemize}
-\item We find a corresponding track with a $j_T$ value, response matrix is filled normally with $\left(j^{obs}_{T},p_T^{obs},j^{true}_{T},p_T^{true}\right)$
-\item We don't find a corresponding track. Record $\left(j^{true}_{T},p_T^{true}\right)$ as a miss 
-\item We find a corresponding track, but it didn't have $j_T$ value. Most likely because it was not part of a jet. Similary record $\left(j^{true}_{T},p_T^{true}\right)$ as a miss
-\item For detector level tracks that have no correspondence in particle level set the code records  $\left(j^{obs}_{T},p_T^{obs}\right)$ as a fake
+\item We find a corresponding track with a \jt{} value, response matrix is filled normally with $\left(\jt{}^\mathrm{obs},\pt{jet}^{obs},\jt{}^\mathrm{true},\pt{jet}^{true}\right)$
+\item We don't find a corresponding track. Record $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$ as a miss 
+\item We find a corresponding track, but it didn't have $\jt{}$ value. Most likely because it was not part of a jet in the detector level set. Similary record $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$ as a miss
+\item For detector level tracks that have no correspondence in particle level set the code records  $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}\right)$ as a fake
 \end{itemize}
 
-In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(j_{T,obs},p_{T,obs},j_{T,true}\right)$ as axes. The histogram index gives the $p_{T,true}$ value.
+In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs},\jt{}^\mathrm{true}\right)$ as axes. The histogram index gives the $\pt{jet}^\mathrm{true}$ value.
 
 \subsubsection{Unfolding algorithm}
 As a primary method unfolding is performed with an iterative (bayesian) algorithm using the RooUnfold~\cite{roounfold} package. The number of iterations used is 4. 
 
 
 \subsubsection{Unfolding  closure test}
-Pythia set is divided in 2 halves. First is used to fill the response matrices, as well as record missed and fake tracks. Second half is used to test the effectiveness of the unfolding method. Jet $p_T$ distributions are shown in figure \ref{fig:jetptunf} and response matrix are shown in figure \ref{fig:jetptresponse}.
+Pythia set is divided in 2 halves. First is used to fill the response matrices, as well as record missed and fake tracks. Second half is used to test the effectiveness of the unfolding method. Jet $\pt{}$ distributions are shown in figure \ref{fig:jetptunf} and response matrix are shown in figure \ref{fig:jetptresponse}.
  
  \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
 \includegraphics[width=0.7\textwidth]{figures/analysis/JetPtUnfolded.pdf}
-\caption{Unfolded jet $p_T$ distribution in \pythia~closure test}
+\caption{Unfolded jet $\pt{}$ distribution in \pythia~closure test}
 \label{fig:jetptunf}
 \end{subfigure}
 \begin{subfigure}[b]{0.5\textwidth}
 \includegraphics[width=0.8\textwidth]{figures/analysis/JetPtResponse.pdf} 
-\caption{Jet $p_T$ response matrix from unfolding closure test}
+\caption{Jet $\pt{}$ response matrix from unfolding closure test}
 \label{fig:jetptresponse}
 \end{subfigure}
 \caption{Jet $\pt{}$ in unfolding closure test}
 \label{fig:jetptclosure}
 \end{figure}
  
-Response matrices within single jet $p_T$ bins are shown in figure \ref{fig:response}. Results from the closure test are shown in figure \ref{fig:closure}. In the lowest jet $p_T$ bins unfolding fails to recover the true distribution. The lowest jet $p_T$ bins are dominated by combinatorial jets and thus the true detector response is likely not retrieved.
+Response matrices within single jet $\pt{}$ bins are shown in figure \ref{fig:response}. Results from the closure test are shown in figure \ref{fig:closure}. In the lowest jet $\pt{}$ bins unfolding fails to recover the true distribution. The lowest jet $\pt{}$ bins are dominated by combinatorial jets and thus the true detector response is likely not retrieved.
 
-Above jet $p_T$ 30-40 \gev the distribution is recovered well in the mid $j_T$ region. At $j_T < 0.1$ there is clear discrepancy. The final results are shown only for $j_T > 0.1$. Additionally there is some discrepancy at very high $j_T$. This is taken into account in the unfolding systematics. {\color{red}(TODO: Show this) }
+Above $\unit[30]{\gev} <\pt{jet} < \unit[40]{\gev}$~the distribution is recovered well in the mid $\jt{}$ region. At $\jt{} < \unit[0.1]{\gev}$ there is clear discrepancy. The final results are shown only for $\jt{} > \unit[0.1]{\gev}$. Additionally there is some discrepancy at very high $\jt{}$. This is taken into account in the unfolding systematics. {\color{red}(TODO: Show this) }
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/analysis/ResponseMatrixNFin00.pdf}
-\caption{$j_T$ Response matrices in single jet $p_T$ bins}
+\caption{$\jt{}$ Response matrices in individual $\pt{jet}$ bins}
 \label{fig:response}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/analysis/PythiaTest.pdf}
 \includegraphics[width=0.99\textwidth]{figures/analysis/PythiaTest_Extra.pdf}
-\caption{Pythia closure test results. Fake tracks include also tracks that do exist in the true dataset, but for one reason or another were not given $j_T$ values. $j_T$ is only calculated for tracks that are associated with jets}
+\caption{Pythia closure test results. Fake tracks include also tracks that do exist in the true dataset, but for one reason or another were not given $\jt{}$ values. $\jt{}$ is only calculated for tracks that are associated with jets}
 \label{fig:closure}
 \end{figure}
 
@@ -356,10 +475,10 @@ Above jet $p_T$ 30-40 \gev the distribution is recovered well in the mid $j_T$ r
  
 \subsection{Background}
 \label{sec:bg}
-When calculating $j_T$ distribution for jet constituents there is a contribution from underlying event (UE), i.e. tracks that just happen to be close to the jet axis.
+When calculating \jt{} distribution for jet constituents there is a contribution from underlying event (UE), i.e. tracks that just happen to be close to the jet axis.
 To find the signal coming from the actual jet we need to subtract the background (UE) contribution. On a jet-by-jet basis this is impossible, so one must estimate the background contribution in the inclusive  distribution. A schematic view of the background contribution is shown in Fig.~\ref{fig:bgdef}.
 
-We have two methods for background estimation. In the first we look at the direction perpendicular to the jet. This is assumed to be the region least likely to contain jet contributions. In the second method we randomly assign the tracks of event new $\phi$ and $\eta$ values. The result is guaranteed to be uncorrelated.
+We have two methods for background estimation. In the first we look at the direction perpendicular to the jet. This is assumed to be the region least likely to contain jet contributions. In the second method we randomly assign the tracks of event new $\phi$ and $\eta$ values. The result is thus guaranteed to be uncorrelated.
 
 \begin{figure}
 \centering
@@ -372,7 +491,7 @@ We have two methods for background estimation. In the first we look at the direc
 \draw[green, thick] (0,0) -- node[near end, right] {Jet cone}(1.5,2.8);
 \draw[green, thin, <->] (0,2.8) -- node[midway, above] {$R$} (1.5,2.8);
 \draw[green, thick] (0,0) --  (-1.5,2.8);
-\draw[blue, thin, ->] (0,2.2) -- node [midway, above] {$j_T$} (-0.8,2.2);
+\draw[blue, thin, ->] (0,2.2) -- node [midway, above] {\jt{}} (-0.8,2.2);
 \draw[black, very thick, ->] (0,0) -- node [near end,right] {jet} (0,3);
 \draw[black, very thick, ->] (0,0) -- node [near end, right] {Awayside jet?} (0,-2);
 \draw[red, thin, ->] (0,0) -- (-1.25982281336992,-1.55333398820495);
@@ -383,7 +502,7 @@ We have two methods for background estimation. In the first we look at the direc
 \draw[red, thin, ->] (0,0) -- (0.935437036685518,-1.76775494636474);
 \draw[red, thin, ->] (0,0) -- (-0.905166754522554,1.2459025429411);
 \draw[red, thin, ->] (0,0) -- (0.392170769946368,1.89994791697027);
-\draw[red, thin, ->] (0,1.89994791697027) -- node [near start, left] {$j_T$} (0.392170769946368,1.89994791697027);
+\draw[red, thin, ->] (0,1.89994791697027) -- node [near start, left] {\jt{}} (0.392170769946368,1.89994791697027);
 \end{tikzpicture}
 \caption{Red is underlying event while gray tracks represent the signal}
 \end{subfigure}
@@ -406,7 +525,7 @@ We have two methods for background estimation. In the first we look at the direc
 \draw[red, thin, ->] (0,0) -- (0.935437036685518,-1.76775494636474);
 \draw[red, thin, ->] (0,0) -- (-0.905166754522554,1.2459025429411);
 \draw[red, thin, ->] (0,0) -- (0.392170769946368,1.89994791697027);
-\draw[red, thin, ->] (-1.48782136581293,0) -- node [near start, left] {\tiny bg $j_T$} (-1.48782136581293,-0.397476519344932);
+\draw[red, thin, ->] (-1.48782136581293,0) -- node [near start, left] {\tiny bg $\jt{}$} (-1.48782136581293,-0.397476519344932);
 \end{tikzpicture}
 \caption{We estimate the background using a cone where the axis is perpendicular to the jet axis}
 \end{subfigure}
@@ -419,9 +538,9 @@ As a primary method to estimate the background we look at regions of the detecto
 
 %$\jt{}$ is calculated for any tracks found within this cone. The vector sum of the individual track momentum and the imaginary jet axis is used as reference for $\jt{}$. The background obtained in this manner is subtracted from the unfolded inclusive $\jt{}$ distribution, which gives the resulting signal distribution. To make sure there is no jet contribution in the background, any events with jets inside the perpendicular cone are not used for background estimation.
 
-After calculating the $j_T$ values for tracks in the jet, we rotate the jet axis by $\frac{\pi}{2}$ in positive $\phi$ direction. We check that there are no other jets closer than $2R$ to the rotated axis. If there are then background calculation is skipped for this jet. Probability of this happening is 1-2\% depending on the jet $p_T$ bin.
+After calculating the $\jt{}$ values for tracks in the jet, we rotate the jet axis by $\frac{\pi}{2}$ in positive $\phi$ direction. We check that there are no other jets closer than $2R$ to the rotated axis. If there are then background calculation is skipped for this jet. Probability of this happening is 1-2\% depending on the jet $\pt{}$ bin.
 
-If we don't find other jets in the vicinity we move on to estimate the background. We find all tracks within a cone of radius $R$ around the rotated axis and calculate $j_T$ of these tracks with respect to the rotated axis. Auto-correlations are added to match effect to jet. (see \ref{sec:autoC})
+If we don't find other jets in the vicinity we move on to estimate the background. We find all tracks within a cone of radius $R$ around the rotated axis and calculate $\jt{}$ of these tracks with respect to the rotated axis. Auto-correlations are added to match effect to jet. (see \ref{sec:autoC})
 
 \begin{figure}[htp]
 \centering
@@ -442,7 +561,7 @@ If we don't find other jets in the vicinity we move on to estimate the backgroun
     \node [block, left of=jets, node distance = 2.5cm] (discard) {Don't calculate background};
     \node [block, right of=jets, node distance = 2.5cm] (tracks) {Find tracks within cone R};
     \node [block, above of=tracks, node distance = 2cm](sum) {Calculate vector sum of track and rotated axis};
-    \node [block, right of =sum, node distance = 2cm](jt) {Calculate $j_T$ with respect to the vector sum};
+    \node [block, right of =sum, node distance = 2cm](jt) {Calculate $\jt{}$ with respect to the vector sum};
     
     % Draw edges
     \path [line] (init) -- (rotate);
@@ -474,12 +593,12 @@ If we don't find other jets in the vicinity we move on to estimate the backgroun
 %\end{figure}
 
 \subsubsection{Random background}
-In the random background method we look at all tracks in the event, except for tracks close to jets found by the jet algorithm. We randomly assign new $\eta$ and $\phi$ values to all tracks using uniform distributions with $\left|\eta\right| < 1.0$. $\pt{}$ values are kept the same. To increase statistics there is a possibility to create a number of random tracks for each actual track. In the analysis we do this 10 times for each track. Again the track $p_T$ value is kept the same. 
+In the random background method we look at all tracks in the event, except for tracks close to jets found by the jet algorithm. We randomly assign new $\eta$ and $\phi$ values to all tracks using uniform distributions with $\left|\eta\right| < 1.0$. $\pt{}$ values are kept the same. To increase statistics there is a possibility to create a number of random tracks for each actual track. In the analysis we do this 10 times for each track. Again the track $\pt{}$ value is kept the same. 
 
-We create a random jet cone from uniform $\eta$ and $\phi$ distributions. Here $\left| \eta \right| < 0.25$. Now we calculate $j_T$ of the random tracks with respect to the random cone axis. Auto-correlations are added before calculating $j_T$ (see \ref{sec:autoC})
+We create a random jet cone from uniform $\eta$ and $\phi$ distributions. Here $\left| \eta \right| < 0.25$. Now we calculate $\jt{}$ of the random tracks with respect to the random cone axis. Auto-correlations are added before calculating $\jt{}$ (see \ref{sec:autoC})
 \subsubsection{Auto-correlations}
 \label{sec:autoC}
-Jet axis is simply a vector sum of all its constituents. Thus having an additional track in the jet from the underlying event moves the jet axis towards this track. Since the axis is now closer to the track, it has a smaller $j_T$ value. Assuming a \unit[1]{\gev} background track  at the edge of a $R = 0.4$ the $j_T$ value would be \unit[0.5]{\gev}. If this is added to a  \unit[5]{\gev} jet, the $j_T$ value becomes \unit[0.33]{\gev}. In a \unit[50]{\gev} jet it would be \unit[0.39]{\gev}.{\color{red} CHECK} This is a region where the inclusive $j_T$ distribution is dominated by background. The distribution is also steeply falling. Overestimating the background can lead to a situation where the background estimation exceeds the inclusive distribution.
+Jet axis is simply a vector sum of all its constituents. Thus having an additional track in the jet from the underlying event moves the jet axis towards this track. Since the axis is now closer to the track, it has a smaller $\jt{}$ value. Assuming a \unit[1]{\gev} background track  at the edge of a $R = 0.4$ the $\jt{}$ value would be \unit[0.5]{\gev}. If this is added to a  \unit[5]{\gev} jet, the $\jt{}$ value becomes \unit[0.33]{\gev}. In a \unit[50]{\gev} jet it would be \unit[0.39]{\gev}.{\color{red} CHECK} This is a region where the inclusive $\jt{}$ distribution is dominated by background. The distribution is also steeply falling. Overestimating the background can lead to a situation where the background estimation exceeds the inclusive distribution.
 
 %\begin{figure}[htp]
 %\centering
@@ -494,7 +613,7 @@ Jet axis is simply a vector sum of all its constituents. Thus having an addition
 %\caption{Auto-correlations in background and jets}
 %\end{figure}
 
-To take this effect into account we can't use a fixed axis for background, but it has to behave like a jet would when additional tracks are added. Thus before calculating $j_T$ values we make a vector sum of the track and the axis used for background, which is either the perpendicular cone axis or the random axis depending on the background method. In each case the momentum of this background axis is assumed to be the same as the jet which initiated the background estimation.
+To take this effect into account we can't use a fixed axis for background, but it has to behave like a jet would when additional tracks are added. Thus before calculating $\jt{}$ values we make a vector sum of the track and the axis used for background, which is either the perpendicular cone axis or the random axis depending on the background method. In each case the momentum of this background axis is assumed to be the same as the jet which initiated the background estimation.
 
 In pPb data there is on average about one underlying event track in a $R = 0.4$ cone. If there would be more, one should consider taking the vector sum of all tracks inside the cone. As there is usually only one track and if there are more it's unlikely that more than one has high momentum, taking the vector sum track-by-track should be enough.
 
@@ -504,14 +623,16 @@ In pPb data there is on average about one underlying event track in a $R = 0.4$ 
 
 
 \subsubsection{Background methods}
-Comparison between perpendicular cone and random background in figure \ref{fig:bgcomparison}. The advantage of the random background method is the added amount of statistics as the procedure can be repeated several times for each event. However, it seems that, especially in the highest $\pt{jet}$ bins there is some jet contribution left at the high end. One should note that the results from perpendicular cone background show no observable change between $\pt{jet}$ bins. It is a good indication that the background is actually dominated by the underlying event over the entire $\jt{}$ region. 
+Comparison between perpendicular cone and random background in figure \ref{fig:bgcomparison}. The advantage of the random background method is the added amount of statistics as the procedure can be repeated several times for each event. However, it seems that, especially in the highest $\pt{jet}$ bins there is some jet contribution left at the high end. Naturally there is no correlation between the tracks and the background axis, but if some high momentum tracks originating from jets were not subtracted and happen to hit the edge of the background cone, they can increase the high $\jt{}$ yield in the background estimation.
+
+One should note that the results from perpendicular cone background show no observable change between $\pt{jet}$ bins. It is a good indication that the background is actually dominated by the underlying event over the entire $\jt{}$ region. 
 \begin{figure}
 \centering
 \begin{subfigure}{0.95\textwidth}
 \includegraphics[width=\textwidth]{results/MixedFullJetsR04BackgroundComparison.pdf}
 %Tag 20170810 python2.7 Python/InclusiveWithBackground.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
 \end{subfigure}
-\caption{$j_T$ background with two different methods}
+\caption{$\jt{}$ background with two different methods}
 \label{fig:bgcomparison}
 \end{figure}
 
@@ -531,22 +652,22 @@ After getting the fit function $\sqrt{\left<\jt{}^2\right>}$ (RMS) and yield val
 
 $$\sqrt{\left<\jt{}^2\right>}=\sqrt{2}B_1,$$
 
-and the wide component RMS value is calculated as 
+\noindent and the wide component RMS value is calculated as 
 
 $$\sqrt{\left<\jt{}^2\right>}=\frac{B_5}{\sqrt{\left(B_4-2\right)\left(B_4-3\right)}},$$
 
-where it is required that $B_4 > 3$.
+\noindent where it is required that $B_4 > 3$.
 
 The statistical errors can be calculated with the general error propagation formulas. As a result one gets errors for the narrow component RMS
 
 
 \begin{equation}
-\delta \sqrt{\left<j_T^2\right>} = \sqrt{2}\delta B_1
+\delta \sqrt{\left<\jt{}^2\right>} = \sqrt{2}\delta B_1
 \end{equation}
-and for the wide component RMS
+\noindent and for the wide component RMS
 
 \begin{equation}
-\delta \sqrt{\left<j_T^2\right>} = \sqrt{ \left( \frac{\left(5-2 B_4 \right) B_5 \delta  B_4}{\left( 2\left(  B_4-2\right)\left( B_4-3\right)      \right)^{\frac{3}{2}}}\right)^2 + \left( \frac{\delta B_5}{\sqrt{\left( B_4-2\right)\left( B_4-3\right)}}      \right)^2  }
+\delta \sqrt{\left<\jt{}^2\right>} = \sqrt{ \left( \frac{\left(5-2 B_4 \right) B_5 \delta  B_4}{\left( 2\left(  B_4-2\right)\left( B_4-3\right)      \right)^{\frac{3}{2}}}\right)^2 + \left( \frac{\delta B_5}{\sqrt{\left( B_4-2\right)\left( B_4-3\right)}}      \right)^2  }
 \end{equation}
 
 %Yield(narrow)

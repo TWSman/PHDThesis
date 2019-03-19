@@ -63,6 +63,7 @@ Calorimeters are designed to stop any particles hitting them and use the absorpt
 
 
 \subsubsection{Tracking}
+\ref{sec:tracking}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.95\textwidth]{pics/AliceITS}
@@ -189,6 +190,7 @@ $\nicefrac{\mathrm{d}E}{\mathrm{d}x}$ measurements are provided by the last four
 
 
 \subsubsection{Electromagnetic Calorimeter}
+\label{sec:emcal}
 Calorimeters are designed to measure the energy of particles. Electromagnetic calorimeters specialise in detecting particles that interact primarily through the electromagnetic interaction, namely photons and electrons. They are required in many neutral meson and direct photon analyses. In addition the energy information enhance jet measurements.
 
 ALICE has two electromagnetic calorimeters, the photon spectrometer (PHOS)~\cite{PHOS} and the electromagnetic calorimeter (EMCal)~\cite{emcal}. PHOS is a homogeneous calorimeter that consists of scintillating $\mathrm{PbWO_4}$ crystals, which generate a bremsstrahlung  shower and produce scintillation light. The energy of the particle determines the amount of light produced. To improve the charged particle rejection, PHOS includes a charged particle veto detector (CPV)~\cite{cpv}. PHOS is built to have a very fine granularity, making it well suited for measuring direct photons and neutral mesons.
@@ -217,6 +219,7 @@ The build of individual towers is shown in Fig.~\ref{fig:emcaltower}. Each tower
 The acceptance of EMCal in the azimuthal angle is $ 80\deg < \phi < 187 \deg$. During long shutdown 1 in 2013-2015, EMCal was extended with the di-jet calorimeter (DCal) ~\cite{DCAL}, giving an additional acceptance region of $ 260\deg < \phi < 320 \deg$. This provides partial back-to-back coverage. In comparison to PHOS, EMCal has coarser granularity, but a significantly larger acceptance, making it suitable for jet physics.
 
 \subsubsection{Forward detectors}
+\label{sec:forward}
 ALICE includes a few small and specialised detectors of importance. The event time is determined with very good precision (< 25 ns) by the T0 detector~\cite{T0}. T0 consists of two sets of Cherenkov counters that are mounted around the beam pipe on both sides of the interaction point. T0 gives the luminosity measurement in ALICE.
 
 Another small detector in the forward direction is the V0 detector~\cite{V0}. This consists of two arrays of segmented scintillator counters located at $-3.7 < \eta < -1.7$ and $ 2.8 < \eta < 5.1$. V0 is used as a minimum bias trigger and for rejection of beam-gas background. Particle multiplicity in the forward direction can be related to the event centrality. Thus V0 is the main detector used in centrality determination in PbPb collisions.
@@ -239,6 +242,7 @@ Outside the main magnet, ALICE has a spectrometer dedicated to measuring muons~\
 The muon spectrometer consists of three parts, the absorber, the muon tracker and the muon trigger. The absorber is meant to remove the hadronic background as efficiently as possible. After the absorber there are ten plates of thin cathode strip tracking stations with high granularity, the muon tracker. After the muon tracker there is a layer of iron to filter out any remaining particles, other than muons. The muon trigger is located behind this layer. The trigger consists of four resistive plate chambers. 
 
 \subsubsection{Trigger}
+\label{sec:trigger}
 High energy physics experiments need triggers to select interesting physics. Experiments such as CMS and ATLAS at CERN look for extremely rare events with up to 40 million events each second. Such amounts can't be recorded real-time as many detectors require some time for the readout, up to 1 ms/event in ALICE. Thus one uses triggers, i.e. a set of very fast hardware based decisions on which events are to be saved. Additionally one needs some confirmation that an event has even occurred. 
 
 For ALICE the target event rates are \unit[1]{MHz} for \pp collisions, 0.1-2 \unit{kHz} for \PbPb collisions and 200 \unit{kHz} for the 2013 \pPb collisions.
