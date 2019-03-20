@@ -2,13 +2,15 @@
 \section{Systematic erros}
 {\color{red} Extend Systematics}
 \label{sec:systematicerrors}
-The systematic uncertainties in this analysis come from the background estimation, the unfolding procedure and the cuts used to select the tracks. Tracking uncertainties are estimated from variations of the track selection cuts defined in Sec.~\ref{sec:experimentaldetails}. The resulting variations in RMS are shown in Table \ref{tab:systematics}. The uncertainties from unfolding and background subtraction are of the same magnitude. 
+The main systematic uncertainties in this analysis come from the background estimation, the unfolding procedure and uncertainty in the tracking efficiency. Tracking uncertainties are estimated from variations of the track selection cuts defined in Sec.~\ref{sec:experimentaldetails}. 
+
+%The resulting variations in RMS are shown in Table \ref{tab:systematics}. The uncertainties from unfolding and background subtraction are of the same magnitude. 
 
 The systematics in background estimation were studied using an alternative method to extract the background, mainly the random background method. The resulting uncertainty is below 5\% for the wide component RMS and below 9\% for the narrow component RMS. 
 
 The systematic uncertainty that arises from the unfolding procedure is estimated by performing the unfolding with two separate methods. Data corrected by the iterative unfolding method are used as the results and the SVD unfolding method is employed to estimate the uncertainty. In a \textsc{Pythia} closure test the true distribution was in general found to be between the unfolded distributions from the iterative and SVD method. The difference between the methods when unfolding data should give a reasonable estimate of the unfolding uncertainty. The resulting uncertainty is below 8\% for both wide and narrow component RMS.
 
-The different source of the systematic uncertainty are considered as uncorrelated and the values of each source are summed in quadrature. The resulting uncertainty is 9 \% for the wide component RMS and 12 \% for the narrow component RMS. 
+
 
 \begin{table}[htb]
 \centering
@@ -25,10 +27,31 @@ The different source of the systematic uncertainty are considered as uncorrelate
   \end{tabular}
   \end{table}
   
-  \subsection{Background}
- Fits are performed on both perpendicular cone and random background signals. Difference between them is taken as the systematic error. The fits for individual bins from the random background method are shown in figure \ref{fig:fitsrandombg}. Resulting differences between the methods for different components are shown in figure \ref{fig:systbg}.
+ \subsection{Background}
+The uncertainty coming from background estimation is estimated by subtracting the background separately for the perpendicular cone and random background methods. Comparisons of the resulting signal distributions are shown in Fig.~\ref{fig:signal}. 
+ 
+ \begin{figure}[htb]
+\centering
+\begin{subfigure}{0.95\textwidth}
+\includegraphics[width=\textwidth]{results/MixedFullJetsR04JetConeJtSignal.pdf}
+%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
+\end{subfigure}
+\caption{$\jt{}$ signal with background subtracted}
+\label{fig:signal}
+\end{figure}
 
+ 
+Fits are then performed on both perpendicular cone and random background signals. Difference between them is taken as the systematic error. The fits for individual bins from the random background method are shown in figure \ref{fig:fitsrandombg}. Resulting differences between the methods for different components are shown in figure \ref{fig:systbg}. The dotted lines are put at $\pm \unit[5]{\%}$ for the narrow component and at $\pm \unit[8]{\%}$ for the wide component. These are taken as systematic estimates for the entire $\pt{jet}$ range.
 
+\begin{figure}[htb]
+\centering
+\begin{subfigure}{0.95\textwidth}
+\includegraphics[width=\textwidth]{results/MixedFullJetsR04SignalBackgroundComparison.pdf}
+%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
+\end{subfigure}
+\caption{Comparison of the effect of background method on $\jt{}$ signal.}
+\label{fig:signalbg}
+\end{figure}
 
 
 \begin{figure}
@@ -65,8 +88,15 @@ The different source of the systematic uncertainty are considered as uncorrelate
   
   
   \subsection{Unfolding}
-Unfolding is performed using both SVD and Bayesian unfolding. Difference between the methods is taken as the systematic error. Since SVD unfolding does not have a 2 dimensional options, the unfolding is done bin by bin. The resulting distributions after SVD unfolding and background subtraction with the perpendicular cone method are shown in fig \ref{fig:fitsSVD}. Resulting differences between the methods for different components are shown in figure \ref{fig:systunf}.
+Unfolding is the second major source of systematic uncertainty. To estimate the uncertainty related to the unfolding procedure several checks are performed. The main systematic uncertainty estimation comes from comparing results performed using both SVD and Bayesian unfolding. Difference between the methods is taken as the systematic error. Since SVD unfolding does not have a 2 dimensional options, the unfolding is done bin by bin. The resulting distributions after SVD unfolding and background subtraction with the perpendicular cone method are shown in fig \ref{fig:fitsSVD}. 
 
+As in the background systematic estimation, fits are performed for both cases separately. Resulting differences between the methods for different components are shown in figure \ref{fig:systunf}. The dotted lines are at $\pm \unit[8]{\%}$ for both components. These are taken to be the systematic uncertainty related to unfolding. 
+
+\begin{figure}
+\centering
+\caption{Resulting signal distributions from SVD unfolding with the perpendicular cone background methods. These are compared to the results from the Bayesian algorithm to estimate the systematic uncertainty.}
+\label{fig:fitsSVD}
+\end{figure}
 \begin{figure}
 \centering
 \begin{subfigure}{0.24\textwidth}
@@ -79,10 +109,12 @@ Unfolding is performed using both SVD and Bayesian unfolding. Difference between
 \label{fig:systunf}
 \end{figure}
 
+Several other systematic checks were performed with the Bayesian unfolding procedure. They are described in the following sections. As these are small compared to the main uncertainty they are not included separately.
+ 
   
 \subsubsection{Effect of number of iterations}
 \label{sec:iterations}
-The iterative unfolding algorithm permits the change of number of iterations. The unfolding was carried out using different numbers of iterations. The results from these different cases are shown in Fig.~\ref{fig:iterations}. The results are compared to the default unfolding algorithm with 4 iterations. The difference in results between the different cases is mostly less than 2.5\%.
+The iterative unfolding algorithm permits the change of number of iterations. The unfolding procedure was carried out using different numbers of iterations. The results from these different cases are shown in Fig.~\ref{fig:iterations}. The results are compared to the default unfolding algorithm with 4 iterations. The difference in results between the different cases is mostly less than 2.5\%.
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/systematics/IterationsComparison.pdf}
 \caption{Unfolding with different number of iterations}
@@ -92,15 +124,16 @@ The iterative unfolding algorithm permits the change of number of iterations. Th
 \subsubsection{Effect of different prior}
 \label{sec:prior}
 The iterative algorithm requires a prior estimate of the shape of the distribution. As a default prior the truth (particle level) distribution is used. To test the effect of changing the prior we instead use the unfolded $\jt{}$ distribution as prior. The results are compared to the unfolding algorithm with the default prior. This is shown in Fig.~\ref{fig:prior} The difference in results between the different cases is mostly less than 2.5\%. 
+
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/systematics/PtCutComparison10.pdf}
-\caption{Effect of changing minimum jet $\pt{}$ used in unfolding from 5 to 10 \gev}
+\caption{Effect of changing minimum jet $\pt{}$ used in unfolding from 5 to 10 \gev. {\color{red} Wrong figure}}
 \label{fig:prior}
 \end{figure}
 
 \subsubsection{Effect of $\pt{}$ truncation}
 \label{sec:truncation}
-As an additional check the unfolding is carried out with different $\pt{jet}$ truncation values. By default the full range of $\pt{jet} > 5 \gev$ is used. As an option the we test the unfolding by only using the response matrix for $\pt{jet} > 10 \gev$. The results of this test are shown in Fig.~\ref{fig:truncation}
+As an additional check the unfolding is carried out with different $\pt{jet}$ truncation values. By default the full range of $\pt{jet} > 5 \gev$ is used. We test the unfolding by only using the response matrix for $\pt{jet} > \unit[10]{\gev}$. The results of this test are shown in Fig.~\ref{fig:truncation}. The effects are strongest in the lower $\pt{jet}$ bins. Also in this case the difference is less than \unit[2.5]{\%} in all $\pt{jet}$ bins.
 
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/systematics/PtCutComparison10.pdf}
@@ -108,17 +141,29 @@ As an additional check the unfolding is carried out with different $\pt{jet}$ tr
 \label{fig:truncation}
 \end{figure}
 
+\subsection{Tracking}
+Systematic effects originating from uncertainty in the tracking efficiency are estimated through a \pythia~simulation, where an artificial inefficiency of 3\% is introduced i.e. 3 \% of tracks are randomly removed from each event. The effect of this artificial inefficiency is shown in Fig.~\ref{fig:trackingsyst}. The systematic uncertainties assigned to tracking efficiency are \unit[4]{\%} for the narrow component and \unit[5]{\%} for the wide component. 
 
-  
-  
-  \subsection{Tracking}
- Systematic effects originating from uncertainty in the tracking efficiency are estimated through a \pythia~simulation, where an artificial inefficiency of 3\% is introduced. i.e. 3 \% of tracks are randomly removed from each event. 
-  \subsection{EMCAL}
-  The analysis uses EMCAL clusters only in the reconstruction of jets. Thus the only way uncertainty in EMCAL performance can affect the results is through modification of jet momentum or axis.
-  
-  Uncertainty related to the EMCAL energy scale was estimated by scaling cluster energies up and down by 2 \% in a PYTHIA particle level simulation. Similarly the jet momentum was scaled by $\pm 2\%$ when determining the jet $\pt{}$ bin. In the analysis EMCAL is used only in jet reconstruction, not for calculating $\jt{}$. The only ways EMCAL uncertainty can affect the analysis are changes in jet energy and jet axis. Jet axis shouldn't significantly change, so the main contribution should be changes in jet $\pt{}$ bin.
+\begin{figure}
+\centering
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[width=0.95\textwidth]{figures/systematics/SystematicErrorsGausRMS_Tracking.pdf}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\includegraphics[width=0.95\textwidth]{figures/systematics/SystematicErrorsGammaRMS_Tracking.pdf}
+\end{subfigure}
+\caption{Relative systematic errors resulting from tracking efficiency uncertainty.}
+\label{fig:systtrack2}
+\end{figure}
 
-The results are shown in Fig.~\ref{fig:systemcal}. The resulting systematic uncertainties are shown in Fig.~\ref{fig:systemcal2}. The uncertainty is taken to be 1\%. 
+\subsection{EMCal clusters}
+The analysis uses EMCal clusters only in the reconstruction of jets. Thus the only way uncertainty in EMCal performance can affect the results is through modification of jet momentum or axis.
+  
+Uncertainty related to the EMCal energy scale was estimated by scaling cluster energies up and down by 2 \% in a PYTHIA particle level simulation. Similarly the jet momentum was scaled by $\pm 2\%$ when determining the jet $\pt{}$ bin. In the analysis EMCal is used only in jet reconstruction, not for calculating $\jt{}$. The only ways EMCal uncertainty can affect the analysis are changes in jet energy and jet axis. Jet axis shouldn't significantly change, so the main contribution should be changes in jet $\pt{}$ bin.
+
+The resulting differences in the inclusive $\jt{}$ distributions are shown in Fig.~\ref{fig:systemcal}. Qualitatively the effect of scaling cluster energies is the same as scaling the jet energies.
+
+Like in the previous cases fits are performed for the unscaled case and for cases with $\pm \unit[2]{\%}$ scaling. The resulting systematic uncertainties are shown in Fig.~\ref{fig:systemcal2}. The uncertainty is taken to be 1\% for both components.
 
 \begin{figure}
 \centering
@@ -144,53 +189,12 @@ The results are shown in Fig.~\ref{fig:systemcal}. The resulting systematic unce
 \label{fig:systemcal2}
 \end{figure}
 
-  \subsection{Summary}
-
-There is no tracking and no unfolding uncertainty in the Monte Carlo simulations. 
 
 
+\subsection{Summary/Combining systematics}
+The different source of the systematic uncertainty are considered as uncorrelated and the values of each source are summed in quadrature.
 
-\subsection{Comparison between A and C side}
-In 2013 there were issues with tracking. To rule out effects on $\jt{}$ distributions a study was performed comparing $\jt{}$ distributions between A and C side. {\color{red}Which is lead going side and which is proton going} No systematic differences were observed. Figure~\ref{fig:signalbg} shows the comparison between inclusive distributions between the different sides, both for minimum bias and EMCAL triggered datasets.
-
-\begin{figure}
-\centering
-\begin{subfigure}{0.95\textwidth}
-\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom0To4LHC13.pdf}
-\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom4To8LHC13.pdf}
-\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom4To8LHC13EMCAL.pdf}
-%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
-\end{subfigure}
-\caption{Comparison of inclusive $\jt{}$ distributions between A and C side for minimum bias and EMCAL triggered data.}
-\label{fig:signalbg}
-\end{figure}
-
-\subsection{Subtracted signal}
-Results in figure \ref{fig:signal}. Comparison between signals with different backgrounds in figure \ref{fig:signalbg}
-\begin{figure}
-\centering
-\begin{subfigure}{0.95\textwidth}
-\includegraphics[width=\textwidth]{results/MixedFullJetsR04JetConeJtSignal.pdf}
-%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
-\end{subfigure}
-\caption{$\jt{}$ signal with background subtracted}
-\label{fig:signal}
-\end{figure}
-
-\begin{figure}
-\centering
-\begin{subfigure}{0.95\textwidth}
-\includegraphics[width=\textwidth]{results/MixedFullJetsR04SignalBackgroundComparison.pdf}
-%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
-\end{subfigure}
-\caption{Comparison of the effect of background method on $\jt{}$ signal.}
-\label{fig:signalbg}
-\end{figure}
-
-
-
-\subsection{Combining systematics}
-Resulting systematic erros are shown in table \ref{tab:systematics}. Systematic errors are combined bin-by-bin in quadrature to get the total systematic errors.
+Resulting systematic errors are shown in table \ref{tab:systematics}. The different source of the systematic uncertainty are considered to be uncorrelated and are thus combined bin-by-bin in quadrature to get the total systematic errors.  The resulting uncertainty is approximately 9 \% for the wide component RMS and 12 \% for the narrow component RMS. 
 \begin{table}[htb]
 \centering
 \caption{Summary of systematic errors}
@@ -200,9 +204,27 @@ Resulting systematic erros are shown in table \ref{tab:systematics}. Systematic 
     \hline			
   Background & 5 \% & 9 \% \\
   Unfolding & 8 \% & 8 \% \\
-  Tracking & \% & \% \\ 
-  EMCAL & \% & \% \\
-  Total & 9 \% & 12\% \\
+  Tracking & 4 \% & 5 \% \\ 
+  EMCal & 1 \% & 1 \% \\
+  Total & 10 \% & 13\% \\
   \hline
   \end{tabular}
   \end{table}
+
+  
+\subsection{Additional checks}
+\subsubsection{Comparison between A and C side}
+In 2013 there were issues with tracking. To rule out effects on $\jt{}$ distributions a study was performed comparing $\jt{}$ distributions between A and C side. {\color{red}Which is lead going side and which is proton going} No systematic differences were observed. Figure~\ref{fig:signalbg} shows the comparison between inclusive distributions between the different sides, both for minimum bias and EMCal triggered datasets.
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.95\textwidth}
+\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom0To4LHC13.pdf}
+\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom4To8LHC13.pdf}
+\includegraphics[width=\textwidth]{pics/ACsideComparison/ACsideJetConeJtInclusivePtFrom4To8LHC13EMCal.pdf}
+%Tag 20170810 python2.7 Python/DrawSignal.py legotrain_CF_pPb-1053_20170223-2002_LHC13bcde.root
+\end{subfigure}
+\caption{Comparison of inclusive $\jt{}$ distributions between A and C side for minimum bias and EMCal triggered data.}
+\label{fig:signalbg}
+\end{figure}
+
