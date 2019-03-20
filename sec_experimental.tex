@@ -123,57 +123,17 @@ As opposed to wire chambers, which typically have one voltage setting, a GEM-bas
 
 The GEMs are designed to minimise ion backflow to allow continuous, ungated and untriggered readout.
 
-The purpose of the multilayered structure is to reduce the ion backflow~\cite{}; not only one layer of GEM foils will be installed, but a 4 layer stack. In the stack there are 2 standard pitch GEM foils, where the pitch size, i.e. the separation of the holes inside a foil is around 140 $\mu m$, and 2 large pitch GEM foils, there the hole spacing is two times larger, 280 $\mu m$. The two outer layers will have standard pitch and the two middle layers have large pitch. The middle layers with large pitch serve as extra insulator against the ion backflow. Additionally the setup allows operating individual GEM foils at lower voltages and still have an increase in the gain of a few orders of magnitude.
-
-~\cite{TPCupgrade}
+The purpose of the multilayered structure is to reduce the ion backflow~\cite{}; not only one layer of GEM foils will be installed, but a 4 layer stack. In the stack there are 2 standard pitch GEM foils, where the pitch size, i.e. the separation of the holes inside a foil is around 140 $\mu m$, and 2 large pitch GEM foils, there the hole spacing is two times larger, 280 $\mu m$. The two outer layers will have standard pitch and the two middle layers have large pitch. The middle layers with large pitch serve as extra insulator against the ion backflow. Additionally the setup allows operating individual GEM foils at lower voltages and still have an increase in the gain of a few orders of magnitude. ~\cite{TPCupgrade}
 
 \subsubsection*{Quality Assurance of the GEM foils}
-The GEM foils are produced at CERN, where they will undergo a basic QA (QA-B) procedure, that includes
 
-\begin{itemize}
-\item Coarse optical inspection to see any major defects, holes, cuts and discoloured regions
-\item Short-term leakage current measurement
-\end{itemize}
+The GEM foils are produced at CERN, where they will undergo a basic QA (QA-B) procedure, that includes a coarse optical inspection to remove any clear defects and a short term high voltage measurement. Afterwards the advanced quality assurance (QA-A) is performed in two centers, one in the Helsinki Institute of Physics (HIP) and one in the Wigner Research Centre in Budapest. Details of the QA-A procedure can be found in the thesis of Márton Vargyas~\cite{MartonThesis}. In the QA-A centers all foils are put through a detailed optical scanning process and a long term high voltage measurement. I was personally performing the QA production in Helsinki for the last 6 months of the project.
 
-Any problems found in the basic inspection are documented for later cross-checking.
+The optical scan is performed with the help of a scanning robot. The setup along with most of the software was developed at the Detector Laboratory of the Helsinki Institute of Physics~\cite{}. The purpose of the scan is two-fold; to catch defects that could affect the performance and classify the foils based on their hole parameters. It is expected that these are connected with the foil's electric properties~\cite{}. For example, smaller holes create more intense and focused fields, which would result in larger amplification of their avalanche electrons, i.e. the local gain is expected to be larger.
+
+After the optical scanning, the foils are subjected to a long term ( 5-12 hours) high voltage leakage current measurement. Each segment of the GEM foil is connected to a high voltage and the leakage current is measured separately for each segment, by the connected picoamper-meter (pA-meter). The accepted leakage current in each segment is \unit[0.16]{nA}, foils with larger values are discarded. 
 
 
-The advanced quality assurance (QA-A) is performed in two centers, one in the Helsinki Institute of Physics (HIP) and one in the Wigner Research Centre in Budapest. The QA-A procedure includes the following measurements
-
-\begin{itemize}
-\item Long-term leakage current measurement
-\item High-resolution optical scanning
-\item Gain uniformity check (In Budapest)
-\end{itemize}
-
-In the procedure foils are classified according to a traffic light system. Red means the foil didn't pass the basic selection criteria and thus cannot be used. Yellow means it might be usable and green means that the foil passed all evaluations.
-
-\subsubsection{Optical scanning}
-The etching process is a delicate one; many things can go wrong, that are not visible by eye in the coarse optical inspection. It is expected that the hole parameters are connected with the foil's electric properties~\cite{}, so a precise optical measurement can help in classifying the foils. For example, smaller holes create more intense and focused fields, which would result in larger amplification of their avalanche electrons, i.e. the local gain would be larger.
-
-The foils are scanned with the help of a scanning robot. The setup along with most of the software was developed at the Detector Laboratory of the University of Helsinki~\cite{}
-
-Each image is a false colour superposition of two images, one with foreground illumination and one with background illumination. In this way one can observe the three relevant diameters of the foil, the top, middle and bottom diameters. The background light highlights the middle holes, while the foreground illumination captures either the top or the bottom depending on the orientation of the foil as the foils are scanned from both sides. Fig.~\ref{fig:gemscan}
-
-The setup takes images with area about $\unit[11.3]{mm} \times \unit[8.5]{mm}$, corresponding to 2560 by 1920 pixels, resulting in a total of 2000-3500 individual images for both sides of a GEM foil, depending on its type. The images are fed into neural network classifier, which identifies the holes, finds defects and extracts the hole parameters by fitting ellipses to the recognised contours. Thus every individual hole can be measured, which otherwise would be completely unfeasible as even the smallest of foils has about 10 million holes.
-
-\begin{figure}
-%\includegraphics
-\caption{An example image taken of a GEM foil with false colors.}
-\label{fig:gemscan}
-\end{figure}
-
-\subsubsection*{Long term HV measurement of the GEM foils}
-After the optical scanning, the foils are subjected to a long term ( 5-12 hours) high voltage leakage current measurement. Each segment of the GEM foil is connected to a high voltage and the leakage current is measured separately for each segment, by the connected picoamper-meter (pA-meter)~\cite{}. The accepted leakage current in each segment is \unit[0.16]{nA}, foils with larger values are discarded. 
-
-\subsubsection*{Gain scan}
-A small subset of the foils were put through a gain scan. The gain scan could only be performed in the QA-A centre of Budapest. As the time required to scan 1 foil was several days, the gain scan couldn't be performed even for all foils in Budapest. 
-
-The gain scan uses charged particles provided by a $\mathrm{^{55} Fe}$ source, which was placed above the foil. It emits X-ray photons with an energy of \unit[5.9]{keV}. The photons will convert to electrons in the gain scanner's $\mathrm{Ar+CO_2}$ gas mixture, either via photoelectric effect or via Compton Scattering. There electrons travel a few microns in the gas, ionising the gas along their path.
-
-Below the GEM frame, there is a multiwire proportional pad, with perpendicular wires with a resolution of \unit[4]{mm} in $x$ and \unit[3]{mm} in $y$. Amplification is measured both with (HV) and without (reference) voltage over the GEM foil. The HV measurement is divided with the reference measurement, which results in the gain map of the GEM.
-
-\subsubsection*{Gain correlations}
 
 \subsubsection{Particle identification}
 One guiding principle in the design of ALICE was to achieve good particle identification (PID) over  a large part of phases space and for several different particle types. In ALICE there are several detectors taking part in the identification of particles. 
@@ -258,7 +218,7 @@ Similarly \PbPb triggers looks at both V0 and SPD hits. The \pPb data has been m
 
 
 \subsubsection*{EMCal trigger}
-In addition to the minimum bias triggers, the most relevant trigger for this thesis is the EMCal trigger. 
+In addition to the minimum bias triggers, the most relevant trigger for this thesis is the EMCal trigger. Much of the EMCal trigger has been developed at the University of Jyväskylä. Extensive details of the trigger and the development work can be found in the thesis of Ji\v ri Král~\cite{JiriThesis}. Personally I have spent time at CERN helping in the maintenance of the level 0 trigger.
 
 ALICE EMCal provides two levels of trigger signal, L0 and L1, which allows triggering on either single shower deposits or integrated energy deposits in larger ares, i.e. jets~\cite{KRAL2012261}.
 
