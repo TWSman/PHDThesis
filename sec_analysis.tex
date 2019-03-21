@@ -83,7 +83,7 @@ The momentum resolutions of the two classes of particles are comparable up to $\
 
 \subsection{Cluster selection}
 {\color{red} Extend cluster reconstruction}
-Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCAL)~\cite{Cortese:2008zza}. The EMCAL covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCAL is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCAL in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
+Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
 
 
 The clusters used in the analysis were obtained from EMCal by the v2 clusteriser. Clusters matched to charged tracks are removed from the analysis as well as clusters being identified as fake. The parameters used in the clusteriser are summarised in table~\ref{tab:clusters}
@@ -104,7 +104,7 @@ A method of matching the cluster position to TPC track extrapolation is used to 
 
 
 \begin{table}[htb] 
-\caption{Settings used in the EMCAL corrections framework}
+\caption{Parameters used in the EMCal clusteriser}
 \label{tab:clusters}
 \begin{tabular}{| c | c | c |}
 Setting & Value & Description \\
@@ -637,16 +637,15 @@ One should note that the results from perpendicular cone background show no obse
 \end{figure}
 
  \subsection{Fitting}
-
-
-The resulting signal distribution are fitted with a 2 component function shown in Eq.~\ref{eq:fit}. Gaussian distribution is used for low $\jt{}$ and an inverse gamma function is used for high $\jt{}$. The gaussian is taken to have the center at $\jt{} = 0$. In total this gives 5 parameters. The fitting procedure was inspired by the dihadron $\jt{}$ analysis by ALICE~\cite{ALICEjt}. The complete fitting function is 
+After unfolding and background subtraction the resulting signal distributions are fitted with a 2 component function shown in Eq.~\ref{eq:fit}. Gaussian distribution is used for low $\jt{}$ and an inverse gamma function is used for high $\jt{}$. The gaussian is taken to have the center at $\jt{} = 0$. In total this gives 5 parameters. The fitting procedure was inspired by the dihadron $\jt{}$ analysis by ALICE~\cite{ALICEjt}. The complete fitting function is 
 
 \begin{equation}
 \frac{1}{N_{\mathrm{jets}}}\frac{\mathrm{d}N}{\jt{} \mathrm{d}\jt{}} = \frac{B_2}{B_1\sqrt{2\pi}}e^{-\frac{\jt{}^2}{2B_1^2}}+\frac{B_3B_5^{B_4}}{\Gamma\left(B_4\right)}\frac{e^{-\frac{B_5}{\jt{}}}}{\jt{}^{B_4+1}}.
 \label{eq:fit}
 \end{equation}
 
-To achieve stable results the fitting is performed in two steps. First each component is fitted separately. Gaussian component is fitted to the low end in $\jt{}$. Inverse gamma component is fitted to $\jt{}$ above $\unit[1]{\gevc}$. After getting the results from the individual fits they are combined into a single function with initial values from the individual results and an additional fit is performed. Fitting only the gaussian component to the entire distribution produces approximately the same result as the gaussian component in the two-component model.
+To achieve stable results the fitting is performed in two steps. First both components are fitted separately. Gaussian component is fitted to the low end in $\jt{}$. Inverse gamma component is fitted to $\jt{}$ above $\unit[1]{\gevc}$. After getting the results from the individual fits they are combined into a single function with initial values from the individual results and an additional fit is performed. 
+%Fitting only the gaussian component to the entire distribution produces approximately the same result as the gaussian component in the two-component model.
 
 After getting the fit function $\sqrt{\left<\jt{}^2\right>}$ (RMS) and yield values are extracted separately from each component. The narrow component RMS is
 
