@@ -1,0 +1,58 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+\tikzset{
+    photon/.style={decorate, decoration={snake}, draw=red},
+    electron/.style={draw=blue, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=blue]{>}}}},
+    gluon/.style={decorate, draw=magenta,
+        decoration={coil,amplitude=4pt, segment length=5pt}} 
+}
+\definecolor{col1}{HTML}{0000ff}
+\definecolor{col2}{HTML}{ff007f}
+\definecolor{col3}{HTML}{fffe00}
+\definecolor{col4}{HTML}{00ff7f}
+
+\begin{tikzpicture}
+\draw[thick, -<] (0,0) -- (-2,1);
+\draw[thick, -<] (0,0) -- (-2.5,0);
+\draw[thick] (0,0) -- (3,0);
+\draw[thick] (0,0) -- (2,-1);
+
+\draw[thick] (3,0) -- (4.5,0.5);
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (3, 0) -- (4.5,-0.5);
+
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (4.5, 0.5) -- (6,1.6);
+\draw[thick] (4.5,0.5) -- (6,0.8);
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (4.5, -0.5) -- (6,-1.5);
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (4.5, -0.5) -- (6,-0.3);
+
+
+\draw[thick] (6,1.6) -- (7.5,2.6);
+\draw[thick] (6,1.6) -- (7.5,1.9);
+\draw[thick] (6,0.8) -- (7.5,1.1);
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (6,0.8) -- (7.5,0.7);
+\draw[thick] (6,-0.3) -- (7.5,-0.1);
+\draw[thick] (6,-0.3) -- (7.5,-0.5);
+
+
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (6, -1.5) -- (7.5,-1.3);
+\draw[decorate,decoration={coil,amplitude=3pt, segment length=4pt}, thick] (6, -1.5) -- (7.5,-2.1);
+
+\shade[inner color = red, outer color=orange, blur shadow = {shadow blur steps=5}] (0,0) ellipse (1.5cm and 1cm);
+\shade[left color = orange, right color=yellow, rounded corners, blur shadow = {shadow blur steps=5}] (7.5,-2.5) rectangle (8.5,3);
+
+\draw[very thick, color = col2] (8.5, 2.7) -- (11,2.7);
+\draw[very thick, color = col2] (8.5, 1.7) -- (11,1.7);
+\draw[very thick, color = col2] (8.5, 0.7) -- (11,0.7);
+\draw[very thick, color = col2] (8.5, -0.3) -- (11,-0.3);
+\draw[very thick, color = col2] (8.5, -1.3) -- (11,-1.3);
+\draw[very thick, color = col2] (8.5, -2.2) -- (11,-2.2);
+\end{tikzpicture}
+\end{document}

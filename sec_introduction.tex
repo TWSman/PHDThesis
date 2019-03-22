@@ -434,6 +434,15 @@ The measurement of anisotropic flow coefficients can be extended to very high tr
 \label{fig:qcdlo}
 \end{figure}
 
+
+\begin{figure}[htb]
+\centering
+\input{figures/tikz/qcdlo}
+\label{fig:qcdlo}
+\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
+\end{figure}
+
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{pics/ink}
@@ -444,16 +453,29 @@ The term Hard Scattering is used in connection with the scattering of two point-
 
 Jet fragmentation can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elemantary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
 
-$$\frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c}$$
+\begin{equation}
+\frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c}
+\end{equation}
+
+\noindent where, 
+
+$$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}$$
+
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.9\textwidth]{pics/Showering}
+%\caption[Jet showering]{REPLACE FIGURE An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
+%\label{fig:highpt}
+%\end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{pics/Showering}
-\caption[Jet showering]{REPLACE FIGURE An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
+\input{figures/tikz/showering.tex}
+\caption[Jet showering]{An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
 \label{fig:highpt}
 \end{figure}
 
-$$x_a = \frac{\left| p_a \right|}{\left| p_{proton} \right|}$$
 
 
 \subsubsection*{Parton Distribution Function}
@@ -575,7 +597,7 @@ When the clusters are light enough, they decay into final state hadrons. If the 
 
 \subsubsection{Jet energy loss}
 \subsubsection*{Discovery of jet quenching via leading hadron suppression}
-First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
+First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
 
 
 Jet quenching in heavy-ion collisions is usually quantized with the nuclear modification factor $R_{AA}$, which is  is defined as
@@ -749,7 +771,7 @@ Also the quanta originating from the DGLAP region will undergo medium interactio
 \frac{\mathrm d P_\mathrm{find}}{\mathrm d \log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)},
 \end{equation} 
 
-Note that the ratio $\nicefrac{t}{t_\mathrm{split}}$ is smaller than 1 for nodes above $k_\mathrm{split}$ and therefore the number of daughters is smaller than the number of vacuum splitted quanta. Below $k_\mathrm{split}$ the cascade is similar to the medium cascade and the number of quanta become
+Note that the ratio $\nicefrac{t}{t_\mathrm{split}}$ is smaller than 1 for nodes above $k_\mathrm{split}$ and therefore the number of daughters is smaller than the number of vacuum splitted quanta. Below $k_\mathrm{split}$ the cascade is similar to the medium cascade and the number of quanta become
 
 \begin{equation}
 \frac{\mathrm{d}n}{\mathrm{d}\log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)}, \text{ for } p < k_\mathrm{split}\left(p\right)
@@ -776,7 +798,7 @@ Large angular scales cannot be reached by Brownian motion, but can arise from ra
 
 %\subsubsection*{DGLAP}
 %
-%Quantum mechanical formation time prevents emission faster than a time it takes to separate the wave packets of the splitter and the splittee. In general, splittees at a scale $p < Q$ can form at a time $t  \geq \nicefrac{p}{k_\perp^2}$ set by their inverse transverse energy. For jet evolution in the vacuum the angular distribution is determined by the primary decay kinematics of the splittee, $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{1}{p \theta^2}$. Therefore, the logarithmically ordered DGLAP 'vacuum' parton shower fills the $\log p$-$\log\theta$-plane from the outside in. In the entire region determined by $\theta > \theta_\mathrm{vac}$ with
+%Quantum mechanical formation time prevents emission faster than a time it takes to separate the wave packets of the splitter and the splittee. In general, splittees at a scale $p < Q$ can form at a time $t  \geq \nicefrac{p}{k_\perp^2}$ set by their inverse transverse energy. For jet evolution in the vacuum the angular distribution is determined by the primary decay kinematics of the splittee, $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{1}{p \theta^2}$. Therefore, the logarithmically ordered DGLAP 'vacuum' parton shower fills the $\log p$-$\log\theta$-plane from the outside in. In the entire region determined by $\theta > \theta_\mathrm{vac}$ with
 %
 %\begin{equation}
 %\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{pt}},

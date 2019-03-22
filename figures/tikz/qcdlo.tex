@@ -1,0 +1,288 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+\newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=black, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=black, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=black},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=black,
+    decoration={coil,amplitude=2pt, segment length=3pt}}
+ }
+ 
+%\begin{tabular}{ >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{8cm}}
+\begin{tabular}{ c c c}
+
+\begin{tabular}{c}
+$qq' \rightarrow qq' $ \\
+$\bar q q' \rightarrow \bar qq' $
+\end{tabular} 
+& $\frac{4}{9}\frac{\hat s^2+\hat u^2}{\hat t^2}$
+
+&
+\centered{
+
+ \begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[particle] (e1) -- (aux1);
+\draw[particle] (aux1) -- (e2);
+\draw[particle] (e3) -- (aux2);
+\draw[particle] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=left:$t$] {} (aux1);
+\end{tikzpicture} 
+
+}
+ \\
+$qq \rightarrow qq$ & $\frac{4}{9}\left( \frac{\hat s^2+\hat u^2}{\hat t^2} + \frac{\hat s^2+\hat u^2}{\hat t^2}  \right) - \frac{8}{27}\frac{\hat s^2}{\hat u \hat t}$ &
+\centered{
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[particlearrow] (e1) -- (aux1);
+\draw[particlearrow] (aux1) -- (e2);
+\draw[particlearrow] (e3) -- (aux2);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=left:$t$] {} (aux1);
+\end{tikzpicture} 
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[particlearrow] (e1) -- (aux1);
+\draw[particle] (aux1) -- (e4);
+\draw[particlearrow] (e3) -- (aux2);
+\draw[particle] (aux2) -- (e2);
+\draw[gluon] (aux2) -- node[label=left:$u$] {} (aux1);
+\end{tikzpicture}
+}
+\\
+$\bar q q \rightarrow \bar q' q'$ & $\frac{4}{9}\frac{\hat t^2+\hat u^2}{\hat s^2}$ &
+\centered{
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[antiparticlearrow] (aux1) -- (e1);
+\draw[antiparticlearrow] (e2) -- (aux2);
+\draw[particlearrow] (e3) -- (aux1);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=above:$s$] {} (aux1);
+\end{tikzpicture}
+}
+\\
+$\bar q q \rightarrow \bar q q$ & $\frac{4}{9}\left( \frac{\hat s^2+\hat u^2}{\hat t^2} + \frac{\hat t^2+\hat u^2}{\hat s^2}  \right) - \frac{8}{27}\frac{\hat u^2}{\hat s \hat t}$ &
+\centered{
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[antiparticlearrow] (aux1) -- (e1);
+\draw[antiparticlearrow] (e2) -- (aux2);
+\draw[particlearrow] (e3) -- (aux1);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=above:$s$] {} (aux1);
+\end{tikzpicture}
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[antiparticlearrow] (e2) -- (aux1);
+\draw[antiparticlearrow] (aux1) -- (e1);
+\draw[particlearrow] (e3) -- (aux2);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=left:$t$] {} (aux1);
+\end{tikzpicture} 
+}
+\\
+$\bar q q \rightarrow gg$ & $\frac{32}{27}\frac{\hat u^2+\hat t^2}{\hat u \hat t} - \frac{8}{3}\frac{\hat u^2 + \hat t^2}{\hat s^2}$ &
+\centered{
+
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[antiparticlearrow] (aux1) -- (e1);
+\draw[gluon] (aux2) -- (e2);
+\draw[particlearrow] (e3) -- (aux1);
+\draw[gluon] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=above:$s$] {} (aux1);
+\end{tikzpicture}
+}
+\\
+$gg \rightarrow \bar q q$ & $\frac{1}{6}\frac{\hat u^2+\hat t^2}{\hat u \hat t} - \frac{3}{8}\frac{\hat u^2 + \hat t^2}{\hat s^2}$ &
+\centered{
+
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[antiparticlearrow] (e2) -- (aux2);
+\draw[gluon] (e3) -- (aux1);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=above:$s$] {} (aux1);
+\end{tikzpicture}
+}
+\\
+
+$q g  \rightarrow qg $ & $\frac{4}{9}\frac{\hat u^2+\hat s^2}{\hat u \hat s} + \frac{\hat u^2 + \hat s^2}{\hat t^2}$ &
+\centered{
+
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux2) -- (e2);
+\draw[particlearrow] (e3) -- (aux1);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[particlearrow] (aux1) -- node[label=above:$s$] {} (aux2);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux2);
+\draw[gluon] (aux1) -- (e2);
+\draw[particlearrow] (e3) -- (aux1);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[particlearrow] (aux1) -- node[label=below:$s$] {} (aux2);
+\end{tikzpicture}
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux1) -- (e2);
+\draw[particlearrow] (e3) -- (aux2);
+\draw[particlearrow] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=left:$t$] {} (aux1);
+\end{tikzpicture} 
+}
+\\
+$g g  \rightarrow gg $ & $\frac{9}{2}\left(3- \frac{\hat u \hat t}{\hat s^2}  - \frac{\hat u \hat s}{\hat t^2} -\frac{\hat s \hat t}{\hat u^2}\right)$ &
+\centered{
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux1) -- (e2);
+\draw[gluon] (e3) -- (aux2);
+\draw[gluon] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=left:$t$] {} (aux1);
+\end{tikzpicture} 
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (aux2);
+\coordinate[above right=0.7cm of aux2] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux2) -- (e2);
+\draw[gluon] (e3) -- (aux1);
+\draw[gluon] (aux2) -- (e4);
+\draw[gluon] (aux2) -- node[label=above:$s$] {} (aux1);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\coordinate[] (e1);
+\coordinate[right=1cm of e1] (aux1);
+\coordinate[right=1cm of aux1] (e2);
+\coordinate[below=1cm of aux1] (aux2);
+\coordinate[left=1cm of aux2] (e3);
+\coordinate[right=1cm of aux2] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux1) -- (e4);
+\draw[gluon] (e3) -- (aux2);
+\draw[gluon] (aux2) -- (e2);
+\draw[gluon] (aux2) -- node[label=left:$u$] {} (aux1);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\coordinate[] (e1);
+\coordinate[below right=0.7cm of e1] (aux1);
+\coordinate[above right=0.7cm of aux1] (e2);
+\coordinate[below left=0.7cm of aux1] (e3);
+\coordinate[below right=0.7cm of aux1] (e4);
+
+\draw[gluon] (e1) -- (aux1);
+\draw[gluon] (aux1) -- (e2);
+\draw[gluon] (e3) -- (aux1);
+\draw[gluon] (aux1) -- (e4);
+\end{tikzpicture}
+}
+
+
+\end{tabular}
+\end{document}
