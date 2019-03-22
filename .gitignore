@@ -28,6 +28,7 @@ sec_introduction.pdf
 sec_introduction.synctex.gz
 figures/tikz/qcdlo.pdf
 figures/tikz/showering.pdf
+figures/tikz/scattering.pdf
 **/*.log
 **/*.gz
 **/*.aux
