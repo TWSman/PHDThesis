@@ -480,50 +480,13 @@ We have two methods for background estimation. In the first we look at the direc
 \begin{figure}
 \centering
 \begin{subfigure}{0.4\textwidth}
-\begin{tikzpicture}
-\draw[gray, thick, ->] (0,0) -- (1,2);
-\draw[gray, thick, ->] (0,0) -- (-0.8,2.2);
-\draw[gray, thick, ->] (0,0) -- (-0.1,1.5);
-\draw[gray, thick, ->] (0,0) -- (0.7,1.7);
-\draw[green, thick] (0,0) -- node[near end, right] {Jet cone}(1.5,2.8);
-\draw[green, thin, <->] (0,2.8) -- node[midway, above] {$R$} (1.5,2.8);
-\draw[green, thick] (0,0) --  (-1.5,2.8);
-\draw[blue, thin, ->] (0,2.2) -- node [midway, above] {\jt{}} (-0.8,2.2);
-\draw[black, very thick, ->] (0,0) -- node [near end,right] {jet} (0,3);
-\draw[black, very thick, ->] (0,0) -- node [near end, right] {Awayside jet?} (0,-2);
-\draw[red, thin, ->] (0,0) -- (-1.25982281336992,-1.55333398820495);
-\draw[red, thin, ->] (0,0) -- (-1.45147226001971,0.514614689251372);
-\draw[red, thin, ->] (0,0) -- (-0.30285006631157,-1.69312782663775);
-\draw[red, thin, ->] (0,0) -- (0.8074529522207,0.832838357636147);
-\draw[red, thin, ->] (0,0) -- (-1.48782136581293,-0.397476519344932);
-\draw[red, thin, ->] (0,0) -- (0.935437036685518,-1.76775494636474);
-\draw[red, thin, ->] (0,0) -- (-0.905166754522554,1.2459025429411);
-\draw[red, thin, ->] (0,0) -- (0.392170769946368,1.89994791697027);
-\draw[red, thin, ->] (0,1.89994791697027) -- node [near start, left] {\jt{}} (0.392170769946368,1.89994791697027);
-\end{tikzpicture}
+\input{figures/tikz/bgdef}
+
 \caption{Red is underlying event while gray tracks represent the signal}
 \end{subfigure}
 \begin{subfigure}{0.4\textwidth}
-\begin{tikzpicture}
-\draw[gray, thick, ->] (0,0) -- (1,2);
-\draw[gray, thick, ->] (0,0) -- (-0.8,2.2);
-\draw[gray, thick, ->] (0,0) -- (-0.1,1.5);
-\draw[gray, thick, ->] (0,0) -- (0.7,1.7);
-\draw[green, thick] (0,0) -- (-2.8,1.5);
-\draw[green, thick] (0,0) --  (-2.8,-1.5);
-\draw[green, very thick, ->] (0,0) -- node [near end, above] {Rotated axis} (-3,0);
-\draw[black, very thick, ->] (0,0) -- node [near end,right] {jet} (0,3);
-\draw[black, very thick, ->] (0,0) -- node [near end, right] {Awayside jet?} (0,-2);
-\draw[red, thin, ->] (0,0) -- (-1.25982281336992,-1.55333398820495);
-\draw[red, thin, ->] (0,0) -- (-1.45147226001971,0.514614689251372);
-\draw[red, thin, ->] (0,0) -- (-0.30285006631157,-1.69312782663775);
-\draw[red, thin, ->] (0,0) -- (0.8074529522207,0.832838357636147);
-\draw[red, thin, ->] (0,0) -- (-1.48782136581293,-0.397476519344932);
-\draw[red, thin, ->] (0,0) -- (0.935437036685518,-1.76775494636474);
-\draw[red, thin, ->] (0,0) -- (-0.905166754522554,1.2459025429411);
-\draw[red, thin, ->] (0,0) -- (0.392170769946368,1.89994791697027);
-\draw[red, thin, ->] (-1.48782136581293,0) -- node [near start, left] {\tiny bg $\jt{}$} (-1.48782136581293,-0.397476519344932);
-\end{tikzpicture}
+\input{figures/tikz/perpcone}
+
 \caption{We estimate the background using a cone where the axis is perpendicular to the jet axis}
 \end{subfigure}
 \caption{Background estimation}
@@ -541,35 +504,8 @@ If we don't find other jets in the vicinity we move on to estimate the backgroun
 
 \begin{figure}[htp]
 \centering
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
-    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-    text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-    minimum height=2em]
-    
-\tiny 
-\begin{tikzpicture}[node distance = 1cm, auto]
-    % Place nodes
-    \node [block] (init) {Jet found};
-    \node [block, below of=init, node distance = 2cm] (rotate) {Rotate jet axis by $\pi/2$ (positive $\phi$)};
-    \node [decision, below of=rotate, node distance = 2.5cm](jets){Other jets close to the rotated axis? ($<2R$)};
-    \node [block, left of=jets, node distance = 2.5cm] (discard) {Don't calculate background};
-    \node [block, right of=jets, node distance = 2.5cm] (tracks) {Find tracks within cone R};
-    \node [block, above of=tracks, node distance = 2cm](sum) {Calculate vector sum of track and rotated axis};
-    \node [block, right of =sum, node distance = 2cm](jt) {Calculate $\jt{}$ with respect to the vector sum};
-    
-    % Draw edges
-    \path [line] (init) -- (rotate);
-    \path [line] (rotate) -- (jets);
-    \path [line] (jets) -- node [near start] {yes} (discard);
-    \path [line] (jets) -- node [near start] {no} (tracks);
-    \path [line] (tracks) -- node [near start] {For each track} (sum);
-    \path [line] (sum) -- (jt);
-    \path [line] (jt) |- (tracks);
-    
-\end{tikzpicture}
+\input{figures/tikz/bgflow}
+
 \caption{Flowchart representation of the perpendicular cone background procedure}
 \label{fig:bgflow}
 \end{figure}
