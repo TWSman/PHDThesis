@@ -1,0 +1,98 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=blue, line width=0.75pt, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=blue, line width=0.75pt},
+hadron/.style={draw=red,line width=2pt,postaction={decorate},
+    decoration={markings,mark=at position .9 with {\arrow[draw=red]{>}}}},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=magenta, line width=0.75pt,
+    decoration={coil,amplitude=4pt, segment length=5pt}}
+ }
+\begin{tikzpicture}
+%\draw[step = 4cm, gray, thin] (-3cm,-3cm) grid(8,4cm);
+
+\node[ellipse,draw=red,fill=red!20, minimum height=1cm, blur shadow = {shadow blur steps=5},minimum width=2cm] (hard) {};
+\coordinate[above=1cm of hard, label=Hard Scattering] (label);
+\coordinate[left=1cm of hard] (p1);
+\coordinate[above left=1cm and 1cm of hard] (p2);
+\coordinate[right=1cm of hard] (p3);
+\coordinate[below right=1cm and 1cm of hard] (p4);
+
+\coordinate[above right=1cm and 1.25cm of p3] (vertex1_1);
+\coordinate[below right=1cm and 1.25cm of p3]  (vertex1_2);
+
+\coordinate[above right=0.75cm and 1cm of vertex1_1] (vertex2_1);
+\coordinate[below right=0.3cm and 1cm of vertex1_1] (vertex2_2);
+\coordinate[above right=0.3cm and 1cm of vertex1_2] (vertex2_3);
+\coordinate[below right=0.75cm and 1cm of vertex1_2] (vertex2_4);
+
+
+\coordinate[above right=0.75cm and 1cm of vertex2_1] (vertex3_1);
+\coordinate[below right=0.3cm and 1cm of vertex2_1] (vertex3_2);
+\coordinate[above right=0.3cm and 1cm of vertex2_2] (vertex3_3);
+\coordinate[below right=0.3cm and 1cm of vertex2_2] (vertex3_4);
+\coordinate[above right=0.3cm and 1cm of vertex2_3] (vertex3_5);
+\coordinate[below right=0.3cm and 1cm of vertex2_3] (vertex3_6);
+\coordinate[above right=0.3cm and 1cm of vertex2_4] (vertex3_7);
+\coordinate[below right=0.75cm and 1cm of vertex2_4] (vertex3_8);
+
+
+\draw[particlearrow] (p1) -- (hard);
+\draw[particlearrow] (p2) -- (hard);
+\draw[particlearrow] (hard) -- (p3);
+\draw[particlearrow] (hard) -- (p4);
+
+\draw[particle] (p3) -- (vertex1_2);
+\draw[gluon] (p3) -- (vertex1_1);
+
+\draw[particle] (vertex1_1) -- (vertex2_1);
+\draw[gluon] (vertex1_1) -- (vertex2_2);
+\draw[gluon] (vertex1_2) -- (vertex2_3);
+\draw[gluon] (vertex1_2) -- (vertex2_4);
+
+\draw[gluon] (vertex2_1) -- (vertex3_1);
+\draw[particle] (vertex2_1) -- (vertex3_2);
+\draw[particle] (vertex2_2) -- (vertex3_3);
+\draw[particle] (vertex2_2) -- (vertex3_4);
+\draw[gluon] (vertex2_3) -- (vertex3_5);
+\draw[gluon] (vertex2_3) -- (vertex3_6);
+\draw[particle] (vertex2_4) -- (vertex3_7);
+\draw[particle] (vertex2_4) -- (vertex3_8);
+
+\node[rectangle,draw=black, fill=red!20, below right=-0.5cm and 0cm of vertex3_1,minimum width=1cm, minimum height=6cm,label={below:Hadronisation},blur shadow = {shadow blur steps=5}] (hadr) {};
+
+\coordinate[right=0cm of hadr] (hadron1);
+\coordinate[right=2cm of hadron1] (detector1);
+
+\coordinate[above=1.5cm of hadron1] (hadron2);
+\coordinate[above=2.5cm of hadron1] (hadron3);
+\coordinate[below=1cm of hadron1] (hadron4);
+\coordinate[below=2.5cm of hadron1] (hadron5);
+\coordinate[right=2cm of hadron2] (detector2);
+\coordinate[right=2cm of hadron3] (detector3);
+\coordinate[right=2cm of hadron4] (detector4);
+\coordinate[right=2cm of hadron5] (detector5);
+
+
+\draw[hadron] (hadron1) -- node[label=above:Hadrons] {}(detector1);
+\draw[hadron] (hadron2) -- (detector2);
+\draw[hadron] (hadron3) -- (detector3);
+\draw[hadron] (hadron4) -- (detector4);
+\draw[hadron] (hadron5) --  (detector5);
+
+
+\end{tikzpicture}
+\end{document}
