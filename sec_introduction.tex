@@ -298,7 +298,7 @@ d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 \label{sec:hydro}
 The relativistic version of hydrodynamics has been used to model the deconfined phase of a heavy-ion collision with success. Heavy-ion collisions produce many hadrons going into all directions. It is expected that tools from statistical physics would be applicable to this complexity~\cite{Ollitrault:2007du}. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest~\cite{Romatschke:2009im}.
 
-The use of relativistic hydrodynamics in high-energy physics dates back to Landau~\cite{Landau:1953gs} and the 1950's, before QCD was discovered. Back then it was used in proton-proton collisions. Development of hydrodynamics for the use of heavy-ion physics has been active since the 1980's, including Bjorken's study of boost-invariant longitudinal expansion and infinite transverse flow~\cite{PhysRevD.27.140}. Major steps were taken later with the inclusion of finite size and and dynamically generated transverse size~\cite{Baym1983541, PhysRevD.34.794}, a part of which was done at the University of Jyväskylä. The role of hydrodynamics in heavy-ion physics was strengthened when QGP was observed to behave like a liquid by RHIC~\cite{Adcox:2004mh}. 
+The use of relativistic hydrodynamics in high-energy physics dates back to Landau~\cite{Landau:1953gs} and the 1950's, before QCD was discovered. Back then it was used in proton-proton collisions. Development of hydrodynamics for the use of heavy-ion physics has been active since the 1980's, including Bjorken's study of boost-invariant longitudinal expansion and infinite transverse flow~\cite{PhysRevD.27.140}. Major steps were taken later with the inclusion of finite size and and dynamically generated transverse size~\cite{Baym:1984sr, PhysRevD.34.794}, a part of which was done at the University of Jyväskylä. The role of hydrodynamics in heavy-ion physics was strengthened when QGP was observed to behave like a liquid by RHIC~\cite{Adcox:2004mh}. 
 
 The evolution of a heavy-ion event can be divided into four stages. A schematic representation of the evolution of the collisions is shown in Fig.~\ref{fig:HISpaceTime}. Stage 1 follows immediately the collision. This is known as the pre-equilibrium stage. Hydrodynamic description is not applicable to this regime because thermal equilibrium is not yet reached. The length of this stage is not known but it is assumed to last about $1\ \mathrm{fm}/c$ in proper time $\tau$. 
 
@@ -383,8 +383,8 @@ Some parts of the Fourier composition approach were used for Au-Au collisions at
 
 \FloatBarrier
 
-\subsubsection{High $\pt{}$ Phenomena}
-The measurement of anisotropic flow coefficients can be extended to very high transverse momenta $\pt{}$. High $\pt{}$ measurements of $v_2$ from CMS~\cite{Chatrchyan:2012xq} are shown in Fig. \ref{fig:highpt}. For high transverse momenta $v_2$ values are positive and they decrease slowly as a function of $\pt{}$. At high transverse momentum the $v_2$ values don't, however, represent flow. 
+%\subsubsection{High $\pt{}$ Phenomena}
+%The measurement of anisotropic flow coefficients can be extended to very high transverse momenta $\pt{}$. High $\pt{}$ measurements of $v_2$ from CMS~\cite{Chatrchyan:2012xq} are shown in Fig. \ref{fig:highpt}. For high transverse momenta $v_2$ values are positive and they decrease slowly as a function of $\pt{}$. At high transverse momentum the $v_2$ values don't, however, represent flow. 
 
 \FloatBarrier
 %\subsubsection{Fluctuations and Event-by-Event Flow}
@@ -435,19 +435,19 @@ The measurement of anisotropic flow coefficients can be extended to very high tr
 \subsubsection{pQCD factorization}
 
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.5\textwidth]{pics/QCDLO}
-\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
-\label{fig:qcdlo}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.5\textwidth]{pics/QCDLO}
+%\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
+%\label{fig:qcdlo2}
+%\end{figure}
 
 
 \begin{figure}[htb]
 \centering
 \input{figures/tikz/qcdlo}
-\label{fig:qcdlo}
 \caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
+\label{fig:qcdlo}
 \end{figure}
 
 
@@ -458,17 +458,17 @@ The measurement of anisotropic flow coefficients can be extended to very high tr
 \caption[Hard scattering]{Schematic view of hard scattering process of $\mathrm{p+p\rightarrow 2\,jets}$}
 \label{fig:scattering}
 \end{figure}
-The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{sig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, reffered to as jets
+The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{fig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, refered to as jets
 
 Jet fragmentation can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elemantary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
 
 \begin{equation}
-\frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c}
+\frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c},
 \end{equation}
 
-\noindent where, 
+\noindent where 
 
-$$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}$$
+$$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.$$
 
 %
 %\begin{figure}
@@ -480,9 +480,9 @@ $$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}$$
 
 \begin{figure}
 \centering
-\input{figures/tikz/showering.tex}
+\input{figures/tikz/showering2.tex}
 \caption[Jet showering]{An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
-\label{fig:highpt}
+\label{fig:showering}
 \end{figure}
 
 
@@ -490,7 +490,7 @@ $$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}$$
 \subsubsection*{Parton Distribution Function}
 Parton Distribution Functions (PDFs) are essential to calculate the scattering cross section. They are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments. PDFs $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. 
 
-PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales at LHC using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{DGLAP}  ~\ref{eq:dglap}.
+As the PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales at LHC using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
 
 \begin{equation}
 \mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
@@ -498,8 +498,9 @@ PDFs cannot be calculated from first principles. In practice the PDFs are measur
 \end{equation}
 
 
-where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. 
+\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. 
 
+\subsubsection*{Fragmentation functions}
 The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of particles radiated from the outgoing parton. Fragmentation function are given with respect to the momentum fraction $z$ which is defined as the longitudinal momentum fraction of jet momentum $p_{\mathrm{jet}}$ carried away by the jet fragment $p_{\mathrm{part}}$
 
 
@@ -522,18 +523,18 @@ Because of momentum conservation the sum of all jet fragments must be equal to t
 A natural consequence is that the average momentum fraction is the inverse of the average multiplicity
 
 \begin{equation}
-\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}
+\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}.
 \end{equation}
 
 
 \subsubsection{Jet hadronisation}
-When the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$, the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. One simple scenario that is used in several theory calculations is the so-called local parton-hadron duality~\cite{Azimov1985}. In the local parton-hadron duality hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons are transformed into hadrons, assuming that the flow of momentum and quantum numbers for the hadrons can be directly obtained from those of partons introducing only small normalising constants. 
+When the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$, the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. One simple scenario that is used in several theory calculations is the so-called local parton-hadron duality~\cite{Azimov1985}. In the local parton-hadron duality hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons are transformed into hadrons, assuming that the flow of momentum and quantum numbers for the hadrons can be directly obtained from those of partons introducing only small normalising constants. %Hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
 
-Hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
+
 
 \subsubsection*{Lund string model}
 
-One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair.The tube is assumed to have a uniform fixed transverse size of about 1 fm along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx 1 \mathrm{\nicefrac{GeV}{fm}} \approx 0.2 \mathrm{GeV^2}$ can be obtained from hadron mass spectroscopy.
+One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair.The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\nicefrac{GeV}{fm}} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy.
 
 The evolution of string fragmentation is illustrated schematically on the right side of Fig.~\ref{fig:fluxtube}. This figure is drawn in a light cone presentation, so the initial quark and antiquark are going to separate directions at the speed of light, which assumes them as massless. The string between them, illustrated in the figure by the red line, stretches until its potential energy becomes high enough that it can break, forming a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the new pair $\mathrm{q'\bar q'}$, now two new pairs $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$ have formed. As these particles are also moving away from each other, the strings between them can stretch and break, creating yet more pairs. The process continues until the invariant mass of the system connected by the string becomes small enough and a final state meson is formed. 
 
@@ -544,7 +545,7 @@ To mathematically model the string one can use a massless relativistic string wi
 P_\mathrm{tunnelling} \propto \exp \left(\frac{-\pi m_\perp^2}{\kappa} \right) = \exp \left(\frac{-\pi m^2}{\kappa} \right) \left(\frac{-\pi p_\perp^2}{\kappa} \right),
 \end{equation}
 
-where the transverse mass $m_\perp$ is defined as $m_\perp^2 = m^2 + p_\perp ^2$. The transverse momentum is now defined to be transverse to the string axis. This formula gives flavour-independent Gaussian $p_\perp$-distribution for the created $\mathrm{q \bar q}$ pairs.
+\noindent where the transverse mass $m_\perp$ is defined as $m_\perp^2 = m^2 + p_\perp ^2$. The transverse momentum is now defined to be transverse to the string axis. This formula gives flavour-independent Gaussian $p_\perp$-distribution for the created $\mathrm{q \bar q}$ pairs.
 
 As explained above the string fragmentation would only produce mesons in the final state, but we know that also baryons are created in the process. In the string fragmentation model baryon production is included by adding a probability that a diquark-antidiquark pair is created instead of a quark-antiquark pair when a string breaks.
 
@@ -555,7 +556,7 @@ f\left(z\right) \propto \frac{1}{z} \left(1-z\right)^a \exp \left(-\frac{b m_\pe
 \label{eq:symmetric}
 \end{equation}
 
-to break the string into a hadron and a remainder system. In the function $z$ is the fraction of light-cone momentum $p^+$ given to the hadron in the string breaking, $m_\perp$ is the transverse mass of the hadron and $a$ and $b$ are tuneable parameters of the model. For heavy quarks this has to be modified as 
+\noindent to break the string into a hadron and a remainder system. Here $z$ is the fraction of light-cone momentum $p^+$ given to the hadron in the string breaking, $m_\perp$ is the transverse mass of the hadron and $a$ and $b$ are tunable parameters of the model. For heavy quarks this has to be modified as 
 
 \begin{equation}
 f\left(z\right) \propto \frac{1}{z^{1+bm_Q^2}} \left(1-z\right)^a \exp \left(-\frac{b m_\perp ^2}{z} \right)
@@ -592,14 +593,14 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 \label{eq:clustermass}
 \end{equation}
 
-where $m_{1,2}$ are the masses of the constituents partons of the cluster and $M_\mathrm{max}$ and $p$ are the main parameters of the model. These have to be chosen separately for clusters containing light, charmed and bottom quarks. When a cluster is split, a pair of light quarks is generated from the vacuum and two new clusters are made, both containing one quark from the original cluster and one from the newly generated pair. The splitting is continued until no clusters with masses $M_C$ fulfilling the equation ~\ref{eq:clustermass} remains.
+\noindent where $m_{1,2}$ are the masses of the constituents partons of the cluster and $M_\mathrm{max}$ and $p$ are the main parameters of the model. These have to be chosen separately for clusters containing light, charmed and bottom quarks. When a cluster is split, a pair of light quarks is generated from the vacuum and two new clusters are made, both containing one quark from the original cluster and one from the newly generated pair. The splitting is continued until no clusters with masses $M_C$ fulfilling the equation ~\ref{eq:clustermass} remains.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{pics/stringone.pdf}
+\includegraphics[width=0.75\textwidth]{pics/planar.jpg}
 \caption[]{ Colour structure of a parton shower to leading order in Nc.
 \cite{eventGenerators} }
-\label{fig:fluxtube}
+\label{fig:colourstructure}
 \end{figure}
 
 When the clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{} 
@@ -876,7 +877,7 @@ The lack of jet modification seems surprising considering the multitude of flow 
 
 Calculations indicate that there should be modification in the most central pPb collisions, but selecting these in the analysis is complicated. In PbPb collisions most of the particle production comes from the medium and thus the total multiplicity is a good indicator of centrality. In pPb collisions, however the total multiplicity is smaller and is more strongly influenced by jet phenomena. Events with jets have naturally larger multiplicities and are more likely to be classified as central events.
 
-So far the only observable indicative of jet quenching in pPb collisions is the high $\pt{}$ $v_2$. In heavy-ion collisions this is not explained by hydrodynamics. Instead it is assumed to come from jet quenching with different path lengths through the medium in different directions. In Fig.\ref{fig:smallsystems3} ATLAS and CMS measurements of $v_2$ in pPb and PbPb collisions are shown. The pPb results seem to follow a very similar pattern. But 
+So far the only observable indicative of jet quenching in pPb collisions is the high $\pt{}$ $v_2$. In heavy-ion collisions this is not explained by hydrodynamics. Instead it is assumed to come from jet quenching with different path lengths through the medium in different directions. In Fig.\ref{fig:smallsystems3} ATLAS and CMS measurements of $v_2$ in pPb and PbPb collisions are shown. The pPb results seem to follow a very similar pattern. 
 
 
 \begin{figure}[b!]
@@ -890,7 +891,7 @@ So far the only observable indicative of jet quenching in pPb collisions is the 
 \begin{table}[htb]
 \centering
 \caption{Summary of observations in small system}
-\label{tab:systematics}
+\label{tab:Smallsystem}
 \begin{tabular}{ l | c | c | r }
   Observable & PbPb & pPb & pp \\
     \hline			
@@ -909,9 +910,10 @@ So far the only observable indicative of jet quenching in pPb collisions is the 
   \end{table}
 
 \subsubsection{Centrality determination in small systems}
+\label{sec:smallsystemcentrality}
 In lead-lead collisions the total multiplicity of the event is a good indicator of the centrality of the collision. In proton-lead collisions the connection of multiplicity and centrality is less clear. In \pPb collisions the impact parameter is only loosely correlated to $N_\mathrm{part}$ or $N_\mathrm{coll}$. Hence, although one uses traditionally the term centrality to refer to these measurements, the relevant parameters are $N_\mathrm{part}$ and $N_\mathrm{coll}$~\cite{Adam:2014qja}.
 
-The Glauber model~\cite{glauber} is generally used to calculate geometrical quantities of nuclear collisions (A–A or p–A). In this model, the impact parameter $b$ controls the average number of participating nucleons $N_\mathrm{part}$ and the corresponding number of collisions $N_\mathrm{coll}$. It is expected that variations of the amount of matter overlapping in the collision region will change the number of produced particles, and parameters such as $N_\mathrm{part}$ and $N_\mathrm{coll}$ have traditionally been used to describe those
+The Glauber model~\cite{Miller:2007ri} is generally used to calculate geometrical quantities of nuclear collisions (A–A or p–A). In this model, the impact parameter $b$ controls the average number of participating nucleons $N_\mathrm{part}$ and the corresponding number of collisions $N_\mathrm{coll}$. It is expected that variations of the amount of matter overlapping in the collision region will change the number of produced particles, and parameters such as $N_\mathrm{part}$ and $N_\mathrm{coll}$ have traditionally been used to describe those
 changes quantitatively, and to relate them to \pp collisions.
 
 
