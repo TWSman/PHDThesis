@@ -1,0 +1,67 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc}
+\begin{document}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+
+\begin{tikzpicture}
+ \coordinate[] (F);
+ \coordinate[right=6cm of F] (E1);
+ \coordinate[right=2.5cm of E1] (E2);
+ \coordinate[right=3.5cm of E2] (E3);
+\node[right=2cm of E3] (J) {\textbf{ \large \color{primary} Jet}};
+
+\draw[->, blue, thick] (F) -- (J); 
+ \draw[thin, dashed, color=gray, name path=ellipse1] (E1) ellipse (1cm and 2cm);
+ \draw[thin, dashed, color=gray, name path=ellipse2] (E2) ellipse (1cm and 2cm);
+ \draw[thin, dashed, color=gray, name path=ellipse3] (E3) ellipse (1cm and 2cm);
+
+\draw [draw=none, name path=r1] (E1) -- (7,2);
+\draw [draw=none, name path=r2] (E2) -- (10,1);
+\draw [draw=none, name path=r3] (E3) -- (11.5,-1.75);
+\draw [color=black,name intersections={of=ellipse1 and r1}] (F) -- (intersection-1) coordinate (P1);
+\draw [color=black,name intersections={of=ellipse2 and r2}] (F) -- (intersection-1) coordinate (P2);
+\draw [color=black,name intersections={of=ellipse3 and r3}] (F) -- (intersection-1) coordinate[label={below:\color{secondary} \large $\mathbf{\bar{\j}_T}$}] (P3);
+
+\draw[->, color=secondary,thick] (E2) -- (P2);
+\draw[->, color=secondary,thick] (E3) -- (P3);
+\draw[->, color=secondary,thick] (E1) -- (P1);
+
+
+%    \pgfmathsetmacro{\e}{0.2768}
+%    \pgfmathsetmacro{\etilde}{0.68}
+%    \pgfmathsetmacro{\rone}{1}
+%    \pgfmathsetmacro{\rtwo}{1.524}
+%    \pgfmathsetmacro{\deltanu}{107}
+%    \pgfmathsetmacro{\a}{1.36}
+%    \pgfmathsetmacro{\am}{1.14}
+%    \pgfmathsetmacro{\b}{\a * sqrt(1 - \e^2)}
+%    \pgfmathsetmacro{\btilde}{\a * sqrt(1 - (\etilde)^2)}
+%    \pgfmathsetmacro{\c}{sqrt(\a^2 - \b^2)}
+%    \pgfmathsetmacro{\ctilde}{sqrt(\a^2 - (\btilde)^2)}
+%    \node[scale = .75, fill, big dot = {below: \(F\)}] (F) at (0, 0) {};
+%    \node[scale = .75, fill = none, big dot = {below: \(F^*\)}] (FS)
+%    at (-2 * \c cm, 0) {};
+%    \draw [name path=ellipse] (-\c,0) ellipse (\a cm and \b cm);
+%    \draw [red, thick, name path=r2] (0, 0) circle (1.523679cm);
+%    \draw [blue, thick, name path=r1] (0, 0) circle (1cm);
+%
+%    \draw [name intersections={of=ellipse and r1}] (F) -- (intersection-1) coordinate (P1) node [fill,big dot=right:P1, minimum size=3pt] {};
+%    \draw [name intersections={of=ellipse and r2}] (F) -- (intersection-1) coordinate (P2) node [fill,big dot=above left:P2, minimum size=3pt] {};
+%
+%    \draw let
+%            \p0=(F),
+%            \p1=(P1),
+%            \p2=(P2),
+%            \n1={atan2(\x1-\x0,\y1-\y0)},
+%            \n2={atan2(\x2-\x0,\y2-\y0)},
+%            \n3={1em}
+%        in (F) +(\n1:\n3) arc [radius=\n3, start angle=\n1, end angle=\n2] node [pos=0.5,above] {\pgfmathparse{\n2-\n1}%
+%        $\pgfmathprintnumber{\pgfmathresult}^\circ$
+%        };
+  \end{tikzpicture}
+  \end{document}
