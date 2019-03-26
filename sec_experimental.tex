@@ -1,4 +1,5 @@
 % !TEX root = thesis.tex
+
 \section{Experimental Details}
 \label{sec:exp}
 \subsection{CERN}
@@ -9,6 +10,8 @@ The laboratory includes a series of accelerators, which are used to accelerate t
 The second largest accelerator is the super proton synchrotron (SPS). It is final step before the particle beam is injected into LHC. Commissioned in 1976, it was the largest accelerator at CERN until the the Large Electron-Positron Collider (LEP) was finished in 1989. Originally it was used as a proton-antiproton collider and as such provided the data for the UA1 and UA2 experiments, which resulted in the discovery of the W and Z bosons. At the moment there are several fixed target experiments utilising the beam from SPS. These study the structure (COMPASS) and properties (NA61/SHINE) of hadrons, rare decays of kaons (NA62) and radiation processes in strong electromagnetic fields (NA63). Additionally the AWAKE and UA9 experiments are used for accelerator research and development. 
 
 -PS
+
+
 
 \begin{figure}
 \centering
@@ -75,9 +78,9 @@ Calorimeters are designed to stop any particles hitting them and use the absorpt
 
 The main design guideline for the tracking detectors in ALICE was the requirement to have good track separation and high granularity in the high multiplicity environment of heavy ion collisions. Before LHC was built the wildest estimates put the particle density at 8000 charged particles per unit of rapidity~\cite{}. In reality the particle density turned out to be significantly smaller, about 1600 charged particles per rapidity unit.~\cite{}
 
-\sloppy
+\setlength{\emergencystretch}{3em}
+
 The main tracking detector in ALICE is the Time Projection Chamber (TPC)~\cite{Dellacasa:2000bm}, discussed in more detail in section ~\ref{sec:TPC}
-\fussy
 
 Between TPC and the beam pipe there is an array of six layers of silicon detectors, called the inner tracking system (ITS)~\cite{Dellacasa:1999kf}. The main tasks of the ITS are to locate the primary vertex with a resolution better than \unit[100]{$\mu m$}, to reconstruct the secondary vertices from decaying particles, to track and identify particles with momenta below \unit[200]{$\mev$} and to compliment the momentum and angle measurements of TPC. During long shutdown 2 in 2019-2020 the entire ITS will be replaced~\cite{ITSupgrade}. As of 2018 the two innermost layers are made of the silicon pixel detector (SPD). As it's the closest detector to the interaction point it requires are very high spatial resolution. Thus the choice of pixel technology is natural. In heavy ion collisions the particle density is around 50 particles per $cm^2$. 
 
@@ -109,6 +112,8 @@ During long shutdown 2 in 2019-2020 ALICE will go through significant modificati
 ALICE will add a new Forward Interaction trigger (FIT) to replace the V0 and T0 detectors. 
 
 Additionally the current inner tracking system (ITS) will be completely replaced. The current layered structure with three different technologies will be replaced by an all pixel detector with significantly reduced pixel size. Additionally the first layer will be brought closer to the beam pipe. The new ITS will have better tracking efficiency and  better impact parameter resolution. 
+
+\setlength{\emergencystretch}{3em}
 
 The muon detection will be complimented by the Muon Forward Tracker (MFT)~\cite{CERN-LHCC-2015-001}. Based on the same technology as the new ITS, MFT will be placed before the hadron absorber that sits in front of the existing muon spectrometer. MFT should significantly increase the signal/background ratio in heavy quark measurements.
 
@@ -155,6 +160,8 @@ $\nicefrac{\mathrm{d}E}{\mathrm{d}x}$ measurements are provided by the last four
 \subsubsection{Electromagnetic Calorimeter}
 \label{sec:emcal}
 Calorimeters are designed to measure the energy of particles. Electromagnetic calorimeters specialise in detecting particles that interact primarily through the electromagnetic interaction, namely photons and electrons. They are required in many neutral meson and direct photon analyses. In addition the energy information enhance jet measurements.
+\setlength{\emergencystretch}{3em}
+
 
 ALICE has two electromagnetic calorimeters, the photon spectrometer (PHOS)~\cite{PHOS} and the electromagnetic calorimeter (EMCal)~\cite{Cortese:2008zza}. PHOS is a homogeneous calorimeter that consists of scintillating $\mathrm{PbWO_4}$ crystals, which generate a bremsstrahlung  shower and produce scintillation light. The energy of the particle determines the amount of light produced. To improve the charged particle rejection, PHOS includes a charged particle veto detector (CPV)~\cite{cpv}. PHOS is built to have a very fine granularity, making it well suited for measuring direct photons and neutral mesons.
 
