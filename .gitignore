@@ -32,6 +32,9 @@ figures/tikz/bgdef.pdf
 figures/tikz/showering.pdf
 figures/tikz/scattering.pdf
 figures/tikz/showering2.pdf
+figures/tikz/central.pdf
+figures/tikz/peripheral.pdf
+figures/tikz/alice.pdf
 **/*.log
 **/*.gz
 **/*.aux

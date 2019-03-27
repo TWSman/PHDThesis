@@ -1,0 +1,29 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc, fadings}
+\begin{document}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+
+\begin{tikzpicture}
+ \coordinate[] (C);
+ \coordinate[left=1cm of C] (C1);
+\coordinate[right=1cm of C] (C2);
+\draw[dashed, thick, gray] (C1) circle (2cm);
+\draw[dashed, thick, gray] (C2) circle (2cm);
+
+\begin{scope}
+\clip (C1) circle (2cm);
+\fill[secondary] (C2) circle (2cm);
+\end{scope}
+
+\foreach \x in {30,41,50,57,64,70,76,82,88,94,100,107,114,122,132,144,161,188,217,229,237,244,250,256,262,267,274,280,286,294,302,311,324,341,368}{
+	\draw[->, primary, very thick] ({4.5* sin(\x)},{4.5*cos(\x)}) -- ({5.05* sin(\x)},{5.05*cos(\x)});
+	\draw[fill = primary, draw=none] ({3.5* sin(\x)},{3.5*cos(\x)}) -- ({5* sin(\x+0.5)},{5*cos(\x+0.5)}) -- ({5* sin(\x-0.5)},{5*cos(\x-0.5)});
+	%	\draw[->, primary, very thick] ({3.5* sin(\x)},{3.5*cos(\x)}) -- ({5* sin(\x)},{5*cos(\x)});
+}
+\end{tikzpicture}
+\end{document}
