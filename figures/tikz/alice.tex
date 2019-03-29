@@ -1,0 +1,23 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc, fadings}
+\begin{document}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+
+\begin{tikzpicture}
+% draw image
+\coordinate[] (O);
+\coordinate[above =1cm of O,label={right:$y$}] (y);
+\coordinate[below left=1cm and 2cm of O, label={below:$x$}] (x);
+\coordinate[above left=0.5cm and 4cm of O, label={left:$z$}] (z);
+
+\draw[blue, thick, ->] (O) --  (y);
+\draw[blue, thick, ->] (O) -- (x);
+\draw[blue, thick, ->] (O) -- (z);
+
+\end{tikzpicture}
+\end{document}
