@@ -499,9 +499,9 @@ Some parts of the Fourier composition approach were used for Au-Au collisions at
 \caption[Hard scattering]{Schematic view of hard scattering process of $\mathrm{p+p\rightarrow 2\,jets}$}
 \label{fig:scattering}
 \end{figure}
-The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{fig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, refered to as jets
+The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{fig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, referred to as jets.
 
-Jet fragmentation can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elemantary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
+Jet production can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
 
 \begin{equation}
 \frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c},
@@ -531,7 +531,7 @@ $$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.$$
 \subsubsection*{Parton Distribution Function}
 Parton Distribution Functions (PDFs) are essential to calculate the scattering cross section. They are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments. PDFs $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. 
 
-As the PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales at LHC using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
+As the PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
 
 \begin{equation}
 \mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
@@ -575,7 +575,7 @@ When the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$, the pe
 
 \subsubsection*{Lund string model}
 
-One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair.The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\nicefrac{GeV}{fm}} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy.
+One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair. The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{}.
 
 The evolution of string fragmentation is illustrated schematically on the right side of Fig.~\ref{fig:fluxtube}. This figure is drawn in a light cone presentation, so the initial quark and antiquark are going to separate directions at the speed of light, which assumes them as massless. The string between them, illustrated in the figure by the red line, stretches until its potential energy becomes high enough that it can break, forming a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the new pair $\mathrm{q'\bar q'}$, now two new pairs $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$ have formed. As these particles are also moving away from each other, the strings between them can stretch and break, creating yet more pairs. The process continues until the invariant mass of the system connected by the string becomes small enough and a final state meson is formed. 
 
@@ -615,13 +615,13 @@ After all the hadrons are produced, the short-lived ones can still decay before 
 \includegraphics[width=0.75\textwidth]{pics/stringone.pdf}
 \caption[]{ (a) A flux tube spanned between a quark and an antiquark. (b) The motion
 and breakup of a string system, with the two transverse degrees of freedom suppressed
-(diagonal lines are (anti)quarks, horizontal ones snapshots of the string field).
-\cite{eventGenerators} }
+(diagonal lines are (anti)quarks, horizontal ones snapshots of the string field) \cite{eventGenerators}.
+ }
 \label{fig:fluxtube}
 \end{figure}
 
 \subsubsection*{Cluster model}
-Instead of a string model HERWIG~\cite{} uses a cluster model~\cite{herwigManual} for hadronisation. The advantage of cluster models is that they require a smaller number of parameters than string models. The model is based on the preconfinement property of parton showers, i.e. the colour structure of the shower at any evolution scale $Q_0$ is such that colour singlet combinations of partons can be formed with an asymptotically 
+Instead of a string model HERWIG~\cite{herwigManual} uses a cluster model for hadronisation. The advantage of cluster models is that they require a smaller number of parameters than string models. The model is based on the preconfinement property of parton showers, i.e. the colour structure of the shower at any evolution scale $Q_0$ is such that colour singlet combinations of partons can be formed with an asymptotically 
 universal invariant mass distribution. The invariant mass does not depend on the initial hard process scale $Q$, but only on $Q_0$ and the QCD scale $\Lambda _ \mathrm{QCD}$, when $Q \gg Q_0$.
 
 The cluster model starts from transforming all gluons non-perturbatively into $\mathrm{q \bar q}$ pairs, which requires that the gluons get a mass, which must be at least twice the lightest quark mass. After the gluons are transformed into quarks, the adjacent colour lines can be clustered together to colour singlet states with mesonic quantum numbers. The momentum of these clusters is defined to be the sum of the momenta of the clustering partons. According to preconfinement, the mass distribution of these clusters is independent of the details of the hard scattering. Additionally the clusters can be regarded as highly excited hadron resonances and decayed into the final state hadrons.
@@ -651,7 +651,7 @@ When the clusters are light enough, they decay into final state hadrons. If the 
 First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
 
 
-Jet quenching in heavy-ion collisions is usually quantized with the nuclear modification factor $R_{AA}$, which is  is defined as
+Jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
 %the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
 
 \begin{equation}
@@ -664,12 +664,12 @@ If the medium has no effect on high $\pt{}$ particles the nuclear modification f
 \begin{figure}[hbt]
 	\centering
                 \includegraphics[width=0.65\textwidth]{pics/Raaplot}
-        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for several of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
+        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
         \label{fig:Raa}
 \end{figure}
 
 
-The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
+The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared, where plane refers to the plane defined by the impact parameter and the beam direction. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
 
 \begin{eqnarray}
 R_{AA}\left(\Delta\phi, \pt{}\right) &=& \frac{(1/N_{AA}^{evt})\dd {^2N}^{AA}/d\Delta\phi \dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}} \approx \frac{\dd {N^{AA}}/\dd {\pt{}}\left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right)}{\left< N_{coll}\right> \dd {N^{pp}}/\dd {\pt{}}} \nonumber \\ &&\nonumber\\
@@ -695,7 +695,7 @@ The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in
 
 At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process.
 
-Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium.
+Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
 
 
 \begin{figure}[ht]
