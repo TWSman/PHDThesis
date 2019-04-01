@@ -23,24 +23,33 @@ EMCal is also used to provide the jet trigger used in triggered datasets. EMCal 
 
 Triggers, V0 and EMCal are discussed in more detail in sections~\ref{sec:forward},~\ref{sec:trigger} and~\ref{sec:emcal}. 
 
-\subsection{Track selection}
+\subsection{Track reconstruction}
 %\setlength{\emergencystretch}{0em}
 
 The analysis uses charged tracks that are reconstructed with the Inner Tracking System (ITS)~\cite{aliceITS} and the Time Projection Chamber (TPC)~\cite{aliceTPC}. These are discussed in sections~\ref{sec:tracking} and~\ref{sec:TPC}. A detailed overview of track reconstruction in ALICE can be found from~\cite{alicePerformance}. 
 
-The main reconstruction of tracks starts in TPC. There are 159 tangential pad rows in the TPC readout chambers. The track reconstruction starts from the outermost layer and the clusters are paired with clusters in the next layer inwards, taking into account a proximity cut. When this track finding procedure hits the innermost pad row in TPC, this information is used as an initial seed for the track finding in ITS. Similar procedure of pairing adjacent layers with a proximity cut is repeated in ITS.
+The track reconstruction procedure is shown in Fig.~\ref{fig:tracking}. The figure shows only one track, but in reality the reconstruction has to deal with many tracks. The main reconstruction of tracks starts in TPC. There are 159 tangential pad rows in the TPC readout chambers. The track reconstruction starts from the outermost layer and the hits are paired with hits in the next layer inwards, taking into account a proximity cut. When this track finding procedure hits the innermost pad row in TPC, this information is used as an initial seed for the track finding in ITS. Similar procedure of pairing adjacent layers with a proximity cut is repeated in ITS.
 
-After the reconstruction of tracks in ITS is completed, all the tracks are extrapolated to their point of closest approach to the preliminary interaction vertex. Then the second track fitting step begins, this time starting from the interaction point and proceeding outwards. A Kalman filter~\cite{Fruhwirth:1987fm} technique is used to do the new fit using the clusters found in the previous stage. This time the tracks are matched also to the other detectors in the central barrel beyond TPC. When this step is complete, a final refit from the outermost TPC pad rows towards the interaction point is performed. The final track parameters come from this refit. 
+After the reconstruction of tracks in ITS is completed, all the tracks are extrapolated to their point of closest approach to the preliminary interaction vertex. Then the second track fitting step begins, this time starting from the interaction point and proceeding outwards. A Kalman filter~\cite{Fruhwirth:1987fm} technique is used to do the new fit using the hits found in the previous stage. This time the tracks are matched also to the other detectors in the central barrel beyond TPC. When this step is complete, a final refit from the outermost TPC pad rows towards the interaction point is performed. The final track parameters come from this refit. 
 
 With the final track parameters the primary vertex can be determined with better accuracy than with only SPD information. The tracks are extrapolated to the nominal beam line and a weighted average of the points of closest approach determines the accurate primary vertex position.
 
 The final step of the track reconstruction is the determination of the secondary vertices. For this, all the tracks whose distance of closest approach (DCA) to the primary vertex is larger than a defined minimum value (?? \unit{mm} in \pPb) are selected. For these tracks, points of closest approaches are determined for pairs of tracks. If the tracks are sufficiently close to each other and show characteristics of short lived particle decays, these points are identified as secondary vertices. 
 
+\begin{figure}[htb]
+%\input{figures/tikz/tracking}
+\includegraphics[width=0.9\textwidth]{pics/Schema-PcpTrackingALICE.png}
+\caption{Principles of tracking in the ALICE experiment, showing the three successive paths allowing to build a track and refine its parameters. Numbers ranging from 1 to 10 mention the bits that are activated in case of success during the propagation of the Kalman filter at the considered stage. Figure from ~\cite{Maire:1984041}}
+\label{fig:tracking}
+\end{figure}
+
 Combining the information from the ITS and the TPC provides a resolution ranging from $1$ to $10\,\%$ for charged particles with momenta from $0.15$ to $\unit[100]{\GeVc}$. For tracks without the ITS information, the momentum resolution is comparable to that of ITS+TPC tracks below transverse momentum $\pt{} = \unit[10]{\GeVc}$, but for higher momenta the resolution reaches $20\,\%$ at $\pt{} = \unit[50]{\GeVc}$~\cite{alicePerformance,aliceBackgroundFluctuation}. 
 
+
+\subsubsection*{Track selection}
 In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite{hybridExplanation} which ensures a uniform distribution of tracks as a function of azimuthal angle ($\varphi$). The parameters in the approach are summarised in table~\ref{tab:hybrid}. 
 
-The first requirements are on the quality of the track fit in ITS and TPC. The ITS requirement only removes tracks that are clear outliers. For TPC the requirement is much more strict. For step 1 it is required that a track has 3 out of the 6 possible hits in ITS, one of which must be in SPD. In step 2 this is replaced by an additional vertex constraint, where the primary vertex itself is added as a point to the track to improve the momentum resolution.
+The first requirements are on the quality of the track fit in ITS and TPC. The ITS requirement only removes tracks that are clear outliers. For TPC the requirement is much more strict. For step 1 it is required that a track has 3 out of the 6 possible hits in ITS, one of which must be in the SPD. In step 2 this is replaced by an additional vertex constraint, where the primary vertex itself is added as a point to the track to improve the momentum resolution.
 
 For the TPC, 70 crossed pad rows out of the maximum 159 is required. This measures the effective track length inside the TPC. This takes into account the possibility of having pad rows missing in the middle of the track due to charge in these clusters being below the threshold for some reason. Additionally it is required that the ratio between crossed rows and findable clusters is at least 0.8. Findable clusters are defined as the number of geometrically possible clusters which can be assigned to a track, taking into account dead zones due to chamber boundaries and limited $\eta$-acceptance. For both steps of the hybrid cut is is required that the fraction of clusters shared with several tracks is less than 40\%.
 
@@ -81,9 +90,8 @@ The momentum resolutions of the two classes of particles are comparable up to $\
 %The ITS is made up of the innermost Silicon Pixel Detector (SPD), the Silicon Drift Detector (SDD) and the outermost Silicon Strip Detector (SSD). Each of these consists of two layers. The TPC is a cylinder filled with gas. Gas is ionised along the path of charged particles. Liberated electrons drift towards the end plates of the cylinder where they are detected. 
 
 
-
+\FloatBarrier
 \subsection{Cluster selection}
-{\color{red} Extend cluster reconstruction}
 Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
 
 
@@ -97,7 +105,7 @@ Highly energetic calorimeter hits should spread into several towers as the elect
 1 -\frac{E_\mathrm{cross}}{E_\mathrm{max}},
 \end{equation}
 
-where $E_\mathrm{max}$ is the energy in the most energetic tower and $E_\mathrm{cross}$ is the sum of the four towers neighbouring the most energetic one. The closer to 1, the more exotic the cluster is and the more probability that it is fake. Cut of 0.97 has been adopted as default for EMCal analyses, including this one.
+\noindent where $E_\mathrm{max}$ is the energy in the most energetic tower and $E_\mathrm{cross}$ is the sum of the four towers neighbouring the most energetic one. The closer this is to 1, the more exotic the cluster is and the larger the probability that it is fake. Cut of 0.97 has been adopted as default for EMCal analyses, including this one.
 
 A method of matching the cluster position to TPC track extrapolation is used to suppress charged hadron contribution to hits in EMCal. Tracks identified by the tracking detectors are extrapolated close to the EMCal surface, where the closest cluster is found and the track extrapolation is continued until reaching the same depth as the cluster. The remaining distance in between the extrapolated track and the cluster is then used to reject hadronic hits.
 
@@ -105,10 +113,11 @@ A method of matching the cluster position to TPC track extrapolation is used to 
 
 
 \begin{table}[htb] 
+\centering
 \caption{Parameters used in the EMCal clusteriser}
 \label{tab:clusters}
-\begin{tabular}{| c | c | c |}
-Setting & Value & Description \\
+\begin{tabular}{| c | c |}
+Setting & Value \\
 Clusteriser seed & 0.2 \unit{\mev} \\
 Clusteriser cutoff & 0.05 \unit{\mev} \\
 Cells in cluster & > 1 \\
@@ -179,7 +188,7 @@ Minimal cluster Energy & 0.3 \unit{\gev}
 %
 
 
-
+\clearpage
 \section{Analysis method}
 \label{sec:methods}
 \subsection{Jet Finding}

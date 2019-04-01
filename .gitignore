@@ -34,6 +34,7 @@ figures/tikz/scattering.pdf
 figures/tikz/showering2.pdf
 figures/tikz/central.pdf
 figures/tikz/peripheral.pdf
+figures/tikz/perpcone.pdf
 figures/tikz/alice.pdf
 figures/tikz/gem.pdf
 **/*.log
