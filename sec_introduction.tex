@@ -484,12 +484,6 @@ Some parts of the Fourier composition approach were used for Au-Au collisions at
 %\end{figure}
 
 
-\begin{figure}[htb]
-\centering
-\input{figures/tikz/qcdlo}
-\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
-\label{fig:qcdlo}
-\end{figure}
 
 
 \begin{figure}[htb]
@@ -501,7 +495,7 @@ Some parts of the Fourier composition approach were used for Au-Au collisions at
 \end{figure}
 The term Hard Scattering is used in connection with the scattering of two point-like constituents (partons) of colliding nucleons, when the momentum transfer $Q^2$ is large ($Q \gg \Lambda_{\mathrm{QCD}}$). Figure ~\ref{fig:scattering} shows the incoming partons, quarks or gluons, as they exchange a space-like virtual gluon and produce two highly virtual outgoing partons. The outgoing partons will eventually fragment into collimated showers of partons, referred to as jets.
 
-Jet production can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$ (Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
+Historically one would study hard scatterings foremost with inclusive hadron spectra. Hadron production from hard scatterings can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$, (A summary of the $2\rightarrow2$ processes in QCD is shown in Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
 
 \begin{equation}
 \frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c},
@@ -519,19 +513,21 @@ $$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.$$
 %\label{fig:highpt}
 %\end{figure}
 
-\begin{figure}
+
+
+\begin{figure}[htb]
 \centering
-\input{figures/tikz/showering2.tex}
-\caption[Jet showering]{An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
-\label{fig:showering}
+\input{figures/tikz/qcdlo}
+\caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
+\label{fig:qcdlo}
 \end{figure}
 
 
 
 \subsubsection*{Parton Distribution Function}
-Parton Distribution Functions (PDFs) are essential to calculate the scattering cross section. They are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments. PDFs $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. 
+Parton Distribution Functions (PDFs) $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. PDFs  are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments.
 
-As the PDFs cannot be calculated from first principles. In practice the PDFs are measure in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
+As the PDFs cannot be calculated from first principles the PDFs are measured in Deeply Inelastic Scattering (DIS) experiments and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
 
 \begin{equation}
 \mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
@@ -539,14 +535,15 @@ As the PDFs cannot be calculated from first principles. In practice the PDFs are
 \end{equation}
 
 
-\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. 
+
+\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. Depending on the data used 
 
 \subsubsection*{Fragmentation functions}
 The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of particles radiated from the outgoing parton. Fragmentation function are given with respect to the momentum fraction $z$ which is defined as the longitudinal momentum fraction of jet momentum $p_{\mathrm{jet}}$ carried away by the jet fragment $p_{\mathrm{part}}$
 
 
 \begin{equation}
-z = \frac{\bar p_{\mathrm{part}} \cdot \bar p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\bar{p}_\mathrm{part} \times \bar{p}_\mathrm{jet}=0}
+z = \frac{\vec p_{\mathrm{part}} \cdot \vec p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\vec{p}_\mathrm{part} \times \vec{p}_\mathrm{jet}=0}
 \end{equation}
 
 Fragmentation function $D\left(z\right)$ then gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{}. 
@@ -561,17 +558,164 @@ Because of momentum conservation the sum of all jet fragments must be equal to t
 \sum p_{i,\mathrm{part}} = p_\mathrm{jet} \Rightarrow \sum z_i = 1 \Rightarrow \int_0^1 z D\left(z\right) \mathrm{d} z = 1
 \end{equation}
 
-A natural consequence is that the average momentum fraction is the inverse of the average multiplicity
+%A natural consequence is that the average momentum fraction is the inverse of the average multiplicity
+%
+%\begin{equation}
+%\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}.
+%\end{equation}
+
+\subsubsection{Jet showering}
+\begin{figure}
+\centering
+\input{figures/tikz/showering2.tex}
+\caption[Jet showering]{An illustration of jet showering. The highly virtual parton from the hard scattering will produce a shower of softer partons. When the virtuality is low enough the shower will go through a hadronisation process that produces the hadrons, which will be eventually observed in the detector. }
+\label{fig:showering}
+\end{figure}
+
+More detailed studies of the hard processes require a formulation of the showering process. The full picture is a complicated $2\rightarrow n$ scattering, but it is typically seen as a series of $1\rightarrow2$ splittings with decreasing virtuality following the initial $2\rightarrow 2$ scattering~\cite{newPythiaShower}.
+
+To first order the cascade is governed by the DGLAP evolution equation~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}
 
 \begin{equation}
-\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}.
+\mathrm{d} P_a\left(z,Q^2\right) = \frac{\mathrm{d}Q^2}{Q^2}\frac{\alpha_s}{2\pi} P_{a\rightarrow bc}\left(z\right)dz,
+\label{eq:dglap}
+\end{equation} 
+
+\noindent which gives the differential probability that parton $a$ (mother) will branch to two partons $b$ and $c$ (daughters), at a virtuality scale $Q^2$. Daughter $b$ takes a fraction $z$ of the parton $a$ energy and daughter $c$ takes energy fraction $1-z$. The splittings kernels $P_{a\rightarrow bc}\left(z\right)$ are 
+
+\begin{align}
+P_\mathrm{q\rightarrow qg}\left(z\right) &= \frac{4}{3}\frac{1+z^2}{1-z} \\
+P_\mathrm{g\rightarrow gg}\left(z\right) &= 3\frac{\left(1-z\left(1-z \right) \right)^2}{z\left(1-z\right)} \\
+P_\mathrm{g\rightarrow q \bar q}\left(z\right)& = \frac{n_f}{2}\left( z^2+\left(1-z\right)^2\right),
+\end{align}
+
+\noindent where $n_f$ is the kinematically allowed number of quark flavours. There is some freedom in how the evolution variable $Q^2$ is chosen. If $Q^2=f\left(z \right) m^2$ and $f\left(z \right)$ is a positive and a smooth function it holds that
+
+$$
+\frac{\mathrm{d}Q^2}{Q^2}\mathrm{d}z = \frac{\mathrm{d} m^2}{m^2} \mathrm{d}z. 
+$$
+
+Of the Monte Carlo generators used in this thesis \pythia uses $m^2$ as evolution variable~\cite{}, while HERWIG uses an energy-weighted emission angle $E^2\left(1-\cos\theta\right) \approx \nicefrac{m^2}{z\left(1-z\right)}$~\cite{}.
+
+Formally eq~\ref{eq:dglap} corresponds to the emission of an infinite number of partons. However very soft and collinear gluons need not considered and one can introduce an effective cut-off scale $Q_0$, usually taken to be of the order of \unit[1]{\gev}.
+
+Going further one approach is to introduce time ordering, i.e. to decide which of the emissions occurs first. This is done in the form of a Sudakov form factor~\cite{}
+
+\begin{equation}
+P_a^{no}\left(Q^2_\mathrm{max},Q^2\right) = \exp \left(- \int_{Q^2}^{Q^2_\mathrm{max}}\int_{z_\mathrm{min}}^{z_\mathrm{max}} \mathrm{d} P_a \left(z',Q'^2\right)\right),
+\end{equation} 
+
+\noindent which gives the probability that no emissions occur between the initial maximum scale $Q^2_\mathrm{max}$ and a give $Q^2$ and within limits $z_\mathrm{min} < z < z_\mathrm{max}$. Thus the probability for the first branching to occur at $Q^2=Q^2_a$ is given by $\mathrm{d}P_a \left(z,Q^2_a\right) P_a^{no}\left(Q^2_\mathrm{max},Q^2\right)z$.
+
+Partons $b$ and $c$ that were produced will further branch with maximum virtuality scale $Q^2_\mathrm{max}$ given by $Q^2_a$. Similarly their daughters will continue branching until the cutoff scale is reached, thus producing the shower. 
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=blue},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=orange,
+    decoration={coil,amplitude=4pt, segment length=5pt}}
+ }
+ 
+\coordinate[label=left:$a$] (a);
+\coordinate[right=1cm of a] (vertex);
+\coordinate[above right=0.5cm and 1 cm of vertex,label=right:$b$] (b);
+\coordinate[below right=0.5cm and 1 cm of vertex,label=right:$c$] (c);
+\draw[particlearrow] (a) -- (vertex);
+\draw[particlearrow] (vertex) -- node[label=above:$z$] {} (b);
+\draw[particlearrow] (vertex) -- node[label=below:$1-z$] {} (c);
+\end{tikzpicture}
+\end{figure}
+
+
+
+
+\subsubsection{Soft gluon radiation and angular ordering}
+We still need to consider soft gluon enhancement~{\color{red} reword}. Fig.~\ref{fig:soft} shows a case where a gluon splits into two quarks, and one of the created quarks emits a soft gluon. In the laboratory frame the time it takes for a gluon to be emitted from a quark can be estimated to be
+
+\begin{equation}
+t_\mathrm{emit} \approx \frac{1}{E_q},
 \end{equation}
 
 
+\noindent where the energy of the quark is given by $E_q$. In the rest frame of the quark its energy is given by its virtuality $M_\mathrm{virt}$ and assuming the quark is massless the Lorentz factor between the rest frame the laboratory frame is 
+
+\begin{equation}
+\gamma = \frac{E_q}{M_\mathrm{virt}}.
+\end{equation}
+
+\noindent Thus the emission time can be written as
+
+\begin{equation}
+t_\mathrm{emit} \approx \frac{E_q}{M_\mathrm{virt}^2}  = \frac{E_q}{\left(k+p\right)^2},
+\end{equation}
+\noindent where $k$ and $p$ are the four-momenta of the gluon and the quark after the gluon emission. This can be written open in the laboratory frame. Through assuming that the end products are massless and Taylor-expanding the resulting cosine term gives a form that expresses the emission time using the opening angle $\theta_\mathrm{kq}$ between the quark and the gluon
+
+
+\begin{equation}
+t_\mathrm{emit} \approx \frac{1}{k\theta_\mathrm{kq}^2}.
+\end{equation}
+
+
+\noindent The transverse wavelength of the emitted gluon is $\lambda_\perp^{-1}=k_\perp\approx k\theta_\mathrm{kq}$. Thus we get
+
+\begin{equation}
+t_\mathrm{emit} \approx \frac{\lambda_\perp}{\theta_\mathrm{kq}}.
+\end{equation}
+
+\noindent The secondary gluon can only probe the quark of the earlier splitting if the transverse wavelength is smaller than the transverse separation of the produced $\mathrm{q \bar q}$ pair. The transverse separation is given by
+
+\begin{equation}
+r_\perp^{\mathrm{q \bar q}} \approx \theta_\mathrm{q \bar q} t_\mathrm{emit} \approx \lambda_\perp \frac{\theta_\mathrm{q \bar q} }{\theta_\mathrm{k q} }.
+\end{equation}
+
+Thus in order for the emission to probe the individual quark, the opening angle of the $\mathrm{q \bar q}$ splitting, $\theta_\mathrm{q \bar q}$, must be larger than $\theta_\mathrm{k q}$. If the opening angle $\theta_\mathrm{k q}$ is larger, the gluon can't distinguish between the quark and the antiquark, so it probes the state of the system before the splitting, i.e. it can be treated like it was emitted from the primary gluon.  
+
+This leads to the angular ordering of soft gluon radiation. Each successive angle must be smaller than the previous one. The effect can be calculated in all orders ~\cite{missing} and in the DGLAP formalism one can select the evolution variable $Q^2$ in a way that ensures angular ordering~\cite{missing}.
+
+(The soft gluon behaves as if testing the colour charge of the jet as a whole)= As a results to describe the jet evolution in terms of independent sequential parton splittings one has to include the Angular ordering (AO) condition. This is implemented differently in Monte Carlo generators. In \pythia 8 this is strictly not included, but the transverse momentum ordered showers are as accurate in describing the soft gluon emissions as the angular ordered showers~\cite{eventGenerators}. In Herwig angular ordering is a consequence of the choice of the evolution variable.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale = 2]
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=blue},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=orange,
+    decoration={coil,amplitude=4pt, segment length=5pt}}
+ }
+\coordinate[label=left:$a$] (a);
+\coordinate[right=1cm of a] (vertex);
+\coordinate[above right = 0.25cm and 0.5cm of vertex] (vertex2);
+\coordinate[above right=0.5cm and 0.5cm of vertex2] (gluon);
+\coordinate[above right=0.5cm and 1 cm of vertex,label=right:$b$] (b);
+\coordinate[below right=0.5cm and 1 cm of vertex,label=right:$c$] (c);
+\draw[gluon] (a) -- (vertex);
+\draw[particlearrow] (vertex) -- node[label=above:$z$] {$q$} (b);
+\draw[particlearrow] (vertex) -- node[label=below:$1-z$] {$\bar q$} (c);
+\draw[gluon] (vertex2) -- (gluon);
+\end{tikzpicture}
+\caption{Soft gluon}
+\label{fig:soft}
+\end{figure}
+
 \subsubsection{Jet hadronisation}
-When the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$, the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. One simple scenario that is used in several theory calculations is the so-called local parton-hadron duality~\cite{Azimov1985}. In the local parton-hadron duality hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons are transformed into hadrons, assuming that the flow of momentum and quantum numbers for the hadrons can be directly obtained from those of partons introducing only small normalising constants. %Hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
+When the virtuality of the shower is low enough, the shower starts to hadronise. In this regime the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$ and the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. In general hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
+The most simple scenario that is used in several theory calculations is the so-called local parton-hadron duality~\cite{Azimov1985}. In the local parton-hadron duality hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons are transformed into hadrons, assuming that the flow of momentum and quantum numbers for the hadrons can be directly obtained from those of partons introducing only small normalising constants. 
 
-
+The next sections will present more complicated hadronisation models used in Monte Carlo generators, \pythia and Herwig.
 
 \subsubsection*{Lund string model}
 
@@ -647,63 +791,7 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 When the clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{} 
 
 \subsubsection{Jet energy loss}
-\subsubsection*{Discovery of jet quenching via leading hadron suppression}
-First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
 
-
-Jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
-%the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
-
-\begin{equation}
-R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
-\end{equation}
-\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Sec.~\ref{sec:glauber}. From the point of view of direct production a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. 
-
-If the medium has no effect on high $\pt{}$ particles the nuclear modification factor should be 1. At RHIC and LHC this has been observed to be as low as 0.2 because of jet quenching. Measurements of $R_{AA}$ from different sources are shown in Fig.~\ref{fig:Raa}
-
-\begin{figure}[hbt]
-	\centering
-                \includegraphics[width=0.65\textwidth]{pics/Raaplot}
-        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
-        \label{fig:Raa}
-\end{figure}
-
-
-The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared, where plane refers to the plane defined by the impact parameter and the beam direction. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
-
-\begin{eqnarray}
-R_{AA}\left(\Delta\phi, \pt{}\right) &=& \frac{(1/N_{AA}^{evt})\dd {^2N}^{AA}/d\Delta\phi \dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}} \approx \frac{\dd {N^{AA}}/\dd {\pt{}}\left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right)}{\left< N_{coll}\right> \dd {N^{pp}}/\dd {\pt{}}} \nonumber \\ &&\nonumber\\
-&=& R_{AA}^{incl}(\pt{}) \left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right).
-\label{eq:raaandv2}
-\end{eqnarray}	
-
-The yield of proton-proton collisions is independent of the reaction plane and the yield in heavy-ion collisions is modulated by the second harmonics. In Eq. (\ref{eq:raaandv2}) $R_{AA}$ is approximated only up to the second harmonics.
-From \eq{eq:raaandv2} it follows that
-
-\begin{equation}
-\frac{R_{AA}\left(0, \pt{}\right)-R_{AA}\left(\pi/2, \pt{}\right)}{R_{AA}^{incl}(\pt{})} \approx \frac{R_{AA}^{incl}(\pt{}) \left(1+2 \cdot v_2-(1-2 \cdot v_2) \right)}{R_{AA}^{incl}(\pt{})} = 4 \cdot v_2
-\label{eq:raaandv2result}
-\end{equation} 
-%At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the path length-dependence of the energy loss process. 
-The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in Au-Au collisions at $\sqrt{s}=200\gev$~\cite{PhysRevC.80.054907} is compared to $R_{AA}$ using $v_2$  via \eq{eq:raaandv2} in Fig.~\ref{fig:RAAv2}. They agree very well within the statistical errors for all centrality and $\pt{}$ bins.
-\begin{figure}[htb]
-	\centering
-                \includegraphics[width=0.5\textwidth]{pics/RAAandv2Correlation}
-        \caption[A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$]{ A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$ from PHENIX measurements of Au-Au collisions at $\sqrt{s}=200\gev$. On the X-axis is the measured $R_{AA}\left(\Delta\phi,\pt{}\right)$. On the y-axis is the inclusive $R_{AA}$ multiplied by  $1+2v_2\cos\left(\Delta\phi\right)$~\cite{PhysRevC.80.054907}.}
-        \label{fig:RAAv2}
-\end{figure}
-
-At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process.
-
-Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.9\textwidth]{pics/fig2_vn_exp-11543.pdf}
-\caption[Elliptic flow, $v_2$ from $\pt{}=1$ to $60\gevc$]{} %Elliptic flow, $v_2$, as a function of the charged particle transverse momentum from $1$ to $60\gevc$ with $\left|\eta\right|<1$ for six centrality ranges in Pb-Pb collisions at $\snn=2.76\tev$, measured by the CMS experiment.~\cite{Chatrchyan:2012xq}. }
-\label{fig:highpt}
-\end{figure}
 
 \subsubsection*{Theory of jet quenching}
 
@@ -766,6 +854,63 @@ The above models calculate the energy loss while the parton propagates through t
 The last category is formed by the Monte Carlo methods. The PYTHIA event generator~\cite{pythia} is widely used in high-energy particle physics. Two Monte Carlo models based on PYTHIA describing the energy loss mechanism are PYQUEN~\cite{Lokhtin:2005px} and Q-Pythia~\cite{Armesto:2009zc}. Other Monte Carlo models include JEWEL~\cite{Zapp:2008gi} and YaJEM~\cite{Renk:2009nz}.
 
 
+\subsubsection*{Discovery of jet quenching via leading hadron suppression}
+First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
+Jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
+%the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
+
+\begin{equation}
+R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
+\end{equation}
+\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Sec.~\ref{sec:glauber}. From the point of view of direct production a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. 
+
+If the medium has no effect on high $\pt{}$ particles the nuclear modification factor should be 1. At RHIC and LHC this has been observed to be as low as 0.2 because of jet quenching. Measurements of $R_{AA}$ from different sources are shown in Fig.~\ref{fig:Raa}
+
+\begin{figure}[hbt]
+	\centering
+                \includegraphics[width=0.65\textwidth]{pics/Raaplot}
+        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
+        \label{fig:Raa}
+\end{figure}
+
+
+The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared, where plane refers to the plane defined by the impact parameter and the beam direction. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
+
+\begin{eqnarray}
+R_{AA}\left(\Delta\phi, \pt{}\right) &=& \frac{(1/N_{AA}^{evt})\dd {^2N}^{AA}/d\Delta\phi \dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}} \approx \frac{\dd {N^{AA}}/\dd {\pt{}}\left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right)}{\left< N_{coll}\right> \dd {N^{pp}}/\dd {\pt{}}} \nonumber \\ &&\nonumber\\
+&=& R_{AA}^{incl}(\pt{}) \left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right).
+\label{eq:raaandv2}
+\end{eqnarray}	
+
+The yield of proton-proton collisions is independent of the reaction plane and the yield in heavy-ion collisions is modulated by the second harmonics. In Eq. (\ref{eq:raaandv2}) $R_{AA}$ is approximated only up to the second harmonics.
+From \eq{eq:raaandv2} it follows that
+
+\begin{equation}
+\frac{R_{AA}\left(0, \pt{}\right)-R_{AA}\left(\pi/2, \pt{}\right)}{R_{AA}^{incl}(\pt{})} \approx \frac{R_{AA}^{incl}(\pt{}) \left(1+2 \cdot v_2-(1-2 \cdot v_2) \right)}{R_{AA}^{incl}(\pt{})} = 4 \cdot v_2
+\label{eq:raaandv2result}
+\end{equation} 
+%At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the path length-dependence of the energy loss process. 
+The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in Au-Au collisions at $\sqrt{s}=200\gev$~\cite{PhysRevC.80.054907} is compared to $R_{AA}$ using $v_2$  via \eq{eq:raaandv2} in Fig.~\ref{fig:RAAv2}. They agree very well within the statistical errors for all centrality and $\pt{}$ bins.
+\begin{figure}[htb]
+	\centering
+                \includegraphics[width=0.5\textwidth]{pics/RAAandv2Correlation}
+        \caption[A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$]{ A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$ from PHENIX measurements of Au-Au collisions at $\sqrt{s}=200\gev$. On the X-axis is the measured $R_{AA}\left(\Delta\phi,\pt{}\right)$. On the y-axis is the inclusive $R_{AA}$ multiplied by  $1+2v_2\cos\left(\Delta\phi\right)$~\cite{PhysRevC.80.054907}.}
+        \label{fig:RAAv2}
+\end{figure}
+
+At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process. ~\ref{fig:highpt}
+
+Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{pics/fig2_vn_exp-11543.pdf}
+\caption[Elliptic flow, $v_2$ from $\pt{}=1$ to $60\gevc$]{} %Elliptic flow, $v_2$, as a function of the charged particle transverse momentum from $1$ to $60\gevc$ with $\left|\eta\right|<1$ for six centrality ranges in Pb-Pb collisions at $\snn=2.76\tev$, measured by the CMS experiment.~\cite{Chatrchyan:2012xq}. }
+\label{fig:highpt}
+\end{figure}
+
+
 
 \subsubsection{New paradigm of jet Quenching}
 As described in the previous section there have been many experimental evidences of jet energy loss, such as the suppression of inclusive hadron spectra at high transverse momentum~\cite{Adcox:2001jp,Adams:2003im,Arsene:2003yk,Khachatryan:2016odn,Acharya:2018qsh}, the modification of back-to-back hadron-hadron~\cite{Adare:2007vu,Aamodt:2011vg} and direct photon-jet correlations~\cite{Adare:2012qi}, and the modification of reconstructed jet spectra~\cite{Adam:2015ewa} and jet substructure~\cite{Sirunyan:2018qec,Chatrchyan:2014ava,Acharya:2018uvf}, as compared to the expectations from elementary proton-proton collisions.
@@ -779,7 +924,8 @@ The first indications of jet quenching, such as $R_{\mathrm{AA}}$, looked essent
 Thus the new paradigm in jet quenching in heavy-ion collisions involves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of color flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
 
 
-\subsubsection*{Lund diagram}
+\subsubsection*{Lund diagram?? }
+
 
 \begin{figure}
 \centering
