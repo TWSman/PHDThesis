@@ -321,14 +321,23 @@ Two common methods to perform this inversion are Bayesian and SVD unfolding meth
 
 \subsubsection{Bayesian unfolding}
 The bayesian (iterative) method is based on the Bayes formula~\cite{}.
-$$P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},$$
+\begin{equation}
+P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},
+\end{equation}
 
 \noindent i.e. the probability of Cause $C_i$ ("truth") given Effect $E_j$ ("observed") is proportional to the probability of observing $E_j$ given $C_i$, $P\left(E_j |C_i\right)$ (response matrix) and the true distribution $P_0\left(C_i\right)$.
 
-In the unfolding procedure $P_0$ is given some starting distribution, either a uniform distribution or some guess of the final distribution. Taking into account the inefficiency this gives $$\hat n\left(C_i\right) = \frac{1}{\epsilon_i} \sum_{j=1}^{n_E}n\left(E_j\right)P\left(C_i | E_j\right), $$
+In the unfolding procedure $P_0$ is given some starting distribution, either a uniform distribution or some guess of the final distribution. Taking into account the inefficiency this gives 
+
+\begin{equation}
+\hat n\left(C_i\right) = \frac{1}{\epsilon_i} \sum_{j=1}^{n_E}n\left(E_j\right)P\left(C_i | E_j\right),
+\end{equation}
 %\item First calculate $P\left(C_i |E_j\right)$ with the uniform distribution
 \noindent where 
-$$P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},$$
+\begin{equation}
+P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},
+\end{equation}
+
 
 \noindent and 
 {
@@ -340,7 +349,10 @@ $$P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{
 }
 
 First  $P\left(C_i |E_j\right)$ is calculated with the uniform distribution or best guess of the shape of the distribution. This is then used to calculate the new distribution $\hat P\left(C_i\right)$
-$$\hat N_{true} = \sum_{i=1}^{n_C} \hat n\left(C_i\right),\,\hat P\left(C_i\right) = P\left(C_i | n\left(E\right)\right) = \frac{\hat n\left(C_i\right)}{\hat N_{true}}$$
+\begin{equation}
+\hat N_{true} = \sum_{i=1}^{n_C} \hat n\left(C_i\right),\,\hat P\left(C_i\right) = P\left(C_i | n\left(E\right)\right) = \frac{\hat n\left(C_i\right)}{\hat N_{true}}
+\end{equation}
+
 $P_0$ is then replaced with $\hat P$ and the procedure is repeated until an acceptable solution is found. 
 
 The bayesian procedure alongside with the SVD unfolding method are implemented in the RooUnfold package~\cite{roounfold}, which is used to perform the unfolding in practice. In RooUnfold the number of iterations is given beforehand. In practice this requires some trial and error. The number of iterations should be as low as possible, as the errors increase when going further in the iterations, but the number of iterations must be high enough so that the correct distribution is extracted. 
@@ -607,11 +619,17 @@ To achieve stable results the fitting is performed in two steps. First both comp
 
 After getting the fit function $\sqrt{\left<\jt{}^2\right>}$ (RMS) and yield values are extracted separately from each component. The narrow component RMS is
 
-$$\sqrt{\left<\jt{}^2\right>}=\sqrt{2}B_1,$$
+\begin{equation}
+\sqrt{\left<\jt{}^2\right>}=\sqrt{2}B_1,
+\end{equation}
+
 
 \noindent and the wide component RMS value is calculated as 
 
-$$\sqrt{\left<\jt{}^2\right>}=\frac{B_5}{\sqrt{\left(B_4-2\right)\left(B_4-3\right)}},$$
+\begin{equation}
+\sqrt{\left<\jt{}^2\right>}=\frac{B_5}{\sqrt{\left(B_4-2\right)\left(B_4-3\right)}},
+\end{equation}
+
 
 \noindent where it is required that $B_4 > 3$.
 
