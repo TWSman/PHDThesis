@@ -1,0 +1,87 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=blue},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=black,
+    decoration={coil,amplitude=4pt, segment length=5pt}}
+ }
+ 
+ 
+ 
+\tikzstyle{proton} = [ellipse, draw=black, text centered, fill=orange!20, minimum height=3cm, blur shadow = {shadow blur steps=5},minimum width=1em ] 
+\tikzstyle{protonnoshade} = [ellipse, draw=black, text centered, fill=orange!20, minimum height=3cmminimum width=1em ] 
+
+\begin{tikzpicture}[node distance=1cm and 1.5cm]
+\node[proton]  (proton)  {};
+\node[proton, right=5cm of proton] (proton2) {};
+\coordinate[above right=-0.5cm and 0.03cm of proton] (aux2);
+\coordinate[below =0cm of proton] (a);
+\coordinate[above=0cm of proton2] (b);
+\shade[inner color=red, outer color=yellow] (a) rectangle (b);
+
+\coordinate[right=-0.75cm and 2.5cm of aux2] (vertex1);
+\coordinate[left=2cm of proton2] (vertex2);
+\node[proton]  (proton3)  {};
+\node[proton, right=5cm of proton] (proton4) {};
+
+%\coordinate[below right=1.5cm and 0.5cm of vertex1] (vertex2);
+
+%\coordinate[below right=0.0cm and 2cm of vertex2] (b1);
+%\node[proton, below right=-0.05cm and 0.02cm of b1] (proton2) {};
+%\coordinate[left=2cm of proton2] (aux6);
+%\coordinate[below left=-0.05cm and 0.02cm of proton2] (b2);
+%\coordinate[left=2cm of b2] (aux7);
+%\coordinate[left=2cm of aux7] (spec3);
+%\coordinate[left=2cm of aux6] (spec4);
+%\coordinate[right of=proton2] (p2);
+\coordinate[above right=1cm and 1cm of vertex1] (jet1);
+\coordinate[below left=1cm and 1cm of vertex2] (jet2);
+
+
+%Jet cones
+\coordinate[above right=1cm and 0.5cm of jet1] (cone11);
+\coordinate[above right=0.5cm and 1cm of jet1, label={right:Jet}] (cone12);
+\draw[particle] (jet1) -- (cone11);
+\draw[particle] (jet1) -- (cone12);
+\draw[blue] (cone11) to[out=45,in=45]  (cone12);
+\draw[blue] (cone11) to[out=225,in=225] (cone12);
+
+\coordinate[below left=1cm and 0.5cm of jet2] (cone21);
+\coordinate[below left=0.5cm and 1cm of jet2, label={left:Jet}] (cone22);
+\draw[particle] (jet2) -- (cone21);
+\draw[particle] (jet2) -- (cone22);
+\draw[blue] (cone21) to[out=45,in=45]  (cone22);
+\draw[blue] (cone21) to[out=225,in=225] (cone22);
+
+\draw[particlearrow] (aux2) -- node[label=below:$q$] {} (vertex1); 
+\draw[particle] (vertex1) -- (jet1);
+\draw[particle] (vertex2) -- (jet2);
+
+\draw[gluon] (vertex1) -- (vertex2);
+\draw[particlearrow] (proton2) -- node[label=above:$q$] {} (vertex2);
+
+%\draw[particlearrow] (p2) -- node[label=above:$P_B$] {} (proton2);
+
+
+
+
+\end{tikzpicture}
+
+
+
+\end{document}
