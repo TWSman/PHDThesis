@@ -503,7 +503,9 @@ Historically one would study hard scatterings foremost with inclusive hadron spe
 
 \noindent where 
 
-$$x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.$$
+\begin{equation}
+x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.
+\end{equation}
 
 %
 %\begin{figure}
@@ -565,6 +567,7 @@ Because of momentum conservation the sum of all jet fragments must be equal to t
 %\end{equation}
 
 \subsubsection{Jet showering}
+\label{sec:shower}
 \begin{figure}
 \centering
 \input{figures/tikz/showering2.tex}
@@ -591,9 +594,9 @@ P_\mathrm{g\rightarrow q \bar q}\left(z\right)& = \frac{n_f}{2}\left( z^2+\left(
 
 \noindent where $n_f$ is the kinematically allowed number of quark flavours. There is some freedom in how the evolution variable $Q^2$ is chosen. If $Q^2=f\left(z \right) m^2$ and $f\left(z \right)$ is a positive and a smooth function it holds that
 
-$$
+\begin{equation}
 \frac{\mathrm{d}Q^2}{Q^2}\mathrm{d}z = \frac{\mathrm{d} m^2}{m^2} \mathrm{d}z. 
-$$
+\end{equation}
 
 Of the Monte Carlo generators used in this thesis \pythia uses $m^2$ as evolution variable~\cite{}, while HERWIG uses an energy-weighted emission angle $E^2\left(1-\cos\theta\right) \approx \nicefrac{m^2}{z\left(1-z\right)}$~\cite{}.
 
@@ -625,9 +628,9 @@ gluon/.style={decorate, draw=orange,
  }
  
 \coordinate[label=left:$a$] (a);
-\coordinate[right=1cm of a] (vertex);
-\coordinate[above right=0.5cm and 1 cm of vertex,label=right:$b$] (b);
-\coordinate[below right=0.5cm and 1 cm of vertex,label=right:$c$] (c);
+\coordinate[right=2cm of a] (vertex);
+\coordinate[above right=0.5cm and 2 cm of vertex,label=right:$b$] (b);
+\coordinate[below right=0.5cm and 2 cm of vertex,label=right:$c$] (c);
 \draw[particlearrow] (a) -- (vertex);
 \draw[particlearrow] (vertex) -- node[label=above:$z$] {} (b);
 \draw[particlearrow] (vertex) -- node[label=below:$1-z$] {} (c);
@@ -638,7 +641,7 @@ gluon/.style={decorate, draw=orange,
 
 
 \subsubsection{Soft gluon radiation and angular ordering}
-We still need to consider soft gluon enhancement~{\color{red} reword}. Fig.~\ref{fig:soft} shows a case where a gluon splits into two quarks, and one of the created quarks emits a soft gluon. In the laboratory frame the time it takes for a gluon to be emitted from a quark can be estimated to be
+Let us now consider a case where a gluon splits into two quarks, and one of the created quarks emits a soft gluon as seen in Fig.~\ref{fig:soft}. In the laboratory frame the time it takes for a gluon to be emitted from a quark can be estimated to be
 
 \begin{equation}
 t_\mathrm{emit} \approx \frac{1}{E_q},
@@ -696,18 +699,30 @@ antiparticle/.style={draw=blue},
 gluon/.style={decorate, draw=orange,
     decoration={coil,amplitude=4pt, segment length=5pt}}
  }
-\coordinate[label=left:$a$] (a);
-\coordinate[right=1cm of a] (vertex);
-\coordinate[above right = 0.25cm and 0.5cm of vertex] (vertex2);
-\coordinate[above right=0.5cm and 0.5cm of vertex2] (gluon);
-\coordinate[above right=0.5cm and 1 cm of vertex,label=right:$b$] (b);
-\coordinate[below right=0.5cm and 1 cm of vertex,label=right:$c$] (c);
+\coordinate[label=left:$g$] (a);
+\coordinate[right=2cm of a] (vertex);
+\coordinate[above right = 0.25cm and 1cm of vertex] (vertex2);
+\coordinate[above right=1cm and 1cm of vertex2] (gluon);
+\coordinate[above right=0.5cm and 2 cm of vertex,label=right:$q$] (b);
+\coordinate[below right=0.5cm and 2 cm of vertex,label=right:$\bar q$] (c);
 \draw[gluon] (a) -- (vertex);
-\draw[particlearrow] (vertex) -- node[label=above:$z$] {$q$} (b);
-\draw[particlearrow] (vertex) -- node[label=below:$1-z$] {$\bar q$} (c);
+\draw[particlearrow] (vertex) --  (b);
+\draw[particlearrow] (vertex) --  (c);
 \draw[gluon] (vertex2) -- (gluon);
+
+\coordinate[label=left:$g$,right=3cm of vertex] (g2);
+\coordinate[right=2cm of g2] (vertex3);
+\coordinate[left = 1cm of vertex3] (vertex4);
+\coordinate[above right=2cm and 3cm of vertex4] (gluon2);
+\coordinate[above right=0.5cm and 2 cm of vertex3,label=right:$q$] (b2);
+\coordinate[below right=0.5cm and 2 cm of vertex3,label=right:$\bar q$] (c2);
+\draw[gluon] (g2) -- (vertex3);
+\draw[particlearrow] (vertex3) --  (b2);
+\draw[particlearrow] (vertex3) --  (c2);
+\draw[gluon] (vertex4) -- (gluon2);
 \end{tikzpicture}
-\caption{Soft gluon}
+
+\caption{Soft gluon production}
 \label{fig:soft}
 \end{figure}
 
@@ -790,31 +805,66 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 
 When the clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{} 
 
-\subsubsection{Jet energy loss}
+\subsubsection{Interactions between jet and medium}
+Let us now look at what happens to jet production in heavy-ion collisions. High momentum particles are very rare and they are only produced in the initial collisions. In a heavy ion collision, where a QGP medium is formed, the hard scattered quarks and gluons are expected to interact strongly with the medium due to their colour charges and thus lose energy, either through collisions with medium partons, or through gluon bremsstrahlung~\cite{Connors:2017ptx}. This is referred to as jet quenching. Figure ~\ref{fig:jetq} shows a dijet inside QGP medium. Studying the modification of jets inside the medium gives another key approach to constraining the properties of QGP. Modification can be also observed in jet shapes, particle composition, fragmentation, splitting functions and many others.
 
-
-\subsubsection*{Theory of jet quenching}
-
-
-
-High momentum particles are very rare and they are only produced in the initial collisions. After they are created they escape the medium before a thermal equilibrium is reached. Thus they are not part of the pressure-driven collective expansion. Instead high momentum yield is suppressed because of energy loss in the medium. When propagating through the medium these partons lose energy as they pass through the medium. This is referred to as jet quenching. Jet quenching depends on the path lengths through the medium. Thus anisotropy in this region is mainly dependent on the collision geometry and density of medium.
-
-
-The energy loss of partons in medium is mainly due to QCD bremsstrahlung and to elastic scatterings between the parton and the medium. 
-
-
-The radiative energy loss mechanism is given in terms of the transport coefficient $\left<\hat q\right>$, which describes the average momentum transfer between the medium and parton~\cite{jetBroadeningPpb1}. The exact definition of this depends on the theoretical formalism used to describe the energy loss mechanism. 
-
-Many of the energy loss models exploit the analogy between the QCD interaction of parton propagating through the colored medium and the QED energy loss of electron propagating through material. An electron propagating through matter loses its energy by photon Bremsstrahlung radiation. In the simplest case, each individual scattering center results in a single emission of a photon. This is known as the Bethe-Heitler regime~\cite{BetheHeitler}. The energy spectrum of radiated photons $\nicefrac{dN}{dE}$ is, in this case, proportional to $\nicefrac{1}{E}$. However, the Bremsstrahlung photon, can be radiated only when the distance between the scattering centers is larger than the formation length. In the limit, when the scattering centers are closer than the formation length, the Bremsstrahlung process is suppressed. This phenomenon is known as the Landau-Pomeranchuk-Migdal (LPM)~\cite{Landau:1953um,Migdal:1956tc} suppression. The radiated spectrum in this regime is proportional to $\nicefrac{1}{\sqrt{E}}$.
-
-Lower energy photons are further suppressed by the destructive interference leading to the suppression of Bremsstrahlung photons of $E < \gamma \omega_p$, where $\omega_p$ is the plasma frequency of the radiator. This is knows as Dielectric suppression. The photon energy distribution in this regime is proportional to the energy of the photon. A schematic view of the effect of these three regimes is shown in Fig.~\ref{fig:bremsstrahlung}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{pics/BremsstrahlungElectron}
+\input{figures/tikz/jetquenching}
+\caption{If hard scatterings happen in conjunction with QGP medium the produced jets must traverse the medium. Thus they are subject to interactions with the medium. Note that the dijet pair can be created anywhere within the medium volume and thus the two jets will have differing path lengths through the medium.}
+\label{fig:jetq}
+\end{figure}
+
+\subsubsection*{Discovery of jet quenching via leading hadron suppression}
+First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons of jets. In this picture jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
+%the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
+
+\begin{equation}
+R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
+\end{equation}
+\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Sec.~\ref{sec:glauber}. From the point of view of direct production at high $\pt{}$ a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. At low $\pt{}$ this scaling breaks down as the determining factor in direct production is the number of participants.
+
+
+\begin{figure}[hbt]
+	\centering
+                \includegraphics[width=0.65\textwidth]{pics/Raaplot}
+        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
+        \label{fig:Raa}
+\end{figure}
+
+If the medium has no effect on high $\pt{}$ particles the nuclear modification factor should be 1. At RHIC and LHC this has been observed to be as low as 0.2, which is a clear signal that jet quenching is happening. Measurements of $R_{AA}$ from different sources are shown in Fig.~\ref{fig:Raa}. One should note that the physical interpretation is not that 80 \% of high momentum tracks disappear, rather they are shifted to smaller momenta. The relation between the shift in momentum and $R_{AA}$ depends on the steepness of the $\dd{N}/\dd{\pt{}}$ spectra. At LHC energies the spectrum is flatter and thus the same $R_{AA}$ value as in RHIC requires a larger momentum shift, which results from the larger temperature of the medium. 
+
+The reaction plane dependence of inclusive particle $R_{AA}$ demonstrates that energy loss is path length dependent~\cite{Adler:2006bw}, as expected from models. The path length can be affected by collisions centrality and system size. However the temperature and lifetime of the QGP also changes with changing centrality and system size. Thus to study different path lengths the angle relative to the reaction plane gives the cleanest signal, as the properties of medium remain the same. Additionally it was concluded that there is no suppression for path lengths below $\mathrm{L} = \unit[2]{fm}$. Similar indications about path length dependence are given by jet $v_2$ both at RHIC~\cite{Adare:2013wop} and at LHC~\cite{Abelev:2012di,Chatrchyan:2012xq}. 
+
+
+
+ %Naturally jet quenching depends on the path lengths through the medium.
+
+%\subsubsection*{Theory of jet quenching}
+
+
+%After the hard partons are created they escape the medium before a thermal equilibrium is reached. Thus they are not part of the pressure-driven collective expansion. Instead high momentum yield is suppressed because of energy loss in the medium. When propagating through the medium these partons lose energy as they pass through the medium. This is referred to as jet quenching. Jet quenching depends on the path lengths through the medium. Thus anisotropy in this region is mainly dependent on the collision geometry and density of medium.
+
+
+%The energy loss of partons in medium is mainly due to QCD bremsstrahlung and to elastic scatterings between the parton and the medium. 
+
+
+\subsubsection*{QED Bremsstrahlung}
+
+Many of the energy loss models exploit the analogy between the QCD interaction of parton propagating through the coloured medium and the QED energy loss of electron propagating through material. An electron propagating through matter loses its energy by photon Bremsstrahlung radiation. In the simplest case, each individual scattering center results in a single emission of a photon. This is known as the Bethe-Heitler regime~\cite{BetheHeitler}. The energy spectrum of radiated photons $\nicefrac{dN}{dE}$ is, in this case, proportional to $\nicefrac{1}{E}$. However, the Bremsstrahlung photon, can be radiated only when the distance between the scattering centers is larger than the formation length. In the limit, when the scattering centers are closer than the formation length, the Bremsstrahlung process is suppressed. This phenomenon is known as the Landau-Pomeranchuk-Migdal (LPM)~\cite{Landau:1953um,Migdal:1956tc} suppression. The radiated spectrum in this regime is proportional to $\nicefrac{1}{\sqrt{E}}$.
+
+Lower energy photons are further suppressed by the destructive interference leading to the suppression of Bremsstrahlung photons of $E < \gamma \omega_p$, where $\omega_p$ is the plasma frequency of the radiator. This is knows as Dielectric suppression. The photon energy distribution in this regime is proportional to the energy of the photon. A schematic view of the effect of these three regimes is shown in Fig.~\ref{fig:bremsstrahlung}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[height=2in]{pics/BremsstrahlungElectron}
 \caption[Photon spectrum]{ The expected bremsstrahlung spectrum for a electron propagating through material.  ~\cite{Bosted1993QuantummechanicalSO}. }
 \label{fig:bremsstrahlung}
 \end{figure}
+
+\subsubsection*{QCD}
+In QCD the radiative energy loss mechanism is given in terms of the transport coefficient $\left<\hat q\right>$, which describes the average momentum transfer between the medium and parton~\cite{jetBroadeningPpb1}. The exact definition of this depends on the theoretical formalism used to describe the energy loss mechanism. 
 
 The simplest energy loss process is elastic QCD scattering off the medium partons. In elastic scatterings the recoil energy of the scattered partons are absorbed by the thermal medium, which reduces the energy of the initial parton. The mean energy loss from elastic scatterings can be estimated by
 
@@ -851,82 +901,101 @@ Thermal effective theory formulation by Arnold, Moore and Yaffe (AMY)~\cite{Arno
 
 The above models calculate the energy loss while the parton propagates through the medium, focusing on the pQCD part. The higher twist (HT) approach by Wang and Guo~\cite{Wang:2001ifa} implements the energy loss mechanism in the energy scale evolution of the fragmentation functions.
 
-The last category is formed by the Monte Carlo methods. The PYTHIA event generator~\cite{pythia} is widely used in high-energy particle physics. Two Monte Carlo models based on PYTHIA describing the energy loss mechanism are PYQUEN~\cite{Lokhtin:2005px} and Q-Pythia~\cite{Armesto:2009zc}. Other Monte Carlo models include JEWEL~\cite{Zapp:2008gi} and YaJEM~\cite{Renk:2009nz}.
+The last category is formed by the Monte Carlo methods. The PYTHIA event generator~\cite{pythia} is widely used in high-energy particle physics. Two Monte Carlo models based on PYTHIA describing the energy loss mechanism are PYQUEN~\cite{Lokhtin:2005px} and Q-Pythia~\cite{Armesto:2009zc}. Other Monte Carlo models include JEWEL~\cite{Zapp:2008gi} and YaJEM~\cite{Renk:2009nz}. 
 
 
-\subsubsection*{Discovery of jet quenching via leading hadron suppression}
-First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
-Jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
-%the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
-
-\begin{equation}
-R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
-\end{equation}
-\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Sec.~\ref{sec:glauber}. From the point of view of direct production a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. 
-
-If the medium has no effect on high $\pt{}$ particles the nuclear modification factor should be 1. At RHIC and LHC this has been observed to be as low as 0.2 because of jet quenching. Measurements of $R_{AA}$ from different sources are shown in Fig.~\ref{fig:Raa}
-
-\begin{figure}[hbt]
-	\centering
-                \includegraphics[width=0.65\textwidth]{pics/Raaplot}
-        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
-        \label{fig:Raa}
-\end{figure}
-
-
-The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared, where plane refers to the plane defined by the impact parameter and the beam direction. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
-
-\begin{eqnarray}
-R_{AA}\left(\Delta\phi, \pt{}\right) &=& \frac{(1/N_{AA}^{evt})\dd {^2N}^{AA}/d\Delta\phi \dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}} \approx \frac{\dd {N^{AA}}/\dd {\pt{}}\left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right)}{\left< N_{coll}\right> \dd {N^{pp}}/\dd {\pt{}}} \nonumber \\ &&\nonumber\\
-&=& R_{AA}^{incl}(\pt{}) \left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right).
-\label{eq:raaandv2}
-\end{eqnarray}	
-
-The yield of proton-proton collisions is independent of the reaction plane and the yield in heavy-ion collisions is modulated by the second harmonics. In Eq. (\ref{eq:raaandv2}) $R_{AA}$ is approximated only up to the second harmonics.
-From \eq{eq:raaandv2} it follows that
-
-\begin{equation}
-\frac{R_{AA}\left(0, \pt{}\right)-R_{AA}\left(\pi/2, \pt{}\right)}{R_{AA}^{incl}(\pt{})} \approx \frac{R_{AA}^{incl}(\pt{}) \left(1+2 \cdot v_2-(1-2 \cdot v_2) \right)}{R_{AA}^{incl}(\pt{})} = 4 \cdot v_2
-\label{eq:raaandv2result}
-\end{equation} 
-%At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the path length-dependence of the energy loss process. 
-The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in Au-Au collisions at $\sqrt{s}=200\gev$~\cite{PhysRevC.80.054907} is compared to $R_{AA}$ using $v_2$  via \eq{eq:raaandv2} in Fig.~\ref{fig:RAAv2}. They agree very well within the statistical errors for all centrality and $\pt{}$ bins.
-\begin{figure}[htb]
-	\centering
-                \includegraphics[width=0.5\textwidth]{pics/RAAandv2Correlation}
-        \caption[A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$]{ A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$ from PHENIX measurements of Au-Au collisions at $\sqrt{s}=200\gev$. On the X-axis is the measured $R_{AA}\left(\Delta\phi,\pt{}\right)$. On the y-axis is the inclusive $R_{AA}$ multiplied by  $1+2v_2\cos\left(\Delta\phi\right)$~\cite{PhysRevC.80.054907}.}
-        \label{fig:RAAv2}
-\end{figure}
-
-At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process. ~\ref{fig:highpt}
-
-Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.9\textwidth]{pics/fig2_vn_exp-11543.pdf}
-\caption[Elliptic flow, $v_2$ from $\pt{}=1$ to $60\gevc$]{} %Elliptic flow, $v_2$, as a function of the charged particle transverse momentum from $1$ to $60\gevc$ with $\left|\eta\right|<1$ for six centrality ranges in Pb-Pb collisions at $\snn=2.76\tev$, measured by the CMS experiment.~\cite{Chatrchyan:2012xq}. }
-\label{fig:highpt}
-\end{figure}
+%\subsubsection*{Discovery of jet quenching via leading hadron suppression}
+%First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons.
+%Jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
+%%the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
+%
+%\begin{equation}
+%R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
+%\end{equation}
+%\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Sec.~\ref{sec:glauber}. From the point of view of direct production a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. 
+%
+%If the medium has no effect on high $\pt{}$ particles the nuclear modification factor should be 1. At RHIC and LHC this has been observed to be as low as 0.2 because of jet quenching. Measurements of $R_{AA}$ from different sources are shown in Fig.~\ref{fig:Raa}
+%
+%\begin{figure}[hbt]
+%	\centering
+%                \includegraphics[width=0.65\textwidth]{pics/Raaplot}
+%        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions at three different center-of-mass energies, as a function of $\pt{}$, for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv}, compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the points are the statistical uncertainties, and the yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
+%        \label{fig:Raa}
+%\end{figure}
+%
+%
+%The nuclear modification factor can also be used to quantify anisotropy. In the study of anisotropy $R_{AA}$ in-plane and out-of-plane can be compared, where plane refers to the plane defined by the impact parameter and the beam direction. The distance traveled through medium is largest out-of-plane which leads to stronger suppression in this direction. The nuclear modification factor as a function of $\Delta\phi=\phi-\psi_n$ is given by
+%
+%\begin{eqnarray}
+%R_{AA}\left(\Delta\phi, \pt{}\right) &=& \frac{(1/N_{AA}^{evt})\dd {^2N}^{AA}/d\Delta\phi \dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}} \approx \frac{\dd {N^{AA}}/\dd {\pt{}}\left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right)}{\left< N_{coll}\right> \dd {N^{pp}}/\dd {\pt{}}} \nonumber \\ &&\nonumber\\
+%&=& R_{AA}^{incl}(\pt{}) \left( 1+2\cdot v_2\cos{(2\Delta\phi)} \right).
+%\label{eq:raaandv2}
+%\end{eqnarray}	
+%
+%The yield of proton-proton collisions is independent of the reaction plane and the yield in heavy-ion collisions is modulated by the second harmonics. In Eq. (\ref{eq:raaandv2}) $R_{AA}$ is approximated only up to the second harmonics.
+%From \eq{eq:raaandv2} it follows that
+%
+%\begin{equation}
+%\frac{R_{AA}\left(0, \pt{}\right)-R_{AA}\left(\pi/2, \pt{}\right)}{R_{AA}^{incl}(\pt{})} \approx \frac{R_{AA}^{incl}(\pt{}) \left(1+2 \cdot v_2-(1-2 \cdot v_2) \right)}{R_{AA}^{incl}(\pt{})} = 4 \cdot v_2
+%\label{eq:raaandv2result}
+%\end{equation} 
+%%At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the path length-dependence of the energy loss process. 
+%The observed $R_{AA}\left(\Delta\phi, \pt{}\right)$  from PHENIX measurements in Au-Au collisions at $\sqrt{s}=200\gev$~\cite{PhysRevC.80.054907} is compared to $R_{AA}$ using $v_2$  via \eq{eq:raaandv2} in Fig.~\ref{fig:RAAv2}. They agree very well within the statistical errors for all centrality and $\pt{}$ bins.
+%\begin{figure}[htb]
+%	\centering
+%                \includegraphics[width=0.5\textwidth]{pics/RAAandv2Correlation}
+%        \caption[A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$]{ A comparison between observed $R_{AA}\left(\Delta\phi, \pt{}\right) $ and $R_{AA}$ using $v_2$ from PHENIX measurements of Au-Au collisions at $\sqrt{s}=200\gev$. On the X-axis is the measured $R_{AA}\left(\Delta\phi,\pt{}\right)$. On the y-axis is the inclusive $R_{AA}$ multiplied by  $1+2v_2\cos\left(\Delta\phi\right)$~\cite{PhysRevC.80.054907}.}
+%        \label{fig:RAAv2}
+%\end{figure}
+%
+%At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process. ~\ref{fig:highpt}
+%
+%Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
+%
+%
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=0.9\textwidth]{pics/fig2_vn_exp-11543.pdf}
+%\caption[Elliptic flow, $v_2$ from $\pt{}=1$ to $60\gevc$]{} %Elliptic flow, $v_2$, as a function of the charged particle transverse momentum from $1$ to $60\gevc$ with $\left|\eta\right|<1$ for six centrality ranges in Pb-Pb collisions at $\snn=2.76\tev$, measured by the CMS experiment.~\cite{Chatrchyan:2012xq}. }
+%\label{fig:highpt}
+%\end{figure}
 
 
 
 \subsubsection{New paradigm of jet Quenching}
-As described in the previous section there have been many experimental evidences of jet energy loss, such as the suppression of inclusive hadron spectra at high transverse momentum~\cite{Adcox:2001jp,Adams:2003im,Arsene:2003yk,Khachatryan:2016odn,Acharya:2018qsh}, the modification of back-to-back hadron-hadron~\cite{Adare:2007vu,Aamodt:2011vg} and direct photon-jet correlations~\cite{Adare:2012qi}, and the modification of reconstructed jet spectra~\cite{Adam:2015ewa} and jet substructure~\cite{Sirunyan:2018qec,Chatrchyan:2014ava,Acharya:2018uvf}, as compared to the expectations from elementary proton-proton collisions.
+%As described in the previous section there have been many experimental evidences of jet energy loss, such as the suppression of inclusive hadron spectra at high transverse momentum~\cite{Adcox:2001jp,Adams:2003im,Arsene:2003yk,Khachatryan:2016odn,Acharya:2018qsh}, the modification of back-to-back hadron-hadron~\cite{Adare:2007vu,Aamodt:2011vg} and direct photon-jet correlations~\cite{Adare:2012qi}, and the modification of reconstructed jet spectra~\cite{Adam:2015ewa} and jet substructure~\cite{Sirunyan:2018qec,Chatrchyan:2014ava,Acharya:2018uvf}, as compared to the expectations from elementary proton-proton collisions.
 
 
-The first indications of jet quenching, such as $R_{\mathrm{AA}}$, looked essentially at the leading hadrons of jets, the hard part, ignoring the soft scale part of jet phenomena. However, experimental methods have since improved; jet reconstruction algorithms have become reliable in the LHC era. Instead of the leading hadron we can study the entire jet shower. 
+As described in the previous sections the first indications of jet quenching, such as $R_{\mathrm{AA}}$, looked essentially at the leading hadrons of jets, the hard part, ignoring the soft scale part of jet phenomena. However, experimental methods have since improved; jet reconstruction algorithms have become reliable in the LHC era. Instead of the leading hadron we can study the entire jet shower and its structure. 
 
--Jet RAA
--Jetscape
-
-Thus the new paradigm in jet quenching in heavy-ion collisions involves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of color flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
+The first evidence of jet quenching in reconstructed jets at the LHC was observed by measuring the dijet asymmetry, $A_j$ ~\cite{Connors:2017ptx}. In jet observables one must consider what happens to the lost energy. Radiated gluons may end up being clustered with the jet, depending on the radiation angle, the parameters of jet reconstruction and whether the gluon reaches equilibrium with the medium or not. Thus the suppression on the jet level is expected to be smaller. Figure~\ref{fig:jetraa} shows jet $R_{AA}$ in central \PbPb collisions measured by ALICE,ATLAS and CMS and indeed jet $R_{AA}$ is about 0.5 instead of 0.2. Of course this begs the question, what counts as being part of the jet.  If a gluon radiated from the jet thermalises with the medium, is it a part of the jet or the medium?
 
 
-\subsubsection*{Lund diagram?? }
+\begin{figure}
+\centering
+\includegraphics[height=2.4in]{figures/LHC_Run1_RAA_comparison_cent010.pdf}
+\caption{Reconstructed anti-$\kt{}$ jet $R_{AA}$ from ALICE~\cite{Adam:2015ewa} with $R = 0.2$ for $\left| \eta \right| < 0.5$, ATLAS~\cite{Aad:2014bxa} with $R = 0.4$ for $\left| \eta \right| < 2.1$, and CMS~\cite{Khachatryan:2016jfl} with R = 0.2, 0.3 and 0.4 for $ \left| \eta \right| < 2.0$. The ALICE and CMS data are consistent within uncertainties while the ATLAS data are higher. This may be due to the ATLAS technique, which could impose a survivor bias and lead to a
+higher jet RAA at low momenta. Figure from~\cite{Connors:2017ptx}}
+\label{fig:jetraa}
+\end{figure}
+
+Thus, on the level of the reconstructed jet, energy loss manifests itself as broadening and softening of the jet. This is seen for example in jet-hadron correlations. Figure~\ref{fig:jethadron} shows $\Delta \eta$ correlations with the leading jet. $\Delta \phi$ correlations have similar trends. Jets in \PbPb are observed to be broader, with the greatest increase in the width for low momentum associated particles. This is consistent with expectations from partonic energy loss. These studies found that the subleading jet was broadened even more than the leading jet, indicating a bias towards selecting less modified jets as the leading jet.
+Jet hadron correlations have also been studied at RHIC with similar conclusion~\cite{Adamczyk:2013jei}.
 
 
+\begin{figure}
+\centering
+\includegraphics[height=2.4in]{figures/TrackJetCMS-HIN-14-016_Figure_003.pdf}
+\caption{Measurement by CMS~\cite{Khachatryan:2016erx}. Symmetrized $\Delta \eta$ distributions correlated with \PbPb and \pp inclusive jets with $\pt{}>\unit[120]{\gev}$ are shown in the top panels for tracks with $1 < \pt{} < \unit[2]{\gev}$. The difference between per-jet yields in \PbPb and \pp collisions is shown in the bottom panels. These measurements indicate that the jet is broadened and softened, as expected. The effect is stronger in more central collisions.  $\Delta \phi$ correlations have similar trends.}
+\label{fig:jetraa}
+\end{figure}
+
+
+
+Thus the new paradigm in jet quenching in heavy-ion collisions involves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of colour flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
+
+
+\subsubsection*{Phase-space view of the medium modified parton cascade}
 \begin{figure}
 \centering
 \includegraphics[width=0.75\textwidth]{figures/regions4.eps}
@@ -934,26 +1003,28 @@ Thus the new paradigm in jet quenching in heavy-ion collisions involves multi-sc
 \label{fig:cascades}
 \end{figure}
 
-The different momentum and angular scales are subject to different physical phenomena. Figure~\ref{fig:cascades} shows the relevant medium modification phenomena for different regions of the phase space at time $t$, when a jet propagates through a thermal cloud of temperature $T$. As in a practice jets propagate over a finite path-length $L$ in QCD matter, Fig.~\ref{fig:cascades} can be taken as a representation of the distribution of partonic jet fragments at moment $t \approx L$, when the jet escapes the medium.
+Let us now look at medium modification of jets in a $\log\left(p\right)-\log\left(\theta\right)$ plane as shown in ~\cite{Kurkela:2014tla}. The different momentum and angular scales are subject to different physical phenomena. Figure~\ref{fig:cascades} shows the relevant medium modification phenomena for different regions of the phase space at time $t$, when a jet propagates through a thermal cloud of temperature $T$. As in a practice jets propagate over a finite path-length $L$ in QCD matter, Fig.~\ref{fig:cascades} can be taken as a representation of the distribution of partonic jet fragments at moment $t \approx L$, when the jet escapes the medium.~\cite{Kurkela:2014tla}
 
-The region marked as DGLAP is dominated by the primary vacuum splittings. This region is determined by $\theta > \theta_\mathrm{vac}$ with
+The region marked as DGLAP is dominated by the primary vacuum splittings explained in section~\ref{sec:shower}. This region is determined by $\theta > \theta_\mathrm{vac}$ with
 
 \begin{equation}
-\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{pt}}.
+\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{\pt{}}}.
 \end{equation}
 
 
-Medium-induced parton branching fills the $\log p$-$\log$-$\theta$-plane from the bottom up (in $p$) and from the inside out (in $\theta$). This is because transverse momentum is acquired by Brownian motion in the medium, $k_\perp^2 \propto \hat q t$. Then the formation time constaint $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{p}{\hat q t}$ implies that medium-induced quanta can be formed in the region $p \leq k_\mathrm{form}$ where
+\noindent Medium-induced parton branching fills the $\log p$-$\log \theta$-plane from the bottom up (in $p$) and from the inside out (in $\theta$). This is because transverse momentum is acquired by Brownian motion in the medium, $k_\perp^2 \propto \hat q t$. Then the formation time constraint $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{p}{\hat q t}$ implies that medium-induced quanta can be formed in the region $p \leq k_\mathrm{form}$ where
 
-$$k_\mathrm{form}\left(t\right) = \hat q t^2$$.
+\begin{equation}
+k_\mathrm{form}\left(t\right) = \hat q t^2.
+\end{equation}
 
-The probability of finding a splittee with a momentum $p$ with $p < k_\mathrm{form}$ is 
+\noindent The probability of finding a splittee with a momentum $p$ with $p < k_\mathrm{form}$ is 
 
 \begin{equation}
 \frac{\mathrm d P_\mathrm{find}\left(t\right)}{\mathrm d \log p} \propto \alpha_s \nicefrac{t}{t_\mathrm{form}}\left(p\right) \propto \alpha_s \hat q ^{nicefrac{1}{2}} p^{-\nicefrac{1}{2}} t
 \end{equation} 
 
-Not all quanta will stay where they were created. Those modes that have time to lose a significant fraction of their energy will cascade to a significantly lower scale $p$. For LPM-type radiation, the splitting that degrades energy the most is the hardest splitting. 
+\noindent Not all quanta will stay where they were created. Those modes that have time to lose a significant fraction of their energy will cascade to a significantly lower scale $p$. For LPM-type radiation, the splitting that degrades energy the most is the hardest splitting. 
 
 The $\log p $ distribution has the same $\frac{1}{\sqrt{p}}$ dependence as in the LPM region
 
@@ -961,116 +1032,100 @@ The $\log p $ distribution has the same $\frac{1}{\sqrt{p}}$ dependence as in th
 \frac{\mathrm{d}n}{\mathrm{d}\log p} = \frac{1}{p}\frac{\mathrm{d}\epsilon}{\mathrm{d}\log p} \approx \alpha_s \frac{\sqrt{\hat q t}}{\sqrt{p}}
 \end{equation}
 
-Also the quanta originating from the DGLAP region will undergo medium interactions that will make the quanta radiate and split. The distribution of radiation is the same as from any other mode. Above a certain momentum scale $k_\mathrm{split}$ the distribution of originating daughters is 
+\noindent Also the quanta originating from the DGLAP region will undergo medium interactions that will make the quanta radiate and split. The distribution of radiation is the same as from any other mode. Above a certain momentum scale $k_\mathrm{split}$ the distribution of originating daughters is 
 
 
 \begin{equation}
 \frac{\mathrm d P_\mathrm{find}}{\mathrm d \log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)},
 \end{equation} 
 
-Note that the ratio $\nicefrac{t}{t_\mathrm{split}}$ is smaller than 1 for nodes above $k_\mathrm{split}$ and therefore the number of daughters is smaller than the number of vacuum splitted quanta. Below $k_\mathrm{split}$ the cascade is similar to the medium cascade and the number of quanta become
+\noindent Note that the ratio $\nicefrac{t}{t_\mathrm{split}}$ is smaller than 1 for nodes above $k_\mathrm{split}$ and therefore the number of daughters is smaller than the number of vacuum splitted quanta. Below $k_\mathrm{split}$ the cascade is similar to the medium cascade and the number of quanta become
 
 \begin{equation}
 \frac{\mathrm{d}n}{\mathrm{d}\log p \mathrm{d} \log \theta} \approx \alpha_s \frac{t}{t_\mathrm{split}\left(p\right)}, \text{ for } p < k_\mathrm{split}\left(p\right)
 \end{equation}
 
 
-The angular distribution is driven by two mechanisms; Multiple soft scatterings give rise to transverse Brownian motion, which determines the distribution at small angles. The typical angle reached in the LPM region is 
+\noindent The angular distribution is driven by two mechanisms; Multiple soft scatterings give rise to transverse Brownian motion, which determines the distribution at small angles. The typical angle reached in the LPM region is 
 
 \begin{equation}
 \theta_\mathrm{BR}\left(p\right) \approx \frac{\sqrt{\hat q t}}{p}, \text{ for } k_\mathrm{form} > p > k_\mathrm{split},
 \end{equation}
 
-while in the medium cascade region of the phase space this becomes
+\noindent while in the medium cascade region of the phase space this becomes
 
 \begin{equation}
 \theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}
 \end{equation}
 
-Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings, described by Molière~\cite{}.
-
-
-\subsubsection{Jet shape measurements}
-
-
-%\subsubsection*{DGLAP}
-%
-%Quantum mechanical formation time prevents emission faster than a time it takes to separate the wave packets of the splitter and the splittee. In general, splittees at a scale $p < Q$ can form at a time $t  \geq \nicefrac{p}{k_\perp^2}$ set by their inverse transverse energy. For jet evolution in the vacuum the angular distribution is determined by the primary decay kinematics of the splittee, $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{1}{p \theta^2}$. Therefore, the logarithmically ordered DGLAP 'vacuum' parton shower fills the $\log p$-$\log\theta$-plane from the outside in. In the entire region determined by $\theta > \theta_\mathrm{vac}$ with
-%
-%\begin{equation}
-%\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{pt}},
-%\end{equation}
-%
-%one finds with a probability $O\left(\alpha_s\right)$ per logarithmic phase space quanta due to vacuum radiation, 
-%
-%\begin{equation}
-%\frac{\mathrm{d} P_\mathrm{find}}{\mathrm{d} \log p \mathrm{d}\log \theta} \propto \alpha_s
-%\end{equation}
-%
-%The region where this primary splitting gives the dominant contribution in the $\log p$-$\log \theta$-plane is marked as DGLAP in Fig.~\ref{fig:cascades}.
-%
-%\subsubsection*{LPM}
-%
-%
-%
-%\subsubsection*{Medium cascade}
+\noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{}.
 
 
 
-
+\subsubsection*{Influence of jet on medium}
+Energy loss of hard partons is well established by experimental observations. Naturally energy can't just disappear, but is transferred to daughter partons or the medium. For radiation that stays inside the jet cone energy loss manifests itself as softening and broadening. If a daughter parton loses energy and becomes equilibrated with the medium it may no longer be correlated with the parent parton. This energy would then be distributed at distances far from the jet cone. There is some evidence for out-of-cone radiation by CMS~\cite{Chatrchyan:2011sx}, but the interpretation is not clear. Other possible phenomena include the mach cone and Moliére scattering, but there is no experimental evidence for these. Evidence for all of these effects is difficult to find as the underlying event gives already a large and fluctuating background. Additionally its unclear how this energy would be different from the underlying event~\cite{Connors:2017ptx}.
 
 
 
 \subsection{QGP in Small systems}
-After the existence of QGP in heavy-ion collisions has been established, attention has been turned to small systems. Proton-proton (pp) and proton-Lead (pPb) collisions have been studied at LHC and RHIC has studied a host of different collision systems; namely proton-Gold (pAu), deuteron-Gold (dAu) and Helium$^3$-Gold (He$^3$Au) collisions starting in 2000. %At LHC small systems have been studied in proton-Lead (pPb) collisions. First observations seemed to indicate that the signals taken to confirm the existence of QGP in heavy-ion collisions disappear in these small systems.
+After the existence of QGP in heavy-ion collisions has been established, attention has been turned to small systems. Proton-proton (\pp) and proton-Lead (\pPb) collisions have been studied at LHC and RHIC has studied a host of different collision systems; namely proton-gold (pAu)~\cite{}, deuteron-gold (dAu)~\cite{} and helium$^3$-gold (He$^3$Au)~\cite{} collisions starting from 2000. %At LHC small systems have been studied in proton-Lead (pPb) collisions. First observations seemed to indicate that the signals taken to confirm the existence of QGP in heavy-ion collisions disappear in these small systems.
 
-Already before the era of modern colliders, collective behaviour in proton-proton collisions was considered by names like Heisenberg, Fermi and Bjorken.~\cite{Nagle:2018nvi} Eventually there were some experimental searches of QGP in pp and $p\bar p$ collisions in E735 at Tevatron~\cite{Alexopoulos:1993wt} and MiniMAX~\cite{Brooks:1999xy}. However no conclusive evidence was found. 
+Already before the era of modern colliders, collective behaviour in proton-proton collisions was considered by names like Heisenberg, Fermi and Bjorken~\cite{Nagle:2018nvi}. Eventually there were some experimental searches of QGP in pp and $p\bar p$ collisions in E735 at Tevatron~\cite{Alexopoulos:1993wt} and MiniMAX~\cite{Brooks:1999xy}. However no conclusive evidence was found. 
 
-In the early years of RHIC these small systems were mostly considered as control measurement, for example in constraining nuclear modified parton distribution functions (nPDFs) that determine the initial gluon distributions that determine the first epoch
-of heavy-ion collisions~\cite{Shen:2015qta, Adare:2015lcd}. 
+In the early years of RHIC these small systems were mostly considered as control measurement, for example in constraining nuclear modified parton distribution functions (nPDFs) that determine the initial gluon distributions that determine the first epoch of heavy-ion collisions~\cite{Shen:2015qta, Adare:2015lcd}. 
 
-In 2010 ultrahigh-multiplicity pp collisions were studied at CMS. The study found that particles had a weak but clear preference to be emitted along a common transverse $\phi$ angle across all rapidities ~\cite{Salgado:2016jws}. This seemed like behaviour were similar to AA collisions, but it was argued that it could as well come from momentum correlations present in the earliest moments of the collision.
+In 2010 ultrahigh-multiplicity pp collisions were studied at CMS~\cite{Khachatryan:2010gv}. The study found that particles had a weak but clear preference to be emitted along a common transverse $\phi$ angle across all rapidities ~\cite{Salgado:2016jws}. This seemed like behaviour were similar to AA collisions, but it was argued that it could as well come from momentum correlations present in the earliest moments of the collision.
 
-In 2012 LHC ran its first pPb data taking period. Around the same time dAu data was reexamined at RHIC. Now it was revealed that most of the flow signatures attributed to hydrodynamic expansion in AA collisions also existed in smaller systems.
+In 2012 LHC ran its first \pPb data taking period. Around the same time dAu data was re-examined at RHIC. Now it was revealed that most of the flow signatures attributed to hydrodynamic expansion in AA collisions also existed in smaller systems.
+
+
+
+%-Sub nucleonic structure needed to describe intial conditions in pA, pp
+%\FloatBarrier
+
+\subsubsection{Collective phenomena}
+The most rugged analysis of collective behaviour concerns the two (or more) particle correlations, often parametrised via the relative azimuthal angle and pseudorapidity differences, $\Delta \phi$ and $\Delta \eta$ respectively. Figure ~\ref{fig:smallsystems2} shows two-particle correlations measurements in \PbPb, \pPb and \pp collisions at the LHC~\cite{Aad:2015gqa}. In \PbPb collisions long-range correlations dominate over short-range phenomena. This shows in the two ridges at $\Delta \phi = 0 $ and $\Delta \phi = \pi$. At $\Delta\phi\approx\Delta\eta\approx0$, there is a peak coming from single jet fragmentation. Since the away-side jet can be spread out in $\Delta\eta$, this contribution disappears when compared to the flow contribution at the away side ridge. In pPb, and pp the near side peak is more distinguished and the away-side jet contribution starts to show. Still, one can see long-range correlations that seem like flow-like collective behaviour in both systems. 
+\begin{figure}[b!]
+\centering
+            	\includegraphics[width=0.9\textwidth]{pics/figure_ridges}
+                \caption{Two-particle correlation results in PbPb, pPb, and pp collisions at the LHC~\cite{Aad:2015gqa}. }
+	\label{fig:smallsystems2}
+\end{figure}
+
+In addition to the two particle correlations, correlations have been observed in the form of $v_n$ coefficients both at LHC~\cite{Acharya:2017ino} and at RHIC~\cite{Aidala:2016vgl}. The results have also been described  with hydrodynamical models, although the applicability of said models might be questionable, because of the large Reynolds numbers in small systems~\cite{Shen:2016zpp,Niemi:2014wta}. Figure \ref{fig:smallsystems1} shows results for $v_2$ in different collisions systems at RHIC as measured by PHENIX. These different systems provide also different initial geometries. dAu collisions naturally have an ellipsoidal form, while a $\mathrm{He}^3$ collision has a triangular form and thus produces larger triangular flow, $v_3$ components. 
+
 \begin{figure}[b!]
 \centering
             	\includegraphics[height=2.4in]{pics/figure_phenix_geometry_new}
-                \caption{Calculations of the intial energy density in small collision systems at RHIC and the resulting hydrodynamic evolution.}
+                \caption{{\it left}Calculations of the initial energy density in small collision systems at RHIC and the resulting hydrodynamic evolution. Figure from~\cite{Nagle:2018nvi}, {\it right} Comparison between hydrodynamic calculations and data from $p+\mathrm{Au}$, $d+\mathrm{Au}$ and $^3\mathrm{He+Au}$ collisions~\cite{Aidala:2016vgl}}
 	\label{fig:smallsystems1}
 \end{figure}
 
 
-
--Sub nucleonic structure needed to describe intial conditions in pA, pp
-\subsubsection{Collective phenomena}
-The most rugged analysis of collective behaviour concerns the two (or more) particle correlations, often parametrised via the relative azimuthal angle and pseudorapidity differences, $\Delta \phi$ and $\Delta \eta$ respectively. Figure ~\ref{fig:smallsystems2} shows two-particle correlations measurements in PbPb, pPb and pp collisions at the LHC. In PbPb collisions long-range correlations dominate over short-range phenomena. This shows in the two ridges at $\Delta \phi = 0 $ and $\Delta \phi = \pi$. At $\Delta\phi\approx\Delta\eta\approx0$, there is a peak coming from single jet fragmentation. Since the away-side jet can be spread out in $\Delta\eta$, this contribution disappears when compared to the flow contribution at the away side ridge. In pPb, and pp the near side peak is more distinguished and the away-side jet contribution starts to show. Still, one can see long-range correlations that seem like flow-like collective behaviour in both systems. 
-\begin{figure}[b!]
-\centering
-            	\includegraphics[width=0.9\textwidth]{pics/figure_ridges}
-                \caption{Two-particle correlation results in PbPb, pPb, and pp collisions at the LHC~\cite{}. }
-	\label{fig:smallsystems2}
-\end{figure}
-
-In addition to the two particle correlations, correlations have been observed in the form of $v_n$ coefficients both at LHC and at RHIC. The results have also been described  with hydrodynamical models, although the applicability of said models is questionable, because of the large Reynolds numbers in small systems. Figure \ref{fig:smallsystems1} shows results for $v_2$ in different collisions systems at RHIC as measured by PHENIX. These different systems provide also different initial geometries. dAu collisions naturally have an ellipsoidal form, while a He3 collision has a triangular form and thus produces larger triangular flow, $v_3$ components. 
-
-Other observations that produce flow-like results include mass ordered $v_2$ coefficients and higher order harmonics coming from fluctuations in the initial geometry. Thus all the major collective flow phenomena observed in heavy-ion collisions have been also identified in small systems.
+Other observations that produce flow-like results include mass ordered $v_2$ coefficients~\cite{} and higher order harmonics coming from fluctuations in the initial geometry~\cite{Acharya:2017ino}. Thus all the major collective flow phenomena observed in heavy-ion collisions have been also identified in small systems.
 
 One open question is identifying the point the point, where flow-like correlations end. The question has proved challenging since low multiplicity events are dominated by non-flow phenomena. This makes observations in low multiplicity events model/method dependant. Different methods assess non-flow contributions differently. Thus some methods fail to observe a signal in cases, where others do and it is unclear whether this is true collective motion or it comes from non-flow contributions.
 
+%\FloatBarrier
+
 \subsubsection{Absence of jet quenching}
-In A+A collisions, an important confirmation of the standard model comes from the energy loss of high $\pt{}$ partons traversing the medium, referred to as jet quenching~\cite{Gyulassy:2003mc,doi:10.1146,Accardi:2009qv}. In 2003 the jet quenching effect was observed to disappear in d+Au collisions. This was taken as an indication that no QGP was created. Similarly at LHC no jet modification has been observed in pPb collisions. Fig. \ref{fig:smallsystems3} shows the nuclear modification factor $R_{\mathrm{pA}}$ in pPb collisions as measured at the LHC. 
+In A+A collisions, an important confirmation of the standard model comes from the energy loss of high $\pt{}$ partons traversing the medium, as discussed in Sec.~\ref{sec:energyloss}.
+%referred to as jet quenching~\cite{Gyulassy:2003mc,doi:10.1146,Accardi:2009qv}.
+Originally the interest in small systems was due to ruling out possible cold nuclear matter effects that might affect the results also in $\PbPb$. In 2003 the jet quenching effect was observed to disappear in d+Au collisions at RHIC~\cite{Adler:2003ii,Adams:2003im,Arsene:2003yk,Back:2003ns}. This was taken as an indication that no QGP was created. Similarly at LHC no jet modification has been observed in pPb collisions. Fig. \ref{fig:smallsystems3} shows the nuclear modification factor $R_{\mathrm{pA}}$ and $v_2$ in pPb collisions as measured at the LHC~\cite{Khachatryan:2016odn,Aad:2014lta}. 
 
-The lack of jet modification seems surprising considering the multitude of flow observations supporting the existence of QGP in small systems. One possible explanation is simply the size of medium. In PbPb collision partons traversing through the medium lose energy to the medium. If the medium is very small there is limited time for interaction with the medium. 
+Now the lack of jet modification seems surprising considering the multitude of flow observations supporting the existence of QGP in small systems. One possible explanation is simply the size of medium. In PbPb collision partons traversing through the medium lose energy to the medium. If the medium is very small there is limited time for interaction with the medium. Reaction plane dependent $R_{AA}$ measurements~\cite{physRevC.76.034904} in \PbPb collisions indicated that \unit[2]{fm} could be the minimum path length required for energy loss.
 
-Calculations indicate that there should be modification in the most central pPb collisions, but selecting these in the analysis is complicated. In PbPb collisions most of the particle production comes from the medium and thus the total multiplicity is a good indicator of centrality. In pPb collisions, however the total multiplicity is smaller and is more strongly influenced by jet phenomena. Events with jets have naturally larger multiplicities and are more likely to be classified as central events.
+Some calculations~\cite{Zhang:2013oca,Park:2016jap,Tywoniuk:2014hta} indicate that there should be modification in the most central \pPb collisions, but selecting these in the analysis is complicated~\cite{Nagle:2018nvi}. In \PbPb collisions most of the particle production comes from the medium and thus the total multiplicity is a good indicator of centrality. However in \pPb collisions the total multiplicity is smaller and is more strongly influenced by jet phenomena. Events with jets have naturally larger multiplicities and are more likely to be classified as central events.
 
-So far the only observable indicative of jet quenching in pPb collisions is the high $\pt{}$ $v_2$. In heavy-ion collisions this is not explained by hydrodynamics. Instead it is assumed to come from jet quenching with different path lengths through the medium in different directions. In Fig.\ref{fig:smallsystems3} ATLAS and CMS measurements of $v_2$ in pPb and PbPb collisions are shown. The pPb results seem to follow a very similar pattern. 
+So far the only observable indicative of jet quenching in pPb collisions is the high $\pt{}$ $v_2$. In heavy-ion collisions this is not explained by hydrodynamics. Instead it is assumed to come from jet quenching with different path lengths through the medium in different directions. In Fig.\ref{fig:smallsystems3} ATLAS~\cite{Aad:2014lta} and CMS~\cite{missing} measurements of $v_2$ in pPb and PbPb collisions are shown. The pPb results seem to follow a very similar pattern. 
 
 
 \begin{figure}[b!]
 \centering
             	\includegraphics[width=0.9\textwidth]{pics/figure_ppb_jetquenching.pdf}
-                \caption{RpA in proton-lead collisions}
+                \caption{{\it}The nuclear modification factor $R_\mathrm{pA}$ in \pPb collisions~\cite{Khachatryan:2016odn}. Compared to $R_\mathrm{AA}$  $R_\mathrm{pA}$ shows no sign of modification. 
+                {\it right} The $v_2$ coefficient as a function of \pt{} in \PbPb and \pPb at the LHC~\cite{Aad:2014lta,Zhang:2013oca}. For shape comparison the \pPb results have been scaled up by a factor 1.5.}
+                
 	\label{fig:smallsystems3}
 \end{figure}
 
@@ -1096,46 +1151,47 @@ So far the only observable indicative of jet quenching in pPb collisions is the 
   \end{tabular}
   \end{table}
 
+\FloatBarrier
 \subsubsection{Centrality determination in small systems}
 \label{sec:smallsystemcentrality}
-In lead-lead collisions the total multiplicity of the event is a good indicator of the centrality of the collision. In proton-lead collisions the connection of multiplicity and centrality is less clear. In \pPb collisions the impact parameter is only loosely correlated to $N_\mathrm{part}$ or $N_\mathrm{coll}$. Hence, although one uses traditionally the term centrality to refer to these measurements, the relevant parameters are $N_\mathrm{part}$ and $N_\mathrm{coll}$~\cite{Adam:2014qja}.
-
-The Glauber model~\cite{Miller:2007ri} is generally used to calculate geometrical quantities of nuclear collisions (A–A or p–A). In this model, the impact parameter $b$ controls the average number of participating nucleons $N_\mathrm{part}$ and the corresponding number of collisions $N_\mathrm{coll}$. It is expected that variations of the amount of matter overlapping in the collision region will change the number of produced particles, and parameters such as $N_\mathrm{part}$ and $N_\mathrm{coll}$ have traditionally been used to describe those
-changes quantitatively, and to relate them to \pp collisions.
-
-
-
-%In practice centrality is determined in \pPb~collisions using the same methods as in \pbpb~collisions.
-
-The problem in \pPb collisions, is that fluctuations in multiplicity coming from for example hard scatterings are of the same order as the differences in multiplicity between centrality classes. In \PbPb collisions these multiplicity fluctuations have little influence on the centrality determination, the range of $N_\mathrm{part}$ or $N_\mathrm{coll}$ is large and $P\left(M|v\right)$ converges quickly to a Gaussian with a small width relative to the range of $v$. 
-
-Thus in practice selecting high multiplicity one chooses not only large average $N_\mathrm{part}$, but also positive multiplicity fluctuations leading to deviations from the binary scaling of hard processes. These fluctuations are partly related to qualitatively different types of collisions. High multiplicity nucleon-nucleon collisions show a significantly higher particle mean transverse momentum. They can be understood as harder collisions with larger momentum transfer $Q^2$ or as nucleon-nucleon collisions where multiple parton-parton interactions (MPI) take place. This is illustrated in Fig.~\ref{fig:pPbMult}.
-
-Of particular interest are estimators from kinematic regions that are causally disconnected after the collision. The measurement of a finite correlation between them unambiguously establishes their connection to the common collision geometry. Typically these studies are performed with observables from well separated pseudorapidity ($\eta$) intervals, e.g. at zero-degree (spectators, slow-nucleons, deuteron break-up probability) and multiplicity in the rapidity plateau.
-
-One centrality selection that is argued not to induce a bias on the binary scaling of hard processes is provided by the energy measurement with the Zero Degree Calorimeters (ZDC) in ALICE, due to their large $\eta$-separation from the central barrel detectors. They detect the "slow" nucleons produced in the interaction by nuclear de-excitation processes or knocked out by wounded nucleons.
+In lead-lead collisions the total multiplicity of the event is a good indicator of the geometric centrality of the collision~\cite{Abelev:2013qoq,PhobosCentrality}. In proton-lead collisions the connection between multiplicity and centrality is less clear~\cite{Adam:2014qja}. In \pPb collisions the impact parameter is only loosely correlated to $N_\mathrm{part}$ or $N_\mathrm{coll}$. Hence, although one uses traditionally the term centrality to refer to these measurements, the relevant parameters are $N_\mathrm{part}$ and $N_\mathrm{coll}$~\cite{Adam:2014qja}.
 
 \begin{figure}[b!]
 \centering
             	\includegraphics[width=0.50\textwidth]{pics/CentralitypPb}
                 \caption{Distribution of the sum of amplitudes in the V0A hodoscopes (Pb-going), as well
-as the NBD-Glauber fit (explained in the text). Centrality classes are indicated by vertical lines. The
+as the NBD-Glauber fit. Centrality classes are indicated by vertical lines. The
 inset shows a zoom-in on the most peripheral events.~\cite{Adam:2014qja}}
 	\label{fig:pPbcentrality}
 \end{figure}
 
 
 
-\begin{figure}[b!]
-\centering
-            	\includegraphics[width=0.9\textwidth]{pics/BNpart_Glau-10758.pdf}
 
-            	\includegraphics[width=0.9\textwidth]{pics/NpartMult_Glau-10759.pdf}
+As in \PbPb collisions the Glauber model~\cite{Miller:2007ri} is generally used to calculate geometrical quantities of \pPb collisions. In this model, the impact parameter $b$ controls the average number of participating nucleons $N_\mathrm{part}$ and the corresponding number of collisions $N_\mathrm{coll}$. It is expected that variations of the amount of matter overlapping in the collision region will change the number of produced particles, and parameters such as $N_\mathrm{part}$ and $N_\mathrm{coll}$ have traditionally been used to describe those changes quantitatively, and to relate them to \pp collisions. Figure ~\ref{fig:pPbcentrality} shows the measured V0A amplitude distribution in ALICE and the best NBD Glauber fit to the distribution~\cite{Adam:2014qja}.
+
+
+
+%In practice centrality is determined in \pPb~collisions using the same methods as in \pbpb~collisions.
+
+The problem in \pPb collisions is that fluctuations in multiplicity coming from for example hard scatterings are of the same order as the differences in multiplicity between centrality classes. In \PbPb collisions these multiplicity fluctuations have little influence on the centrality determination as the range of $N_\mathrm{part}$ or $N_\mathrm{coll}$ is large and both $P\left(M|N_\mathrm{part}\right)$ and $P\left(M|N_\mathrm{coll}\right)$ converge quickly to a Gaussian with a small width relative to the range of $N_\mathrm{part}$/$N_\mathrm{coll}$. This is illustrated in Fig.~\ref{fig:pPbMult}. In practice selecting high multiplicity in \pPb one chooses not only large average $N_\mathrm{part}$, but also positive multiplicity fluctuations leading to deviations from the binary scaling of hard processes. These fluctuations are partly related to qualitatively different types of collisions. High multiplicity nucleon-nucleon collisions show a significantly higher mean transverse momentum. They can be understood either as harder collisions with larger momentum transfer $Q^2$ or as nucleon-nucleon collisions where multiple parton-parton interactions (MPI) take place. 
+
+Of particular interest are estimators from kinematic regions that are causally disconnected after the collision. The measurement of a finite correlation between them unambiguously establishes their connection to the common collision geometry. Typically these studies are performed with observables from well separated pseudorapidity ($\eta$) intervals, e.g. at zero-degree (spectators, slow-nucleons, deuteron break-up probability) and multiplicity in the rapidity plateau.
+
+One centrality selection that is argued not to induce a bias on the binary scaling of hard processes is provided by the energy measurement with the Zero Degree Calorimeters (ZDC) in ALICE, due to their large $\eta$-separation from the central barrel detectors. They detect the "slow" nucleons produced in the interaction by nuclear de-excitation processes or knocked out by wounded nucleons~\cite{Sikler:2003ef}.
+
+
+\begin{figure}[htb]
+\centering
+            	\includegraphics[width=0.7\textwidth]{pics/BNpart_Glau-10758.pdf}
+            	\includegraphics[width=0.7\textwidth]{pics/NpartMult_Glau-10759.pdf}
                 \caption{Top: Scatter plot of number of participating nucleons versus impact parameter; Bottom: Scatter plot of multiplicity versus the number of participating nucleons from the Glauber fit for V0A. The quantities are calculated with a Glauber Monte Carlo of p-Pb (left) and Pb-Pb (right) collisions.~\cite{Adam:2014qja}}
 	\label{fig:pPbMult}
 \end{figure}
 
 
-Additional kinematic biases exist for events containing high-$\pt{}$ particles, which arise from the fragmentation of partons produced in parton-parton scattering with large momentum transfer. Their contribution to the overall multiplicity increases with increasing parton energy and thus can introduce a trivial correlation between the centrality estimator and the presence of a high-$\pt{}$ particle in the event. For very peripheral collisions, the multiplicity range that governs the centrality for the bulk of soft collisions can represent an effective veto on hard processes. For the nuclear modification factor this would lead to $R_\mathrm{pPb} < 1$.
+Additional kinematic biases exist for events containing high-$\pt{}$ particles, which arise from the fragmentation of partons produced in parton-parton scattering with large momentum transfer. Their contribution to the overall multiplicity increases with increasing parton energy and thus can introduce a trivial correlation between the centrality estimator and the presence of a high-$\pt{}$ particle in the event. For very peripheral collisions, the multiplicity range that governs the centrality for the bulk of soft collisions can represent an effective veto on hard processes. For the nuclear modification factor this would lead to $R_\mathrm{pPb} < 1$~\cite{Adam:2014qja}.
+
+{\color{red} More citations to final discussion?}
 
 

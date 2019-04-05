@@ -37,6 +37,7 @@ figures/tikz/peripheral.pdf
 figures/tikz/perpcone.pdf
 figures/tikz/alice.pdf
 figures/tikz/gem.pdf
+figures/tikz/jetquenching.pdf
 **/*.log
 **/*.gz
 **/*.aux
