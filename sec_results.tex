@@ -31,55 +31,42 @@
 
 
 
-\subsection{Fitting}
-Fits of $\jt{}$ distributions in different $\pt{jet}$ bins with $\pt{jet}  > \unit[40]{\gev}$ are shown in figure \ref{fig:fits}. Additional $\pt{jet}$ bins are shown in appendix \ref{app:a}. {\color{red} Add appendix} In lowest $\pt{jet}$ bins the jets are mainly combinatorial which makes background subtraction and unfolding difficult and thus the signal can't be trusted. 
+%\subsection{$\jt{} signal distributions$}
+In this section I present the final results for $\jt{}$ signals. After unfolding and subtracting the background contribution we get the final $\jt{}$ distributions. These are then fitted using the two component model. Figure~\ref{fig:fits} shows $\jt{}$ distributions for two different $\pt{jet}$ bins with $\unit[60]{\gev}< \pt{jet}  < \unit[80]{\gev}$ and $\unit[100]{\gev}< \pt{jet}  < \unit[150]{\gev}$. Additional $\pt{jet}$ bins are shown in appendix \ref{app:a}. It is clear that the distributions get wider with increasing $\pt{jet}$. In a jet cone this is natural as the cone size sets kinematical limits on the possible $\jt{}$ values. For a given $\pt{,track}$ the maximum $\jt{}$ value is approximately
 
-The fits describe the data well. There is some fluctuation of the order of 10 \% around the fit function. At hight $\jt{}$ the statistical errors in the signal are large.
+\begin{equation}
+\jt{max} \approx R\cdot \pt{,track},
+\end{equation}
 
-\begin{figure}
+\noindent using the small angle approximation. 
+
+We fit the distribution using the two component fit function presented in Sec.~\ref{sec:fitting}. These are also shown in Fig.~\ref{fig:fits}. Aside from statistical fluctuations the fits describe the data well. It should be noted that fitting a Gaussian alone would produce the same result as the Gaussian component in the combined fit function.
+
+\begin{figure}[htb]
 \centering
-%\begin{subfigure}{0.24\textwidth}
-%\includegraphics[width=0.95\textwidth]{RooUnfold/figs/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt00perconeBgBayes}
-%\end{subfigure}
-%\begin{subfigure}{0.24\textwidth}
-%\includegraphics[width=0.95\textwidth]{RooUnfold/figs/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt01perconeBgBayes}
-%\end{subfigure}
-%\begin{subfigure}{0.24\textwidth}
-%\includegraphics[width=0.95\textwidth]{RooUnfold/figs/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt02perconeBgBayes}
-%\end{subfigure}
-%\begin{subfigure}{0.24\textwidth}
-%\includegraphics[width=0.95\textwidth]{RooUnfold/figs/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt03perconeBgBayes}
-%\end{subfigure}
-\begin{subfigure}{0.24\textwidth}
-\includegraphics[width=0.95\textwidth]{results/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt04perconeBgBayes}
-\end{subfigure}
-\begin{subfigure}{0.24\textwidth}
+\begin{subfigure}{0.44\textwidth}
 \includegraphics[width=0.95\textwidth]{results/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt05perconeBgBayes}
 \end{subfigure}
-\begin{subfigure}{0.24\textwidth}
-\includegraphics[width=0.95\textwidth]{results/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt06perconeBgBayes}
-\end{subfigure}
-\begin{subfigure}{0.24\textwidth}
+\begin{subfigure}{0.44\textwidth}
 \includegraphics[width=0.95\textwidth]{results/JetConejTSignalFit/JetConejTSignalFitNFin00JetPt07perconeBgBayes}
 \end{subfigure}
-\caption{$\jt{}$ signal fits in different jet $\pt{}$ bins}
+\caption{$\jt{}$ signal distributions fitted with the two component model in different jet $\pt{}$ bins}
 \label{fig:fits}
 \end{figure}
 
+To characterise the widening of the $\jt{}$ distribution we can then extract the RMS values of the fits. Resulting RMS values with systematic errors are shown separately for the two components in Fig.~\ref{fig:rmsyield}. Here it is seen that the width of the narrow component shows no or only a weak dependence on the transverse momentum of the jet, $\pt{jet}$. Wide component on the other increases clearly with increasing $\pt{jet}$.
 
-
-
-\subsubsection{RMS values from fitted distributions}
-RMS results with systematic errors are shown separately in figure \ref{fig:rmsyield}. Figure \ref{fig:rms} shows RMS values for both components combined. The figure also includes results from a PYTHIA simulation. 
+Figure \ref{fig:rms} shows RMS values for both components combined and overlaid with \pythia and Hewig simulations. As seen in the figure all the \pythia models reproduce the data well, both the wide and narrow component. Herwig, on the other hand, seems to produce significantly wider $\jt{}$ distributions. This difference seems to get larger with increasing $\pt{jet}$. For the narrow component Herwig gives a good representation of the data.
 \begin{figure}[htb]
-\begin{subfigure}{0.5\textwidth}
+\centering
+\begin{subfigure}{0.49\textwidth}
 \includegraphics[width=0.95\textwidth]{results/gammaRMSWithSystematics}
 \end{subfigure}
 %\begin{subfigure}{0.5\textwidth}
 %\includegraphics[width=0.95\textwidth]{results/gammaYieldWithSystematics}
 %\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.95\textwidth]{results/gausRMSWithSystematics}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=0.95\textwidth]{figures/results/gausRMSWithSystematics}
 \end{subfigure}
 %\begin{subfigure}{0.5\textwidth}
 %\includegraphics[width=0.95\textwidth]{results/gausYieldWithSystematics}
@@ -89,24 +76,23 @@ RMS results with systematic errors are shown separately in figure \ref{fig:rmsyi
 \end{figure}
 
 \begin{figure}[htb]
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.95\textwidth]{results/RMSWithSystematics}
-\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.95\textwidth]{results/RMSWithSystematics_Pythia}
-\end{subfigure}
+\centering
+\includegraphics[width=0.65\textwidth]{results/RMSWithSystematics_Pythia}
 \caption{RMS values extracted from the fits for the Gaussian (narrow) and inverse gamma (wide) components}
 \label{fig:rms}
 \end{figure}
 
 \subsection{High multiplicity}
-The analysis was repeated taking only events with high multiplicity. Three different multiplicity cuts were used; \unit[10]{\%}, \unit[1]{\%} and \unit[0.1]{\%}. We used ZDC(TODO) as a centrality estimator. As argued in section ~\ref{sec:smallsystemcentrality} the zero-degree energy deposit should provide a centrality estimator with minimal bias from jets production. Resulting $\jt{}$ distributions are shown Fig.~\ref{fig:highm}. As the statistics are limited in the high multiplicity runs, it was hard to achieve stable fits to the distributions. Thus the RMS values are not shown.
+The analysis was repeated taking only events with high multiplicity. Three different multiplicity percentile cuts were used; \unit[10]{\%}, \unit[1]{\%} and \unit[0.1]{\%}. We used ZDC(TODO) as a centrality estimator. As argued in section ~\ref{sec:smallsystemcentrality} the zero-degree energy deposit should provide a centrality estimator with minimal bias from jet production. Resulting $\jt{}$ signal distributions are shown Fig.~\ref{fig:highm}. As the statistics are limited in the high multiplicity runs, it was hard to achieve stable fits to the distributions. Thus the RMS values are not shown. 
 
-From the figure one can observe no systematic modification when tighter multiplicity cuts are introduced. 
+From the figure one can observe no systematic modification when tighter multiplicity cuts are introduced. There is a hint of a dip at $\jt{} \approx 2$, but it is well within statistical error bars. This is also the region where the signal is most sensitive to background subtraction. Higher multiplicity events will naturally have higher background. Background estimation is done separately for the multiplicity bins. Thus it is not expected that different backgrounds would cause a difference, but this possibility can't be ruled out.
+
+As described in Sec.~\ref{sec:smallsystem} no conclusive evidence of jet modification in \pPb collisions has been observed.  Most jet observables show no difference between \pp and \pPb collisions. Thus any difference in $\jt{}$ would also be small. 
+
 
 \begin{figure}[htb]
 \includegraphics[width=0.95\textwidth]{results/HighMJetConeJtSignalPtFrom3To8.pdf}
-\caption{$\jt{}$ distributions for high multiplicity \pPb~ events. {\color{red} Replace figure}}
+\caption{$\jt{}$ distributions for high multiplicity \pPb~ events. {\color{red} Replace figure with ZDC results}}
 \label{fig:highm}
 \end{figure}
 
