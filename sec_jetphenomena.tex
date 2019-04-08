@@ -74,7 +74,7 @@ The final component in the factorization, fragmentation functions, describe the 
 z = \frac{\vec p_{\mathrm{part}} \cdot \vec p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\vec{p}_\mathrm{part} \times \vec{p}_\mathrm{jet}=0}
 \end{equation}
 
-Fragmentation function $D\left(z\right)$ then gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{}. 
+Fragmentation function $D\left(z\right)$ then gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{missing}. 
 
 \begin{equation}
 m\left(z_0\right) = \int_{z_0}^1 D\left(z\right) \mathrm{d} z \Rightarrow m\left(0\right) \equiv \left< m \right> = \int_0^1 D\left(z\right) \mathrm{d}z
@@ -124,11 +124,11 @@ P_\mathrm{g\rightarrow q \bar q}\left(z\right)& = \frac{n_f}{2}\left( z^2+\left(
 \frac{\mathrm{d}Q^2}{Q^2}\mathrm{d}z = \frac{\mathrm{d} m^2}{m^2} \mathrm{d}z. 
 \end{equation}
 
-Of the Monte Carlo generators used in this thesis \pythia uses $m^2$ as evolution variable~\cite{}, while HERWIG uses an energy-weighted emission angle $E^2\left(1-\cos\theta\right) \approx \nicefrac{m^2}{z\left(1-z\right)}$~\cite{}.
+Of the Monte Carlo generators used in this thesis \pythia uses $m^2$ as evolution variable~\cite{missing}, while HERWIG uses an energy-weighted emission angle $E^2\left(1-\cos\theta\right) \approx \nicefrac{m^2}{z\left(1-z\right)}$~\cite{missing}.
 
 Formally eq~\ref{eq:dglap} corresponds to the emission of an infinite number of partons. However very soft and collinear gluons need not considered and one can introduce an effective cut-off scale $Q_0$, usually taken to be of the order of \unit[1]{\gev}.
 
-Going further one approach is to introduce time ordering, i.e. to decide which of the emissions occurs first. This is done in the form of a Sudakov form factor~\cite{}
+Going further one approach is to introduce time ordering, i.e. to decide which of the emissions occurs first. This is done in the form of a Sudakov form factor~\cite{missing}
 
 \begin{equation}
 P_a^{no}\left(Q^2_\mathrm{max},Q^2\right) = \exp \left(- \int_{Q^2}^{Q^2_\mathrm{max}}\int_{z_\mathrm{min}}^{z_\mathrm{max}} \mathrm{d} P_a \left(z',Q'^2\right)\right),
@@ -260,7 +260,7 @@ The next sections will present more complicated hadronisation models used in Mon
 
 \subsubsection*{Lund string model}
 
-One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair. The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{}.
+One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons. The left side of Fig. ~\ref{fig:fluxtube} illustrates this point for a $\mathrm{q \bar q}$-pair. The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{missing}.
 
 The evolution of string fragmentation is illustrated schematically on the right side of Fig.~\ref{fig:fluxtube}. This figure is drawn in a light cone presentation, so the initial quark and antiquark are going to separate directions at the speed of light, which assumes them as massless. The string between them, illustrated in the figure by the red line, stretches until its potential energy becomes high enough that it can break, forming a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the new pair $\mathrm{q'\bar q'}$, now two new pairs $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$ have formed. As these particles are also moving away from each other, the strings between them can stretch and break, creating yet more pairs. The process continues until the invariant mass of the system connected by the string becomes small enough and a final state meson is formed. 
 
@@ -294,7 +294,7 @@ The process can be thought as follows: first start from the q-leg of a $\mathrm{
 
 One additional possibility one must consider is that a string can have such a low mass that it cannot break at all. In this case a single hadron is generated out of the string and if necessary  energy and momentum are exchanged with other partons in the event.
 
-After all the hadrons are produced, the short-lived ones can still decay before the set of final state particles in the simulation is obtained~\cite{}
+After all the hadrons are produced, the short-lived ones can still decay before the set of final state particles in the simulation is obtained~\cite{missing}
 \begin{figure}
 \centering
 \includegraphics[width=0.75\textwidth]{pics/stringone.pdf}
@@ -312,7 +312,7 @@ universal invariant mass distribution. The invariant mass does not depend on the
 The cluster model starts from transforming all gluons non-perturbatively into $\mathrm{q \bar q}$ pairs, which requires that the gluons get a mass, which must be at least twice the lightest quark mass. After the gluons are transformed into quarks, the adjacent colour lines can be clustered together to colour singlet states with mesonic quantum numbers. The momentum of these clusters is defined to be the sum of the momenta of the clustering partons. According to preconfinement, the mass distribution of these clusters is independent of the details of the hard scattering. Additionally the clusters can be regarded as highly excited hadron resonances and decayed into the final state hadrons.
 
 Some of these initial clusters are too heavy to reasonably describe an excited state of a hadron. These must be
-split before they are allowed to decay. The cluster $C$ is split if its mass fulfils the condition~\cite{}
+split before they are allowed to decay. The cluster $C$ is split if its mass fulfils the condition~\cite{missing}
 
 \begin{equation}
 M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
@@ -329,7 +329,7 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 \label{fig:colourstructure}
 \end{figure}
 
-When the clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{} 
+When the clusters are light enough, they decay into final state hadrons. If the mass of the cluster is high enough for decaying into a baryon-antibaryon pair, there is a parameter deciding whether the cluster undergoes mesonic or baryonic decay. For a mesonic decay a quark-antiquark pair is created from the vacuum and for the baryonic decay a diquark-antidiquark pair is made. Then the exact decay products are chosen and the cluster decays isotropically in the rest frame of the cluster. If there are partons produced in the perturbative phase involved in the decay, they retain their original direction in the cluster rest frame, up to some Gaussian smearing. If the cluster mass is too low to decay into a pair of mesons, it decays into the lightest possible hadron and some energy and momentum is exchanged with the adjacent clusters. At the end we are left with the final state hadrons, some of which might still decay until the end of the simulation if they are very short-lived.~\cite{missing} 
 
 \subsubsection{Interactions between jet and medium}
 Let us now look at what happens to jet production in heavy-ion collisions. High momentum particles are very rare and they are only produced in the initial collisions. In a heavy ion collision, where a QGP medium is formed, the hard scattered quarks and gluons are expected to interact strongly with the medium due to their colour charges and thus lose energy, either through collisions with medium partons, or through gluon bremsstrahlung~\cite{Connors:2017ptx}. This is referred to as jet quenching. Figure ~\ref{fig:jetq} shows a dijet inside QGP medium. Studying the modification of jets inside the medium gives another key approach to constraining the properties of QGP. Modification can be also observed in jet shapes, particle composition, fragmentation, splitting functions and many others.
@@ -476,7 +476,7 @@ The last category is formed by the Monte Carlo methods. The PYTHIA event generat
 %
 %At high-$\pt{}$, the pQCD processes are dominant, hence the $v_n$ (or $R_{AA}(\Delta\phi, \pt{})$) characterize the pathlength-dependence of the energy loss process. ~\ref{fig:highpt}
 %
-%Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{}.
+%Jet quenching is not the only high $\pt{}$ phenomenon studied in heavy-ion collisions. Another property is jet fragmentation. The high momentum parton created in the initial collision fragments into a number of partons with smaller $\pt{}$. Jet fragmentation occurs also in proton-proton collisions in the vacuum, but it can be modified due to the presence of the medium. In order to study the jet fragmentation function ($D(z)$, where $z= \pt{}^h/\pt{}^{part}$) modification due the medium, we use the two-particle correlations. The particle yield can be extracted from the correlation function. The background from the flow processes is correlated and needs to be subtracted to get the particle yield associated only with the jet. The ratio of the jet yields in Au-Au and p-p collision $I_{AA} = {Y^{Au+Au}}/{Y^{p+p}}$ characterizes the jet fragmentation modification \cite{Aamodt:2011vg}. $I_{AA}$ probes the interplay between the parton production spectrum, the relative importance of quark-quark, gluon-gluon and quark-gluon final states, and energy loss in the medium~\cite{missing}.
 %
 %
 %\begin{figure}[ht]
@@ -584,7 +584,7 @@ The $\log p $ distribution has the same $\frac{1}{\sqrt{p}}$ dependence as in th
 \theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}
 \end{equation}
 
-\noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{}.
+\noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{missing}.
 
 
 
