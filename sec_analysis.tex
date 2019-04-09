@@ -17,9 +17,9 @@ The $\sqrtSnnE{5.02}$ $\pPb$ ($1.3 \cdot 10^{8}$ events, $\mathcal{L}_{\mathrm{i
 \subsection{Event selection}
 This analysis uses both a minimum bias trigger and an EMCal based trigger to select the analysed events. 
 %The V0 detector~\cite{forwarddetectorsTdr} provides the information for event triggering. The V0 detector consists of two scintillator hodoscopes that are located on either side of the interaction point along the beam direction. It covers the pseudorapidity region $-3.7 < \eta < -1.7$ (V0C) and $2.8 < \eta < 5.1$ (V0A).
- For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both V0A and V0C. This condition is used later offline to reduce the contamination of the data sample from beam-gas events by using the timing difference of the signal between the two stations~\cite{alicePerformance}. 
+ For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both V0A and V0C. The timing difference between the two stations is also used to reduce the contamination of the data sample from beam-gas events~\cite{alicePerformance}. 
 
-EMCal is also used to provide the jet trigger used in triggered datasets. EMCal can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCal trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size. The EMCal 
+EMCal is used to provide the jet trigger used in triggered datasets. EMCal can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCal trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size. 
 
 Triggers, V0 and EMCal are discussed in more detail in sections~\ref{sec:forward},~\ref{sec:trigger} and~\ref{sec:emcal}. 
 
@@ -36,7 +36,7 @@ With the final track parameters the primary vertex can be determined with better
 
 The final step of the track reconstruction is the determination of the secondary vertices. For this, all the tracks whose distance of closest approach (DCA) to the primary vertex is larger than a defined minimum value (?? \unit{mm} in \pPb) are selected. For these tracks, points of closest approaches are determined for pairs of tracks. If the tracks are sufficiently close to each other and show characteristics of short lived particle decays, these points are identified as secondary vertices. 
 
-\begin{figure}[htb]
+\begin{figure}[h]
 %\input{figures/tikz/tracking}
 \includegraphics[width=0.9\textwidth]{pics/Schema-PcpTrackingALICE.png}
 \caption{Principles of tracking in the ALICE experiment, showing the three successive paths allowing to build a track and refine its parameters. Numbers ranging from 1 to 10 mention the bits that are activated in case of success during the propagation of the Kalman filter at the considered stage. Figure from ~\cite{Maire:1984041}}
@@ -51,11 +51,11 @@ In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite
 
 The first requirements are on the quality of the track fit in ITS and TPC. The ITS requirement only removes tracks that are clear outliers. For TPC the requirement is much more strict. For step 1 it is required that a track has 3 out of the 6 possible hits in ITS, one of which must be in the SPD. In step 2 this is replaced by an additional vertex constraint, where the primary vertex itself is added as a point to the track to improve the momentum resolution.
 
-For the TPC, 70 crossed pad rows out of the maximum 159 is required. This measures the effective track length inside the TPC. This takes into account the possibility of having pad rows missing in the middle of the track due to charge in these clusters being below the threshold for some reason. Additionally it is required that the ratio between crossed rows and findable clusters is at least 0.8. Findable clusters are defined as the number of geometrically possible clusters which can be assigned to a track, taking into account dead zones due to chamber boundaries and limited $\eta$-acceptance. For both steps of the hybrid cut is is required that the fraction of clusters shared with several tracks is less than 40\%.
+For the TPC, 70 crossed pad rows out of the maximum 159 is required. This measures the effective track length inside the TPC. This takes into account the possibility of having pad rows missing in the middle of the track due to charge in these clusters being below the threshold for some reason. Additionally it is required that the ratio between crossed rows and findable clusters is at least 0.8. Findable clusters are defined as the number of geometrically possible clusters which can be assigned to a track, taking into account dead zones due to chamber boundaries and limited $\eta$-acceptance. For both steps of the hybrid cut it is required that the fraction of clusters shared with several tracks is less than 40\%.
 
 %Additionally we only accept tracks with $\left| \eta \right| < 0.8$ to avoid border effects ot the TPC acceptance $\left| \eta \right| < 0.9$ 
 
-The remaining cuts are meant to make sure that the measured tracks are really produced in the primary collision. A track might gain a kink due to a particle scattering decay. After this, it is no longer describing the properties of the primary collisions. The particle after such a kink, a kink daughter, is rejected in the cuts. The final cuts are on the distance of closest approach (DCA) of the track to primary vertex. To have confidence that the track comes from the primary collision, the track must be close enough to the primary vertex. The cuts are different for the distance along ($\mathrm{DCA}_{z}$) and perpendicular to ($\mathrm{DCA}_{xy}$) the beam axis.
+The remaining cuts are meant to make sure that the measured tracks are really produced in the primary collision. A track might gain a kink due to a particle scattering decay. The particle after such a kink, a kink daughter, is rejected in the cuts, as it no longer describes the properties of the primary collisions. The final cuts are on the distance of closest approach (DCA) of the track to primary vertex. To have confidence that the track comes from the primary collision, the track must be close enough to the primary vertex. The cuts are different for the distance along ($\mathrm{DCA}_{z}$) and perpendicular to ($\mathrm{DCA}_{xy}$) the beam axis.
 
 
 \begin{table}
@@ -81,7 +81,7 @@ Other & & Rejected by step 1 \\
 
 
 
-The momentum resolutions of the two classes of particles are comparable up to $\pt{} \approx 10\;\GeVc$, but after that, tracks without ITS requirements have a worse resolution~\cite{alicePerformance,aliceBackgroundFluctuation}.
+%The momentum resolutions of the two classes of particles are comparable up to $\pt{} \approx 10\;\GeVc$, but after that, tracks without ITS requirements have a worse resolution~\cite{alicePerformance,aliceBackgroundFluctuation}.
 
 
 
@@ -92,20 +92,20 @@ The momentum resolutions of the two classes of particles are comparable up to $\
 
 \FloatBarrier
 \subsection{Cluster selection}
-Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
+Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal)~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
 
 
-The clusters used in the analysis were obtained from EMCal by the v2 clusteriser. Clusters matched to charged tracks are removed from the analysis as well as clusters being identified as fake. The parameters used in the clusteriser are summarised in table~\ref{tab:clusters}
+The clusters used in the analysis were obtained from EMCal {\color{red}by the v2 clusteriser}. Clusters matched to charged tracks are removed from the analysis as well as clusters being identified as fake. The parameters used in the clusteriser are summarised in table~\ref{tab:clusters}
 
 
 The clusteriser  searches for a tower with energy deposit greater than a defined seed energy and merges all surrounding (sharing a side) towers with energy deposit higher than a defined threshold. In the next step all towers sharing a side with already included towers are added, again requiring that the energy deposits exceeds the threshold. The algorithm can identify local minima and halts the clustering in case that the neighbouring tower energy is higher. Already clustered towers are removed from the pool, so one tower can only be clustered once.
 
-Highly energetic calorimeter hits should spread into several towers as the electromagnetic shower evolves. However, some clusters with high energy have their energy located in a single tower. These are believed to come from slow neutron hitting the APD readout of the towers. These are called exotic clusters. The measure of exoticity is denoted as 
+Highly energetic calorimeter hits should spread into several towers as the electromagnetic shower evolves. However, some clusters with high energy have their energy located in a single tower. These are believed to come from a slow neutron hitting the APD readout of the towers. These are called exotic clusters. The measure of exoticity is denoted as 
 \begin{equation}
 1 -\frac{E_\mathrm{cross}}{E_\mathrm{max}},
 \end{equation}
 
-\noindent where $E_\mathrm{max}$ is the energy in the most energetic tower and $E_\mathrm{cross}$ is the sum of the four towers neighbouring the most energetic one. The closer this is to 1, the more exotic the cluster is and the larger the probability that it is fake. Cut of 0.97 has been adopted as default for EMCal analyses, including this one.
+\noindent where $E_\mathrm{max}$ is the energy in the most energetic tower and $E_\mathrm{cross}$ is the sum of the four towers neighbouring the most energetic one. The closer this is to 1, the more exotic the cluster is and the larger the probability that it is fake. Cut of 0.97 has been adopted as default for analyses using EMCal, including the one presented in this thesis. Any clusters above this cut are removed.
 
 A method of matching the cluster position to TPC track extrapolation is used to suppress charged hadron contribution to hits in EMCal. Tracks identified by the tracking detectors are extrapolated close to the EMCal surface, where the closest cluster is found and the track extrapolation is continued until reaching the same depth as the cluster. The remaining distance in between the extrapolated track and the cluster is then used to reject hadronic hits.
 
