@@ -2,9 +2,10 @@
 
 \section{Discussion}
 \label{sec:disc}
-\cite{Chatrchyan:2014gia,Dasgupta:2007wa}
+%\cite{Chatrchyan:2014gia} Measurement of the ratio of inclusive jet cross sections R=0.5 vs R=0.7
+%\Dasgupta:2007wa} R dependence of energy 
 
-\subsection{Dihadron \texorpdfstring{$\jt{}$}{jT}}
+\subsection{\texorpdfstring{$\jt{}$}{jT} in dihadron correlations}
 The jet fragmentation transverse momentum $\jt{}$ has been studied previously at ALICE with dihadron correlations~\cite{ALICEjt}. The study took the leading hadron in each event and calculated $\jt{}$ for any near-side tracks with respect to the leading hadron. Thus there is no kinematical limit to $\jt{}$ from the jet cone. In the analysis the background shape is estimated using pairs with large $\Delta \eta$. The normalisation of the background is done when fitting the $\jt{}$ distribution. The inclusive and signal distributions from the analysis are shown in Fig.~\ref{fig:dihadron}. The inclusive distribution is fitted with a three component function, 
 
 \begin{figure}[htp]
@@ -15,7 +16,7 @@ The jet fragmentation transverse momentum $\jt{}$ has been studied previously at
 \begin{subfigure}{0.49\textwidth}
 \includegraphics[width = 0.95\textwidth]{pics/jtsignal-89703}
 \end{subfigure}
-\caption[Dihadron $\jt{}$ results]{\emph{Left:} Measured \jt distribution including a three-component fit. The three components describe the background (circular symbols), hadronization (long dashed line), and showering (short dashed line). \emph{Right:} The same \jt distribution but with background subtracted.}
+\caption[Dihadron $\jt{}$ results]{\emph{Left:} Measured \jt{} distribution including a three-component fit. The three components describe the background (circular symbols), hadronization (long dashed line), and showering (short dashed line). \emph{Right:} The same \jt{} distribution but with background subtracted.}
 \label{fig:dihadron}
 \end{figure}
 
@@ -43,18 +44,20 @@ The RMS results from the fitting in both \pp and \pPb collisions are shown in Fi
 
 
 \subsection{Comparing dihadron and jet \texorpdfstring{$\jt{}$}{jT} results}
-Comparison to RMS values in dihadron analysis~\cite{ALICEjt} are shown in figure \ref{fig:dihadroncomparison}. For comparison the dihadron trigger $\pt{}$ bins are converted to jet $\pt{}$ bins and vice versa. Bin-by-bin comparison is still not possible, but dihadron analysis gives systematically larger RMS values. This could be caused by several kinematical factors. In jet $\jt{}$ analysis the jet cone limits possible $\jt{}$ values and thus the width and RMS of the $\jt{}$ distributions. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}. 
+Comparison to RMS values in dihadron analysis~\cite{ALICEjt} is shown in figure \ref{fig:dihadroncomparison}. For comparison the dihadron trigger $\pt{}$ bins are converted to jet $\pt{}$ bins and vice versa. Bin-by-bin comparison is still not possible, but general features can be identified. %The most striking difference is that the dihadron analysis gives systematically larger RMS values. This could be caused by several kinematical factors. In jet $\jt{}$ analysis the jet cone limits possible $\jt{}$ values and thus the width and RMS of the $\jt{}$ distributions. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}. 
 
 %Comparison to $\jt{}$ results from dihadron analysis ~\cite{ALICEjt} is shown in figure \ref{fig:DihadronComparison}. 
 %Trigger $\pt{}$ bins used in dihadron analysis are converted to jet $\pt{}$ bins using observed average jet $\pt{}$ values in leading track momentum bins. Simlarly jet $\pt{}$ bins are converted to $p_{T,\mathrm{trigger}}$ bins using average leading track $\pt{}$ values in $\pt{jet}$ bins.
 
-The trends are similar in dihadron and jet $\jt{}$ results. Wide component RMS values tend to increase with increasing $p_{T,\mathrm{trigger}}$/$\pt{jet}$. Narrow component RMS increases slightly in dihadron analysis but not in jet $\jt{}$, WHY? (Depends on $x_{||}$ bin in dihadron)
+The trends are similar in dihadron and jet $\jt{}$ results. Wide component RMS values tend to increase with increasing $p_{T,\mathrm{trigger}}$/$\pt{jet}$. Narrow component RMS increases slightly in dihadron analysis but not in jet $\jt{}$. In the dihadron analysis this changes slightly between $x_{||}$ bins; In larger $x_{||}$ bins the narrow component RMS is closer to constant.
 
-In general dihadron $\jt{}$ gives wider distributions with larger RMS values. In jet analysis the cone size limits width and thus the RMS values. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}.
+ %WHY? (Depends on $x_{||}$ bin in dihadron)
+
+The most striking difference is that dihadron $\jt{}$ gives wider distributions with larger RMS values. In jet analysis the cone size limits width and thus the RMS values. The effect of this limitation can be studied by changing the cone size as is described in section \ref{sec:Rstudy}.
 
 Additionally the leading track is an imperfect estimate of the jet/original parton. Because the leading track in general is at an angle compared to the jet axis, the resulting $\jt{}$ values are different. In practice the jet axis found by the jet finding algrorithm tends to minimize the average $\jt{}$ of jet constituents. Thus the yield at high $\jt{}$ is limited and the RMS values are smaller. The effect of having the leading hadron as reference instead of the jet axis is discussed in section ~\ref{sec:reference}
 
-Lastly the results from the dihadron analysis are done in \pt{trigger} bins. This favours hard jets, i.e. jets where the leading hadron carries a large momentum fraction and the jet multiplicity is small. In \pt{jet} bins jets are more likely to be soft, i.e. small leading momentum fraction and high multiplicity jets.
+Lastly the results from the dihadron analysis are done in \pt{trigger} bins. This favours hard jets, i.e. jets where the leading hadron carries a large momentum fraction and the jet multiplicity is small. In \pt{jet} bins jets are more likely to be soft, i.e. they have a small leading momentum fraction and high multiplicity jets.
 
 
 
@@ -77,14 +80,14 @@ The size of the jet cone gives a limit for $\jt{}$. For a track with a fixed mom
 \jt{} \approx p \cdot R
 \end{equation}
 
-\noindent  Thus for tracks with $\pt{track} < \pt{0} $, $\jt{} < \pt{0} \times R$.
+\noindent  Thus for tracks with $\pt{,track} < \pt{0} $, the limit is $\jt{} < \pt{0} \cdot R$.
  
 
-In practice the effect of cone sizes on $\jt{}$ distribution is studied in a \pythia~simulation. Results of the individual distributions and resulting RMS values from this simulation are shown in Fig.~\ref{fig:RcomparisonjT} and Fig.~\ref{fig:RcomparisonRMS} respectively. Increasing the cone size of jets gives more room for high $\jt{}$ tracks. This is seen in the individual $\jt{}$ distributions as increased high $\jt{}$ production. At low $\jt{}$ there is no change.
+We studied the the effect of cone sizes on $\jt{}$ distribution in a \pythia~simulation. Results of the individual distributions values from this simulation are shown in Fig.~\ref{fig:RcomparisonjT}. The increase of high $\jt{}$ with increasing cone size, $R$ is clearly seen in the individual $\jt{}$ distributions. At low $\jt{}$ there is no systematic change.
 
-When looking at RMS values from wide component we see an increase/decrease of about 10\% when going from $R=0.4$ to $R=0.5$/$R=0.3$.
+When looking at RMS values from wide component we see an increase/decrease of about 10\% when going from $R=0.4$ to $R=0.5$/$R=0.3$. This is seen in Fig.~\ref{fig:RcomparisonRMS}. The message from narrow component RMS values is less clear. At low jet $\pt{}$ the behaviour is similar, but at high $\pt{}$ the order is reversed. 
 
-The message from narrow component RMS values is less clear. At low jet $\pt{}$ the behaviour is similar, but at high $\pt{}$ the order is reversed.
+
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.8\textwidth]{results/RcomparisonSignal.pdf}
@@ -107,14 +110,14 @@ The message from narrow component RMS values is less clear. At low jet $\pt{}$ t
 
 \subsubsection{Leading tracks versus jet}
 \label{sec:reference}
-The leading track is an imperfect estimate of the jet/original parton. Because the leading track in general is at an angle compared to the jet axis, the resulting $\jt{}$ values are different. In practice the jet axis found by the jet finding algrorithm tends to minimize the average $\jt{}$ of jet constituents. Thus the yield at high $\jt{}$ is limited and the RMS values are smaller.
+In comparison to the leading hadron the jet axis from jet reconstruction should provide a better estimate of the original parton. Because the leading track in general is at an angle compared to the jet axis, the resulting $\jt{}$ values are different. In practice the jet axis found by the jet finding algorithm tends to minimise the average $\jt{}$ of jet constituents. Thus the yield at high $\jt{}$ is limited and the RMS values are smaller.
 
-A \textsc{Pythia} study was performed where $\jt{}$ was calculated with respect to the leading track momentum, instead of the jet axis. The results are shown in Fig. \ref{fig:RefComparison}. The resulting $\jt{}$ distributions are significantly wider than $\jt{}$ distributions from the typical method. The effect seems to be larger than the effect seen in comparing different $R$ values.
+We performed a \textsc{Pythia} study where $\jt{}$ was calculated with respect to the leading track momentum, instead of the jet axis. The results are shown in Fig. \ref{fig:RefComparison}. The resulting $\jt{}$ distributions are significantly wider than $\jt{}$ distributions from the typical method. The effect seems to be larger than the effect seen in comparing different $R$ values. 
 
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.55\textwidth]{figures/results/JetVsLeadingRefConst.pdf}
-\caption{Results of calculating $\jt{}$ with respect to the jet axis or the leading hadron. The assumption is that because the leading hadron is an imperfect estimate of the jet axis, low $\jt{}$ tracks should on average be shifted to higher $\jt{}$}
+\caption{Results of calculating $\jt{}$ with respect to the leading hadron, instead of the jet axis. The assumption is that because the leading hadron is an imperfect estimate of the jet axis, low $\jt{}$ tracks should on average be shifted to higher $\jt{}$}
 \label{fig:RefComparison}
 \end{figure}
 
@@ -123,6 +126,21 @@ A \textsc{Pythia} study was performed where $\jt{}$ was calculated with respect 
 \FloatBarrier
 \section{Summary}
 \label{sec:sum}
-In this work two distinct $\jt{}$ components were extracted for narrow and wide contributions using jet reconstruction in $\snn = \unit[5.02]{\tev}$ \pPb collisions. RMS values for both components were obtained. The width of the wide component is found to increase for increasing $\pt{jet}$. This is in part explained by the changing kinematical limits when going to higher $\pt{jet}$ which allows higher $\pt{track}$. Additionally the larger phase space allows stronger parton splitting. The results are qualitatively compatible with previous studies that studied $\jt{}$ using two-particle correlations.
+In this thesis I have studied the jet fragmentation transverse momentum in $\snn = \unit[5.02]{\tev}$ \pPb collisions. The analysis was performed using jets reconstructed with the anti-$\kt{}$ algorithm. The resulting $\jt{}$ distributions were fitted with a two component function, which enabled separating two distinct components. Width of the narrow component, related to hadronisation, was found to depend only weakly, if at all, on jet \pt{}. This is consistent with the assumption that hadronisation is universal, i.e. it doesn't depend on the hard scattering. 
 
-{\color{red} Extend summary}
+The width of the wide component was found to increase for increasing $\pt{jet}$. This is in part explained by the changing kinematical limits when going to higher $\pt{,jet}$ which allows higher $\pt{,track}$. Additionally the larger phase space allows stronger parton splitting.
+
+Both the narrow and wide component RMS values were well described by \pythia~, but Herwig gave larger RMS values for the wide component than data. \pythia~and Herwig have different algorithms for the showering. It seems that this difference shows in the $\jt{}$ distributions.  
+
+ In the narrow component there was no difference between the models. Both describe the data well. This component was associated with hadronisation. At least in this context the different hadronisation algorithms of \pythia (string model) and Herwig (cluster model) give similar results.
+
+
+Similar analysis has been performed with dihadron correlations~\cite{ALICEjt}. Although a direct comparison between the results is not possible, they are qualitatively compatible with each other. The difference is understood to come from the different $\jt{}$ reference and the cone size limitation in jet $\jt{}$ analysis.
+
+The dihadron analysis saw no difference between results in \pp and \pPb datasets and concluded that there were no cold nuclear matter effects. The same is expected to be true for the jet $\jt{}$. This is further supported by the agreement between \pythia~and data as \pythia~results are for \pp collisions. 
+
+To study possible QGP effects in high multiplicity \pPb collisions the analysis was repeated using different multiplicity cuts. No effect was seen in any of the multiplicity cuts. However, with the statistics available, the effect should be quite large ($\gtrapprox 20\%$) to be visible.
+
+Naturally the next step would be extending the analysis to \PbPb data. Jet analysis in a heavy-ion collision with significant underlying event contributions has proved challenging~\cite{missing}. However, experimental methods have improved in recent years. For the $\jt{}$ analysis presented in this thesis the main challenge would be the background subtraction method. Because of anisotropic flow the background inside the jet cone and a cone perpendicular to it would be different. It's unclear if the perpendicular cone method can be modified or if a completely new approach is required. 
+
+It has been shown that in \PbPb collisions jets become softer and wider because of medium-induced radiation~\cite{missing}. On the other hand, the hot medium suppresses gluon jets more than quark jets~\cite{missing}. This has the opposite effect, narrowing jets, as gluon jets are naturally wider than quark jets~\cite{missing}. How these different different effects combine in $\jt{}$ needs to be studied. 
