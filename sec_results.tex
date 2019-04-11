@@ -38,9 +38,43 @@ In this section I present the final results for $\jt{}$ signals. After unfolding
 \jt{max} \approx R\cdot \pt{,track},
 \end{equation}
 
-\noindent using the small angle approximation. 
+\noindent using the small angle approximation. This illustrated in Fig.~\ref{fig:jtmax}
+\begin{figure}[h!]
+\tikzset{
+photon/.style={decorate, decoration={snake}, draw=red},
+particlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+antiparticlearrow/.style={draw=blue, postaction={decorate},
+    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+particle/.style={draw=blue},
+antiparticle/.style={draw=blue},
+gluon/.style={decorate, draw=orange,
+    decoration={coil,amplitude=4pt, segment length=5pt}}
+ }
+\centering
+\begin{tikzpicture}[scale= 3]
+\coordinate[] (a);
+\coordinate[above right = 1.2cm and 3cm of a,label=right:{\color{black!60}Jet Cone}] (b);
+\coordinate[below right = 1.2cm and 3cm of a] (c);
+\coordinate[above right = 0.8cm and 2cm  of a] (d);
+\coordinate[right = 2cm of a] (e);
+\coordinate[right = 4cm of a] (g);
+\coordinate[right = 3cm of a] (f);
+\draw[thick, black!60] (a) -- (b);
+\draw[thick, black!60] (a) -- (c); 
+\draw[thick, blue,->] (a) -- node[label=above:$\vec{p}_\mathrm{track}$] {}  (d);
+\draw[thick, black!40, ->] (a) -- (g);
+\draw[dashed,blue,->] (e) -- node[label=right:$\jt{max}$] {}  (d);
+\draw[thick, black!60, ->] (f) --  node[label=right:$R$] {}  (c);
+\end{tikzpicture}
+\caption{\jt{} has maximum value defined by the cone size and track momentum $\vec{p}_\mathrm{track}$}
+\label{fig:jtmax}
+\end{figure}
+
+
 
 We fit the distribution using the two component fit function presented in Sec.~\ref{sec:fitting}. These are also shown in Fig.~\ref{fig:fits}. Aside from statistical fluctuations the fits describe the data well. It should be noted that fitting a Gaussian alone would produce the same result as the Gaussian component in the combined fit function.
+
 
 \begin{figure}[htb]
 \centering
