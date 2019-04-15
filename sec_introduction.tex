@@ -199,6 +199,11 @@ In contrast to protons atomic nuclei are objects with considerable transverse si
 Impact parameter defines the reaction plane which is the plane spanned by $b$ and the beam direction. $\Psi_{RP}$ gives the angle between the reaction plane and some reference frame angle. Experimentally the reference frame is fixed by the detector setup. Reaction plane angle cannot be directly measured in high energy nuclear collisions, but it can be estimated with the event plane method~\cite{Voloshin:2008dg}. 
 \begin{figure}[h!]
 \centering
+\begin{tikzpicture}
+      \draw[->] (0,0) -- (7,0) node[below] {$r\left[\unit{fm}\right]$};
+      \draw[->] (0,0) -- (0,5) node[left] {$\nicefrac{\rho}{\rho_0}$};
+\end{tikzpicture}
+
 \includegraphics[width=0.6\textwidth]{pics/Definitions}
 \caption[The definitions of the Reaction Plane and Participant Plane coordinate systems]{The definitions of the Reaction Plane and Participant Plane coordinate systems~\cite{Voloshin:2007pc}. The dashed circles represent the two colliding nuclei and the green dots are partons that take part  in the collision. $x_{PP}$ and $x_{RP}$ are the participant and reaction planes. The angle between $x_{RP}$ and $x_{PP}$ is given by Eq. (\ref{eq:partangle}). $y_{PP}$ and $y_{RP}$ are lines perpendicular to the participant and reaction planes. }
 \label{fig:planes}
@@ -227,22 +232,22 @@ The impact parameter is one way to quantize the centrality of a heavy-ion collis
 
 
 
-\begin{figure}[h!]
-\centering
-        \begin{subfigure}[b]{0.45\textwidth}
-                \centering
-            	\includegraphics[height=1in]{pics/Collisionperipheral}
-                \caption{Peripheral collision}
-                \label{fig:peripheral}
-        \end{subfigure}
-        \begin{subfigure}[b]{0.45\textwidth}
-                \centering
-               \includegraphics[height=1in]{pics/Collisioncentral}
-                \caption{Central collision}
-                \label{fig:central}
-        \end{subfigure}
-        \caption[Interaction between partons in central and peripheral collisions.]{Interaction between partons in central and peripheral collisions. The snowflakes represent elementary parton-parton collisions. When the impact parameter $b$ is large the number of elementary collisions is small. Particle production is small. Smaller impact parameter increases the number of elementary collisions. This increases  particle production.}\label{fig:collisionA}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%        \begin{subfigure}[b]{0.45\textwidth}
+%                \centering
+%            	\includegraphics[height=1in]{pics/Collisionperipheral}
+%                \caption{Peripheral collision}
+%                \label{fig:peripheral}
+%        \end{subfigure}
+%        \begin{subfigure}[b]{0.45\textwidth}
+%                \centering
+%               \includegraphics[height=1in]{pics/Collisioncentral}
+%                \caption{Central collision}
+%                \label{fig:central}
+%        \end{subfigure}
+%        \caption[Interaction between partons in central and peripheral collisions.]{Interaction between partons in central and peripheral collisions. The snowflakes represent elementary parton-parton collisions. When the impact parameter $b$ is large the number of elementary collisions is small. Particle production is small. Smaller impact parameter increases the number of elementary collisions. This increases  particle production.}\label{fig:collisionA}
+%\end{figure}
 
 Instead in practice centrality is defined by dividing collision events into percentile bins by the number participants or experimentally by the observed multiplicity. Centrality bin 0-5\% corresponds to the most central collisions with the highest multiplicity and higher centrality percentages correspond to more peripheral collisions with lower multiplicities. A multiplicity distribution from ALICE measurements~\cite{PhysRevC.88.044909} illustrating the centrality division is shown in Fig.~\ref{fig:centrality}. The distribution is fitted using a phenomenological approach based on a Glauber Monte Carlo~\cite{Miller:2007ri} plus a convolution of a model for the particle production and a negative binomial distribution. 
 
@@ -266,7 +271,8 @@ the fit of the Glauber calculation to the measurement. The data is divided into 
 
 %\subsubsection{Glauber Model}
 %\label{sec:glauber}
-Nuclear geometry in heavy-ion collisions is often modelled with the Glauber Model. The model was originally introduced already in 1958~\cite{Glauber:1959}. The approach used in modern applications was introduced in 1976~\cite{Biallas1976461} by Białłas, Bleszyński, and Czyż to model inelastic nuclear collisions
+
+The Glauber Model is often used to model the nuclear geometry in a heavy-ion collision. The model was originally introduced already in 1958~\cite{Glauber:1959} and the modern terminology and tools were introduced in 1976~\cite{Biallas1976461} by Białłas, Bleszyński, and Czyż to model inelastic nuclear collisions.
 
 %The model was originally developed to address the problem of high energy scattering with composite particles. Glauber presented his first collection of papers and unpublished work in his 1958 lectures~\cite{Glauber:1959}. In the 1970's Glauber's work started to have utility in describing total cross sections, after Maximon and Czyz applied it to proton-nucleus and nucleus-nucleus collisions in 1969~\cite{Czyz:1969}. 
 %In 1976 ~\cite{Biallas1976461} Białłas, Bleszyński, and Czyż applied Glauber's approach to inelastic nuclear collisions. Their approach introduced the basic functions used in modern language including the thickness function and the nuclear overlap function. 
@@ -288,31 +294,31 @@ T_A\left(s\right)=\int_{-\infty}^{\infty}\dd z \rho\left(\sqrt{s^2+z^2}\right),
 \begin{figure}
 \centering
 \begin{tikzpicture}
-      \draw[->] (0,0) -- (6,0) node[below] {$r\left[\unit{fm}\right]$};
+      \draw[->] (0,0) -- (7,0) node[below] {$r\left[\unit{fm}\right]$};
       \draw[->] (0,0) -- (0,5) node[left] {$\nicefrac{\rho}{\rho_0}$};
       \draw	(0,0) node[anchor=north] {0}
-		(2,0) node[anchor=north] {5}
-		(4,0) node[anchor=north] {10};
+		(3,0) node[anchor=north] {5}
+		(6,0) node[anchor=north] {10};
 
       \draw	(0,2) node[anchor=east] {0.5}
 		(0,4) node[anchor=east] {1};
 	
-      \draw[dashed,black] (4,0) -- (4,5);
+      \draw[dashed,black] (3.8,0) -- (3.8,5);
 
 	
-     \draw[black,thin,<->] (0,2) -- node[above] {$R$} (4,2);
-     \draw[black,thin,<->] (3.75,1) -- node[below] {$a$} (4.25,1);
+     \draw[black,thin,<->] (0,2) -- node[above] {$R$} (3.8,2);
+     \draw[black,thin,<->] (3.55,1) -- node[below] {$a$} (4.05,1);
      
      \draw[blue] (2,3.5) node {$\omega=0$};
      \draw[blue] (2,4.5) node {$\omega>0$};
 
-      \draw[scale=1,domain=0:6,smooth,variable=\x,blue,dashed] plot ({\x},{(4+1*\x^2/4^2)/(1+exp((\x-4)/0.5))});
-       \draw[scale=1,domain=0:6,smooth,variable=\x,blue] plot ({\x},{(4)/(1+exp((\x-4)/0.5))});
+      \draw[scale=0.6,domain=0:10,smooth,variable=\x,blue,dashed] plot ({\x},{(6.66+1*\x^2/6.38^2)/(1+exp((\x-6.38)/0.546))});
+       \draw[scale=0.6,domain=0:10,smooth,variable=\x,blue] plot ({\x},{(6.66)/(1+exp((\x-6.38)/0.546))});
 
       %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
 
 \end{tikzpicture}
-\caption{A typical woods-saxon potential}
+\caption{Woods-saxon distribution, with typical values for a Pb nucleus, $a=0.55\unit{fm}$ and $R=6.68\unit{fm}$.}
 \label{fig:woodssaxon}
 \end{figure}
 
@@ -337,14 +343,14 @@ T_{AB}\left(\vec b\right)=\int \dd{^2s} T_A\left(\vec s\right) T_B\left(\vec s -
 \left<N_{coll}\right>=\sigma_{pp}^{inel}\left<T_{AA}\right>,
 \end{equation}
 
-\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. As each binary collision has equal probability for direct production of high-momentum partons, the number of binary collisions is related to the hard processes in a heavy-ion collision. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}. This required knowledge of $\sigma\mathrm{^{NN}_{inel}}$, which can be measured in proton-proton collisions at different energies.
+\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. As each binary collision has equal probability for direct production of high-momentum partons, the number of binary collisions is related to the hard processes in a heavy-ion collision. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}. This required knowledge of $\sigma\mathrm{^{NN}_{inel}}$, which can be measured in proton-proton collisions at different energies. At the LHC the most precise cross section measurements come from TOTEM~\cite{missing}.
 
 Soft production on the other hand is related to the number of participants~\cite{Kharzeev:2004if}. It is assumed that in the binary interactions participants get excited and further interactions are not affected by previous interactions because the time scales are too short for any reaction to happen in the nucleons. After the interactions excited nucleons are transformed into soft particle production. The average number of participants, $\left<N_{part}\right>$ can be calculated from the Glauber model 
 
 
 \begin{eqnarray}
-\left<N_{part}^{AB}\left(b\right)\right>&=&\int \dd{^2s} T_A\left(\bar s\right)\left[1-\left[1-\sigma_{NN}\frac{T_B\left(\bar s - \bar b\right)}{B}\right]^B\right] \nonumber \\
- &+ &\int \dd{^2 s} T_B\left(\bar s\right)\left[1-\left[1-\sigma_{NN}\frac{T_A\left(\bar s - \bar b\right)}{A}\right]^A\right].
+\left<N_{part}^{AB}\left(\vec b\right)\right>&=&\int \dd{^2s} T_A\left(\vec s\right)\left[1-\left[1-\sigma_{NN}\frac{T_B\left(\vec s - \vec b\right)}{B}\right]^B\right] \nonumber \\
+ &+ &\int \dd{^2 s} T_B\left(\vec s\right)\left[1-\left[1-\sigma_{NN}\frac{T_A\left(\vec s - \vec b\right)}{A}\right]^A\right].
 \end{eqnarray}
 
 %
@@ -396,19 +402,16 @@ d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 \centering
                \includegraphics[width=0.5\textwidth]{pics/glauber_eli}
         \caption[The results of one Glauber Monte Carlo simulation.]{The results of one Glauber Monte Carlo simulation. Big circles with black dotted boundaries represent the two colliding nuclei. The participant zone is highlighted with the solid red line.        
-        Small red and blue circles represent nucleons. Circles with thick boundaries are participants i.e. they interact with at least one nucleon from the other nucleus. Small circles with dotted boundaries are spectators which do not take part in the collision.}
+        Small red and blue circles represent nucleons. Circles with thick boundaries are participants i.e. they interact with at least one nucleon from the other nucleus. Small circles with dotted boundaries are spectators which do not take part in the collision.~\cite{}}
         	\label{fig:GMC}
 \end{figure}
 
 
 
-\subsubsection{Hydrodynamical Modelling}
-\label{sec:hydro}
-The relativistic version of hydrodynamics has been used to model the deconfined phase of a heavy-ion collision with success. Heavy-ion collisions produce many hadrons going into all directions. It is expected that tools from statistical physics would be applicable to this complexity~\cite{Ollitrault:2007du}. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest~\cite{Romatschke:2009im}.
-
-The use of relativistic hydrodynamics in high-energy physics dates back to Landau~\cite{Landau:1953gs} and the 1950's, before QCD was discovered. Back then it was used in proton-proton collisions. Development of hydrodynamics for the use of heavy-ion physics has been active since the 1980's, including Bjorken's study of boost-invariant longitudinal expansion and infinite transverse flow~\cite{PhysRevD.27.140}. Major steps were taken later with the inclusion of finite size and and dynamically generated transverse size~\cite{Baym:1984sr, PhysRevD.34.794}, a part of which was done at the University of Jyväskylä. The role of hydrodynamics in heavy-ion physics was strengthened when QGP was observed to behave like a liquid by RHIC~\cite{Adcox:2004mh}. 
-
-The evolution of a heavy-ion event can be divided into four stages. A schematic representation of the evolution of the collisions is shown in Fig.~\ref{fig:HISpaceTime}. Stage 1 follows immediately the collision. This is known as the pre-equilibrium stage. Hydrodynamic description is not applicable to this regime because thermal equilibrium is not yet reached. The length of this stage is not known but it is assumed to last about $1\ \mathrm{fm}/c$ in proper time $\tau$. 
+\subsubsection{Collective motion}
+\label{sec:collective}
+Quite often the evolution of a heavy-ion event can be divided into four stages. A schematic representation of the evolution of the collisions is shown in Fig.~\ref{fig:HISpaceTime}. Stage 1 follows immediately the collision. This is known as the pre-equilibrium stage. The length of this stage is not known but it is assumed to last about $1\ \mathrm{fm}/c$ in proper time $\tau$. 
+%Hydrodynamic description is not applicable to this regime because thermal equilibrium is not yet reached. 
 
 \begin{figure}[htb]
 \centering
@@ -417,19 +420,17 @@ The evolution of a heavy-ion event can be divided into four stages. A schematic 
         	\label{fig:HISpaceTime}
 \end{figure}
 
-The second stage is the regime where thermal equilibrium or at least near-equilibrium is reached. In this stage hydrodynamics should be applicable if the temperature is above the deconfinement temperature~\cite{Romatschke:2009im}. This lasts about $5-10\ \mathrm{fm}/c$ until the temperature of the system sinks low enough for hadronization to occur. Now the system loses its deconfined, strongly coupled, state and hydrodynamics can no longer be used. The third stage is the hadron gas stage where the hadrons still interact. This ends when hadron scattering becomes rare and they no longer interact. In the final stage hadrons are free streaming and they fly in straight lines until they reach the detector.
+The second stage is the regime where thermal equilibrium or at least near-equilibrium is reached. This lasts about $5-10\ \mathrm{fm}/c$ until the temperature of the system sinks low enough for hadronization to occur~\cite{missing} and the system loses its deconfined, strongly coupled state.
+The third stage is the hadron gas stage where the hadrons still interact with each other. This ends when hadron scattering becomes rare and they no longer interact. In the final stage hadrons are free streaming and they fly in straight lines until they reach the detector.
 
-%The hydrodynamical approach uses. Mass density is not a well defined quantity since pair production and annihilation of quark-antiquark pairs constantly modifies the mass of the system. Instead energy density is used. 
-
-The hydrodynamical approach treats the ensemble of particles as a fluid. It uses  basic equations from hydrodynamics and thermodynamics but with a few modifications to account for the relativistic energies. The calculation is based on a collection of differential equations connecting the local thermal variables like temperature, pressure etc. to local velocities of the fluid. One also needs equations of state that connect the properties of the matter, e.g. temperature and pressure to density.  Given initial conditions and equations of state the calculation gives the time-evolution of the system.
-
-At first only ideal hydrodynamics was used. Ideal hydrodynamics does not include viscosity but it is a relatively good approximation and it could predict phenomena like elliptic flow. For more detailed calculations also viscosity must be considered and viscosity itself is an interesting property of QGP.
+%In this stage hydrodynamics should be applicable if the temperature is above the deconfinement temperature~\cite{Romatschke:2009im}. 
+% strongly coupled, state and hydrodynamics can no longer be used.
 
 
-\FloatBarrier
-\pagebreak
-\subsection{Flow}
-In a heavy-ion collision the bulk particle production is known as flow. The production is mainly isotropic but a lot of studies including my thesis focus on the small anisotropies. After the formation of the QGP, the matter begins to expand as it is driven outwards by the strong pressure difference between the center of the collision zone and the vacuum outside the collision volume. The pressure-driven expansion is transformed into flow of low-momentum particles in the hadronization phase. Since the expansion is mainly isotropic the resulting particle flow is isotropic with small anisotropic corrections that are of the order of $10\%$ at most. The isotropic part of flow is referred to as radial flow. 
+
+
+
+In a heavy-ion collision the bulk collective particle production that is emitted from the QGP medium is referred to as flow. After the formation of the QGP, the matter begins to expand as it is driven outwards by the strong pressure difference between the center of the collision zone and the vacuum outside the collision volume. The pressure-driven expansion is transformed into flow of low-momentum particles in the hadronization phase. Since the expansion is mainly isotropic the resulting particle flow is isotropic with small anisotropic corrections that are of the order of $10\%$ at most. The isotropic part of flow is referred to as radial flow. 
 
 \begin{figure}[b!]
 \centering
@@ -440,11 +441,7 @@ In a heavy-ion collision the bulk particle production is known as flow. The prod
 
 The transverse momentum spectra $\dd N/\dd {\pt{}}$ in heavy-ion collisions is shown in Fig. \ref{fig:dndpt}. The vast majority of produced particles have small $\pt{}$. The difference between the yield of $1\gevc$ and $4\gevc$ particles is already 2-3 orders of magnitude. Any observables that are integrated over $\pt{}$ are therefore dominated by the small momentum particles.
 
-
-
-
-\subsubsection{Anisotropic Flow}
-In a non-central heavy-ion collision the shape of the impact zone is almond-like. In peripheral collisions the impact parameter is large which means a strongly asymmetric overlap region.  In a central collision the overlap region is almost symmetric in the transverse plane. In this case the impact parameter is small. Collisions with different impact parameters are shown in Fig.~\ref{fig:collisionA}.
+The geometry of the heavy-ion collision produces an anisotropic component to the collective motion. In a non-central heavy-ion collision, with a large impact parameter, the shape of the impact zone is almond-like. In a central collision the overlap region is almost symmetric in the transverse plane. In this case the impact parameter is small. Collisions with different impact parameters are shown in Fig.~\ref{fig:flow}.
 
 \begin{figure}[b!]
 \centering
@@ -468,80 +465,63 @@ In a non-central heavy-ion collision the shape of the impact zone is almond-like
 	\label{fig:flow}
 \end{figure}
 
-The pressure gradient is largest in-plane, in the direction of the impact parameter $b$, where the distance from high pressure, at the collision center, to low pressure, outside the overlap zone, is smallest. This leads to stronger collective flow into in-plane direction, which in turn results in enhanced thermal emission through a larger effective temperature into this direction, as compared to out-of-plane~\cite{Ollitrault:1992,Ollitrault:1993, Heinz:2002}. The resulting flow is illustrated in Fig.~\ref{fig:flow}. Flow with two maxima in the direction of the reaction plane is called elliptic flow. This is the dominant part of anisotropic flow. Also more complex flow patterns can be identified. The most notable of these is the triangular flow, which is mainly due to fluctuations in the initial conditions.
+The pressure gradient is largest in-plane, in the direction of the impact parameter $b$, where the distance from high pressure, at the collision center, to low pressure, outside the overlap zone, is smallest. This leads to stronger collective flow along the direction of $b$, which in turn results in enhanced thermal emission through a larger effective temperature into this direction, as compared to out-of-plane~\cite{Ollitrault:1992,Ollitrault:1993, Heinz:2002}. The resulting flow is illustrated in Fig.~\ref{fig:flow}. %Flow with two maxima in the direction of the reaction plane is called elliptic flow. 
 
-Flow is nowadays usually quantified in the form of a Fourier composition 
+Flow is typically quantified in the form of a Fourier composition 
 
 \begin{equation}
 E\frac{\dd{^3N}}{\dd {p^3}}=\frac{1}{2\pi}\frac{\dd {^2N}}{\pt{ }\dd {\pt{ }}\dd {\eta} } \left(1+\sum_{n=1}^{\infty}2v_n\left(\pt{},\eta\right)\cos(n(\phi-\Psi_n))\right),
 %\label{eq:finalseries}
 \end{equation}
 
-\noindent where the coefficients $v_n$ give the relative strengths of different anisotropic flow components and the overall normalisation gives the strength of radial flow. Elliptic flow is represented by $v_2$ and $v_3$ represents triangular flow. The first coefficient, $v_1$, is connected to directed flow. This will however in total be zero because of momentum conservation. It can be nonzero in some rapidity or momentum regions but it must be canceled by other regions.
+\noindent where the coefficients $v_n$ give the relative strengths of different anisotropic flow components and the overall normalisation gives the strength of radial flow. Elliptic flow, i.e. flow with two maxima, is represented by $v_2$ and $v_3$ represents triangular flow. The first coefficient, $v_1$, is connected to directed flow~\cite{missing}. This will however in total be zero because of momentum conservation. It can be nonzero in some rapidity or momentum regions but it must be canceled by other regions.
 
-The first approaches to quantifying the anisotropy of flow did not use the Fourier composition. Instead they approached the problem with a classic event shape analysis using directivity~\cite{danielewicz:1985} or sphericity~\cite{Ollitrault:1992, Danielewicz:1983283} to quantify the flow.
+In a peripheral collision $v_2$ is the dominant part of anisotropic flow as it arises from the asymmetric geometry of the collision region. Higher harmonics, the most notable of which is the triangular flow, come from fluctuations in the initial conditions~\cite{}. As the colliding nuclei are not static objects, the arrangement of the nucleons at the time of the collision is random. The shape of the collision zone is not a perfect almond. Instead it can have a more complex shape. Also inside the collision zone the density of the created medium is not homogenous but it can have denser hot spots
+
+It has been noted that higher harmonics of $v_n$ would be suppressed by viscous effects and that the shape of $v_n$ as a function of $n$ would provide another valuable tool for studying $\eta/s$~\cite{Mocsy:2010um}. For a long time it was believed that the odd harmonics would be negligible. In 2007 Mishra {\emph et al.}~\cite{Mishra:2007tw} argued that density inhomogeneities in the initial state would lead to non-zero $v_n$ values for higher harmonics including $v_3$.  
+
+The first one to predict anisotropic flow in heavy-ion collisions was Ollitrault in 1992~\cite{Ollitrault:1992}. However, the first papers on anisotropy did not discuss the Fourier composition. Instead they approached the problem with a classic event shape analysis. (sphericity) The first experimental studies of anisotropy were performed at the AGS~\cite{PhysRevLett.70.1393} in 1993, where it was noted that the anisotropy of particle production in one rapidity region correlates with the reaction plane angle defined in another rapidity region. The first ones to present the Fourier decomposition were Voloshin and Zhang in 1996~\cite{Voloshin:1994mz}
+
+Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}. The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv}.
+
+The measured collective flow in heavy-ion collisions has been successfully modelled with the relativistic version of hydrodynamics. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest~\cite{Romatschke:2009im}, which is assumed to hold for QGP phase of a heavy-ion collision~\cite{}.
+
+The use of relativistic hydrodynamics in high-energy physics dates back to Landau~\cite{Landau:1953gs} and the 1950's, before QCD was discovered. Back then it was used in proton-proton collisions. Development of hydrodynamics for the use of heavy-ion physics has been active since the 1980's, including Bjorken's study of boost-invariant longitudinal expansion and infinite transverse flow~\cite{PhysRevD.27.140}. Major steps were taken later with the inclusion of finite size and and dynamically generated transverse size~\cite{Baym:1984sr, PhysRevD.34.794}, a part of which was done at the University of Jyväskylä. %The role of hydrodynamics in heavy-ion physics was strengthened when QGP was observed to behave like a liquid by RHIC~\cite{Adcox:2004mh}. 
+
+{\color{red} What has been learned}
+
+%Comparing hydrodynamical calculations to experimental results has provided a path to studying the $\eta/s$ value of QGP. 
 
 
-%The first one to predict anisotropic flow in heavy-ion collisions was Ollitrault in 1992~\cite{Ollitrault:1992}. The first papers on anisotropy did not discuss the Fourier composition. Instead they approached the problem with an classic event shape analysis. (sphericity)
+\begin{figure}[tb]
+	\centering
+	\begin{subfigure}[t]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{pics/alice_vn_figa.pdf}
+        \caption[ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$]{ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$ as a function of transverse momentum. The flow coefficients are determined by two-particle correlations using different rapidity separations. 
+        The full and open symbols are for $\Delta\eta > 0.2$ and $\Delta\eta > 1.0$. 
+        The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv} with different values of $\eta/s$~\cite{PRL107032301}.}
+        \label{fig:higherharmonics}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{pics/2012-Jun-06-fig02b}
+        \caption{Amplitude of $v_n$ harmonics as a function of $n$ for the 2\% most central collisions as  measured by ALICE~\cite{Aamodt2012249}.}
+        \label{fig:alicepowers}
 
-The first experimental studies of anisotropy were performed at the AGS~\cite{PhysRevLett.70.1393} in 1993. They noted that the anisotropy of particle production in one region correlates with the reaction plane angle defined in another region. 
+        \end{subfigure} 
+        
+%        \begin{subfigure}[t]{\textwidth}
+ %               \includegraphics[width=\textwidth]{pics/atlas_powerspectra.png}
+%        \caption{Power spectra of $v_n$ for the 1\% most central collisions measured by ATLAS~\cite{PhysRevC.86.014907}.}
+%        \label{fig:atlaspowers}
+ %       \end{subfigure}
+                \caption[Flow measurements of higher harmonics]{Flow measurements of higher harmonics}
+                \label{fig:vnpowers}
 
-The first ones to present the Fourier decomposition were Voloshin and Zhang in 1996~\cite{Voloshin:1994mz}. This new approach was useful for detecting different types of anisotropy in flow, since the different Fourier coefficients give different harmonics in flow. They also show the relative magnitude of each harmonic compared to radial flow.
-
-Some parts of the Fourier composition approach were used for Au-Au collisions at $\snn=11.4\gev$ at AGS in 1994~\cite{Barrette:1994xr}. This analysis still focused on event shapes but they constructed these shapes using Fourier composition from different rapidity windows.
+\end{figure}
 
 
-{\color{red} Add a paragraph on the lessions learned from flow studies.}
 
-\FloatBarrier
-
-%\subsubsection{High $\pt{}$ Phenomena}
-%The measurement of anisotropic flow coefficients can be extended to very high transverse momenta $\pt{}$. High $\pt{}$ measurements of $v_2$ from CMS~\cite{Chatrchyan:2012xq} are shown in Fig. \ref{fig:highpt}. For high transverse momenta $v_2$ values are positive and they decrease slowly as a function of $\pt{}$. At high transverse momentum the $v_2$ values don't, however, represent flow. 
-
-\FloatBarrier
-%\subsubsection{Fluctuations and Event-by-Event Flow}
-%The colliding nuclei are not static objects but the distribution of nucleons fluctuates over time. The arrangement of the nucleons at the time of the collision is random, which leads to fluctuations in the initial conditions. The shape of the collision zone is not a perfect almond and it can have a more complex shape. Also the density of the created medium is not homogenous but it can have dense hot spots. The initial density distribution of the created medium is the main reason for anisotropic flow. Because of fluctuations the strength of anisotropic flow is not constant event-by-event.
-%
-%The existence of more complex density profiles also leads to odd flow harmonics. The basic hydrodynamical approach could only explain elliptic flow and even-harmonics. For a long time it was believed that the odd harmonics would be negligible. In 2007 Mishra {\emph et al.}~\cite{Mishra:2007tw} argued that density inhomogeneities in the initial state would lead to non-zero $v_n$ values for higher harmonics including $v_3$.  It was later noted that higher harmonics of $v_n$ would be suppressed by viscous effects and that the shape of $v_n$ as a function of $n$ would provide another valuable tool for studying $\eta/s$~\cite{Mocsy:2010um}. 
-%
-%In 2010 significant $v_3$ components were also observed in RHIC data~\cite{Alver:2010gr}. The AMPT model that is also studied in this thesis was able to quantitatively describe the centrality dependence of $v_3$ at RHIC and LHC energies, $\snn=200 \gev$ and $2.76\tev$~\cite{Xu:2011fe}.
-%
-%%Initial state fluctuations can be modelled using the Glauber model~\cite{Alver:2008zza}. However, so far all models fail to describe the experimental $v_n$ distributions consistently over the whole centrality range~\cite{Jia:2012ve}.
-%
-%Contrary to elliptic flow higher harmonics are not strongly affected by the centrality of the collision. This supports the theory of higher harmonics being the result of fluctuations. Also $v_2$ measurements of ultra-central collisions give non-zero results for flow, even though the traditional approach based on the anisotropy of the overlap zone gives no prediction of anisotropic flow. This is also the result of fluctuations. Measurement of distributions of $v_n$ coefficients has been performed at ATLAS~\cite{Jia:2012ve}. Their measurements of distributions for $v_2$ in central collisions and for $v_3$ and $v_4$ in general are consistent with a pure Gaussian fluctuation scenario~\cite{Jia:2012ve}.
-%
-%\begin{figure}[tb]
-%	\centering
-%	\begin{subfigure}[t]{0.5\textwidth}
-%                \includegraphics[width=\textwidth]{pics/alice_vn_figa.pdf}
-%        \caption[ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$]{ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$ as a function of transverse momentum. The flow coefficients are determined by two-particle correlations using different rapidity separations. 
-%        The full and open symbols are for $\Delta\eta > 0.2$ and $\Delta\eta > 1.0$. 
-%        The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv} with different values of $\eta/s$~\cite{PRL107032301}.}
-%        \label{fig:higherharmonics}
-%        \end{subfigure}
-%        \quad
-%        \begin{subfigure}[t]{0.45\textwidth}
-%        \includegraphics[width=\textwidth]{pics/2012-Jun-06-fig02b}
-%        \caption{Amplitude of $v_n$ harmonics as a function of $n$ for the 2\% most central collisions as  measured by ALICE~\cite{Aamodt2012249}.}
-%        \label{fig:alicepowers}
-%
-%        \end{subfigure} 
-%        
-%%        \begin{subfigure}[t]{\textwidth}
-% %               \includegraphics[width=\textwidth]{pics/atlas_powerspectra.png}
-%%        \caption{Power spectra of $v_n$ for the 1\% most central collisions measured by ATLAS~\cite{PhysRevC.86.014907}.}
-%%        \label{fig:atlaspowers}
-% %       \end{subfigure}
-%                \caption[Flow measurements of higher harmonics]{Flow measurements of higher harmonics}
-%                \label{fig:vnpowers}
-%
-%\end{figure}
-%
-%Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}.
-%
-%
-%
-%Measurement of event-by-event flow and higher harmonics has growing importance in the field. Triangular flow is useful also for studying jet quenching and in-medium energy loss since anisotropies of flow are related to the path lengths of partons traversing through the medium. Path-lengths and medium density in turn are related the energy loss. An interesting topic of future research would be studying jet properties like $R_{AA}$ separately in events with strong and weak anisotropy.
 
 
 
