@@ -224,6 +224,9 @@ Participant zone is the area containing the participants. The distribution of nu
 The impact parameter is one way to quantize the centrality of a heavy-ion collision but it is impossible to measure in a collision. It can be estimated from observed data using theoretical models, but this is always model-dependent and to compare results from different experiments one needs an universal definition for centrality. %The difference between central and peripheral collisions is illustrated in Fig.~\ref{fig:collisionA}. In a central collision the overlap region is larger than in a peripheral collision. Larger overlap region translates into a larger number of nucleons participating in the collision, which in turn leads to a larger number of particles produced in the event.
 
 
+
+
+
 \begin{figure}[h!]
 \centering
         \begin{subfigure}[b]{0.45\textwidth}
@@ -261,18 +264,60 @@ the fit of the Glauber calculation to the measurement. The data is divided into 
 %\label{sec:glauber}
 %To model heavy-ion collisions one must first have a description as good as possible of the colliding objects. Atomic nuclei are complex ensembles of nucleons. The nuclei used in heavy-ion physics have in the order of 200 nucleons. Mostly used nuclei are $\mathrm{^{208}Pb}$ at LHC and $\mathrm{^{197}Au}$ at RHIC. The distribution of these nucleons within a nucleus is not uniform and is subject to fluctuations in time.
 
-\subsubsection{Glauber Model}
-\label{sec:glauber}
-Nuclear geometry in heavy-ion collisions is often modelled with the Glauber Model. The model was originally developed to address the problem of high energy scattering with composite particles. Glauber presented his first collection of papers and unpublished work in his 1958 lectures~\cite{Glauber:1959}. In the 1970's Glauber's work started to have utility in describing total cross sections, after Maximon and Czyz applied it to proton-nucleus and nucleus-nucleus collisions in 1969~\cite{Czyz:1969}. 
+%\subsubsection{Glauber Model}
+%\label{sec:glauber}
+Nuclear geometry in heavy-ion collisions is often modelled with the Glauber Model. The model was originally introduced already in 1958~\cite{Glauber:1959}. The approach used in modern applications was introduced in 1976~\cite{Biallas1976461} by Białłas, Bleszyński, and Czyż to model inelastic nuclear collisions
 
-In 1976 ~\cite{Biallas1976461} Białłas, Bleszyński, and Czyż applied Glauber's approach to inelastic nuclear collisions. Their approach introduced the basic functions used in modern language including the thickness function and the nuclear overlap function. Thickness function is the integral of the nuclear density over a line going through the nucleus with minimum distance $s$ from its center
+%The model was originally developed to address the problem of high energy scattering with composite particles. Glauber presented his first collection of papers and unpublished work in his 1958 lectures~\cite{Glauber:1959}. In the 1970's Glauber's work started to have utility in describing total cross sections, after Maximon and Czyz applied it to proton-nucleus and nucleus-nucleus collisions in 1969~\cite{Czyz:1969}. 
+%In 1976 ~\cite{Biallas1976461} Białłas, Bleszyński, and Czyż applied Glauber's approach to inelastic nuclear collisions. Their approach introduced the basic functions used in modern language including the thickness function and the nuclear overlap function. 
+The model starts by defining the thickness function which is the integral of the nuclear density over a line going through the nucleus with minimum distance $s$ from its center
 
 \begin{equation}
-T_A\left(s\right)=\int_{-\infty}^{\infty}\dd z \rho\left(\sqrt{s^2+z^2}\right).
+T_A\left(s\right)=\int_{-\infty}^{\infty}\dd z \rho\left(\sqrt{s^2+z^2}\right),
 \end{equation}
 
-\noindent This function gives the thickness of the nucleus, i.e. the amount material seen by a particle passing through it. 
+\noindent where $ \rho\left(\sqrt{s^2+z^2}\right)$ is the number density of nuclear matter. This can be experimentally determined by studying the nuclear charge distribution in low-energy electron scattering experiments~\cite{Miller:2007ri}. For a spherically symmetric nucleus a good approximation is given by the Woods-Saxon potential~\cite{}
 
+\begin{equation}
+\rho\left( r\right) = \frac{\rho_0 \left(1+\omega r^2 / R^2\right)}{1+\exp \left(\frac{r-R}{a}\right)},
+\end{equation}
+
+
+\noindent where $\rho_0$ is the nucleon density in center of the nucleus, $R$ is the nuclear radius, $a$ parametrizes the depth of the skin and $\omega$ can be used to introduce a surface excess. Figure~\ref{fig:woodssaxon} shows how this distribution looks like. With $\omega=0$ the density stays relatively constant as a function of $r$ until around $R$ where it drops to almost 0 within a distance given by $a$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+      \draw[->] (0,0) -- (6,0) node[below] {$r\left[\unit{fm}\right]$};
+      \draw[->] (0,0) -- (0,5) node[left] {$\nicefrac{\rho}{\rho_0}$};
+      \draw	(0,0) node[anchor=north] {0}
+		(2,0) node[anchor=north] {5}
+		(4,0) node[anchor=north] {10};
+
+      \draw	(0,2) node[anchor=east] {0.5}
+		(0,4) node[anchor=east] {1};
+	
+      \draw[dashed,black] (4,0) -- (4,5);
+
+	
+     \draw[black,thin,<->] (0,2) -- node[above] {$R$} (4,2);
+     \draw[black,thin,<->] (3.75,1) -- node[below] {$a$} (4.25,1);
+     
+     \draw[blue] (2,3.5) node {$\omega=0$};
+     \draw[blue] (2,4.5) node {$\omega>0$};
+
+      \draw[scale=1,domain=0:6,smooth,variable=\x,blue,dashed] plot ({\x},{(4+1*\x^2/4^2)/(1+exp((\x-4)/0.5))});
+       \draw[scale=1,domain=0:6,smooth,variable=\x,blue] plot ({\x},{(4)/(1+exp((\x-4)/0.5))});
+
+      %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+
+\end{tikzpicture}
+\caption{A typical woods-saxon potential}
+\label{fig:woodssaxon}
+\end{figure}
+
+
+%The thickness function gives the thickness of the nucleus, i.e. the amount material seen by a particle passing through it. 
 Overlap function is an integral of the thickness functions of two colliding nuclei over the overlap area. This can be seen as the material that takes part in the collision. It is given as a function of the impact parameter $b$
 
 \begin{equation}
@@ -292,9 +337,9 @@ T_{AB}\left(\vec b\right)=\int \dd{^2s} T_A\left(\vec s\right) T_B\left(\vec s -
 \left<N_{coll}\right>=\sigma_{pp}^{inel}\left<T_{AA}\right>,
 \end{equation}
 
-\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. The number of binary collisions is related to the hard processes in a heavy-ion collision. Each binary collision has equal probability for direct production of high-momentum partons. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}.
+\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. As each binary collision has equal probability for direct production of high-momentum partons, the number of binary collisions is related to the hard processes in a heavy-ion collision. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}. This required knowledge of $\sigma\mathrm{^{NN}_{inel}}$, which can be measured in proton-proton collisions at different energies.
 
-Soft production on the other hand is related to the number of participants~\cite{Kharzeev:2004if}. It is assumed that in the binary interactions participants get excited and further interactions are not affected by previous interactions because the time scales are too short for any reaction to happen in the nucleons. After the interactions excited nucleons are transformed into soft particle production. Production does not depend on the number of interactions a nucleon has gone through. The average number of participants, $\left<N_{part}\right>$ can also be calculated from the Glauber model 
+Soft production on the other hand is related to the number of participants~\cite{Kharzeev:2004if}. It is assumed that in the binary interactions participants get excited and further interactions are not affected by previous interactions because the time scales are too short for any reaction to happen in the nucleons. After the interactions excited nucleons are transformed into soft particle production. The average number of participants, $\left<N_{part}\right>$ can be calculated from the Glauber model 
 
 
 \begin{eqnarray}
@@ -324,23 +369,22 @@ Soft production on the other hand is related to the number of participants~\cite
 %
 
 
-Glauber calculations require some knowledge of the properties of the nuclei. One requirement is the nucleon density distribution, which can be experimentally determined by studying the nuclear charge distribution in low-energy electron scattering experiments~\cite{Miller:2007ri}.  The nucleon density is usually parametrized by a Woods-Saxon  distribution
-
-%\begin{equation}
-%\rho\left(r\right)=\rho_0 \frac{1+w\left(\frac{r}{R}\right)^2}{1+\exp{\left(\frac{r-R}{a}\right)}}
-%,\end{equation}
+%Glauber calculations require some knowledge of the properties of the nuclei. One requirement is the nucleon density distribution, which can be experimentally determined by studying the nuclear charge distribution in low-energy electron scattering experiments~\cite{Miller:2007ri}.  The nucleon density is usually parametrized by a Woods-Saxon  distribution
 %
-\begin{equation}
-\rho\left(r\right)=\frac{\rho_0}{1+\exp{\left(\frac{r-R}{a}\right)}}
-,\end{equation}
+%%\begin{equation}
+%%\rho\left(r\right)=\rho_0 \frac{1+w\left(\frac{r}{R}\right)^2}{1+\exp{\left(\frac{r-R}{a}\right)}}
+%%,\end{equation}
+%%
+%\begin{equation}
+%\rho\left(r\right)=\frac{\rho_0}{1+\exp{\left(\frac{r-R}{a}\right)}}
+%,\end{equation}
 
-\noindent where $\rho_0$ is the nucleon density in center of the nucleus, $R$ is the nuclear radius and $a$ parametrizes the depth of the skin. The density stays relatively constant as a function of $r$ until around $R$ where it drops to almost 0 within a distance given by $a$.
 
-Another observable required in the calculations is the total inelastic nucleon-nucleon cross-section $\sigma\mathrm{^{NN}_{inel}}$.  This can be measured in proton-proton collisions at different energies.
+
 
 There are two often used approaches to Glauber calculations. The optical approximation is one way to get simple analytical expressions for the nucleus-nucleus interaction cross-section, the number of interacting  nucleons and the number of nucleon-nucleon collisions. In the optical Glauber it is assumed that during the crossing of the nuclei the nucleons move independently and they will be essentially undeflected.  
 
-With the increase of computational power at hand the Glauber Monte Carlo (GMC) approach has emerged as a method to get a more realistic description of the collisions. In GMC the nucleons are distributed randomly in three-dimensional coordinate system according to the nuclear density distributions~\cite{Abelev:2013qoq}. Also nuclear parameters, like the radius $R$ can be sampled from a distribution. A heavy-ion collision is then treated as a series of independent nucleon-nucleon collisions, where in the simplest model nucleons interact if their distance  in the plane orthogonal to the beam axis, $d$, satisfies
+With increased appreciation of the physics emerging from fluctuations in the collision geometry the Glauber Monte Carlo (GMC) approach has emerged as a method to get a more realistic description of the collisions. In GMC the nucleons are distributed randomly in a three-dimensional coordinate system according to the nuclear density distributions~\cite{Abelev:2013qoq}. A heavy-ion collision is then treated as a series of independent nucleon-nucleon collisions, where in the simplest model nucleons interact if their distance  in the plane orthogonal to the beam axis, $d$, satisfies
 
 \begin{equation}
 d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
