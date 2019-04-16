@@ -11,7 +11,7 @@
 \clearpage
 \section{Introduction}
 \label{sec:introduction}
-This thesis focuses on studying Quantum Chromodynamics (QCD)~\cite{gross1973asymptotically}, a part of the standard model of particle physics~\cite{Tanabashi:2018oca}, which is the theory describing the strong interactions. Strong interaction is the force responsible for interactions that holds the nucleus of an atom together. Fundamentally it describes the interactions between quarks and gluons, the elementary constituents of the building blocks of the nucleus, protons and neutrons. Because of specifics of this interaction quarks and gluons, together dubbed partons, can never be seen free~\cite{missing}. Under ordinary conditions they are confined into bound states called hadrons. In extreme conditions they can form a medium of asymptotically free quarks and gluons, guark-gluon plasma (QGP)~\cite{Shuryak:1980}. %Understanding QGP is the holy grail of Heavy-Ion physics
+This thesis focuses on studying Quantum Chromodynamics (QCD)~\cite{gross1973asymptotically}, a part of the standard model of particle physics~\cite{Tanabashi:2018oca}, which is the theory describing the strong interactions. Strong interaction is the force responsible for interactions that holds the nucleus of an atom together. Fundamentally it describes the interactions between quarks and gluons, the elementary constituents of the building blocks of the nucleus, protons and neutrons. Because of specifics of this interaction quarks and gluons, together dubbed partons, can never be seen free~\cite{Perl:2004qc}. Under ordinary conditions they are confined into bound states called hadrons. In extreme conditions they can form a medium of asymptotically free quarks and gluons, guark-gluon plasma (QGP)~\cite{Shuryak:1980}. %Understanding QGP is the holy grail of Heavy-Ion physics
 
 Indirectly the effect of quarks can be studied using for example jets, collimated streams of particles observed in high energy particle collisions~\cite{Perkins:1982xb}. The physics of these jets is the primary topic discussed in this thesis. Understanding jets is important when one is interested in the processes that produce the partons that eventually fragment into jets. By themselves jets can provide an insight into QCD when the fragmentation is studied. Jets can also be used as probes of the QGP medium. 
 
@@ -199,10 +199,19 @@ In contrast to protons atomic nuclei are objects with considerable transverse si
 Impact parameter defines the reaction plane which is the plane spanned by $b$ and the beam direction. $\Psi_{RP}$ gives the angle between the reaction plane and some reference frame angle. Experimentally the reference frame is fixed by the detector setup. Reaction plane angle cannot be directly measured in high energy nuclear collisions, but it can be estimated with the event plane method~\cite{Voloshin:2008dg}. 
 \begin{figure}[h!]
 \centering
-\begin{tikzpicture}
-      \draw[->] (0,0) -- (7,0) node[below] {$r\left[\unit{fm}\right]$};
-      \draw[->] (0,0) -- (0,5) node[left] {$\nicefrac{\rho}{\rho_0}$};
-\end{tikzpicture}
+%\definecolor{primary}{HTML}{0000FF}
+%\definecolor{secondary}{HTML}{FF8000}
+%\definecolor{tertiary}{HTML}{00FFFF}
+%\begin{tikzpicture}
+%      \draw[->] (-4,0) -- (4,0) node[below] {$x$};
+%      \draw[->] (0,-3) -- (0,3) node[left] {$y$};
+%       \coordinate[] (C);
+% \coordinate[left=1cm of C] (C1);
+%\coordinate[right=1cm of C] (C2);
+%\draw[dashed, thick, primary] (C1) circle (2cm);
+%\draw[dashed, thick, secondary] (C2) circle (2cm);
+%      
+%\end{tikzpicture}
 
 \includegraphics[width=0.6\textwidth]{pics/Definitions}
 \caption[The definitions of the Reaction Plane and Participant Plane coordinate systems]{The definitions of the Reaction Plane and Participant Plane coordinate systems~\cite{Voloshin:2007pc}. The dashed circles represent the two colliding nuclei and the green dots are partons that take part  in the collision. $x_{PP}$ and $x_{RP}$ are the participant and reaction planes. The angle between $x_{RP}$ and $x_{PP}$ is given by Eq. (\ref{eq:partangle}). $y_{PP}$ and $y_{RP}$ are lines perpendicular to the participant and reaction planes. }
@@ -282,14 +291,14 @@ The model starts by defining the thickness function which is the integral of the
 T_A\left(s\right)=\int_{-\infty}^{\infty}\dd z \rho\left(\sqrt{s^2+z^2}\right),
 \end{equation}
 
-\noindent where $ \rho\left(\sqrt{s^2+z^2}\right)$ is the number density of nuclear matter. This can be experimentally determined by studying the nuclear charge distribution in low-energy electron scattering experiments~\cite{Miller:2007ri}. For a spherically symmetric nucleus a good approximation is given by the Woods-Saxon potential~\cite{}
+\noindent where $ \rho\left(\sqrt{s^2+z^2}\right)$ is the number density of nuclear matter. This can be experimentally determined by studying the nuclear charge distribution in low-energy electron-nucleus scattering experiments~\cite{Miller:2007ri,DeJager:1987qc}. For a spherically symmetric nucleus a good approximation is given by the Woods-Saxon potential~\cite{Abelev:2013qoq}. 
 
 \begin{equation}
 \rho\left( r\right) = \frac{\rho_0 \left(1+\omega r^2 / R^2\right)}{1+\exp \left(\frac{r-R}{a}\right)},
 \end{equation}
 
 
-\noindent where $\rho_0$ is the nucleon density in center of the nucleus, $R$ is the nuclear radius, $a$ parametrizes the depth of the skin and $\omega$ can be used to introduce a surface excess. Figure~\ref{fig:woodssaxon} shows how this distribution looks like. With $\omega=0$ the density stays relatively constant as a function of $r$ until around $R$ where it drops to almost 0 within a distance given by $a$.
+\noindent where $\rho_0$ is the nucleon density in center of the nucleus, $R$ is the nuclear radius, $a$ parametrizes the depth of the skin and $\omega$ can be used to introduce a surface excess. Figure~\ref{fig:woodssaxon} shows how this distribution looks like. With $\omega=0$ the density stays relatively constant as a function of $r$ until around $R$ where it drops to almost 0 within a distance given by $a$. 
 
 \begin{figure}
 \centering
@@ -318,7 +327,7 @@ T_A\left(s\right)=\int_{-\infty}^{\infty}\dd z \rho\left(\sqrt{s^2+z^2}\right),
       %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
 
 \end{tikzpicture}
-\caption{Woods-saxon distribution, with typical values for a Pb nucleus, $a=0.55\unit{fm}$ and $R=6.68\unit{fm}$.}
+\caption{Woods-saxon distribution, with typical values for a Pb nucleus, $a=0.55\unit{fm}$ and $R=6.6\unit{fm}$.}
 \label{fig:woodssaxon}
 \end{figure}
 
@@ -343,7 +352,7 @@ T_{AB}\left(\vec b\right)=\int \dd{^2s} T_A\left(\vec s\right) T_B\left(\vec s -
 \left<N_{coll}\right>=\sigma_{pp}^{inel}\left<T_{AA}\right>,
 \end{equation}
 
-\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. As each binary collision has equal probability for direct production of high-momentum partons, the number of binary collisions is related to the hard processes in a heavy-ion collision. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}. This required knowledge of $\sigma\mathrm{^{NN}_{inel}}$, which can be measured in proton-proton collisions at different energies. At the LHC the most precise cross section measurements come from TOTEM~\cite{missing}.
+\noindent where the total inelastic cross-section, $\sigma_{pp}^{inel}$, gives the probability of two nucleons interacting. As each binary collision has equal probability for direct production of high-momentum partons, the number of binary collisions is related to the hard processes in a heavy-ion collision. Thus the number of high momentum particles is proportional to $\left<N_{coll}\right>$~\cite{Abelev:2013qoq,Kharzeev:2004if,Deng:2010mv}. This required knowledge of $\sigma\mathrm{^{NN}_{inel}}$, which can be measured in proton-proton collisions at different energies. At the LHC the most precise cross section measurements come from TOTEM~\cite{Antchev:2017dia}.
 
 Soft production on the other hand is related to the number of participants~\cite{Kharzeev:2004if}. It is assumed that in the binary interactions participants get excited and further interactions are not affected by previous interactions because the time scales are too short for any reaction to happen in the nucleons. After the interactions excited nucleons are transformed into soft particle production. The average number of participants, $\left<N_{part}\right>$ can be calculated from the Glauber model 
 
@@ -400,9 +409,9 @@ d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 
 \begin{figure}[htbp]
 \centering
-               \includegraphics[width=0.5\textwidth]{pics/glauber_eli}
-        \caption[The results of one Glauber Monte Carlo simulation.]{The results of one Glauber Monte Carlo simulation. Big circles with black dotted boundaries represent the two colliding nuclei. The participant zone is highlighted with the solid red line.        
-        Small red and blue circles represent nucleons. Circles with thick boundaries are participants i.e. they interact with at least one nucleon from the other nucleus. Small circles with dotted boundaries are spectators which do not take part in the collision.~\cite{}}
+               \includegraphics[width=0.5\textwidth]{figures/test_pbpb_2a}
+        \caption[The results of one Glauber Monte Carlo simulation.]{The results of one Glauber Monte Carlo simulation for a \PbPb collision. Big circles with black dotted boundaries represent the two colliding nuclei. The participant zone is highlighted with the solid red line.        
+        Small red and blue circles represent nucleons. Circles with solid boundaries are participants i.e. they interact with at least one nucleon from the other nucleus. Circles with dotted boundaries are spectators which do not take part in the collision. Figure from~\cite{Alver:2008aq}}
         	\label{fig:GMC}
 \end{figure}
 
@@ -420,7 +429,7 @@ Quite often the evolution of a heavy-ion event can be divided into four stages. 
         	\label{fig:HISpaceTime}
 \end{figure}
 
-The second stage is the regime where thermal equilibrium or at least near-equilibrium is reached. This lasts about $5-10\ \mathrm{fm}/c$ until the temperature of the system sinks low enough for hadronization to occur~\cite{missing} and the system loses its deconfined, strongly coupled state.
+The second stage is the regime where thermal equilibrium or at least near-equilibrium is reached. This lasts about $5-10\ \mathrm{fm}/c$ until the temperature of the system sinks low enough for hadronization to occur and the system loses its deconfined, strongly coupled state.
 The third stage is the hadron gas stage where the hadrons still interact with each other. This ends when hadron scattering becomes rare and they no longer interact. In the final stage hadrons are free streaming and they fly in straight lines until they reach the detector.
 
 %In this stage hydrodynamics should be applicable if the temperature is above the deconfinement temperature~\cite{Romatschke:2009im}. 
@@ -474,9 +483,9 @@ E\frac{\dd{^3N}}{\dd {p^3}}=\frac{1}{2\pi}\frac{\dd {^2N}}{\pt{ }\dd {\pt{ }}\dd
 %\label{eq:finalseries}
 \end{equation}
 
-\noindent where the coefficients $v_n$ give the relative strengths of different anisotropic flow components and the overall normalisation gives the strength of radial flow. Elliptic flow, i.e. flow with two maxima, is represented by $v_2$ and $v_3$ represents triangular flow. The first coefficient, $v_1$, is connected to directed flow~\cite{missing}. This will however in total be zero because of momentum conservation. It can be nonzero in some rapidity or momentum regions but it must be canceled by other regions.
+\noindent where the coefficients $v_n$ give the relative strengths of different anisotropic flow components and the overall normalisation gives the strength of radial flow. Elliptic flow, i.e. flow with two maxima, is represented by $v_2$ and $v_3$ represents triangular flow. The first coefficient, $v_1$, is connected to directed flow~\cite{Voloshin:1994mz}. This will however in total be zero because of momentum conservation. It can be nonzero in some rapidity or momentum regions but it must be canceled by other regions.
 
-In a peripheral collision $v_2$ is the dominant part of anisotropic flow as it arises from the asymmetric geometry of the collision region. Higher harmonics, the most notable of which is the triangular flow, come from fluctuations in the initial conditions~\cite{}. As the colliding nuclei are not static objects, the arrangement of the nucleons at the time of the collision is random. The shape of the collision zone is not a perfect almond. Instead it can have a more complex shape. Also inside the collision zone the density of the created medium is not homogenous but it can have denser hot spots
+In a peripheral collision $v_2$ is the dominant part of anisotropic flow as it arises from the asymmetric geometry of the collision region. Higher harmonics, the most notable of which is the triangular flow, come from fluctuations in the initial conditions~\cite{Alver:2010gr}. As the colliding nuclei are not static objects, the arrangement of the nucleons at the time of the collision is random. The shape of the collision zone is not a perfect almond. Instead it can have a more complex shape. Also inside the collision zone the density of the created medium is not homogenous but it can have denser hot spots
 
 It has been noted that higher harmonics of $v_n$ would be suppressed by viscous effects and that the shape of $v_n$ as a function of $n$ would provide another valuable tool for studying $\eta/s$~\cite{Mocsy:2010um}. For a long time it was believed that the odd harmonics would be negligible. In 2007 Mishra {\emph et al.}~\cite{Mishra:2007tw} argued that density inhomogeneities in the initial state would lead to non-zero $v_n$ values for higher harmonics including $v_3$.  
 
@@ -484,7 +493,7 @@ The first one to predict anisotropic flow in heavy-ion collisions was Ollitrault
 
 Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}. The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv}.
 
-The measured collective flow in heavy-ion collisions has been successfully modelled with the relativistic version of hydrodynamics. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest~\cite{Romatschke:2009im}, which is assumed to hold for QGP phase of a heavy-ion collision~\cite{}.
+The measured collective flow in heavy-ion collisions has been successfully modelled with the relativistic version of hydrodynamics. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest, which is assumed to hold for QGP phase of a heavy-ion collision~\cite{Romatschke:2009im}.
 
 The use of relativistic hydrodynamics in high-energy physics dates back to Landau~\cite{Landau:1953gs} and the 1950's, before QCD was discovered. Back then it was used in proton-proton collisions. Development of hydrodynamics for the use of heavy-ion physics has been active since the 1980's, including Bjorken's study of boost-invariant longitudinal expansion and infinite transverse flow~\cite{PhysRevD.27.140}. Major steps were taken later with the inclusion of finite size and and dynamically generated transverse size~\cite{Baym:1984sr, PhysRevD.34.794}, a part of which was done at the University of Jyväskylä. %The role of hydrodynamics in heavy-ion physics was strengthened when QGP was observed to behave like a liquid by RHIC~\cite{Adcox:2004mh}. 
 
