@@ -197,7 +197,7 @@ The analysis uses reconstructed jets as estimates of the original parton. Jet re
 
 Collisions between hadrons are never as clean as electron-electron collisions. Even for a proton-proton collision there are participant partons, that will produce a soft background in addition to the hard scattering products. Jet reconstruction must deal with this soft background. The reconstruction is never perfect, one can have uncorrelated tracks that get included in the jet and some tracks originating from the parton are missed by the reconstruction. There are several methods to perform the reconstruction, all of which require some kind of size parameter, which cuts out jet participants too far from the jet axis. The tracks that are grouped into a jet are referred to as jet constituents. 
 
-In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. The analysis is then performed by analysing the charged jet constituents and results are presented in terms of the jet transverse momentum $\pt{jet}$. 
+In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. The analysis is then performed by analysing the charged jet constituents and results are presented in terms of the jet transverse momentum $\pt{,jet}$. 
 
 \subsubsection{Anti \texorpdfstring{\kt{}}{kT} algorithm}
 Jets are reconstructed using the anti-$\kt{}$ algorithm~\cite{antikt}. The algorithm works by trying to undo the splittings through combining protojets. First the algorithm creates a list of protojets. At the beginning the list is populated by converting each track in the event into a protojet. Then the algorithm proceeds by combining these protojets. A simplified picture of the process for a limited number of tracks is shown in Fig.~\ref{fig:ktalg}
@@ -256,7 +256,7 @@ It represents the transverse kick with respect to the initial hard parton moment
 
 The reconstructed jet axis is used for $\jt{}$ reference. Any charged track within a fixed cone with radius $R$ is taken as a jet constituent, as opposed to using the constituent list provided by the jet algorithm. Anti-$\kt{}$ produces jets that are very circular in shape. Thus this doesn't change the constituent list considerably. Neutral tracks are used only in jet reconstruction.
  
-Results of the raw inclusive $\jt{}$ distribution in four $\pt{jet}$ bins with background are shown in figure \ref{fig:inclusive}. Background is further discussed in Sec.~\ref{sec:bg}
+Results of the raw inclusive $\jt{}$ distribution in four $\pt{,jet}$ bins with background are shown in figure \ref{fig:inclusive}. Background is further discussed in Sec.~\ref{sec:bg}
  
  \begin{figure}
 \centering
@@ -404,7 +404,7 @@ For errors originating from the measured distribution RooUnfold uses the error p
  A toy Monte Carlo simulation was performed to see the performance of unfolding in an ideal case.
 The simulations samples jet $\pt{}$ values from the observed $\pt{}$ distribution. Starting from this $\pt{}$ the simulations starts creating tracks with 
 \begin{equation}
-p_{\mathrm{track}} = z_\mathrm{track} \pt{jet}
+p_{\mathrm{track}} = z_\mathrm{track} \pt{,jet}
 \end{equation}
 
 \noindent where $z_\mathrm{track} $ is sampled from the observed $z$ distribution. All tracks below \unit[0.15]{\gev} are discarded. Sampling is continued until the sum of the track transverse momenta exceeds the jet transverse momentum. Jet is then defined as the sum of the track momenta.
@@ -412,12 +412,12 @@ p_{\mathrm{track}} = z_\mathrm{track} \pt{jet}
 Simultaneously a $\pt{}$ dependant observation efficiency is applied to the tracks and a separate observed jet is calculated using only the observed tracks. Additionally a set of fake tracks is added to the observed jet. Tracks are always either observed or not at the true momentum. No smearing is added to the observed momentum.
 
 Afterwards the tracks are looped over for $\jt{}$ calculation. For observed tracks we calculate $\jt{}$ with respect to both the true jet axis and the observed jet. 2D Response matrix is filled with \begin{equation}
-\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}, \jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)
+\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs}, \jt{}^\mathrm{true},\pt{,jet}^\mathrm{true}\right)
 \end{equation}
 
 In practice this is done with a set of 3D histograms, where \pt{jet,true} determines the histogram index and the remaining three values the bin in the 3D histogram.
 
-After creating the response matrices, an identical procedure is carried out to the create testing data. Now instead of filling response matrices, 2D histograms are filled with $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}\right)$ and $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$
+After creating the response matrices, an identical procedure is carried out to the create testing data. Now instead of filling response matrices, 2D histograms are filled with $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs}\right)$ and $\left(\jt{}^\mathrm{true},\pt{,jet}^\mathrm{true}\right)$
 
 The observed distributions are unfolded using RooUnfold's 2D Bayesian (iterative) algorithm. Results are shown in figure \ref{fig:toymc}. Aside from some discrepancy at very low \jt{} the true distribution is retrieved well. 
 
@@ -435,29 +435,29 @@ A \pythia 6 simulation was carried out to determine the response matrices.
 
 Response matrices are filled through correlation between MC detector and particle level jets and tracks.
 
-The ranges of both $\jt{}$ and $\pt{jet}$ extend the ranges in end results. These are shown in Tab.~\ref{tab:unfranges}. The ranges are the same in detector and particle level.
+The ranges of both $\jt{}$ and $\pt{,jet}$ extend the ranges in end results. These are shown in Tab.~\ref{tab:unfranges}. The ranges are the same in detector and particle level.
 
 When calculating \jt{} for MC particles the code checks whether a corresponding detector level track exists and if that track had a \jt{} value. Additionally the code checks for detector level tracks that don't have corresponding particle level track with a \jt{} value.
 
 There are several possibilities that have to be taken into account:
 \begin{itemize}
-\item We find a corresponding track with a \jt{} value, response matrix is filled normally with $\left(\jt{}^\mathrm{obs},\pt{jet}^{obs},\jt{}^\mathrm{true},\pt{jet}^{true}\right)$
-\item We don't find a corresponding track. Record $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$ as a miss 
-\item We find a corresponding track, but it didn't have $\jt{}$ value. Most likely because it was not part of a jet in the detector level set. Similary record $\left(\jt{}^\mathrm{true},\pt{jet}^\mathrm{true}\right)$ as a miss
-\item For detector level tracks that have no correspondence in particle level set the code records  $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs}\right)$ as a fake
+\item We find a corresponding track with a \jt{} value, response matrix is filled normally with $\left(\jt{}^\mathrm{obs},\pt{,jet}^{obs},\jt{}^\mathrm{true},\pt{,jet}^{true}\right)$
+\item We don't find a corresponding track. Record $\left(\jt{}^\mathrm{true},\pt{,jet}^\mathrm{true}\right)$ as a miss 
+\item We find a corresponding track, but it didn't have $\jt{}$ value. Most likely because it was not part of a jet in the detector level set. Similary record $\left(\jt{}^\mathrm{true},\pt{,jet}^\mathrm{true}\right)$ as a miss
+\item For detector level tracks that have no correspondence in particle level set the code records  $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs}\right)$ as a fake
 \end{itemize}
 
-In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(\jt{}^\mathrm{obs},\pt{jet}^\mathrm{obs},\jt{}^\mathrm{true}\right)$ as axes. The histogram index gives the $\pt{jet}^\mathrm{true}$ value.
+In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs},\jt{}^\mathrm{true}\right)$ as axes. The histogram index gives the $\pt{,jet}^\mathrm{true}$ value.
 
 \subsubsection{Unfolding algorithm}
-As a primary method unfolding is performed with an iterative (bayesian) algorithm using the RooUnfold~\cite{roounfold} package. The number of iterations used is 4. The default ranges of $\jt{}$ and $\pt{jet}$ are shown in~\ref{tab:unfranges}. As a default the true $\jt{}$ distribution from the \pythia~simulation is used as the prior.
+As a primary method unfolding is performed with an iterative (bayesian) algorithm using the RooUnfold~\cite{roounfold} package. The number of iterations used is 4. The default ranges of $\jt{}$ and $\pt{,jet}$ are shown in~\ref{tab:unfranges}. As a default the true $\jt{}$ distribution from the \pythia~simulation is used as the prior.
 
 \begin{table}
 \centering
 \caption{$\jt{}$ and $\pt{}$ ranges used in unfolding. The same ranges are used for detector and truth level.}
 \label{tab:unfranges}
 \begin{tabular}{c | c | c}
- & $\jt{}$ & $\pt{jet}$ \\
+ & $\jt{}$ & $\pt{,jet}$ \\
  \hline
 Min & 0.01 & 5 \\
 Max & 20 & 500 \\
@@ -485,10 +485,10 @@ The \pythia set is divided into 2 halves. First is used to fill the response mat
  
 Response matrices within single jet $\pt{}$ bins are shown in figure \ref{fig:response}. Results from the closure test are shown in figure \ref{fig:closure}. In the lowest jet $\pt{}$ bins unfolding fails to recover the true distribution. The lowest jet $\pt{}$ bins are dominated by combinatorial jets and thus the true detector response is likely not retrieved.
 
-Above $\unit[30]{\gev} <\pt{jet} < \unit[40]{\gev}$~the distribution is recovered well in the mid $\jt{}$ region. At $\jt{} < \unit[0.1]{\gev}$ there is clear discrepancy. The final results are shown only for $\jt{} > \unit[0.1]{\gev}$. Additionally there is some discrepancy at very high $\jt{}$. This is taken into account in the unfolding systematics. {\color{red}(TODO: Show this) }
+Above $\unit[30]{\gev} <\pt{,jet} < \unit[40]{\gev}$~the distribution is recovered well in the mid $\jt{}$ region. At $\jt{} < \unit[0.1]{\gev}$ there is clear discrepancy. The final results are shown only for $\jt{} > \unit[0.1]{\gev}$. Additionally there is some discrepancy at very high $\jt{}$. This is taken into account in the unfolding systematics. {\color{red}(TODO: Show this) }
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/analysis/ResponseMatrixNFin00.pdf}
-\caption{$\jt{}$ Response matrices in individual $\pt{jet}$ bins}
+\caption{$\jt{}$ Response matrices in individual $\pt{,jet}$ bins}
 \label{fig:response}
 \end{figure}
 
@@ -591,7 +591,7 @@ In pPb data there is on average about one underlying event track in a $R = 0.4$ 
 \subsubsection{Comparing background methods}
 
 
-Comparison between perpendicular cone and random background in figure \ref{fig:bgcomparison}. The advantage of the random background method is the added amount of statistics as the procedure can be repeated several times for each event. However, it seems that, especially in the highest $\pt{jet}$ bins there is some jet contribution left at the high end. Naturally there is no correlation between the tracks and the background axis, but if some high momentum tracks originating from jets were not subtracted and happen to hit the edge of the background cone, they can increase the high $\jt{}$ yield in the background estimation.
+Comparison between perpendicular cone and random background in figure \ref{fig:bgcomparison}. The advantage of the random background method is the added amount of statistics as the procedure can be repeated several times for each event. However, it seems that, especially in the highest $\pt{,jet}$ bins there is some jet contribution left at the high end. Naturally there is no correlation between the tracks and the background axis, but if some high momentum tracks originating from jets were not subtracted and happen to hit the edge of the background cone, they can increase the high $\jt{}$ yield in the background estimation.
 
 \begin{figure}[htb]
 \centering
@@ -603,7 +603,7 @@ Comparison between perpendicular cone and random background in figure \ref{fig:b
 \label{fig:bgcomparison}
 \end{figure}
 
-One should note that the results from perpendicular cone background show no observable change between $\pt{jet}$ bins. It is a good indication that the background is actually dominated by the underlying event over the entire $\jt{}$ region. 
+One should note that the results from perpendicular cone background show no observable change between $\pt{,jet}$ bins. It is a good indication that the background is actually dominated by the underlying event over the entire $\jt{}$ region. 
 
 
 \FloatBarrier
