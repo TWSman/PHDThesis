@@ -25,7 +25,7 @@ The term Hard Scattering is used in connection with the scattering of two point-
 \label{fig:scattering}
 \end{figure}
 
-Historically one would study hard scatterings foremost with inclusive hadron spectra. In this context hadron production from hard scatterings can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$, (A summary of the $2\rightarrow2$ processes in QCD is shown in Fig. ~\ref{fig:qcdlo}) and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
+Historically one would study hard scatterings foremost with inclusive hadron spectra. In this context hadron production from hard scatterings can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$,  and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
 
 \begin{equation}
 \frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c},
@@ -36,6 +36,12 @@ Historically one would study hard scatterings foremost with inclusive hadron spe
 \begin{equation}
 x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.
 \end{equation}
+
+
+Parton distribution functions will be discussed further in the following section. The elementary cross section $ab\rightarrow cd$ can be calculated from QCD. A summary of the first order $2\rightarrow2$ processes in QCD is shown in Fig. ~\ref{fig:qcdlo}. 
+
+The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of fragments radiated from the outgoing parton.  In a leading order picture, it can be interpreted as the probability that the observed final state originates from a given parton~\cite{Metz:2016swz}. Like the PDFs they are non-perturbative and must be determined experimentally. The measurement is usually performed in $e^+ e^-$ collisions where the kinematics are better controlled. 
+
 
 %
 %\begin{figure}
@@ -69,44 +75,6 @@ As the PDFs cannot be calculated from first principles they are measured in Deep
 
 \noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
 
-\subsubsection*{Fragmentation functions}
-
-{\color{red} improve
-The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of fragments radiated from the outgoing parton. Fragmentation function $D\left(z\right)$ gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{missing} as 
-
-\begin{equation}
-m\left(z_0\right) = \int_{z_0}^1 D\left(z\right) \mathrm{d} z \Rightarrow m\left(0\right) \equiv \left< m \right> = \int_0^1 D\left(z\right) \mathrm{d}z,
-\end{equation}
-
-\noindent where $z$ is the longitudinal momentum fraction of jet momentum $p_{\mathrm{jet}}$ carried away by the jet fragment $p_{\mathrm{part}}$
-
-
-%\begin{equation}
-%z = \frac{\vec p_{\mathrm{part}} \cdot \vec p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\vec{p}_\mathrm{part} \times \vec{p}_\mathrm{jet}=0}
-%\end{equation}
-
-\begin{equation}
-z = \frac{\vec p_{\mathrm{part}} \cdot \vec p_{\mathrm{jet}}}{p^2_{\mathrm{jet}}} = \left.\frac{p_{\mathrm{part}}}{p_{\mathrm{jet}}}\right\vert_{\vec{p}_\mathrm{part} \parallel \vec{p}_\mathrm{jet}}
-\end{equation}
-
-%Fragmentation function $D\left(z\right)$ then gives the average multiplicity $m$ of jet fragments having $z > z_0$ ~\cite{missing}. 
-%
-%\begin{equation}
-%m\left(z_0\right) = \int_{z_0}^1 D\left(z\right) \mathrm{d} z \Rightarrow m\left(0\right) \equiv \left< m \right> = \int_0^1 D\left(z\right) \mathrm{d}z
-%\end{equation}
-
-Because of momentum conservation the sum of all jet fragments must be equal to the jet momentum, i.e. 
-
-\begin{equation}
-\sum p_{i,\mathrm{part}} = p_\mathrm{jet} \Rightarrow \sum z_i = 1 \Rightarrow \int_0^1 z D\left(z\right) \mathrm{d} z = 1
-\end{equation}
-
-%A natural consequence is that the average momentum fraction is the inverse of the average multiplicity
-%
-%\begin{equation}
-%\left<z \right> = \frac{\int_0^1 z D\left(z\right) }{\int_0^1 D\left(z\right) } = \frac{1}{\left< m \right>}.
-%\end{equation}
-}
 \subsubsection{Jet showering}
 \label{sec:shower}
 \begin{figure}
