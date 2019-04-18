@@ -53,7 +53,7 @@ The final component in the factorization, fragmentation functions, describe the 
 
 
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \input{figures/tikz/qcdlo}
 \caption[QCD Leading Order]{The basic pQCD processes and their quadratic matrix elements}
@@ -124,30 +124,29 @@ P_a^{no}\left(Q^2_\mathrm{max},Q^2\right) = \exp \left(- \int_{Q^2}^{Q^2_\mathrm
 
 Partons $b$ and $c$ that were produced will further branch with maximum virtuality scale $Q^2_\mathrm{max}$ given by $Q^2_a$. Similarly their daughters will continue branching until the cutoff scale is reached, thus producing a shower. 
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}
-\tikzset{
-photon/.style={decorate, decoration={snake}, draw=red},
-particlearrow/.style={draw=blue, postaction={decorate},
-    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
-antiparticlearrow/.style={draw=blue, postaction={decorate},
-    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
-particle/.style={draw=blue},
-antiparticle/.style={draw=blue},
-gluon/.style={decorate, draw=orange,
-    decoration={coil,amplitude=4pt, segment length=5pt}}
- }
- 
-\coordinate[label=left:$a$] (a);
-\coordinate[right=2cm of a] (vertex);
-\coordinate[above right=0.5cm and 2 cm of vertex,label=right:$b$] (b);
-\coordinate[below right=0.5cm and 2 cm of vertex,label=right:$c$] (c);
-\draw[particlearrow] (a) -- (vertex);
-\draw[particlearrow] (vertex) -- node[label=above:$z$] {} (b);
-\draw[particlearrow] (vertex) -- node[label=below:$1-z$] {} (c);
-\end{tikzpicture}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\begin{tikzpicture}
+%\tikzset{
+%photon/.style={decorate, decoration={snake}, draw=red},
+%particlearrow/.style={draw=blue, postaction={decorate},
+%    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+%antiparticlearrow/.style={draw=blue, postaction={decorate},
+%    decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
+%particle/.style={draw=blue},
+%antiparticle/.style={draw=blue},
+%gluon/.style={decorate, draw=orange,
+%    decoration={coil,amplitude=4pt, segment length=5pt}}
+% }
+%\coordinate[label=left:$a$] (a);
+%\coordinate[right=2cm of a] (vertex);
+%\coordinate[above right=0.5cm and 2 cm of vertex,label=right:$b$] (b);
+%\coordinate[below right=0.5cm and 2 cm of vertex,label=right:$c$] (c);
+%\draw[particlearrow] (a) -- (vertex);
+%\draw[particlearrow] (vertex) -- node[label=above:$z$] {} (b);
+%\draw[particlearrow] (vertex) -- node[label=below:$1-z$] {} (c);
+%\end{tikzpicture}
+%\end{figure}
 
 
 
@@ -459,15 +458,15 @@ Jet hadron correlations have also been studied at RHIC with similar conclusion~\
 \subsubsection*{Phase-space view of the medium modified parton cascade}
 The new paradigm in jet quenching in heavy-ion collisions involves multi-scale problems~\cite{Kurkela:2014tla,Tachibana:2018yae}. The elementary scattering and the subsequent branching process down to non-perturbative scales are dominated by hard scales in the vacuum as well as in the medium. Soft scales, of the order of the temperature of the medium, characterise the interactions of soft partons produced in the shower with the QGP. Soft scales also rule hadronisation, which is expected to take place in vacuum for sufficiently energetic probes, even though some modifications can persist from modifications of colour flow~\cite{Aurenche:2011rd,Beraudo:2011bh,Beraudo:2012bq}. Understanding the contributions from the different processes to the jet shower evolution in medium and their scale dependence is crucial to to constrain the dynamics of jet energy loss in the expending medium, the role of colour coherence~\cite{CasalderreySolana:2012ef}, and fundamental medium properties like temperature dependent transport coefficient~\cite{DEramo:2012uzl,Ayala:2016pvm}.
 
-\begin{figure}[tbp]
+\begin{figure}[tb]
 \centering
-\begin{subfigure}{0.45\textwidth}
+\begin{subfigure}{0.48\textwidth}
 \includegraphics[width=0.99\textwidth]{figures/regions4.eps}
 %\caption[]{Illustration of how a medium-modified parton cascade fills the phase space. Early stage vacuum radiation dominates phase space in the DGLAP region. Late stage, after exiting the medium, radiation dominates the Late DGLAP regions.  }
 %Parametrically accurate picture of how a medium-modified parton cascade fills the phase space. At time $t$, quanta can be formed up to momentum scale $k_{\rm form}$ and they are formed with $O(1)$ probability per $\log p$ at lower scale $k_{\rm split}$. Quanta below $k_{\rm split}$ split further and their energy cascades to the thermal scale $T$ in less than an epoch $t$. Transverse Brownian motion moves quanta up to the angle $\theta_{\rm BR}(p)$ denoted by the thick purple line.  The Moli\`ere region at larger $\theta$ is dominated by rare large angle scattering. At even larger angle, there are $O(\alpha_s)$ quanta per double logarithmic phase space  from DGLAP 'vacuum' radiation, and for momenta below $k_{\rm split}$ these cascade within time $t$ to $T$. After the jet escapes the medium, the jet and the emitted fragments will undergo vacuum radiation. This late time vacuum radiation emitted by the original parton dominates at sufficiently small $\log \theta$  (regions marked ``late DGLAP'' and bounded by $\theta_{\rm vac}$ and $\theta_\alpha$),  whereas the late time radiation of the fragments dominates in the region  denoted by ``Vacuum cascade of the medium induced quanta''. }
 %\label{fig:cascades}
 \end{subfigure}
-\begin{subfigure}{0.45\textwidth}
+\begin{subfigure}{0.48\textwidth}
 \includegraphics[width=0.99\textwidth]{figures/e-vs-th3.eps}
 %\caption[]{The distribution of energy as a function of angle for a fixed $p > k_\mathrm{split}$. The  Medium induced radiation dominates around the angular scale $\theta_\mathrm{BR}$. The medium induced contributions (dashed lines) grow as a function of evolution time with respect to the vacuum one (dotted line). ~\cite{Kurkela:2014tla}.}
 %\label{fig:edistribution}

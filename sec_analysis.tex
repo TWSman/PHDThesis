@@ -94,6 +94,22 @@ Other & & Rejected by step 1 \\
 \subsection{Cluster selection}
 Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal)~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complimented with the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal. The DCal coverage spans over 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. In between PHOS and DCal active volumes, there is a gap of 10 cm. DCal is fully back-to-back with EMCal.
 
+\begin{table}[tb] 
+\centering
+\caption{Parameters used in the EMCal clusteriser}
+\label{tab:clusters}
+\begin{tabular}{| c | c |}
+Setting & Value \\
+Clusteriser seed & 0.2 \unit{\mev} \\
+Clusteriser cutoff & 0.05 \unit{\mev} \\
+Cells in cluster & > 1 \\
+Track matching radius & 0.025 \\
+Fiducial cut & 1 tower \\
+Exotic cut & 0.97 \\
+Minimal cluster Energy & 0.3 \unit{\gev}
+%Maximum pair asymmetry & 0.8 \\
+\end{tabular}
+\end{table}
 
 The clusters used in the analysis were obtained from the EMCal clusteriser. The parameters used in the clusteriser are summarised in Table~\ref{tab:clusters}. The clusteriser  searches for a tower with energy deposit greater than a defined seed energy and merges all surrounding (sharing a side) towers with energy deposit higher than a defined threshold. In the next step all towers sharing a side with already included towers are added, again requiring that the energy deposits exceeds the threshold. The algorithm can identify local minima and halts the clustering in case that the neighbouring tower energy is higher. Already clustered towers are removed from the pool, so one tower can only be clustered once. 
 
@@ -110,22 +126,7 @@ A method of matching the cluster position to TPC track extrapolation is used to 
 
 
 
-\begin{table}[htb] 
-\centering
-\caption{Parameters used in the EMCal clusteriser}
-\label{tab:clusters}
-\begin{tabular}{| c | c |}
-Setting & Value \\
-Clusteriser seed & 0.2 \unit{\mev} \\
-Clusteriser cutoff & 0.05 \unit{\mev} \\
-Cells in cluster & > 1 \\
-Track matching radius & 0.025 \\
-Fiducial cut & 1 tower \\
-Exotic cut & 0.97 \\
-Minimal cluster Energy & 0.3 \unit{\gev}
-%Maximum pair asymmetry & 0.8 \\
-\end{tabular}
-\end{table}
+
 
 
 %The combination of charged tracks with  $\pt{} > \unit[0.15]{\GeVc}$ and neutral particles with $\pt{} > \unit[0.30]{\GeVc}$ is used to construct jets. 
@@ -536,7 +537,7 @@ This background procedure is a part of the reason for using charged tracks insid
 
 
 
-\begin{figure}[htp]
+\begin{figure}[tb]
 \centering
 \input{figures/tikz/bgflow}
 \caption{Flowchart representation of the perpendicular cone background procedure}
