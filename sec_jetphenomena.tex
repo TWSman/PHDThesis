@@ -336,13 +336,14 @@ Let us now look at what happens to jet production in heavy-ion collisions. Figur
 \end{figure}
 
 \subsubsection*{Discovery of jet quenching via leading hadron suppression}
+\label{sec:energyloss}
 First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons of jets. In this picture jet quenching in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
 %the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
 
 \begin{equation}
 R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
 \end{equation}
-\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Section~\ref{sec:glauber}. From the point of view of direct production at high $\pt{}$ a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. At low $\pt{}$ this scaling breaks down as the determining factor in direct production is the number of participants.
+\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. The number of binary collisions can be calculated from the Glauber model as shown in Section~\ref{sec:geometry}. From the point of view of direct production at high $\pt{}$ a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. At low $\pt{}$ this scaling breaks down as the determining factor in direct production is the number of participants.
 
 
 \begin{figure}[hbt]
@@ -449,7 +450,7 @@ Jet hadron correlations have also been studied at RHIC with similar conclusion~\
 \centering
 \includegraphics[height=2.4in]{figures/TrackJetCMS-HIN-14-016_Figure_003.pdf}
 \caption{Measurement by CMS~\cite{Khachatryan:2016erx}. Symmetrized $\Delta \eta$ distributions correlated with \PbPb and \pp inclusive jets with $\pt{}>\unit[120]{\gev}$ are shown in the top panels for tracks with $1 < \pt{} < \unit[2]{\gev}$. The difference between per-jet yields in \PbPb and \pp collisions is shown in the bottom panels. These measurements indicate that the jet is broadened and softened, as expected. The effect is stronger in more central collisions.  $\Delta \phi$ correlations have similar trends.}
-\label{fig:jetraa}
+\label{fig:jethadron}
 \end{figure}
 
 
@@ -495,7 +496,7 @@ k_\mathrm{form}\left(t\right) = \hat q t^2.
 p \geq k_\mathrm{split} \approx \alpha_s^2 k_\mathrm{form}\left(t\right) \approx \alpha_s^2\hat q t^2.
 \end{equation} 
 
-\noindent Thus the region marked as LPM in Figure~\ref{fig:cascades} is filled by the primary medium-induced branchings. Fragments with $p \leq k_\mathrm{split}$ will have time to split further. An approximately equal splitting where both splittees get momentum $~\nicefrac{p}{2}$ from the parent will degrade energy the most. These splittees will undergo the next splitting in an even shorter time scale producing even softer fragments. Momenta can continue cascading all the way to the thermal scale $T$ of the medium within the same time scale within which the first splitting occurred. Thus filling the region marked as Medium cascade in Figure~\ref{fig:cascade}. Similarly splittees from vacuum radiation can cascade inside the medium when they have $p \leq k_\mathrm{split}$, filling the bottom right corner of the $\log p$-$\log \theta$-plane.
+\noindent Thus the region marked as LPM in Figure~\ref{fig:cascades} is filled by the primary medium-induced branchings. Fragments with $p \leq k_\mathrm{split}$ will have time to split further. An approximately equal splitting where both splittees get momentum $~\nicefrac{p}{2}$ from the parent will degrade energy the most. These splittees will undergo the next splitting in an even shorter time scale producing even softer fragments. Momenta can continue cascading all the way to the thermal scale $T$ of the medium within the same time scale within which the first splitting occurred. Thus filling the region marked as Medium cascade in Figure~\ref{fig:cascades}. Similarly splittees from vacuum radiation can cascade inside the medium when they have $p \leq k_\mathrm{split}$, filling the bottom right corner of the $\log p$-$\log \theta$-plane.
 
 %
 %%\begin{equation}
@@ -536,9 +537,9 @@ The angular distribution of the medium-induced radiation is driven by two mechan
 \theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}
 \end{equation}
 
-\noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{Moliere:1947zza}. The result is that medium-induced radiation is predominantly located in the bands marked as Brownian motion, where $\theta_\alpha < \theta < \theta_\mathrm{BR}$, and Moli\`ere, where $\theta_\mathrm{BR} < \theta < \theta_\mathrm{Mol}$ in Figure~\ref{fig:cascade}. 
+\noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{Moliere:1947zza}. The result is that medium-induced radiation is predominantly located in the bands marked as Brownian motion, where $\theta_\alpha < \theta < \theta_\mathrm{BR}$, and Moli\`ere, where $\theta_\mathrm{BR} < \theta < \theta_\mathrm{Mol}$ in Figure~\ref{fig:cascades}. 
 
-The hard parton will naturally continue radiating after it leaves the medium. As there is no longer kinematic limits set by the time scale, the vacuum radiation can extend to smaller angular scales in the phase space. The results is that the regions, where $\theta<\theta_\alpha$, marked as Late DGLAP in Figure~\ref{fig:cascade} will be dominated by the late time vacuum radiation. Naturally also the splittees from medium-induced radiation will undergo the late stage vacuum radiation phase, filling the triangular region with small $p$ and $\theta < \theta_\mathrm{\alpha}$.
+The hard parton will naturally continue radiating after it leaves the medium. As there is no longer kinematic limits set by the time scale, the vacuum radiation can extend to smaller angular scales in the phase space. The results is that the regions, where $\theta<\theta_\alpha$, marked as Late DGLAP in Figure~\ref{fig:cascades} will be dominated by the late time vacuum radiation. Naturally also the splittees from medium-induced radiation will undergo the late stage vacuum radiation phase, filling the triangular region with small $p$ and $\theta < \theta_\mathrm{\alpha}$.
 
 
 
