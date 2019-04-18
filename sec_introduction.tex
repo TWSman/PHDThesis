@@ -19,13 +19,13 @@ Experimentally jets are often studied with a jet reconstruction algorithm which 
 
 The analysis studies collisions between protons and lead nuclei. Originally meant as a reference for lead-lead collisions to rule out possible cold nuclear matter effects~\cite{Connors:2017ptx}; effects caused by the regular 'cold' nuclear matter of a nucleus as opposed to QGP. However, \pPb collisions have provided interesting physics by themselves. Many of the collective phenomena that in \PbPb collisions were attributed to QGP have been observed also in high multiplicity \pPb collisions~\cite{Nagle:2018nvi} and even in ultra high multiplicity \pp collisions~\cite{Nagle:2018nvi}. However observables of jet modification show no conclusive signals in \pPb collisions~\cite{Connors:2017ptx,Nagle:2018nvi}. %So far all observables have focused on 
 
-This thesis is organised as follows: Chapter ~\ref{sec:introduction} first gives a general introduction into the history and properties of QCD and Heavy-Ion physics. It is followed by a description of hard processes, jet fragmentation and hadronisation and how these processes might look like in a Heavy-Ion environment. Finally there is a discussion on the physics of small systems.
+This thesis is organised as follows: Section ~\ref{sec:introduction} first gives a general introduction into the history and properties of QCD and Heavy-Ion physics. It is followed by a description of hard processes, jet fragmentation and hadronisation and how these processes might look like in a Heavy-Ion environment. Finally there is a discussion on the physics of small systems.
 
-The experimental setup that was used to collect the data in this thesis is described in Chapter ~\ref{sec:exp}. It starts by explaining the accelerator facilities at CERN and LHC in more detail. This is followed by a description of the ALICE experiment and its sub-detectors. A part of Chapter ~\ref{sec:exp} is dedicated to coming upgrades of ALICE as this is a timely topic. In 2019-2020 ALICE will be upgraded and I have made a personal contribution to the TPC upgrade.
+The experimental setup that was used to collect the data in this thesis is described in Section ~\ref{sec:exp}. It starts by explaining the accelerator facilities at CERN and LHC in more detail. This is followed by a description of the ALICE experiment and its sub-detectors. A part of Section ~\ref{sec:exp} is dedicated to coming upgrades of ALICE as this is a timely topic. In 2019-2020 ALICE will be upgraded and I have made a personal contribution to the TPC upgrade.
 
-Chapter ~\ref{sec:selection} gives a description of the event, track and cluster selection criteria used in the analysis. This is followed in Chapter ~\cite{sec:methods} by the specific analysis methods used in this thesis. First the jet reconstruction algorithm used, anti-\kt{}, is described. Chapter ~\cite{sec:methods} continues by introducing the \jt{} observable, how it is obtained and what methods are used to estimate background contribution and correct for detector effects. Finally the fitting method used for the final results is described. Chapter 5 gives the different systematic uncertainties that arise from the analysis.
+Section ~\ref{sec:selection} gives a description of the event, track and cluster selection criteria used in the analysis. This is followed in Section ~\cite{sec:methods} by the specific analysis methods used in this thesis. First the jet reconstruction algorithm used, anti-\kt{}, is described. Section ~\cite{sec:methods} continues by introducing the \jt{} observable, how it is obtained and what methods are used to estimate background contribution and correct for detector effects. Finally the fitting method used for the final results is described. Section 5 gives the different systematic uncertainties that arise from the analysis.
 
-Finally the results from the analysis are presented in Chapter ~\ref{sec:results}. The results are compared to \pythia~and Herwig Monte Carlo generators. Further discussion of the results is given in Chapter~\ref{sec:disc} when the results are compared to \jt{} results obtained with a different analysis method. Chapter~\ref{sec:sum} summarises the main results and gives an outlook for future.
+Finally the results from the analysis are presented in Section ~\ref{sec:results}. The results are compared to \pythia~and Herwig Monte Carlo generators. Further discussion of the results is given in Section~\ref{sec:disc} when the results are compared to \jt{} results obtained with a different analysis method. Section~\ref{sec:sum} summarises the main results and gives an outlook for future.
 
 
 \pagebreak
@@ -103,7 +103,7 @@ In Quantum Electrodynamics (QED) the electric charge is screened. In the vicinit
 Contrary to QED, QCD is a non-abelian theory. In other words the generators of the symmetry group of QCD, SU(3), do not commute. This has the practical consequence that gluons interact also with other gluons, whereas in QED the neutral carrier particles, photons, only interact with charged particles.
 There is screening also in QCD because of the colour charges, but in addition to that there is antiscreening because of the gluon interactions. In QCD the antiscreening effect dominates over screening. Thus for larger distances to the colour charge the coupling constant is larger. This explains why no free colour charges can be observed. When the distance between charges increases the interaction strengthens until it is strong enough to produce a new quark-antiquark pair. On the other hand, at very small distances the coupling constant approaches zero. This is called asymptotic freedom.~\cite{Perkins:1982xb}
 
-In 1975 Collins\cite{Collins:1975} predicted a state where individual quarks and gluons are no longer confined into bound hadronic states. Instead they form a bulk QCD matter that Edward Shuryak called Quark-Gluon plasma in his 1980 review of QCD and the theory of superdense matter~\cite{Shuryak:1980}. QGP can be seen as a separate state of matter. A schematic view of a phase diagram for QCD matter is shown in Fig. \ref{fig:QCDphase}. 
+In 1975 Collins\cite{Collins:1975} predicted a state where individual quarks and gluons are no longer confined into bound hadronic states. Instead they form a bulk QCD matter that Edward Shuryak called Quark-Gluon plasma in his 1980 review of QCD and the theory of superdense matter~\cite{Shuryak:1980}. QGP can be seen as a separate state of matter. A schematic view of a phase diagram for QCD matter is shown in Figure~\ref{fig:QCDphase}. 
 
 \begin{figure}[htbp]
 \centering
@@ -116,7 +116,7 @@ In 1975 Collins\cite{Collins:1975} predicted a state where individual quarks and
 
 In the early universe at the age of $10^{-6}\mathrm{s}$ after the Big Bang the conditions preferred the existence of QGP instead of hadronic matter. Nowadays bulk QCD matter, its properties and its phase transitions between hadronic matter and the quark-gluon plasma (QGP) can be explored in the laboratory, through collisions of heavy atomic nuclei at ultra-relativistic energies. The study of QCD matter at high temperature is of fundamental and broad interest. The phase transition in QCD is the only phase transition in a quantum field theory that can be probed by any present or foreseeable technology. 
 
-One important property of the QGP is the shear viscosity to entropy ratio, $\nicefrac{\eta}{s}$. It is believed that this ratio has an universal minimum value of $\nicefrac{1}{4\pi}\approx 0.08$, among all substances in nature. This limit would be reached in the strong coupling limit of certain gauge theories~\cite{Kovtun:2004de}. The temperature dependance of the ratio is shown in Fig. \ref{fig:etas}. The minimum value of $\nicefrac{\eta}{s}$ is found in the vicinity of the critical temperature, $T_c$~\cite{PhysRevLett.98.092301}. Finding the $\nicefrac{\eta}{s}$ values in QGP matter would therefore also provide a way of determining the critical point of QCD matter.
+One important property of the QGP is the shear viscosity to entropy ratio, $\nicefrac{\eta}{s}$. It is believed that this ratio has an universal minimum value of $\nicefrac{1}{4\pi}\approx 0.08$, among all substances in nature. This limit would be reached in the strong coupling limit of certain gauge theories~\cite{Kovtun:2004de}. The temperature dependance of the ratio is shown in Figure~\ref{fig:etas}. The minimum value of $\nicefrac{\eta}{s}$ is found in the vicinity of the critical temperature, $T_c$~\cite{PhysRevLett.98.092301}. Finding the $\nicefrac{\eta}{s}$ values in QGP matter would therefore also provide a way of determining the critical point of QCD matter.
 
 The $\nicefrac{\eta}{s}$ value for the matter created in Au-Au collisions at RHIC ($\sqrt{s_{NN}}=\unit[200]{\gev}$)  has been estimated to be $0.09\pm0.015$~\cite{PhysRevLett.98.092301}, which is very close to the lowest value for a wide class of thermal quantum field theories~\cite{Kovtun:2004de} for all relativistic quantum field theories at finite temperature and zero chemical potential. This suggests that the the matter created goes through a phase where it is close to the critical point of QCD.
 
@@ -193,7 +193,7 @@ XeXe & 5.44 \tev & $\sim \unit[0.3]{\mu b^{-1}}$ \\
 \subsection{Features of Heavy-Ion Collisions}
 \label{sec:features}
 \subsubsection{Collision Geometry}
-In contrast to protons atomic nuclei are objects with considerable transverse size. The properties of a heavy-ion collision depend strongly on the impact parameter $\vec b$ which is the vector connecting the centres of the two colliding nuclei at their closest approach. One illustration of a heavy-ion collision is shown in Fig.~\ref{fig:planes}.
+In contrast to protons atomic nuclei are objects with considerable transverse size. The properties of a heavy-ion collision depend strongly on the impact parameter $\vec b$ which is the vector connecting the centres of the two colliding nuclei at their closest approach. One illustration of a heavy-ion collision is shown in Figure~\ref{fig:planes}.
 
 
 Impact parameter defines the reaction plane which is the plane spanned by $b$ and the beam direction. $\Psi_{RP}$ gives the angle between the reaction plane and some reference frame angle. Experimentally the reference frame is fixed by the detector setup. Reaction plane angle cannot be directly measured in high energy nuclear collisions, but it can be estimated with the event plane method~\cite{Voloshin:2008dg}. 
@@ -235,7 +235,7 @@ Participant zone is the area containing the participants. The distribution of nu
 \sigma_y^2=\langle y^2\rangle-\langle y \rangle ^2, \sigma_x^2=\langle x^2\rangle-\langle x \rangle ^2, \sigma_{xy}=\langle xy \rangle - \langle x \rangle \langle y \rangle
 \end{equation}
 
-The impact parameter is one way to quantize the centrality of a heavy-ion collision but it is impossible to measure in a collision. It can be estimated from observed data using theoretical models, but this is always model-dependent and to compare results from different experiments one needs an universal definition for centrality. %The difference between central and peripheral collisions is illustrated in Fig.~\ref{fig:collisionA}. In a central collision the overlap region is larger than in a peripheral collision. Larger overlap region translates into a larger number of nucleons participating in the collision, which in turn leads to a larger number of particles produced in the event.
+The impact parameter is one way to quantize the centrality of a heavy-ion collision but it is impossible to measure in a collision. It can be estimated from observed data using theoretical models, but this is always model-dependent and to compare results from different experiments one needs an universal definition for centrality. %The difference between central and peripheral collisions is illustrated in Figure~\ref{fig:collisionA}. In a central collision the overlap region is larger than in a peripheral collision. Larger overlap region translates into a larger number of nucleons participating in the collision, which in turn leads to a larger number of particles produced in the event.
 
 
 
@@ -258,7 +258,7 @@ The impact parameter is one way to quantize the centrality of a heavy-ion collis
 %        \caption[Interaction between partons in central and peripheral collisions.]{Interaction between partons in central and peripheral collisions. The snowflakes represent elementary parton-parton collisions. When the impact parameter $b$ is large the number of elementary collisions is small. Particle production is small. Smaller impact parameter increases the number of elementary collisions. This increases  particle production.}\label{fig:collisionA}
 %\end{figure}
 
-Instead in practice centrality is defined by dividing collision events into percentile bins by the number participants or experimentally by the observed multiplicity. Centrality bin 0-5\% corresponds to the most central collisions with the highest multiplicity and higher centrality percentages correspond to more peripheral collisions with lower multiplicities. A multiplicity distribution from ALICE measurements~\cite{PhysRevC.88.044909} illustrating the centrality division is shown in Fig.~\ref{fig:centrality}. The distribution is fitted using a phenomenological approach based on a Glauber Monte Carlo~\cite{Miller:2007ri} plus a convolution of a model for the particle production and a negative binomial distribution. 
+Instead in practice centrality is defined by dividing collision events into percentile bins by the number participants or experimentally by the observed multiplicity. Centrality bin 0-5\% corresponds to the most central collisions with the highest multiplicity and higher centrality percentages correspond to more peripheral collisions with lower multiplicities. A multiplicity distribution from ALICE measurements~\cite{PhysRevC.88.044909} illustrating the centrality division is shown in Figure~\ref{fig:centrality}. The distribution is fitted using a phenomenological approach based on a Glauber Monte Carlo~\cite{Miller:2007ri} plus a convolution of a model for the particle production and a negative binomial distribution. 
 
 
 \begin{figure}[htb]
@@ -405,7 +405,7 @@ With increased appreciation of the physics emerging from fluctuations in the col
 d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 \end{equation}
 
-\noindent The average number of participants and binary collisions can then be determined by simulating many nucleus-nucleus collisions. The results of one GMC Pb-Pb event with impact parameter $b=\unit[9.8]{fm}$ is shown in Fig.~\ref{fig:GMC}
+\noindent The average number of participants and binary collisions can then be determined by simulating many nucleus-nucleus collisions. The results of one GMC Pb-Pb event with impact parameter $b=\unit[9.8]{fm}$ is shown in Figure~\ref{fig:GMC}
 
 \begin{figure}[htbp]
 \centering
@@ -419,7 +419,7 @@ d< \sqrt{\sigma\mathrm{^{NN}_{inel}}}
 
 \subsubsection{Collective motion}
 \label{sec:collective}
-Quite often the evolution of a heavy-ion event can be divided into four stages. A schematic representation of the evolution of the collisions is shown in Fig.~\ref{fig:HISpaceTime}. Stage 1 follows immediately the collision. This is known as the pre-equilibrium stage. The length of this stage is not known but it is assumed to last about $1\ \mathrm{fm}/c$ in proper time $\tau$. 
+Quite often the evolution of a heavy-ion event can be divided into four stages. A schematic representation of the evolution of the collisions is shown in Figure~\ref{fig:HISpaceTime}. Stage 1 follows immediately the collision. This is known as the pre-equilibrium stage. The length of this stage is not known but it is assumed to last about $1\ \mathrm{fm}/c$ in proper time $\tau$. 
 %Hydrodynamic description is not applicable to this regime because thermal equilibrium is not yet reached. 
 
 \begin{figure}[htb]
@@ -448,9 +448,9 @@ In a heavy-ion collision the bulk collective particle production that is emitted
 \label{fig:dndpt}
 \end{figure}
 
-The transverse momentum spectra $\dd N/\dd {\pt{}}$ in heavy-ion collisions is shown in Fig. \ref{fig:dndpt}. The vast majority of produced particles have small $\pt{}$. The difference between the yield of $1\gevc$ and $4\gevc$ particles is already 2-3 orders of magnitude. Any observables that are integrated over $\pt{}$ are therefore dominated by the small momentum particles.
+The transverse momentum spectra $\dd N/\dd {\pt{}}$ in heavy-ion collisions is shown in Figure~\ref{fig:dndpt}. The vast majority of produced particles have small $\pt{}$. The difference between the yield of $1\gevc$ and $4\gevc$ particles is already 2-3 orders of magnitude. Any observables that are integrated over $\pt{}$ are therefore dominated by the small momentum particles.
 
-The geometry of the heavy-ion collision produces an anisotropic component to the collective motion. In a non-central heavy-ion collision, with a large impact parameter, the shape of the impact zone is almond-like. In a central collision the overlap region is almost symmetric in the transverse plane. In this case the impact parameter is small. Collisions with different impact parameters are shown in Fig.~\ref{fig:flow}.
+The geometry of the heavy-ion collision produces an anisotropic component to the collective motion. In a non-central heavy-ion collision, with a large impact parameter, the shape of the impact zone is almond-like. In a central collision the overlap region is almost symmetric in the transverse plane. In this case the impact parameter is small. Collisions with different impact parameters are shown in Figure~\ref{fig:flow}.
 
 \begin{figure}[b!]
 \centering
@@ -474,7 +474,7 @@ The geometry of the heavy-ion collision produces an anisotropic component to the
 	\label{fig:flow}
 \end{figure}
 
-The pressure gradient is largest in-plane, in the direction of the impact parameter $b$, where the distance from high pressure, at the collision center, to low pressure, outside the overlap zone, is smallest. This leads to stronger collective flow along the direction of $b$, which in turn results in enhanced thermal emission through a larger effective temperature into this direction, as compared to out-of-plane~\cite{Ollitrault:1992,Ollitrault:1993, Heinz:2002}. The resulting flow is illustrated in Fig.~\ref{fig:flow}. %Flow with two maxima in the direction of the reaction plane is called elliptic flow. 
+The pressure gradient is largest in-plane, in the direction of the impact parameter $b$, where the distance from high pressure, at the collision center, to low pressure, outside the overlap zone, is smallest. This leads to stronger collective flow along the direction of $b$, which in turn results in enhanced thermal emission through a larger effective temperature into this direction, as compared to out-of-plane~\cite{Ollitrault:1992,Ollitrault:1993, Heinz:2002}. The resulting flow is illustrated in Figure~\ref{fig:flow}. %Flow with two maxima in the direction of the reaction plane is called elliptic flow. 
 
 Flow is typically quantified in the form of a Fourier composition 
 
@@ -491,7 +491,7 @@ It has been noted that higher harmonics of $v_n$ would be suppressed by viscous 
 
 The first one to predict anisotropic flow in heavy-ion collisions was Ollitrault in 1992~\cite{Ollitrault:1992}. However, the first papers on anisotropy did not discuss the Fourier composition. Instead they approached the problem with a classic event shape analysis. (sphericity) The first experimental studies of anisotropy were performed at the AGS~\cite{PhysRevLett.70.1393} in 1993, where it was noted that the anisotropy of particle production in one rapidity region correlates with the reaction plane angle defined in another rapidity region. The first ones to present the Fourier decomposition were Voloshin and Zhang in 1996~\cite{Voloshin:1994mz}
 
-Measurements of different flow harmonics are shown in Fig.~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Fig.~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}. The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv}.
+Measurements of different flow harmonics are shown in Figure~\ref{fig:vnpowers}. The left panel shows different flow harmonics as a function of $\pt{}$ as measured by ALICE~\cite{PRL107032301} in peripheral collisions. In general flow coefficients decrease as a function of $n$ after $n=2$. Central collisions are an exception.The right panel of  Figure~\ref{fig:vnpowers} shows $v_n$ as a function of $n$ in central collisions as measured by ALICE~\cite{Aamodt2012249}. The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv}.
 
 The measured collective flow in heavy-ion collisions has been successfully modelled with the relativistic version of hydrodynamics. The power of relativistic hydrodynamics lies in its simplicity and generality. Hydrodynamics only requires that there is local thermal equilibrium in the system. In order to reach thermal equilibrium the system must be strongly coupled so that the mean free path is shorter than the length scales of interest, which is assumed to hold for QGP phase of a heavy-ion collision~\cite{Romatschke:2009im}.
 

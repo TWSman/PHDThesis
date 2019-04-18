@@ -12,7 +12,7 @@ The European Organization for Nuclear Research (CERN), established in 1954, oper
 \label{fig:CernComplex}
 \end{figure}
 
-The laboratory includes a series of accelerators, which are used to accelerate the particle beams used. A schematic view of the complex as of 2019 is shown in Figure~\ref{fig:CernComplex}. In the framework of this thesis the most important component is the Large Hadron Collider (LHC), the largest collider in the world. LHC will be discussed in more detail in Sec.~\ref{sec:lhc}. Other accelerators in the series are used to inject the particle beams into LHC, but they are also used in itself for various experimental studies. 
+The laboratory includes a series of accelerators, which are used to accelerate the particle beams used. A schematic view of the complex as of 2019 is shown in Figure~\ref{fig:CernComplex}. In the framework of this thesis the most important component is the Large Hadron Collider (LHC), the largest collider in the world. LHC will be discussed in more detail in Section~\ref{sec:lhc}. Other accelerators in the series are used to inject the particle beams into LHC, but they are also used in itself for various experimental studies. 
 
 The second largest accelerator is the super proton synchrotron (SPS). It is the final step before the particle beam is injected into LHC. Commissioned in 1976, it was the largest accelerator at CERN until the the Large Electron-Positron Collider (LEP) was finished in 1989. Originally it was used as a proton-antiproton collider and as such provided the data for the UA1 and UA2 experiments, which resulted in the discovery of the W and Z bosons~\cite{Watkins:1986va}. At the moment there are several fixed target experiments utilising the beam from the SPS. These study the structure (COMPASS~cite{COMPASS}) and properties (NA61/SHINE~\cite{Laszlo:2009vg}) of hadrons, rare decays of kaons (NA62~\cite{Hahn:1404985}) and radiation processes in strong electromagnetic fields (NA63~\cite{ikkelsen:1955391}). Additionally the AWAKE~\cite{Dobert:2669231} and UA9~\cite{Losito:1223625} experiments are used for accelerator research and development. 
 
@@ -36,7 +36,7 @@ The LHC is divided into octants, where each octant has a distinct function. Octa
 
 
 \subsubsection{LHC experiments}
-As of 2018 there are four main experiments at the LHC; ALICE~\cite{aliceDetector}, ATLAS~\cite{Aad:2008zzm}, CMS~\cite{Chatrchyan:2008aa} and LHCb~\cite{Alves:2008zz} and three smaller ones LHCf~\cite{Adriani:2008zz}, TOTEM~\cite{Anelli:2008zza} and MoEDAL~\cite{MoEDAL:2016jlb}. ALICE will be covered in detail in section ~\ref{sec:alice}. 
+As of 2018 there are four main experiments at the LHC; ALICE~\cite{aliceDetector}, ATLAS~\cite{Aad:2008zzm}, CMS~\cite{Chatrchyan:2008aa} and LHCb~\cite{Alves:2008zz} and three smaller ones LHCf~\cite{Adriani:2008zz}, TOTEM~\cite{Anelli:2008zza} and MoEDAL~\cite{MoEDAL:2016jlb}. ALICE will be covered in detail in Section~\ref{sec:alice}. 
 
 ATLAS (A Toroidal LHC ApparatuS)~\cite{Aad:2008zzm} and CMS (Compact Muon Solenoid)~\cite{Chatrchyan:2008aa} are the two largest experiments at the LHC. They are both multipurpose experiments designed to be sensitive to many different possible new physics signals, such as extra dimensions and dark matter particles. The biggest discovery made by these so far is the discovery of the Standard Model Higgs boson, which was simultaneously published by the experiments in 2012 ~\cite{Aad:2012tfa, Chatrchyan:2012xdj}.
 
@@ -85,7 +85,7 @@ The main design guideline for the tracking detectors in ALICE was the requiremen
 
 \setlength{\emergencystretch}{3em}
 
-The main tracking detector in ALICE is the Time Projection Chamber (TPC)~\cite{Dellacasa:2000bm}. TPS is discussed in more detail in section ~\ref{sec:TPC}
+The main tracking detector in ALICE is the Time Projection Chamber (TPC)~\cite{Dellacasa:2000bm}. TPS is discussed in more detail in Section~\ref{sec:TPC}
 
 Between TPC and the beam pipe there is an array of six layers of silicon detectors, called the inner tracking system (ITS)~\cite{Dellacasa:1999kf}. The main tasks of the ITS are to locate the primary vertex with a resolution better than \unit[100]{$\mu m$}, to reconstruct the secondary vertices from decaying particles, to track and identify particles with momenta below \unit[200]{$\mev$} and to compliment the momentum and angle measurements of TPC. During long shutdown 2 in 2019-2020 the entire ITS will be replaced~\cite{ITSupgrade}. As of 2018 the two innermost layers are made of the silicon pixel detector (SPD). As it is the closest detector to the interaction point it requires a very high spatial resolution. Thus the choice of pixel technology is natural. In heavy ion collisions the particle density is around 50 particles per $cm^2$. 
 
@@ -102,11 +102,11 @@ The two remaining layers in the ITS are the silicon strip detector (SSD). The st
 \label{fig:tpc}
 \end{figure}
 The time projection chamber (TPC) is a cylindrical detector filled with $ \unit[88]{m^3}$ of $\mathrm{Ne-CO_2}$ (90/10 \%) gas mixture. The gas is contained in a field cage that provides an uniform electric field of $\unit[400]{\nicefrac{V}{cm}}$ along the z-axis. The gas content and field strength have been chosen for optimised charge transport, signal amplification and transparency for traversing particles~\cite{aliceTPC}
- Charged particles traversing through the TPC volume will ionise the gas along their path. This liberates electrons that drift towards the end plates of the cylinder. A schematic of the TPC is shown in Fig.~\ref{fig:tpc}.
+ Charged particles traversing through the TPC volume will ionise the gas along their path. This liberates electrons that drift towards the end plates of the cylinder. A schematic of the TPC is shown in Figure~\ref{fig:tpc}.
 
 The field cage is separated into two detection volumes by the central high voltage electrode. Both sides have a drift length of \unit[2.5]{m} and inner and outer diameters of \unit[1.2]{m} and \unit[5]{m} respectively. To provide the uniform electric field of $\unit[400]{\nicefrac{V}{cm}}$ the central electrode must provide a potential of \unit[100]{kV}. The maximum time required for electrons to drift through the chamber is about \unit[90]{$\mu s$}.
 
-When electrons reach the end of the main cylinder they enter the readout chambers. The readout section of both sides consists of 18 outer chambers and 18 inner chambers. Each of them is made of multiwire proportional chambers with cathode pad readouts. This design has been used in many TPCs before. During LS2 in 2019-2020, the multiwire chambers will be replaced by Gas Electron Multipliers (GEMs, see section \ref{sec:tpcupgrade}).
+When electrons reach the end of the main cylinder they enter the readout chambers. The readout section of both sides consists of 18 outer chambers and 18 inner chambers. Each of them is made of multiwire proportional chambers with cathode pad readouts. This design has been used in many TPCs before. During LS2 in 2019-2020, the multiwire chambers will be replaced by Gas Electron Multipliers (GEMs, see Section~\ref{sec:tpcupgrade}).
 
 %The relatively slow drift time of 90 $\mu s$ is the limiting factor for the luminosity ALICE can take. The occupancy of the TPC must be kept in a manageable level. 
 
@@ -135,7 +135,7 @@ ALICE has two electromagnetic calorimeters, the photon spectrometer (PHOS)~\cite
 
 In comparison to PHOS, EMCal has coarser granularity, but a significantly larger acceptance, making it suitable for jet physics. The acceptance of EMCal in the azimuthal angle is $ 80\deg < \phi < 187 \deg$. During long shutdown 1 in 2013-2015, EMCal was extended with the di-jet calorimeter (DCal)~\cite{DCAL}, giving an additional acceptance region of $ 260\deg < \phi < 320 \deg$. This provides partial back-to-back coverage. 
 
-EMcal is segmented into 10 full size super modules (SM), 5 for A side and 5 for C side, and two 1/3 sized SMs, one for each side. This segmentation can be seen in Fig.~\ref{fig:emcal}. Each SM is divided into 24 strips, each covering full $\eta$ (24 towers) and 2 towers in $\eta$. Each strip is composed of $2\times2$ tower modules. Thus each full size super module includes 1152 towers and in total the EMCal is made up of 12288 towers.
+EMcal is segmented into 10 full size super modules (SM), 5 for A side and 5 for C side, and two 1/3 sized SMs, one for each side. This segmentation can be seen in Figure~\ref{fig:emcal}. Each SM is divided into 24 strips, each covering full $\eta$ (24 towers) and 2 towers in $\eta$. Each strip is composed of $2\times2$ tower modules. Thus each full size super module includes 1152 towers and in total the EMCal is made up of 12288 towers.
 
 \begin{figure}[htb]
 \centering
@@ -144,7 +144,7 @@ EMcal is segmented into 10 full size super modules (SM), 5 for A side and 5 for 
 \label{fig:emcal}
 \end{figure}
 
-The build of individual towers is shown in Fig.~\ref{fig:emcaltower}. Each tower is built up from 76 alternating layers of 1.44 \unit{mm} Pb and 77 layers of 1.76 \unit{mm} polystyrene base injection moulded scintillator. The lead tiles produce the shower and scintillator tiles the light. Each tower scintillator is equipped with reflectors on all sides to provide better gain and keep the four towers inside one module isolated. The scintillation photons produced in the active volume of the tower are collected by 36 longitudinally placed wave length shifting light guide fibres. The light is eventually directed to the Avalanche Photo Diodes (APD) for readout. 
+The build of individual towers is shown in Figure~\ref{fig:emcaltower}. Each tower is built up from 76 alternating layers of 1.44 \unit{mm} Pb and 77 layers of 1.76 \unit{mm} polystyrene base injection moulded scintillator. The lead tiles produce the shower and scintillator tiles the light. Each tower scintillator is equipped with reflectors on all sides to provide better gain and keep the four towers inside one module isolated. The scintillation photons produced in the active volume of the tower are collected by 36 longitudinally placed wave length shifting light guide fibres. The light is eventually directed to the Avalanche Photo Diodes (APD) for readout. 
 
 \begin{figure}[htb]
 \includegraphics[width=0.9\textwidth]{pics/EMCAL_components}
@@ -224,7 +224,7 @@ TPC has a total of 36 inner and 36 outer readout chambers. Each of these will co
 
 The purpose of the multilayered structure is to reduce the ion backflow~\cite{Sauli:2005zx,Ball:2014qaa}; not only one layer of GEM foils will be installed, but a 4 layer stack. In the stack there are 2 standard pitch GEM foils, where the pitch size, i.e. the separation of the holes inside a foil is around 140 $\mu m$, and 2 large pitch GEM foils, there the hole spacing is two times larger, 280 $\mu m$. The two outer layers will have standard pitch and the two middle layers have large pitch. The middle layers with large pitch serve as extra insulator against the ion backflow. Additionally the setup allows operating individual GEM foils at lower voltages and still have an increase in the gain of a few orders of magnitude~\cite{TPCupgrade}.
 
-The holes have a conical shape which they acquire during a two step chemical etching process. The designed inner and outer diameters of the holes are $50\pm5 \mathrm{\mu m}$ and $70 \pm 5 \mathrm{\mu m}$ respectively. Fig.~\ref{fig:gem} shows the cross-section of a hole alongside with the operation principle of a GEM foil.
+The holes have a conical shape which they acquire during a two step chemical etching process. The designed inner and outer diameters of the holes are $50\pm5 \mathrm{\mu m}$ and $70 \pm 5 \mathrm{\mu m}$ respectively. Figure~\ref{fig:gem} shows the cross-section of a hole alongside with the operation principle of a GEM foil.
 
 \begin{figure}[htb]
 \centering
