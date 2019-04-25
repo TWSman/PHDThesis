@@ -38,6 +38,7 @@ figures/tikz/perpcone.pdf
 figures/tikz/alice.pdf
 figures/tikz/gem.pdf
 figures/tikz/jetquenching.pdf
+figures/tikz/geometry.pdf
 **/*.log
 **/*.gz
 **/*.aux

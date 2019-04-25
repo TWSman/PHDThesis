@@ -1,0 +1,33 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc, fadings}
+\begin{document}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+
+\begin{tikzpicture}[scale=1]
+      \draw[->,black!50] (-5.5,0) -- (5.5,0) node[below] {$x$};
+      \draw[->,black!50] (0,-4) -- (0,4) node[left] {$y$};
+       \coordinate[] (C);
+ \coordinate[below left=0.5cm and 1.7cm of C] (C1);
+\coordinate[above right=0.5cm and 1.7cm of C] (C2);
+\coordinate[below left =1.5cm and 5.1cm of C] (D1);
+\coordinate[above right =1.5cm and 5.1cm of C] (D2);
+
+\coordinate[above left =3.4cm and 1.0cm of C] (D3);
+\coordinate[below right =3.4cm and 1.0cm of C] (D4);
+
+\draw[->,black!50] (D1) -- (D2) node[above] {$x_\mathrm{RP}$};
+\draw[->,black!50] (D4) -- (D3) node[left] {$y_\mathrm{RP}$};
+
+\draw[dashed, thick, primary] (C1) circle (3cm);
+\draw[dashed, thick, secondary] (C2) circle (3cm);
+\draw[->,thick] (C1) -- node[below right] {$\vec b$} (C2);
+\draw[->] (1.5, 0) arc  (0:8.2:1.5cm) node[right] {$\Psi_\mathrm{RP}$} arc (8.2:16.4:1.5cm) ;
+
+
+\end{tikzpicture}
+\end{document}
