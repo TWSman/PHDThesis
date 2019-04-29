@@ -40,7 +40,7 @@ x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.
 
 Parton distribution functions will be discussed further in the following section. The elementary cross section $ab\rightarrow cd$ can be calculated from QCD. A summary of the first order $2\rightarrow2$ processes in QCD is shown in Figure ~\ref{fig:qcdlo}. 
 
-The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of fragments radiated from the outgoing parton.  In a leading order picture, it can be interpreted as the probability that the observed final state originates from a given parton~\cite{Metz:2016swz}. Like the PDFs they are non-perturbative and must be determined experimentally. The measurement is usually performed in $e^+ e^-$ collisions where the kinematics are better controlled. 
+The final component in the factorization, fragmentation functions, describe the distribution of the fractional momenta of fragments radiated from the outgoing parton.  In a leading order picture, it can be interpreted as the probability that the observed final state originates from a given parton~\cite{Metz:2016swz}. Like the PDFs they are non-perturbative and must be determined experimentally. Most measurements come from $e^+ e^-$ collisions where the kinematics are better controlled. 
 
 
 %
@@ -73,7 +73,7 @@ As the PDFs cannot be calculated from first principles they are measured in Deep
 
 
 
-\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe a probability to radiate parton $i$ from parton $j$ as a function of the momentum fraction $z$ carried away by the offspring parton. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
+\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe the probability to radiate parton $i$ with momentum fraction $z$ from parton $j$. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
 
 \subsubsection{Jet showering}
 \label{sec:shower}
@@ -201,7 +201,7 @@ When a gluon splits into two quarks one of the produced quarks can emit a soft g
 t_\mathrm{emit} \approx \frac{1}{E_q},
 \end{equation}
 \nobreak
-\noindent where the energy of the quark is given by $E_q$. In the rest frame of the quark its energy is set by its virtuality $M_\mathrm{virt}$ and assuming the quark is massless the Lorentz factor between the rest frame the laboratory frame is 
+\noindent where the energy of the quark is given by $E_q$. In the rest frame of the quark its energy is set by its virtuality $M_\mathrm{virt}$. With the assumption that the quark is massless the Lorentz factor from the rest frame to the laboratory frame is 
 
 \begin{equation}
 \gamma = \frac{E_q}{M_\mathrm{virt}}.
@@ -212,7 +212,7 @@ t_\mathrm{emit} \approx \frac{1}{E_q},
 \begin{equation}
 t_\mathrm{emit} \approx \frac{E_q}{M_\mathrm{virt}^2}  = \frac{E_q}{\left(k+p\right)^2},
 \end{equation}
-\noindent where $k$ and $p$ are the four-momenta of the gluon and the quark after the gluon emission. As the squared four-momentum is Lorentz invariant, this can be expanded in the frame of our choice. In the laboratory, assuming that the end products are massless, this leads to a form where the gluon emission time is expressed with the opening angle $\theta_\mathrm{kq}$ between the quark and the gluon
+\noindent where $k$ and $p$ are the four-momenta of the gluon and the quark after the gluon emission. As the square of a four-momentum is Lorentz invariant, this can be expanded in the laboratory frame. Assuming that the end products are massless, this leads to a form where the gluon emission time is expressed by the opening angle $\theta_\mathrm{kq}$ between the quark and the gluon
 
 
 \begin{equation}
@@ -226,7 +226,7 @@ t_\mathrm{emit} \approx \frac{1}{k\theta_\mathrm{kq}^2}.
 t_\mathrm{emit} \approx \frac{\lambda_\perp}{\theta_\mathrm{kq}}.
 \end{equation}
 
-\noindent The secondary gluon can only probe the quark of the earlier splitting if the transverse wavelength is smaller than the transverse separation of the produced $\mathrm{q \bar q}$ pair. The transverse separation is given by
+\noindent The secondary gluon can only probe the quark of the earlier splitting if the transverse wavelength is smaller than the transverse separation of the produced $\mathrm{q \bar q}$ pair, which is given by
 
 \begin{equation}
 r_\perp^{\mathrm{q \bar q}} \approx \theta_\mathrm{q \bar q} t_\mathrm{emit} \approx \lambda_\perp \frac{\theta_\mathrm{q \bar q} }{\theta_\mathrm{k q} }.
@@ -234,22 +234,22 @@ r_\perp^{\mathrm{q \bar q}} \approx \theta_\mathrm{q \bar q} t_\mathrm{emit} \ap
 
 \noindent Thus in order for the emission to probe the individual quark, the opening angle of the $\mathrm{q \bar q}$ splitting, $\theta_\mathrm{q \bar q}$, must be larger than $\theta_\mathrm{k q}$. If the opening angle $\theta_\mathrm{k q}$ is larger, the gluon can't distinguish between the quark and the antiquark, and it can only probe the state of the system before the splitting. Thus it is indistinguishable from a gluon emitted by the primary gluon.
 
-This leads to the angular ordering of soft gluon radiation. Each successive angle must be smaller than the previous one. The effect can be calculated in all orders ~\cite{basicsofpqcd} and in the DGLAP formalism one can select the evolution variable $Q^2$ in a way that ensures angular ordering as is done in the Herwig MC generator~\cite{herwigManual}. In \pythia~8 this is strictly not included, but the transverse momentum ordered showers can describe the soft gluon emissions with similar accuracy as the angular ordered showers~\cite{eventGenerators}.
+This leads to the angular ordering of soft gluon radiation. Each successive radiated gluon must be at a smaller angle than the previous one. The effect can be calculated in all orders ~\cite{basicsofpqcd} and in the DGLAP formalism one can select the evolution variable $Q^2$ in a way that ensures angular ordering as is done in the Herwig MC generator~\cite{herwigManual}. In \pythia~8 this is strictly not included, but the transverse momentum ordered showers can describe the soft gluon emissions with similar accuracy as the angular ordered showers~\cite{eventGenerators}.
 
 
 
 
 \subsubsection{Jet hadronisation}
-When the virtuality of the shower is low enough, the shower starts to hadronise. In this regime the parton shower reaches a scale close to $\Lambda_{\mathrm{QCD}}$ and the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. In general hadronisation is assumed to be universal, i.e. it shouldn't depend on the collision energy or system. 
-The simplest scenario that is used in several theory calculations is the local parton-hadron duality hypothesis~\cite{Azimov1985}. In this hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that is independent of the scale of the primary hard process. At this scale the partons transform into hadrons and their quantum numbers and flow of momentum directly gives those of the hadrons, with only small normalising corrections.
+When the virtuality of the shower is low enough, the shower starts to hadronise. In this regime the parton shower reaches an energy scale close to $\Lambda_{\mathrm{QCD}}$ and the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. In general hadronisation is assumed to be universal, i.e. it should be independent of the collision energy and the collision system. 
+The simplest model that is used in several theory approaches is the local parton-hadron duality hypothesis~\cite{Azimov1985}. In this hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that does not depend on the scale of the primary hard process. At this scale the partons transform into hadrons and their quantum numbers and flow of momentum directly gives those of the hadrons, with only small normalising corrections.
 
 The next sections will present more complicated hadronisation models used in Monte Carlo generators, \pythia~and Herwig.
 
 \subsubsection*{Lund string model}
 
-One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. This is also used in the \pythia~generator. The string model is based on the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being stretched between the outgoing partons as illustrated in Figure ~\ref{fig:fluxtube}(a) for a $\mathrm{q \bar q}$-pair. The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{eventGenerators}.
+One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. This is also used in the \pythia~generator. The string model utilises the fact that in QCD linear confinement is expected over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being extended between outgoing partons as illustrated in Figure ~\ref{fig:fluxtube}(a) for a $\mathrm{q \bar q}$-pair. The tube is assumed to have a uniform fixed transverse size of about \unit[1]{fm} along its length, which leads to a linearly rising potential $V\left(r\right) = \kappa r$, where the string constant $\kappa$ describes the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{eventGenerators}.
 
-The evolution of string fragmentation is illustrated schematically in Figure~\ref{fig:fluxtube}(b). The evolution is shown in a light cone presentation, i.e. the initial quark and antiquark are moving in opposite directions at the speed of light. The horizontal red line illustrates the string between the quark-antiquark pair. The string begins to stretch which continues until the potential energy stored in the string is large enough and it breaks, which forms a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the produced pair is $\mathrm{q'\bar q'}$, now two new pairs $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$ have formed.
+The evolution of string fragmentation is illustrated schematically in Figure~\ref{fig:fluxtube}(b). The evolution is shown in a light cone presentation, i.e. the initial quark and antiquark are moving in opposite directions at the speed of light. The horizontal red line illustrates the string between the quark-antiquark pair. The string begins to stretch which continues until the potential energy stored in the string is large enough and it breaks, which forms a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the produced pair is $\mathrm{q'\bar q'}$, these form new pairs, $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$.
 
 Since these produced pairs are also moving away from each other, the strings between them will also stretch and can eventually break, creating even more pairs. This evolution proceeds until the invariant mass of the system becomes small enough and a group of final state mesons is formed. 
 
@@ -263,7 +263,7 @@ and breakup of a string system, with the two transverse degrees of freedom suppr
 \label{fig:fluxtube}
 \end{figure}
 
-To mathematically model the string the Lund model uses a massless relativistic string with no transverse degrees of freedom. The gluons are represented by energy and momentum carrying kinks on the string with incoherent sums of one colour charge and one anticolour charge. When a string breaks the pair is created at one point and the pair then tunnels out to a classically allowed region. Therefore the probability to create a new quark-antiquark pair is proportional to the tunnelling probability~\cite{ANDERSSON198331}
+To mathematically model the string the Lund model uses a massless relativistic string that has no transverse degrees of freedom.  When a string breaks the pair is created at one point and the pair then tunnels out to a classically allowed region. Therefore the probability to create a new quark-antiquark pair is proportional to the tunnelling probability~\cite{ANDERSSON198331}
 
 
 \begin{equation}
@@ -274,14 +274,14 @@ P_\mathrm{tunnelling} \propto \exp \left(\frac{-\pi m_\mathrm{T}^2}{\kappa} \rig
 
 In this formalism the string fragmentation would only produce mesons, but we know that also baryons are created in the process. To produce baryons the model introduces a probability for the creation of a diquark-antidiquark pair instead of a quark-antiquark pair when a string breaks. 
 
-An iterative procedure is used to determine the kinematics of string breakages. Since there is no natural ordering, the string fragmentation can be considered in any order and the answer obtained must be the same.  One can start from the quark leg and work one's way to the $\bar{\mathrm{q}}$ leg, or vice versa. This will give a left-right symmetry to the string fragmentation. The Lund model defines a symmetric fragmentation function as
+An iterative procedure is used to determine the kinematics of string breakages. The string fragmentation can be considered in any order, as there is no natural ordering. One can start from the quark leg and work one's way to the $\bar{\mathrm{q}}$ leg, or vice versa. This will give a left-right symmetry to the string fragmentation. To break the string into a hadron and the remaining system, the Lund model defines a symmetric fragmentation function as
 
 \begin{equation}
-f\left(z\right) \propto \frac{1}{z} \left(1-z\right)^a \exp \left(-\frac{b m_\mathrm{T} ^2}{z} \right)
+f\left(z\right) \propto \frac{1}{z} \left(1-z\right)^a \exp \left(-\frac{b m_\mathrm{T} ^2}{z} \right),
 \label{eq:symmetric}
 \end{equation}
 
-\noindent to break the string into a hadron and the remaining system. Here $z$ is the fraction of light-cone momentum $p^+$ that the hadron obtains in the string breakage, $m_\mathrm{T}$ is the transverse mass of the hadron and $a$ and $b$ are tuneable model parameters. For heavy quarks this is modified as 
+\noindent where $z$ is the fraction of light-cone momentum $p^+$ that the hadron obtains in the string breakage, $m_\mathrm{T}$ is the transverse mass of the hadron and $a$ and $b$ are tuneable model parameters. For heavy quarks this is modified as 
 
 \begin{equation}
 f\left(z\right) \propto \frac{1}{z^{1+bm_Q^2}} \left(1-z\right)^a \exp \left(-\frac{b m_\perp ^2}{z} \right).
@@ -297,18 +297,18 @@ Some of the produced hadrons are short-lived ones which can still decay. The fin
 
 
 \subsubsection*{Cluster model}
-Instead of a string model HERWIG~\cite{herwigManual} uses a cluster model for hadronisation. The advantage of cluster models is that they require a smaller number of parameters than string models. The model is based on the preconfinement property of parton showers, i.e. the colour structure of a shower at any evolution scale $Q_0$ is such that colour singlet combinations of partons can be formed with an asymptotically universal invariant mass distribution. The invariant mass does not depend on the initial hard process scale $Q$, but only on $Q_0$ and the QCD scale $\Lambda _ \mathrm{QCD}$, when $Q \gg Q_0$~\cite{eventGenerators}.
+Instead of a string model HERWIG~\cite{herwigManual} uses a cluster model for hadronisation. The advantage of cluster models is that they require a smaller number of parameters than string models. The model is based on the preconfinement property of parton showers, i.e. the colour structure of a shower at any evolution scale $Q_0$ is such that colour singlet combinations of partons can be formed with an asymptotically universal invariant mass distribution. The invariant mass is independent of the initial hard process scale $Q$, and depends only on $Q_0$ and the QCD scale $\Lambda _ \mathrm{QCD}$, when $Q \gg Q_0$~\cite{eventGenerators}.
 
 The cluster model starts by transforming all gluons non-perturbatively into $\mathrm{q \bar q}$ pairs, which requires that the gluons get a mass at least twice the lightest quark mass. When the gluons have been transformed into quarks, adjacent colour lines can clustered into colour singlets that have mesonic quantum numbers. The sum of the momenta of partons defines the momentum of the entire cluster. The principle of colour-preconfinement states that the mass distribution of these clusters is independent of the hard scattering process and its centre-of-mass energy~\cite{herwigManual}. %As the mass distribution is peaked at low masses, the clusters can be regarded as highly excited hadron resonances and decayed into the final state hadrons.
 
-Some of these initial clusters can be too heavy to reasonably describe an excited hadron and they must be split before they are allowed to decay. The condition to split cluster $C$ is~\cite{herwigManual}
+The mass of some of these initial clusters can be too large to reasonably describe an excited hadron and they must be split before they are allowed to decay. The condition to split cluster $C$ is~\cite{herwigManual}
 
 \begin{equation}
 M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 \label{eq:clustermass}
 \end{equation}
 
-\noindent where $m_{1,2}$ are the masses of the constituents partons of the cluster. $M_\mathrm{max}$ and $p$ are parameters defined in the model. These have to be chosen separately for clusters containing light, charmed and bottom quarks. When a cluster splits, a pair of light quarks is generated from the vacuum, which form two new clusters, both of which contain one quark from the original cluster and one from the newly produced pair. The splitting continues until no clusters with masses fulfilling Equation ~\ref{eq:clustermass} remain.
+\noindent where $m_{1,2}$ are the masses of the constituents partons of the cluster. $M_\mathrm{max}$ and $p$ are parameters defined in the model. These have to be chosen separately for clusters containing light, charmed and bottom quarks. When a cluster splits, a pair of quarks is generated from the vacuum, which combined with the original quark-antiquark pair form two new clusters. This process continues until no clusters with masses fulfilling Equation ~\ref{eq:clustermass} remain.
 
 \begin{figure}
 \centering
@@ -318,10 +318,10 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 \label{fig:colourstructure}
 \end{figure}
 
-When the clusters are light enough, they decay into final state hadrons. If the cluster mass is high enough for decaying into a baryon-antibaryon pair, it can undergo either a mesonic or a baryonic decay. The probabilities of mesonic and baryonic decays are parameters in the model~\cite{herwigManual}. For a mesonic decay a quark-antiquark pair is created from the vacuum and for baryonic decays a diquark-antidiquark pair is made. Exact decay products get chosen by the model and cluster decays such that the decay is isotropic in the cluster rest frame. Any partons produced in the perturbative phase involved in the decay retain their original direction in the cluster rest frame. In cases where the cluster mass is too low to decay into a pair of mesons, some energy and momentum is exchanged with adjacent clusters so that it can decay into the lightest possible hadron. At the end the process gives a set of final state hadrons, some of which may be short-lived and decay before the end of the simulation~\cite{herwigManual}.
+When all clusters are light enough, they decay into final state hadrons. If the cluster mass is high enough for decaying into a baryon-antibaryon pair, it can undergo either a mesonic or a baryonic decay. The probabilities of mesonic and baryonic decays are parameters in the model~\cite{herwigManual}. For a mesonic decay a quark-antiquark pair is created from the vacuum and for baryonic decays a diquark-antidiquark pair is made. Exact decay products get chosen by the model and cluster decays such that the decay is isotropic in the cluster rest frame. Any partons produced in the perturbative phase involved in the decay retain their original direction in the cluster rest frame. In cases where the cluster mass is too low to decay into a pair of mesons, some energy and momentum is exchanged with adjacent clusters so that it can decay into the lightest possible hadron. At the end the process gives a set of final state hadrons, some of which may be short-lived and decay before the end of the simulation~\cite{herwigManual}.
 
 \subsubsection{Interactions between jet and medium}
-Let us now look at what happens to jet production in heavy-ion collisions. Figure ~\ref{fig:jetq} shows a dijet produced inside QGP medium. High momentum particles are very rare and they are only produced in the initial collisions. In a heavy-ion collision, where a QGP medium is formed, the hard scattered quarks and gluons are expected to interact strongly with the medium due to their colour charges and thus lose energy, either through collisions with medium partons, or through gluon bremsstrahlung~\cite{Connors:2017ptx}. This is referred to as jet quenching.  Studying the modification of jets inside the medium gives another key approach to constraining the properties of QGP. Modification can be also observed in jet shapes, particle composition, fragmentation, splitting functions and many others.
+Let us now look at what happens to jet production in heavy-ion collisions. Figure ~\ref{fig:jetq} shows a dijet produced inside QGP medium. High momentum particles are very rare and they are only produced in the initial collisions. In a heavy-ion collision, where a QGP medium is formed, the partons from a hard scattering are expected to interact strongly with the medium due to their colour charges and thus lose energy, either through gluon bremsstrahlung, or through collisions with medium partons~\cite{Connors:2017ptx}. This is referred to as jet quenching.  Studying the modification of jets inside the medium gives another key approach to constraining the properties of QGP. Modification can be also observed in jet shapes, particle composition, fragmentation, splitting functions and many others.
 
 
 \begin{figure}
@@ -339,13 +339,13 @@ First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. t
 \begin{equation}
 R_{AA}\left(\pt{}\right) = \frac{(1/N_{AA}^{evt})\dd {N^{AA}}/\dd {\pt{}}}{\left< N_{coll}\right> (1/N_{pp}^{evt})\dd {N^{pp}}/\dd {\pt{}}}\label{eq:raa}
 \end{equation}
-\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the yields in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event. This can be calculated from the Glauber model as shown in Section~\ref{sec:geometry}. When studying direct production of high $\pt{}$ tracks a heavy-ion collision can be estimated relatively well to be only a series of proton-proton collisions. At low $\pt{}$ this scaling breaks down as the determining factor in direct production is the number of participants.
+\noindent where $\dd{N^{AA}}/\dd{\pt{}}$ and $\dd{N^{pp}}/\dd{\pt{}}$ are the observed spectra in heavy-ion and proton-proton collisions, respectively and $\left< N_{coll}\right>$ is the average number of binary nucleon-nucleon collisions in one heavy-ion event, which can be calculated from the Glauber model as shown in Section~\ref{sec:geometry}. When studying direct production of high $\pt{}$ tracks a heavy-ion collision can be estimated relatively well to be only a combination of individual proton-proton collisions. At low $\pt{}$ this scaling breaks down as the determining factor in direct production is the number of participants.
 
 
 \begin{figure}[hbt]
 	\centering
                 \includegraphics[width=0.65\textwidth]{pics/Raaplot}
-        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ as a function of \pt{} in central heavy-ion collisions at three different centre-of-mass energies. Separate results are shown for neutral pions ($\pi^0$), charged hadrons ($h\pm$), and charged particles~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv} and the results are compared to several theoretical predictions~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}. The error bars on the data points are the statistical uncertainties. The yellow boxes around the CMS points are the systematic uncertainties. The bands for some of the theoretical calculations represent their uncertainties~\cite{CMS:2012aa}.}
+        \caption[Measurements of the nuclear modification factor $R_{AA}$ in central heavy-ion collisions]{Measurements of the nuclear modification factor $R_{AA}$ as a function of \pt{} in central heavy-ion collisions at three different centre-of-mass energies. Separate results are shown for different particle species~\cite{Aamodt:2010jd, Aggarwal:2001gn, d'Enterria:2004ig, Adare:2008qa, Adams:2003kv,CMS:2012aa} and the results are compared to predictions from several theoretical calculations~\cite{Dainese:2004te, Vitev:2002pf, Vitev:2004bh, Salgado:2003gb, Armesto:2005iq, Renk:2011gj}.}
         \label{fig:Raa}
 \end{figure}
 
@@ -381,7 +381,7 @@ Further suppression to low energy photons comes from the destructive interferenc
 \subsubsection*{QCD}
 In QCD the radiative energy loss mechanism is given in terms of the transport coefficient $\left<\hat q\right>$, which describes the average momentum transfer between the medium and parton~\cite{jetBroadeningPpb1}. The exact definition of this depends on the theoretical formalism used to describe the energy loss mechanism. 
 
-Similar to QED the simplest energy loss process is elastic QCD scattering off medium partons. In elastic scatterings the recoil energy of the scattered partons is absorbed by the thermal QGP medium and the energy of the initial parton is reduced. The mean energy loss from elastic scatterings can be estimated by
+Similar to QED the simplest energy loss process is elastic QCD scattering off medium partons. In elastic scatterings a part of the energy of the scattered partons is absorbed by the thermal QGP medium and the energy of the initial parton is reduced. The mean energy loss caused by elastic scatterings can be estimated by
 
 \begin{equation}
 \left<\Delta E\right>_{\mathrm{el}}=\sigma \rho L \left<E\right>_{\mathrm{1\,scatt}}\propto L,
@@ -401,7 +401,7 @@ An alternative energy loss mechanism is medium-induced radiation. In QCD this ra
 
 \noindent where $L$ is the path length through the medium and $T$ is the medium temperature~\cite{Dominguez:2008vd}. The different exponents of $L$ in equations \ref{eq:elastic} and \ref{eq:radiative} indicate that radiative energy loss is dominant over elastic energy loss.
 
-Several models have been used to attempt describing the mechanism of energy loss. The most used approaches can be divided into four formalisms.
+Several models have been used to attempt describing the mechanism of energy loss. The most used formalisms can be divided into four approaches.
 %
 %\begin{itemize}
 %\item Thermal effective theory formulation (AMY)~\cite{Arnold:2001ms, Arnold:2002ja}
@@ -416,7 +416,7 @@ The second approach is the thermal effective theory formulation by Arnold, Moore
 
 These pQCD models consider the energy loss for a parton propagating through the medium. An alternative approach is the higher twist (HT) model by Wang and Guo~\cite{Wang:2001ifa} which considers the effect of energy loss on the energy scale evolution of fragmentation functions.
 
-The fourth category includes the Monte Carlo methods. The \pythia~event generator~\cite{pythia} is widely used in high-energy particle physics. Although primarily used for proton-proton collisions recently \pythia~was extended by the Angantyr~\cite{Bierlich:2018xfw} model which implements some features of heavy-ion collisions. Other Monte Carlo models based on \pythia~describing the energy loss mechanism are PYQUEN~\cite{Lokhtin:2005px} and Q-Pythia~\cite{Armesto:2009zc}. Other Monte Carlo models include JEWEL~\cite{Zapp:2008gi} and YaJEM~\cite{Renk:2009nz}. 
+The fourth category includes the Monte Carlo methods. The \pythia~event generator~\cite{pythia} is widely used in high-energy particle physics. Although primarily used for proton-proton collisions, \pythia~was recently extended by the Angantyr~\cite{Bierlich:2018xfw} model which implements some features of heavy-ion collisions. Other Monte Carlo models based on \pythia~describing the energy loss mechanism are PYQUEN~\cite{Lokhtin:2005px} and Q-Pythia~\cite{Armesto:2009zc}. Other Monte Carlo models include JEWEL~\cite{Zapp:2008gi} and YaJEM~\cite{Renk:2009nz}. 
 
 
 
@@ -436,8 +436,7 @@ As described in the previous sections the first indications of jet quenching, su
 \label{fig:jetraa}
 \end{figure}
 
-Thus, on the level of the reconstructed jet, energy loss manifests itself as broadening and softening of the jet. This is seen for example in jet-hadron correlations. Figure~\ref{fig:jethadron} shows $\Delta \eta$ correlations with the leading jet. $\Delta \phi$ correlations have similar trends. Jets in \PbPb have been observed to be broader, with the greatest increase in the width coming from low momentum tracks. This is consistent with expectations from partonic energy loss. These studies found that the subleading jet was broadened even more than the leading jet, indicating a bias towards selecting less modified jets as the leading jet.
-Jet hadron correlations have also been studied at RHIC with similar conclusion~\cite{Adamczyk:2013jei}.
+Thus, on the level of the reconstructed jet, energy loss manifests itself as broadening and softening of the jet. This is seen for example in jet-hadron correlations. Figure~\ref{fig:jethadron} shows $\Delta \eta$ correlations with the leading jet. $\Delta \phi$ correlations have similar trends. Jets in heavy-ion collisions have been observed to be broader, than in proton-proton collisions. The strongest effect happens for low momentum tracks. These observations are consistent with expectations from various energy loss models. Additionally it was observed that the broadening was stronger for subleading jets than for leading jets, which indicates a bias towards selecting less modified jets as the leading jet. Jet hadron correlations have also been studied at RHIC with similar conclusion~\cite{Adamczyk:2013jei}.
 
 
 \begin{figure}
