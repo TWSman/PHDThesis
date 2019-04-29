@@ -32,7 +32,7 @@ The track reconstruction procedure is shown in Figure~\ref{fig:tracking}. The fi
 After the reconstruction of tracks in ITS is completed, all reconstructed tracks are extrapolated to their point of closest approach to the preliminary interaction vertex. 
 Then the track fitting is repeated but starting from the innermost layer and proceeding outwards. A Kalman filter~\cite{Fruhwirth:1987fm} technique is used to perform the new fits using the hits found in the previous stage. This time the reconstructed tracks are matched also to other detectors in the central barrel beyond TPC. When this step is complete, a third and final refit step is performed, again proceeding from the outermost TPC pad rows towards the interaction point. This final refit provides the final track parameters. 
 
-With the final track parameters the primary vertex can be determined with better accuracy than with the original SPD information. The reconstructed tracks are extrapolated to the beam line and a weighted average of the points of closest approach determines the accurate primary vertex position.
+Using the reconstructed tracks the estimation of the primary vertex can be improved from the original SPD information. The reconstructed tracks are extrapolated to the beam line and the primary vertex position is determined by a weighted average of the points of closest approach.
 
 The final step of the track reconstruction is the determination of secondary vertices. In this step the procedure selects all reconstructed tracks with distances of closest approach (DCA) to the primary vertex larger than a defined minimum value. %(?? \unit{mm} in \pPb). 
 The algorithm determines points of closest approaches for pairs of these tracks. If the tracks are close enough to each other and show characteristics of short lived particle decays, these points are identified as secondary vertices. 
@@ -56,7 +56,7 @@ The approach requires that 70 out of the 159 possible pad rows in the TPC are cr
 
 %Additionally we only accept tracks with $\left| \eta \right| < 0.8$ to avoid border effects ot the TPC acceptance $\left| \eta \right| < 0.9$ 
 
-Additional cuts are meant to ensure that the reconstructed tracks are produced in the primary collision. A track might gain a kink due to a particle scattering. The particle after such a kink, a kink daughter, is rejected in the cuts, as it no longer describes the properties of the primary collisions. The remaining cuts are on the distance of closest approach (DCA) of the track to primary vertex. To have confidence that the track comes from the primary collision, the track must be close enough to the primary vertex. The cuts are different for the distance along ($\mathrm{DCA}_{z}$) and perpendicular to ($\mathrm{DCA}_{xy}$) the beam axis.
+Additional cuts are meant to ensure that the reconstructed tracks are produced in the primary collision. A track might gain a kink due to a particle scattering. The particle after such a kink, a kink daughter, is rejected in the cuts, as it no longer describes the properties of the primary collisions. The remaining cuts are on the distance of closest approach (DCA) of the track to primary vertex. To have confidence that the track comes from the primary collision, the track must be close enough to the primary vertex. The cuts are different for the distance along the beam axis ($\mathrm{DCA}_{z}$) and perpendicular to ($\mathrm{DCA}_{xy}$) the beam axis.
 
 
 \begin{table}
