@@ -1,0 +1,57 @@
+\documentclass{standalone}
+%\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{units}
+\newcommand \dd[1]  { \,\textrm d{#1}   }
+\usetikzlibrary{trees}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc, fadings}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+\begin{document}
+\begin{tikzpicture}
+      \draw[->] (0,0) -- (7,0) node[below] {$E$};
+      \draw[->] (0,0) -- (0,5) node[left] {$\nicefrac{\dd N}{\dd \log E}$};
+      
+      \draw	(0,0) node[anchor=north] {0.001}
+		(3,0) node[anchor=north] {0.01}
+		(6,0) node[anchor=north] {0.1};
+
+      \draw	(0,1.5) node[anchor=east] {2}
+		(0,3.0) node[anchor=east] {4}
+		(0,4.5) node[anchor=east] {6};
+		
+	\draw[domain=0.02:0.2,smooth,samples=50,variable=\x,blue] plot({(log10(\x)+3)*3},{4.3});
+	\draw[domain=0.00495:0.02,smooth,samples=9,variable=\x,blue] plot({(log10(\x)+3)*3},{4.3*sqrt(\x)/sqrt(0.02)});
+	\draw[domain=0.001:0.00505,smooth,samples=8,variable=\x,blue] plot({(log10(\x)+3)*3},{4.4*0.005^(-3/2)*\x*\x/sqrt(0.02)});
+
+	%\draw[scale=0.6,domain=0:10,smooth,variable=\x,blue] plot ({\x},{(6.66)/(1+exp((\x-6.38)/0.546))});
+
+     % \draw[dashed,black] (3.8,0) -- node[above] {$\propto \frac{1}{E}$} (3.8,5);
+
+	%\draw[blue] (4,4.3) --node[above] {$\propto \frac{1}{E}$} (7,4.3);	
+
+     %\draw[black,thin,<->] (0,2) -- node[above] {$R$} (3.8,2);
+     %\draw[black,thin,<->] (3.55,1) -- node[below] {$a$} (4.05,1);
+     
+     \draw[blue] (5.3,4.6) node {Bethe-Heitler $\propto \frac{1}{E}$};
+     \draw[blue] (2.2,3.8) node {LPM $\propto \frac{1}{\sqrt{E}}$};
+     \draw[blue] (3.1,1.1) node {Dielectric $\propto E$};
+
+     %\draw[blue] (2,3.5) node {$\omega=0$};
+     %\draw[blue] (2,4.5) node {$\omega>0$};
+
+     % \draw[scale=0.6,domain=0:10,smooth,variable=\x,blue,dashed] plot ({\x},{(6.66+1*\x^2/6.38^2)/(1+exp((\x-6.38)/0.546))});
+     %  \draw[scale=0.6,domain=0:10,smooth,variable=\x,blue] plot ({\x},{(6.66)/(1+exp((\x-6.38)/0.546))});
+
+      %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+
+\end{tikzpicture}
+\end{document}
