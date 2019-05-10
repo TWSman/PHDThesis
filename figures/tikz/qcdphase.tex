@@ -1,0 +1,42 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections, calc, fadings}
+\begin{document}
+\definecolor{primary}{HTML}{0000FF}
+\definecolor{secondary}{HTML}{FF8000}
+\definecolor{tertiary}{HTML}{00FFFF}
+
+\begin{tikzpicture}
+      \draw[->] (0,0) -- (10,0) node[below] {$\mu$};
+      \draw[->] (0,0) -- (0,6) node[left] {$T$};
+      
+%	\draw[step=1.0,black!20,thin] (0,0) grid (10,6);
+
+
+     \draw (2.5,4) node[circle,color=secondary,fill=secondary,label=below:{\color{secondary} Critical point?  }] (crit) {};
+     \draw (0,4) node[label=left:{$\sim 150$ MeV}] (Tcrit) {};
+     
+     \draw (2,4) node (ALICE) {};
+     \draw (7,0) node (a) {};
+     
+     \draw[secondary] (2.6,1.1) node {Hadrons};
+     \draw[secondary] (6,5) node {Quark-Gluon Plasma};
+
+     \draw[secondary] (a) to[out=100,in=-10] (crit);
+     \draw[secondary, dashed] (crit) to[out=170,in=0] (0,4.2);
+     
+
+     \draw[black!50, thick, ->] (0.5,6) -- node[right,black!50] {\rotatebox{90}{The universe}} (0.5,0.3);
+
+     \draw (4.5,0.2) node[circle,fill=black!40,label=right:{\color{black!40} Nuclei}] (nuc) {};
+     \draw (8.5,0.5) node[black!40] (neutron) {Neutron star Cores};
+
+     \draw[black!50, thick, ->,dashed] (nuc) to[out=95,in=-20,looseness=0.5]  (2.9,5.5) node[label=above:Heavy Ion Collisions] {} to[out=160,in=90,looseness=1.1] (ALICE);
+%     \draw[black!50, thick, ->,dashed] (nuc) to[out=90,in=-60] (3.5,4.5) to[out=120,in=0] (2.5,5.5) to[out=180,in=90] (ALICE);
+
+      %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+
+\end{tikzpicture}
+
+\end{document}
