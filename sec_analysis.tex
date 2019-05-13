@@ -1,5 +1,5 @@
 % !TEX root = thesis.tex
-\section{Event and track selection}
+\chapter{Event and track selection}
 \label{sec:selection}
 The $\sqrtSnnE{5.02}$ $\pPb$ ($1.3 \cdot 10^{8}$ events, $\mathcal{L}_{\mathrm{int}} = \unit[62]{nb^{-1}}$) collisions were recorded in 2013 by the ALICE detector~\cite{aliceDetector}. The details of the performance of the ALICE detector during LHC Run~1 (2009-2013) are presented in ~\cite{alicePerformance}.
 
@@ -15,14 +15,14 @@ The $\sqrtSnnE{5.02}$ $\pPb$ ($1.3 \cdot 10^{8}$ events, $\mathcal{L}_{\mathrm{i
 
 
 
-\subsection{Event selection}
+\section{Event selection}
 This analysis uses both a minimum bias trigger and an EMCal based trigger to select the analysed events. 
 %The V0 detector~\cite{forwarddetectorsTdr} provides the information for event triggering. The V0 detector consists of two scintillator hodoscopes that are located on either side of the interaction point along the beam direction. It covers the pseudorapidity region $-3.7 < \eta < -1.7$ (V0C) and $2.8 < \eta < 5.1$ (V0A).
  For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both V0A and V0C. The timing difference between the two stations is also used to reduce the contamination of the data sample from beam-gas events~\cite{alicePerformance}. 
 
 EMCal is used to provide the jet trigger used in triggered datasets. EMCal can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCal trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size. Triggers, V0 and EMCal are discussed in more detail in sections~\ref{sec:forward},~\ref{sec:trigger} and~\ref{sec:emcal}. 
 
-\subsection{Track reconstruction}
+\section{Track reconstruction}
 %\setlength{\emergencystretch}{0em}
 
 The analysis uses charged tracks that are reconstructed with the Time Projection Chamber (TPC)~\cite{aliceTPC} and the Inner Tracking System (ITS)~\cite{aliceITS}. These are discussed in sections~\ref{sec:tracking} and~\ref{sec:TPC}. A detailed overview of track reconstruction in ALICE can be found from~\cite{alicePerformance}. 
@@ -48,7 +48,7 @@ The algorithm determines points of closest approach for pairs of these tracks. I
 Combining the information from the ITS and the TPC provides a resolution ranging from $1$ to $10\,\%$ for charged particles with momenta from $0.15$ to $\unit[100]{\GeVc}$. For tracks without the ITS information, the momentum resolution is comparable to that of ITS+TPC tracks below transverse momentum $\pt{} = \unit[10]{\GeVc}$, but for higher momenta the resolution reaches $20\,\%$ at $\pt{} = \unit[50]{\GeVc}$~\cite{alicePerformance,aliceBackgroundFluctuation}. 
 
 
-\subsubsection*{Track selection}
+\subsection*{Track selection}
 In $\pPb$ collisions the tracks are selected following the hybrid approach~\cite{hybridExplanation} which ensures a uniform distribution of tracks as a function of azimuthal angle ($\varphi$). The parameters in the approach are summarised in Table~\ref{tab:hybrid}. 
 
 The first requirements are on the quality of the track fit in ITS and TPC. The ITS requirement only removes tracks that are clear outliers. For TPC the requirement is much more strict. For step 1 it is required that a track has 3 out of the 6 possible hits in ITS, one of which must be in the SPD. In step 2 this is replaced by a vertex constraint, which includes the primary vertex itself as a point to the track to improve the momentum resolution.
@@ -93,7 +93,7 @@ Other & & Rejected by step 1 \\
 
 
 \FloatBarrier
-\subsection{Cluster selection}
+\section{Cluster selection}
 Neutral particles used in jet reconstruction are reconstructed by the Electromagnetic Calorimeter (EMCal)~\cite{Cortese:2008zza}. The EMCal covers an area with a range of $|\eta| < 0.7$  in pseudorapidity and $ 100 \deg $ in azimuth. EMCal is complemented by the Dijet Calorimeter (DCal)~\cite{DCAL} and Photon Spectrometer (PHOS)~\cite{PHOS} that are situated opposite of the EMCal in azimuth. PHOS covers 70 degrees in azimuth and $\left| \eta \right| < 0.12$. The DCal is technologically identical to EMCal, but is located opposite to the EMCal. The DCal coverage spans 67 degrees in azimuth, but in pseudorapidity the mid region is occupied by the PHOS. Between the active volumes of PHOS and DCal, there is a gap of 10 cm.
 
 \begin{table}[tb] 
@@ -190,16 +190,16 @@ To suppress charged hadron contributions in EMCal, tracks identified by tracking
 
 
 \clearpage
-\section{Analysis method}
+\chapter{Analysis method}
 \label{sec:methods}
-\subsection{Jet Finding}
+\section{Jet Finding}
 The analysis uses reconstructed jets as estimates of the original parton. Jet reconstruction essentially combines nearby tracks into jets. 
 
 Collisions between hadrons are never as clean as electron-electron collisions. Even for a proton-proton collision there are participant partons, that will produce a soft background in addition to the hard scattering products. Jet reconstruction must deal with this soft background. The reconstruction is never perfect, one can have uncorrelated tracks that get included in the jet and some tracks originating from the parton are missed by the reconstruction. There are several methods to perform the reconstruction, all of which require some kind of size parameter, which cuts out jet participants too far from the jet axis. The tracks that are grouped into a jet are referred to as jet constituents. 
 
 In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. Clusters that match charged tracks are removed before jet reconstruction. The analysis is then performed by analysing the charged jet constituents and results are presented in terms of the jet transverse momentum $\pt{,jet}$. 
 
-\subsubsection{Anti \texorpdfstring{\kt{}}{kT} algorithm}
+\subsection{Anti \texorpdfstring{\kt{}}{kT} algorithm}
 Jets are reconstructed using the anti-$\kt{}$ algorithm~\cite{antikt}. The algorithm works by trying to undo the splittings through combining protojets. First the algorithm creates a list of protojets. At the beginning the list is populated by converting each track in the event into a protojet. Then the algorithm proceeds by combining these protojets. A simplified picture of the process for a limited number of tracks is shown in Figure~\ref{fig:ktalg}
 
 The algorithm calculates distance measures for each individual protojet and for each possible pair of protojets. For individual protojets this depends on the transverse momentum of the track.
@@ -244,7 +244,7 @@ With the choice $p=-1$ in anti-$\kt{}$ algorithm, the softest splittings are und
 
 
 
-\subsection{Definition of \texorpdfstring{$\jt{}$}{jT} }
+\section{Definition of \texorpdfstring{$\jt{}$}{jT} }
 The reconstructed jet axis is used for $\jt{}$ reference. Any charged track within a fixed cone with radius $R$ is taken as a jet constituent, as opposed to using the constituent list provided by the jet algorithm. Anti-$\kt{}$ produces jets that are very circular in shape. Thus this doesn't change the constituent list considerably. Calorimeter clusters are used only in jet reconstruction.
 
 The jet fragmentation transverse momentum, $\vec{\jt{}}$, is defined as the component of the constituent track momentum, $\vec{p}_{\mathrm{track}}$, transverse to the jet momentum, $\vec{p}_{\mathrm{jet}}$. It represents the transverse kick with respect to the initial hard parton momentum that a fragmenting particle receives during the fragmentation process, which is a measure of the momentum spread of the jet fragments.
@@ -300,7 +300,7 @@ Results of the raw inclusive $\jt{}$ distribution in four $\pt{,jet}$ bins with 
 \end{figure}
 
  
-\subsection{Unfolding detector effects}
+\section{Unfolding detector effects}
 The raw inclusive $\jt{}$ distributions are corrected for the detector inefficiency with an unfolding procedure. The procedure uses response matrices obtained from a \textsc{Pythia}~\cite{introPythia81} simulation.
 
 Measured distributions are affected by two main factors; Limited acceptance - The probability to observe a given event is less than one and limited resolution - Quantity $x$ cannot be determined exactly, but there is a measurement error. True $f(x)$ and measured $g(y)$ distributions are connected by a convolution integral. Including statistical fluctuations this becomes
@@ -327,7 +327,7 @@ However this usually leads to oscillating solutions and determining the inverse 
 
 Two common methods to perform this inversion are Bayesian and SVD unfolding methods. Often the solution requires some additional {\emph{ a priori}} information. For example the solution should be smooth in most cases.
 
-\subsubsection{Bayesian unfolding}
+\subsection{Bayesian unfolding}
 The bayesian (iterative) method is based on the Bayes formula~\cite{ADictionaryofStatistics}.
 \begin{equation}
 P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},
@@ -357,7 +357,7 @@ $P_0$ is then replaced with $\hat P$ and the procedure is repeated until an acce
 
 The bayesian procedure alongside with the SVD unfolding method are implemented in the RooUnfold package~\cite{roounfold}, which is used to perform the unfolding in practice. SVD unfolding is another procedure that utilises the Singular Value Decomposition (SVD) of the response matrix to find the inverse of the response matrix~\cite{Hocker:1995kb}.
  
- \subsubsection*{Error propagation in the Bayesian procedure }
+ \subsection*{Error propagation in the Bayesian procedure }
  The measured distribution has some statistical uncertainty, this should be reflected in the unfolded distribution. Additionally the response matrix may have some uncertainty if the statistics used in the Monte Carlo simulation were limited. 
  
 For errors originating from the measured distribution RooUnfold uses the error propagation matrix 
@@ -398,7 +398,7 @@ For errors originating from the measured distribution RooUnfold uses the error p
  
 \noindent where $V\left(P\left(E_j | C_i\right), P\left(E_s | C_r\right) \right)$ can be taken as multinomial, Poisson or other distribution.
  
-\subsubsection{Toy Monte Carlo} 
+\subsection{Toy Monte Carlo} 
  A toy Monte Carlo simulation was performed to see the performance of unfolding in an ideal case.
 The simulations samples jet $\pt{}$ values from the observed $\pt{}$ distribution. Starting from this $\pt{}$ the simulations starts creating tracks with 
 \begin{equation}
@@ -432,7 +432,7 @@ The observed distributions are unfolded using the 2D Bayesian (iterative) algori
 
 
 
-\subsubsection{Pythia Response matrices}
+\subsection{Pythia Response matrices}
 A \pythia~6 simulation was carried out to determine the response matrices.  The simulation used the Perugia 2011~\cite{pythiaPerugiaTune} tune with \snn=5.02\tev. The detector response of the particle level tracks was simulated using GEANT3~\cite{Brun:118715,geant}.
 
 Response matrices are filled through correlation between MC detector and particle level jets and tracks. When creating the response matrices detector level tracks in each event are first analysed using the same procedure as for data, but their $\jt{}$ values are stored in an array. This is only done for tracks that are closer than the cone size, $R$, to a jet. Thus most tracks in the event will not have their $\jt{}$ values calculated. The analysis then moves to particle level (MC) tracks. There are analysed similarly, but for each track the code checks whether a corresponding detector level track existed and if that track had a \jt{} value. Finally the code checks for detector level tracks that don't have corresponding particle level track with a \jt{} value.
@@ -462,7 +462,7 @@ As a primary method unfolding is performed with an iterative (bayesian) algorith
 %\end{tabular}
 %\end{table}
 
-\subsubsection{Unfolding closure test}
+\subsection{Unfolding closure test}
 The \pythia~set is divided into 2 halves. First is used to fill the response matrices, as well as record missed and fake tracks. Second half is used to test the effectiveness of the unfolding method. Jet $\pt{}$ distributions and response matrix are shown in Figure~\ref{fig:jetptclosure}. For the range where this analysis is performed, $\unit[40]{\gev} <\pt{,jet} <\unit[150]{\gev}$, the \pt{,jet} distribution is recovered well. At low \pt{,jet} the true distribution can't be recovered. The primary reason is that jet with $\pt{,obs}<\unit[5]{\gev}$ are not considered, although $\pt{,true}$ would have been above $\unit[5]{\gev}$. Thus these are missing from the response matrix and their contribution can't be unfolded. At high $\pt{,jet}$ the situation is opposite. Jets with $\pt{,true} > \unit[500]{\gev}$ are lost due to histogram limits. Thus jets just below this limit are overrepresented in the response matrix for $\pt{,obs}\approx \unit[500]{\gev}$. 
  
  \begin{figure}
@@ -501,7 +501,7 @@ Above $\unit[30]{\gev} <\pt{,jet} < \unit[40]{\gev}$~the distribution is recover
 
 
  
-\subsection{Background}
+\section{Background}
 \label{sec:bg}
 When calculating \jt{} distributions for jet constituents there is a contribution from the underlying event (UE), i.e. tracks that just happen to be close to the jet axis.
 To find the signal coming from the actual jet we need to subtract the background (UE) contribution. On a jet-by-jet basis this is difficult to achieve reliably, so one must estimate the background contribution in the inclusive  distribution. A schematic view of the background contribution is shown in Figure~\ref{fig:bgdef}. 
@@ -523,7 +523,7 @@ We have two methods for background estimation. In the first we look at the direc
 \label{fig:bgdef}
 \end{figure}
 
-\subsubsection{Perpendicular cone background}
+\subsection{Perpendicular cone background}
 As a primary method to estimate the background we look at regions of the detector where there are no tracks from jets, but only uncorrelated tracks from the underlying event. The underlying event is thus estimated by looking at an imaginary jet cone perpendicular to the observed jet axis ($\frac{\pi}{2}$ Rotation in $\phi$). 
 
 %$\jt{}$ is calculated for any tracks found within this cone. The vector sum of the individual track momentum and the imaginary jet axis is used as reference for $\jt{}$. The background obtained in this manner is subtracted from the unfolded inclusive $\jt{}$ distribution, which gives the resulting signal distribution. To make sure there is no jet contribution in the background, any events with jets inside the perpendicular cone are not used for background estimation.
@@ -588,7 +588,7 @@ In \pPb data there is on average about one underlying event track in a $R = 0.4$
 %%\item jT distribution is constructed from charged jet constituents
 %\end{figure}
 
-\subsubsection{Random background}
+\subsection{Random background}
 In the random background method we look at all tracks in the event, except for tracks close to jets found by the jet algorithm. We randomly assign new $\eta$ and $\phi$ values to all tracks using uniform distributions with $\left|\eta\right| < 1.0$. $\pt{}$ values are kept the same. To increase statistics there is a possibility to create a number of random tracks for each actual track. In the analysis we do this 10 times for each track. Again the track $\pt{}$ value is kept the same. 
 
 We create a random jet cone from uniform $\eta$ and $\phi$ distributions. Here $\left| \eta \right| < 0.25$. Now we calculate $\jt{}$ of the random tracks with respect to the random cone axis. As in the perpendicular cone method auto-correlations are added before calculating \jt{}.
@@ -611,7 +611,7 @@ Thus as a primary method of background estimation the perpendicular cone method 
 
 
 \FloatBarrier
- \subsection{Fitting}
+ \section{Fitting}
  \label{sec:fitting}
 After unfolding and background subtraction the resulting signal distributions are fitted with a 2 component function shown in Eq.~\ref{eq:fit}. Gaussian distribution is used for low $\jt{}$ and an inverse gamma function is used for high $\jt{}$. The Gaussian is taken to have the centre at $\jt{} = 0$. In total this gives 5 parameters. The fitting procedure was inspired by the dihadron $\jt{}$ analysis by ALICE~\cite{ALICEjt}. The complete fitting function is 
 

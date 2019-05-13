@@ -1,8 +1,8 @@
 % !TEX root = thesis.tex
 
-\section{Experimental Setup}
+\chapter{Experimental Setup}
 \label{sec:exp}
-\subsection{CERN}
+\section{CERN}
 The European Organization for Nuclear Research (CERN), established in 1954, operates the largest particle physics laboratory in the world. In 2019 CERN consists of 22 member states. Additionally CERN has contacts with a number of associate member states and various individual institutions. The laboratory, also referred to as CERN, itself is located near Geneva at the border between Switzerland and France employs about 2500 people. Additionally some 12000 visiting scientists from over 600 institutions in over 70 countries come to CERN for their research~\cite{CERN}.
 
 \begin{figure}[tb]
@@ -25,7 +25,7 @@ PS gets proton beams from LINAC2 through BOOSTER and ion beams from LINAC3 throu
 
 More information of the various experiments at CERN can be found online in~\cite{CERNexperiments}.
 
-\subsection{Large Hadron Collider}
+\section{Large Hadron Collider}
 \label{sec:lhc}
 The Large Hadron Collider (LHC)~\cite{Bruning:782076,Evans:2008zzb} with its circumference of \unit[26.7]{km} is the largest accelerator at CERN and the largest particle collider ever built. The LHC is designed to accelerate protons up to an energy of \unit[8]{\tev} and lead ions up to centre-of-mass energies of \unit[5.02]{\tev} per nucleon. The design luminosity of the LHC is $ \unit[10^{34}]{cm^{-2}s^{-1}}$. In 2017 it achieved a record peak luminosity of $ \unit[2\cdot10^{34}]{cm^{-2}s^{-1}}$ which was also reached in 2018. For lead beams luminosities of up to $ \unit[6\cdot10^{27}]{cm^{-2}s^{-1}}$ were reached in 2018. All this is achieved with a ring consisting of 1232 superconducting dipole magnets that keep particles in orbit. 
 
@@ -36,7 +36,7 @@ With 7 TeV proton beams the dipole magnets used to bend the beam must produce a 
 The LHC is divided into eight sections, or octants, where each sections has a distinct function. Octants 2 and 8 are used to inject beam into the LHC from SPS. The 2 beams are crossed in octants 1,2,5 and 8. The main experiments are built around these crossing points. Octants 3 and 7 are used for beam cleansing. This is achieved through collimators that scatter particles with too high momentum or position offsets off from the beam. Octant 4 houses the RF cavities used for acceleration and octant 6 is used for dumping the beam. The beam dump is made up of two iron septum magnets, one for each beam, that will deflect the beam into an absorber away from machine components. 
 
 
-\subsubsection{LHC experiments}
+\subsection{LHC experiments}
 As of 2018 there are four main experiments at the LHC; ALICE~\cite{aliceDetector}, ATLAS~\cite{Aad:2008zzm}, CMS~\cite{Chatrchyan:2008aa} and LHCb~\cite{Alves:2008zz} and three smaller ones LHCf~\cite{Adriani:2008zz}, TOTEM~\cite{Anelli:2008zza} and MoEDAL~\cite{MoEDAL:2016jlb}. ALICE will be covered in detail in Section~\ref{sec:alice}. 
 
 ATLAS (A Toroidal LHC ApparatuS)~\cite{Aad:2008zzm} and CMS (Compact Muon Solenoid)~\cite{Chatrchyan:2008aa} are the two largest experiments at the LHC. They are both multipurpose experiments designed to look for a host of possible new physics signals, such as extra dimensions and dark matter particles. So far the biggest discovery made by the LHC is the discovery of the Standard Model Higgs boson, which was simultaneously published by ATLAS and CMS in 2012 ~\cite{Aad:2012tfa, Chatrchyan:2012xdj}.
@@ -51,7 +51,7 @@ The MoEDAL (Monopole and Exotics Detector At the LHC) experiment~\cite{MoEDAL:20
 
 
 
-\subsection{ALICE}
+\section{ALICE}
 \label{sec:alice}
 \begin{figure}[htb]
 \input{figures/tikz/alice}
@@ -71,7 +71,7 @@ As in all the major high energy physics experiments the positioning of the detec
 Calorimeters are designed to stop particles hitting them and thus use the absorption to measure the energy of the particles. Thus they must be located behind the tracking detectors. ALICE has two separate calorimeter systems, the electromagnetic calorimeters measure mainly electrons and photons, while the muon detection system measures muons.
 
 
-\subsubsection{Tracking detectors}
+\subsection{Tracking detectors}
 \label{sec:tracking}
 
 \begin{figure}[htb]
@@ -95,7 +95,7 @@ The next two layers together are the silicon drift detector (SDD). The layers ar
 
 The two remaining layers in the ITS are the silicon strip detector (SSD). The strips is based on the same technology as silicon pixels, but by itself one layer only provides good resolution in one direction. Combining two crossing grids of strips provides 2 dimensional detection. Each charged particle will hit two intervening strips and their crossing location gives the position of the hit.
 
-\subsubsection{TPC}
+\subsection{TPC}
 \label{sec:TPC}
 \begin{figure}[tb]
 \centering
@@ -114,7 +114,7 @@ When electrons reach the endplates of the main cylinder they enter the readout c
 %The relatively slow drift time of 90 $\mu s$ is the limiting factor for the luminosity ALICE can take. The occupancy of the TPC must be kept in a manageable level. 
 
 
-\subsubsection{Particle identification}
+\subsection{Particle identification}
 One guiding principle in the design of ALICE was to achieve good particle identification (PID) over a large momentum range and for several particle types. In ALICE there are several detectors taking part in the identification of particles. In addition to the specific particle identification detectors, the general purpose tracking detectors can be used for identification through the use of specific energy loss $\nicefrac{\mathrm{d}E}{\mathrm{d}x}$ of charged particles traversing through a medium and the transition radiation emitted by charged particles when crossing the boundary between two materials. 
 
 Energy loss measurements are provided by the last four layers of the ITS detector, i.e. the SDD and the SSD, thanks to their analog readout~\cite{ALICEpid}. ITS can provide particle identification in the low $\pt{}$ region, up to $~ \unit[1]{\gev}$, and pions reconstructed in the standalone mode can be identified down to $~100 \mev$. Similar to ITS the TPC detector provides specific energy loss measurements. TPC can identify charged hadrons up to $\pt{} ~ \unit[1-2]{\gev}$ as well as light nuclei, He$^3$ and He$^4$, providing the majority of PID information for ALICE.
@@ -130,7 +130,7 @@ The third specific particle identification detector is the High Momentum Particl
 
 
 
-\subsubsection{Electromagnetic Calorimeters}
+\subsection{Electromagnetic Calorimeters}
 \label{sec:emcal}
 Calorimeters are used to measure the energy of particles. Electromagnetic calorimeters specialise in detecting particles that interact primarily through the electromagnetic interaction, in practice photons and electrons. They are required in many neutral meson~\cite{Abelev:2012cn} and direct photon~\cite{Adam:2015lda} analyses. In addition the energy information enhances jet measurements~\cite{Reed:2013rpa}, as some of jet fragments can't be detected with trackers.
 \setlength{\emergencystretch}{3em}
@@ -160,7 +160,7 @@ The build of individual towers is shown in Figure~\ref{fig:emcaltower}. Each tow
 \end{figure}
 
 
-\subsubsection{Forward and trigger detectors}
+\subsection{Forward and trigger detectors}
 \label{sec:forward}
 ALICE includes a few small and specialised detectors of importance. The T0 detector~\cite{Cortese:2004aa} is used to determine the event time with very good precision ($< \unit[25]{ns}$). The detector consists of two sets of Cherenkov counters on both sides of the interaction point around the beam pipe. T0 is also used to obtain the luminosity measurement in ALICE.
 
@@ -181,10 +181,10 @@ During long shutdown 1 the ALICE Diffractive detector (AD)~\cite{AD} was install
 
 Built atop of the ALICE magnet there is the ALICE cosmic ray detector (ACORDE)~\cite{Fernandez:2006ki}, which is an array of 60 large scintillators. ACORDE is used as a trigger for cosmic rays for calibration and alignment. 
 
-\subsubsection{Muon spectrometer}
+\subsection{Muon spectrometer}
 In heavy-ion physics muons are mainly used to measure the production of the heavy quark resonances such as $\nicefrac{J}{\psi}, \Psi^{'}$ and $\Upsilon$. In ALICE the muon spectrometer is located outside the main magnet~\cite{Beole:1996yp} in the forward direction on the C side. The muon spectrometer has three sections. The first section is the absorber which removes hadronic background before it can reach the remaining sections.  After the absorber the muon tracker consists of ten high granularity plates of thin cathode strip tracking stations. After the muon tracker there is a layer of iron meant to filter out any remaining particles, other than muons. The muon trigger is located behind this layer. The trigger consists of four resistive plate chambers. 
 
-\subsubsection{Triggers}
+\subsection{Triggers}
 \label{sec:trigger}
 High energy physics experiments need triggers to select interesting physics. Experiments such as CMS and ATLAS at CERN look for extremely rare events. To produce these rare events LHC provides up to 40 million events each second. Such amounts can't be recorded real-time as many detectors require some time for the readout, up to 1 ms/event in ALICE. Thus one uses triggers, i.e. a set of very fast hardware based decisions on which events are to be saved. Additionally one needs some confirmation that an event has even occurred to tell other detectors that the event needs to be recorded. 
 
@@ -194,11 +194,11 @@ At ALICE the main system responsible for the trigger decisions is the ALICE Cent
 
 Triggers can be roughly put into two classes, minimum bias triggers that make sure no empty events are recorded, and rare triggers that require specific signatures in ALICE detectors, such as large energy deposits in EMCal or two muons in the muon arm acceptance.
 
-\subsubsection*{Minimum bias trigger}
+\subsection*{Minimum bias trigger}
 Several of the ALICE detectors are used to make the initial minimum bias trigger decisions. These include the SPD layers of ITS, V0 and T0. SPD can count the number of hits in the first two layers of ITS. Minimum bias \pp collisions typically require at least one hit in either SPD or V0A/V0C. Similarly \PbPb triggers look at both V0 and SPD hits. The \pPb data has been mainly triggered using V0 information.
 
 
-\subsubsection*{EMCal trigger}
+\subsection*{EMCal trigger}
 In addition to the minimum bias triggers, the most relevant trigger for this thesis is the EMCal trigger. Parts of the EMCal trigger has been developed at the University of Jyväskylä. Extensive details of the trigger and the development work can be found in the thesis of Ji\v ri Král~\cite{JiriThesis}. Personally I have contributed to the maintenance of the level 0 trigger.
 
 ALICE EMCal provides two levels of trigger signal, L0 and L1, which allows triggering on either single shower deposits or integrated energy deposits in larger ares, i.e. jets~\cite{KRAL2012261}. As inputs the trigger gets exclusive sets of $2\times2$ EMCal towers, to limit the number of channels that need to be processed. The L0 trigger then checks for energy deposits within a rolling window of $2\times2$ trigger channels ($4\times4$ towers). Areas of $4\times4$ towers most probably will contain only a single shower or two adjacent showers coming from a single decayed $\pi^0$. Thus the trigger is called the single shower trigger. 
@@ -212,9 +212,9 @@ The L1 trigger can compare up to two thresholds for each single shower and jet t
 The trigger subsystem provides both the L0 and L1 decisions to the CTP and DAQ. 
 
 
-\subsection{TPC upgrade}
+\section{TPC upgrade}
 \label{sec:tpcupgrade}
-\subsubsection{ALICE upgrade during LS2}
+\subsection{ALICE upgrade during LS2}
 During LS2 in 2019-2020 ALICE will go through significant modifications. The goal is to be able have continuous readout ~\cite{aliceupgrade} in heavy-ion collisions at an interaction rate of 50 kHz.  ALICE will add a new Forward Interaction trigger (FIT)~\cite{Maevskaya:2019bba} to provide trigger and timing replacing the V0 and T0 detectors. Also the current FMD and AD detectors will be dismantled and their roles will be taken over by FIT.
 
 Additionally the current inner tracking system (ITS) will be completely replaced. The current layered structure with three different technologies will be replaced by a detector that uses pixel technology in all layers and with significantly reduced pixel size. Additionally the first layer will be brought closer to the beam pipe. The new ITS will have better tracking efficiency and better impact parameter resolution~\cite{ITSupgrade}. 
@@ -223,7 +223,7 @@ Additionally the current inner tracking system (ITS) will be completely replaced
 
 The muon detection will be complemented by the Muon Forward Tracker (MFT)~\cite{CERN-LHCC-2015-001}. Based on the same technology as the new ITS, MFT will be placed before the hadron absorber that sits in front of the existing muon spectrometer. MFT should significantly increase the signal/background ratio in heavy quark measurements~\cite{CERN-LHCC-2015-001}.
 
-\subsubsection{TPC upgrade}
+\subsection{TPC upgrade}
 Many subdetectors will make small improvements to enhance the readout rate. The central trigger processor will be replaced and ALICE will introduce a new framework $O^2$ that combines both online data acquisition and offline analysis.
 
 The detector restricting the readout the most at the moment is the TPC. The current wire chamber based system  limits the readout rate to 3.5 kHz. To achieve the 50 kHz readout rate goal the wire chambers will be replaced by a Gas Electron Multiplier (GEM) based system. The GEMs are designed to minimise ion backflow to allow continuous, ungated and untriggered readout. I have made a personal contribution to the quality assurance of the new GEM readout of TPC.
@@ -248,7 +248,7 @@ As opposed to wire chambers, which typically have one voltage setting, a GEM-bas
 
 
 
-\subsubsection*{Quality Assurance of the GEM foils}
+\subsection*{Quality Assurance of the GEM foils}
 The GEM foils are produced at CERN, where they will undergo a basic QA (QA-B) procedure, that includes a coarse optical inspection for any large defects ($ \gtrsim \unit[1]{mm}$) and a short term high voltage measurement. Afterwards the foils are sent for an advanced quality assurance (QA-A) procedure which is performed in one of the two QA-A centres, one in the Helsinki Institute of Physics (HIP) and one in the Wigner Research Centre in Budapest. Details of the QA-A procedure can be found in the thesis of Márton Vargyas~\cite{MartonThesis} and in \cite{Brucken:2018rej}. In the QA-A centres all foils are put through a detailed optical scanning process and a long term high voltage measurement. I was personally performing the QA production in Helsinki for the final 6 months of the project.
 
 The optical scan is performed with the help of a scanning robot. The setup along with most of the software was developed at the Detector Laboratory of the Helsinki Institute of Physics~\cite{Hilden:2014rba}. The optical scan is able to distinguish every single hole on the GEM foil and measure their properties. The purpose of the scan is two-fold; to catch defects that could affect the performance and classify the foils based on their hole parameters. It is expected that these are connected with the foil's electric properties~\cite{Hilden:2014rba}. For example, smaller holes create more intense and focused fields, which would result in larger amplification of their avalanche electrons, i.e. the local gain is expected to be larger.

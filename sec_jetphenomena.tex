@@ -1,7 +1,7 @@
 % !TEX root = thesis.tex
 
-\subsection{Hard processes}
-\subsubsection{pQCD factorization}
+\section{Hard processes}
+\subsection{pQCD factorization}
 
 
 %\begin{figure}[htb]
@@ -62,7 +62,7 @@ The final component in the factorization, fragmentation functions, describe the 
 
 
 
-\subsubsection*{Parton Distribution Function}
+\subsection*{Parton Distribution Function}
 Parton Distribution Functions (PDFs) $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. %PDFs  are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments.
 As the PDFs cannot be calculated from first principles they are measured in Deeply Inelastic Scattering (DIS) experiments~\cite{Placakyte:2011az} and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
 
@@ -75,7 +75,7 @@ As the PDFs cannot be calculated from first principles they are measured in Deep
 
 \noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe the probability to radiate parton $i$ with momentum fraction $z$ from parton $j$. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
 
-\subsubsection{Jet showering}
+\subsection{Jet showering}
 \label{sec:shower}
 \begin{figure}
 \centering
@@ -151,7 +151,7 @@ Partons $b$ and $c$ that were produced will further branch with maximum virtuali
 
 
 
-\subsubsection{Soft gluon radiation and angular ordering}
+\subsection{Soft gluon radiation and angular ordering}
 
 \begin{figure}[tb]
 \centering
@@ -239,7 +239,7 @@ This leads to the angular ordering of soft gluon radiation. Every radiated gluon
 
 
 
-\subsubsection{Jet hadronisation}
+\subsection{Jet hadronisation}
 When the virtuality of the shower is low enough, the shower starts to hadronise. In this regime the parton shower reaches an energy scale close to $\Lambda_{\mathrm{QCD}}$ and the perturbative description is no longer valid. Thus the hadronisation stage must be described in a non-perturbative manner. In general hadronisation is assumed to be universal, i.e. it should be independent of the collision energy and the collision system. 
 
 The simplest model that is used in several theory approaches is the local parton-hadron duality hypothesis~\cite{Azimov1985}. In this hypothesis it is assumed that there exists a low virtuality scale $Q_0$ in which the hadronisation happens, that does not depend on the scale of the primary hard process. At this scale the partons transform into hadrons and their quantum numbers and flow of momentum directly gives those of the hadrons, with only small normalising corrections.
@@ -321,7 +321,7 @@ M_C^p \geq M_\mathrm{max}^p  + \left( m_1 + m_2\right)^p,
 
 When all clusters have become light enough, the clusters into final state hadrons. If the mass of a cluster is high enough for decaying into a baryon-antibaryon pair, it can undergo either a mesonic or a baryonic decay. The probabilities of mesonic and baryonic decays are parameters in the model~\cite{herwigManual}. For a mesonic decay a quark-antiquark pair is generated from the vacuum and for baryonic decays a diquark-antidiquark pair is created. The exact products of the decay get chosen by the model and each cluster decays such that the decay is isotropic in the cluster rest frame. Any partons produced in the perturbative phase involved in the decay retain their original direction in the cluster rest frame. In cases where the cluster mass is too small for the cluster to decay into a pair of mesons, some energy and momentum is exchanged with nearby clusters so that it can decay into the lightest possible hadron. At the end the process gives a set of final state hadrons, some of which may be short-lived and decay before the end of the simulation~\cite{herwigManual}.
 
-\subsubsection{Interactions between jet and medium}
+\subsection{Interactions between jet and medium}
 Let us now look at what happens to jet production in heavy-ion collisions. Figure ~\ref{fig:jetq} shows a dijet produced inside QGP medium. High momentum particles are very rare and they are only produced in the initial collisions. In a heavy-ion collision, where a QGP medium is formed, the partons from a hard scattering are expected to interact strongly with the medium due to their colour charges and thus lose energy, either through gluon bremsstrahlung, or through collisions with medium partons~\cite{Connors:2017ptx}. This is referred to as jet quenching.  Studying the modification of jets inside the medium gives another key approach to constraining the properties of QGP. Modification can be also observed in jet shapes, particle composition, fragmentation, splitting functions and many others.
 
 
@@ -332,7 +332,7 @@ Let us now look at what happens to jet production in heavy-ion collisions. Figur
 \label{fig:jetq}
 \end{figure}
 
-\subsubsection*{Discovery of jet quenching via leading hadron suppression}
+\subsection*{Discovery of jet quenching via leading hadron suppression}
 \label{sec:energyloss}
 First evidence of jet quenching comes from observing high $\pt{}$ tracks, i.e. the leading hadrons of jets. In this picture jet energy loss in heavy-ion collisions is usually quantified with the nuclear modification factor $R_{AA}$, which is  is defined as
 %the yield in heavy-ion collisions divided by the yield in proton-proton collisions and scaled by the The nuclear modification factor
@@ -428,7 +428,7 @@ The fourth category includes the Monte Carlo methods. The \pythia~event generato
 
 
 
-\subsubsection{New paradigm of jet Quenching}
+\subsection{New paradigm of jet Quenching}
 As described in the previous sections the first indications of jet quenching, such as $R_{\mathrm{AA}}$, looked essentially at the leading hadrons of jets, the hard part, ignoring the soft scale part of jet phenomena. However, experimental methods have since improved; jet reconstruction algorithms have become reliable in the LHC era. Instead of the leading hadron we can study the entire jet shower and its structure. In jet observables one must consider what happens to the lost energy. Radiated gluons may end up being clustered with the jet, depending on the radiation angle, the parameters of jet reconstruction and whether the gluon reaches equilibrium with the medium or not. Thus the suppression on the jet level is expected to be smaller. Figure~\ref{fig:jetraa} shows jet $R_{AA}$ in central \PbPb collisions measured by ALICE, ATLAS and CMS and indeed jet $R_{AA}$ is about 0.5 instead of 0.2. %This raises the conceptual question, what counts as being part of the jet.  If a gluon radiated from the jet thermalises with the medium, is it a part of the jet or the medium?
 
 
