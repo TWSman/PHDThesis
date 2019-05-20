@@ -1,0 +1,37 @@
+So I think the analysis is very solid and thesis is good. I found only editorial stuff and some tiny physics issues:
+
+page 5: the extrem cases by the theory of GR. Here I would disagree. The main problem with GR is that after quantizing the GR (this you can do no problem) the Higgs loop corrections go to infinite. Some problems with poles in black holes are not problem for particle physics.
+
+Eq 2 (and most of the equations). Tomas uses symbols which are not defined. For instance in the eq. 2 m_\pi, f_\pi etc. are not defined.
+
+page 8: only interact with charger particles -> only couple to charge particles.
+
+page 14: Białłas -> Białas
+
+page 14: at the last sentence the b is missigin "->" over it. 
+
+page 17: "They fly in straight lines untile they reach the detector. " I would delete straight as they are bend by magnetic field.
+
+page 20: event shape analysis. (sphericity). // remove dot after analysis.
+
+page 24: evolution scheme [118-120]: // add ":" after ref.
+
+page 35: in subsubsection caption I would avoid just shortcuts like QCD. 
+
+page 40: Moliere [175] // this sticks out of the page range.
+
+page 50: [219] again sticks to much out.
+
+page 51: Since you quote the Higgs papers for ATLAS and CMS you should cite the lhcb Bs->mumu http://arxiv.org/abs/1703.05747
+
+page 55: p_T 1-2 GeV. Here is something that I would really fix: units. Sometimes you assume c=1 sometimes you don't. I would make this consistent as f
+
+page 65: V0A was defined but V0C not.
+
+page 71: electron-electoron => electron-positron
+
+page 75: eq 55. Again not all symbols in equations are not defined. 
+
+page 77: Toy Monte Carlo: this is jargon. SHould be pseudo-experiment Monte Carlo
+
+page 79: Figure ?? // broken reference.
