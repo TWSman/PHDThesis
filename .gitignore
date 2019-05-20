@@ -41,6 +41,7 @@ figures/tikz/jetquenching.pdf
 figures/tikz/geometry.pdf
 figures/tikz/bremss2.pdf
 figures/tikz/qcdphase.pdf
+figures/Figures*
 **/*.log
 **/*.gz
 **/*.aux

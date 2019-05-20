@@ -195,7 +195,7 @@ To suppress charged hadron contributions in EMCal, tracks identified by tracking
 \section{Jet Finding}
 The analysis uses reconstructed jets as estimates of the original parton. Jet reconstruction essentially combines nearby tracks into jets. 
 
-Collisions between hadrons are never as clean as electron-electron collisions. Even for a proton-proton collision there are participant partons, that will produce a soft background in addition to the hard scattering products. Jet reconstruction must deal with this soft background. The reconstruction is never perfect, one can have uncorrelated tracks that get included in the jet and some tracks originating from the parton are missed by the reconstruction. There are several methods to perform the reconstruction, all of which require some kind of size parameter, which cuts out jet participants too far from the jet axis. The tracks that are grouped into a jet are referred to as jet constituents. 
+Collisions between hadrons are never as clean as electron-positron collisions. Even for a proton-proton collision there are participant partons, that will produce a soft background in addition to the hard scattering products. Jet reconstruction must deal with this soft background. The reconstruction is never perfect, one can have uncorrelated tracks that get included in the jet and some tracks originating from the parton are missed by the reconstruction. There are several methods to perform the reconstruction, all of which require some kind of size parameter, which cuts out jet participants too far from the jet axis. The tracks that are grouped into a jet are referred to as jet constituents. 
 
 In each collision event, the jets are reconstructed using FastJet~\cite{fastjet} with the anti-$\kt{}$ algorithm~\cite{antikt}. Jets for R=0.4 are selected in $\left| \eta \right| < 0.25 $ to satisfy the fiducial acceptance of the EMCal. In jet reconstruction both charged tracks with $\pt{}>0.15\,\GeVc$ and neutral clusters with $\pt{}>0.30\,\GeVc$ are considered. Clusters that match charged tracks are removed before jet reconstruction. The analysis is then performed by analysing the charged jet constituents and results are presented in terms of the jet transverse momentum $\pt{,jet}$. 
 
@@ -405,9 +405,9 @@ The simulations samples jet $\pt{}$ values from the observed $\pt{}$ distributio
 p_{\mathrm{track}} = z_\mathrm{track} \pt{,jet}
 \end{equation}
 
-\noindent where $z_\mathrm{track} $ is sampled from the observed $z$ distribution. Tracks are given random $\eta$ and $\phi$ values from uniform distributions centred at 0. All tracks below \unit[0.15]{\gev} are discarded. Sampling is continued until the sum of the track transverse momenta exceeds the jet transverse momentum. The sum of all the track momenta is calculate. This is sum is then defined to be the jet.
+\noindent where $z_\mathrm{track} $ is sampled from the observed $z$ distribution. Tracks are given random $\eta$ and $\phi$ values from uniform distributions centred at 0. All tracks below \unit[0.15]{\GeVc} are discarded. Sampling is continued until the sum of the track transverse momenta exceeds the jet transverse momentum. The sum of all the track momenta is calculate. This is sum is then defined to be the jet.
 
-Simultaneously a $\pt{}$ dependant observation efficiency is applied to the tracks and a separate observed jet is calculated using only the observed tracks. Additionally a set of fake tracks is added to the observed jet. Fake tracks are generated identically to normal tracks, except for \pt{,track}, which is taken from a uniform distribution between \unit[0.15]{\gev} and \unit[1]{\gev}. Tracks are always either observed or not at the true momentum. No smearing is added to the observed momentum.
+Simultaneously a $\pt{}$ dependant observation efficiency is applied to the tracks and a separate observed jet is calculated using only the observed tracks. Additionally a set of fake tracks is added to the observed jet. Fake tracks are generated identically to normal tracks, except for \pt{,track}, which is taken from a uniform distribution between \unit[0.15]{\GeVc} and \unit[1]{\GeVc}. Tracks are always either observed or not at the true momentum. No smearing is added to the observed momentum.
 
 Afterwards the tracks are looped over for $\jt{}$ calculation. For observed tracks we calculate $\jt{}$ with respect to both the true jet axis and the observed jet. 2D Response matrix is filled with \begin{equation}
 \left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs}, \jt{}^\mathrm{true},\pt{,jet}^\mathrm{true}\right)
@@ -445,7 +445,7 @@ There are several possibilities that have to be taken into account:
 \item For detector level tracks that have no correspondence in particle level set the code records  $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs}\right)$ as a fake
 \end{itemize}
 
-In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs},\jt{}^\mathrm{true}\right)$ as axes. The histogram index gives the $\pt{,jet}^\mathrm{true}$ value. The ranges in the response matrices of both $\jt{}$ and $\pt{,jet}$ match the ranges used for the end results. For \jt{} the range is between \unit[0.01]{\gev} and \unit[20]{\gev} and \pt{,jet} between \unit[5]{\gev} and \unit[500]{\gev}.  The ranges are the same in detector and particle level.
+In the analysis code the response matrix is made of an array of 3 dimensional histograms, with $\left(\jt{}^\mathrm{obs},\pt{,jet}^\mathrm{obs},\jt{}^\mathrm{true}\right)$ as axes. The histogram index gives the $\pt{,jet}^\mathrm{true}$ value. The ranges in the response matrices of both $\jt{}$ and $\pt{,jet}$ match the ranges used for the end results. For \jt{} the range is between \unit[0.01]{\GeVc} and \unit[20]{\GeVc} and \pt{,jet} between \unit[5]{\GeVc} and \unit[500]{\GeVc}.  The ranges are the same in detector and particle level.
 
 As a primary method unfolding is performed with an iterative (bayesian) algorithm using the RooUnfold~\cite{roounfold} package. The number of iterations used is 4.  As a default the true $\jt{}$ distribution from the \pythia~simulation is used as the prior.
 
@@ -463,7 +463,7 @@ As a primary method unfolding is performed with an iterative (bayesian) algorith
 %\end{table}
 
 \subsection{Unfolding closure test}
-The \pythia~set is divided into 2 halves. First is used to fill the response matrices, as well as record missed and fake tracks. Second half is used to test the effectiveness of the unfolding method. Jet $\pt{}$ distributions and response matrix are shown in Figure~\ref{fig:jetptclosure}. For the range where this analysis is performed, $\unit[40]{\gev} <\pt{,jet} <\unit[150]{\gev}$, the \pt{,jet} distribution is recovered well. At low \pt{,jet} the true distribution can't be recovered. The primary reason is that jet with $\pt{,obs}<\unit[5]{\gev}$ are not considered, although $\pt{,true}$ would have been above $\unit[5]{\gev}$. Thus these are missing from the response matrix and their contribution can't be unfolded. At high $\pt{,jet}$ the situation is opposite. Jets with $\pt{,true} > \unit[500]{\gev}$ are lost due to histogram limits. Thus jets just below this limit are overrepresented in the response matrix for $\pt{,obs}\approx \unit[500]{\gev}$. 
+The \pythia~set is divided into 2 halves. First is used to fill the response matrices, as well as record missed and fake tracks. Second half is used to test the effectiveness of the unfolding method. Jet $\pt{}$ distributions and response matrix are shown in Figure~\ref{fig:jetptclosure}. For the range where this analysis is performed, $\unit[40]{\GeVc} <\pt{,jet} <\unit[150]{\GeVc}$, the \pt{,jet} distribution is recovered well. At low \pt{,jet} the true distribution can't be recovered. The primary reason is that jet with $\pt{,obs}<\unit[5]{\GeVc}$ are not considered, although $\pt{,true}$ would have been above $\unit[5]{\GeVc}$. Thus these are missing from the response matrix and their contribution can't be unfolded. At high $\pt{,jet}$ the situation is opposite. Jets with $\pt{,true} > \unit[500]{\GeVc}$ are lost due to histogram limits. Thus jets just below this limit are overrepresented in the response matrix for $\pt{,obs}\approx \unit[500]{\GeVc}$. 
  
  \begin{figure}
 \begin{subfigure}[b]{0.5\textwidth}
@@ -482,7 +482,7 @@ The \pythia~set is divided into 2 halves. First is used to fill the response mat
  
 Response matrices within single jet $\pt{}$ bins are shown in Figure~\ref{fig:response}. Results from the closure test are shown in Figure~\ref{fig:closure}. In the lowest jet $\pt{}$ bins unfolding fails to recover the true distribution. The lowest jet $\pt{}$ bins are dominated by combinatorial jets and thus the true detector response is likely not retrieved.
 
-Above $\unit[30]{\gev} <\pt{,jet} < \unit[40]{\gev}$~the distribution is recovered well in the mid $\jt{}$ region. At $\jt{} < \unit[0.1]{\gev}$ there is clear discrepancy and hence the final results are shown only for $\jt{} > \unit[0.1]{\gev}$. Additionally there is some discrepancy at very high $\jt{}$. This is taken into account in the unfolding systematics. %{\color{red}(TODO: Show this) }
+Above $\unit[30]{\GeVc} <\pt{,jet} < \unit[40]{\GeVc}$~the distribution is recovered well in the mid $\jt{}$ region. At $\jt{} < \unit[0.1]{\GeVc}$ there is clear discrepancy and hence the final results are shown only for $\jt{} > \unit[0.1]{\GeVc}$. Additionally there is some discrepancy at very high $\jt{}$. This is taken into account in the unfolding systematics. %{\color{red}(TODO: Show this) }
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{figures/analysis/ResponseMatrixNFin00.pdf}
 \caption{$\jt{}$ Response matrices in individual $\pt{,jet}$ bins}
@@ -547,7 +547,7 @@ This background procedure is a part of the reason for using charged tracks insid
 \end{figure}
 
 
-One additional consideration is the issue of auto-correlations as the jet axis is simply a vector sum of all its constituents. Thus having an additional track in the jet from the underlying event moves the jet axis towards this track. Since the axis is now closer to the track, it has a smaller $\jt{}$ value. Assuming a \unit[1]{\gev} background track  at the edge of a $R = 0.4$ cone the $\jt{}$ value would be \unit[0.4]{\gev}. If this is added to a  \unit[5]{\gev} jet, the $\jt{}$ value becomes \unit[0.33]{\gev} after the jet axis moves. In a \unit[50]{\gev} jet it would be \unit[0.39]{\gev}. This is a region where the inclusive $\jt{}$ distribution is dominated by background. The distribution is also steeply falling. Overestimating the background can lead to a situation where the background estimation exceeds the inclusive distribution.
+One additional consideration is the issue of auto-correlations as the jet axis is simply a vector sum of all its constituents. Thus having an additional track in the jet from the underlying event moves the jet axis towards this track. Since the axis is now closer to the track, it has a smaller $\jt{}$ value. Assuming a \unit[1]{\GeVc} background track  at the edge of a $R = 0.4$ cone the $\jt{}$ value would be \unit[0.4]{\GeVc}. If this is added to a  \unit[5]{\GeVc} jet, the $\jt{}$ value becomes \unit[0.33]{\GeVc} after the jet axis moves. In a \unit[50]{\GeVc} jet it would be \unit[0.39]{\GeVc}. This is a region where the inclusive $\jt{}$ distribution is dominated by background. The distribution is also steeply falling. Overestimating the background can lead to a situation where the background estimation exceeds the inclusive distribution.
 
 %\begin{figure}[htp]
 %\centering
@@ -620,7 +620,7 @@ After unfolding and background subtraction the resulting signal distributions ar
 \label{eq:fit}
 \end{equation}
 
-To achieve stable results the fitting is performed in two steps. First both components are fitted separately. Gaussian component is fitted to the low end of $\jt{}$. Inverse gamma component is fitted to $\jt{}$ above $\unit[1]{\gevc}$. After getting the results from the individual fits they are combined into a single function with initial values from the individual results and an additional fit is performed. 
+To achieve stable results the fitting is performed in two steps. First both components are fitted separately. Gaussian component is fitted to the low end of $\jt{}$. Inverse gamma component is fitted to $\jt{}$ above $\unit[1]{\GeVcc}$. After getting the results from the individual fits they are combined into a single function with initial values from the individual results and an additional fit is performed. 
 %Fitting only the Gaussian component to the entire distribution produces approximately the same result as the Gaussian component in the two-component model.
 
 After getting the fit function $\sqrt{\left<\jt{}^2\right>}$ (RMS) and yield values are extracted separately from each component. The narrow component RMS is
