@@ -25,13 +25,13 @@ The term Hard Scattering is used for the scattering of two point-like constituen
 \label{fig:scattering}
 \end{figure}
 
-Historically one would study hard scatterings foremost with inclusive hadron spectra. In this context hadron production from hard scatterings can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$,  and the fragmentation functions that give the probability of getting hadron $h$ from the parton.
+Historically one would study hard scatterings foremost with inclusive hadron spectra. In this context hadron production from hard scatterings can be factorised into three components; the parton distribution functions $f_a$, $f_b$ that give the probability of getting a parton with momentum fraction $x$ of the proton, the cross section of the elementary scattering $ab\rightarrow cd$,  and the fragmentation functions, $D_{h/c}^0$, that give the probability of getting hadron $h$ from the parton.
 
 \begin{equation}
 \frac{\mathrm{d} \sigma^h_{pp}}{\mathrm{d}y\mathrm{d}^2\pt{}} = K \Sigma_{abcd}\int \mathrm{d}x_a \mathrm{d}x_b f_a\left(x_a,Q^2\right) f_b\left(x_b, Q^2\right) \frac{\mathrm{d} \sigma}{\mathrm{d}t}\left(ab\rightarrow cd \right)\frac{D_{h/c}^0}{\pi z_c},
 \end{equation}
 
-\noindent where 
+\noindent where $K$ is normalisation constant and
 
 \begin{equation}
 x_{a,b} = \frac{\left| p_{a,b} \right|}{\left| p_{proton} \right|}.
@@ -64,16 +64,16 @@ The final component in the factorization, fragmentation functions, describe the 
 
 \subsection*{Parton Distribution Function}
 Parton Distribution Functions (PDFs) $f_a\left(x\right)$ give the differential probability for parton $a$ to carry momentum fraction $x$ of the proton momentum. %PDFs  are extracted from comprehensive global analysis of experimental results from a variety of fixed-target and collider experiments.
-As the PDFs cannot be calculated from first principles they are measured in Deeply Inelastic Scattering (DIS) experiments~\cite{Placakyte:2011az} and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}  %~\ref{eq:dglap}.
+As the PDFs cannot be calculated from first principles they are measured in Deeply Inelastic Scattering (DIS) experiments~\cite{Placakyte:2011az} and are extrapolated to the relevant momentum scales using the Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) evolution scheme ~\cite{Gribov:1972ri,Altarelli:1977zs,Dokshitzer:1977sg}:%~\ref{eq:dglap}.
 
 \begin{equation}
-\mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
+\mu_\mathrm{F}^2 \frac{\partial f_i\left(x,\mu_{\mathrm{F}}^2 \right)}{\partial \mu_{\mathrm{F}}^2} = \Sigma_j \frac{\alpha_s\left(\mu_{\mathrm{F}}\right)}{2{\pi}} \int _x^1 \frac{\mathrm{d}z}{z} P_{ij}(z) f_j\left(\frac{x}{z},\mu_{\mathrm{F}}^2\right),
 \label{eq:dglap}
 \end{equation}
 
 
 
-\noindent where $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe the probability to radiate parton $i$ with momentum fraction $z$ from parton $j$. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
+\noindent where $\alpha_s$ is the coupling constant of the strong interaction and $\mu_{\mathrm{F}}$ is a factorization scale. The splitting functions $P_{ij}$ describe the probability to radiate parton $i$ with momentum fraction $x$ from parton $j$. Different theory interpretation and experimental data gives rise to different PDF's. Thus there are several commonly used PDF sets: CTEQ~\cite{cteq}, HERAPDF~\cite{CooperSarkar:2011aa}, PDF4LHC~\cite{Butterworth:2015oua}, etc. %Depending on the data used 
 
 \subsection{Jet showering}
 \label{sec:shower}
@@ -122,7 +122,7 @@ P_a^{no}\left(Q^2_\mathrm{max},Q^2\right) = \exp \left(- \int_{Q^2}^{Q^2_\mathrm
 \dd \Delta_a\left(z,Q_a^2,Q_\mathrm{max}^2\right)=\mathrm{d}P_a \left(z,Q^2_a\right) P_a^{no}\left(Q^2_\mathrm{max},Q_a^2\right).
 \end{equation}
 
-Partons $b$ and $c$ that were produced will further branch with maximum virtuality scale $Q^2_\mathrm{max}$ given by $Q^2_a$. Similarly their daughters will continue branching until the cutoff scale is reached, thus producing a shower. 
+\noindent Partons $b$ and $c$ that were produced will further branch with maximum virtuality scale $Q^2_\mathrm{max}$ given by $Q^2_a$. Similarly their daughters will continue branching until the cutoff scale is reached, thus producing a shower. 
 
 %\begin{figure}[h]
 %\centering
@@ -394,7 +394,7 @@ Similar to QED the simplest energy loss process is elastic QCD scattering off me
 \label{eq:elastic}
 \end{equation}
 
-\noindent where $\sigma$ is the interaction cross section and $\left<E\right>_{1 scatt}$ is the mean energy transfer of one individual scattering~\cite{Majumder:2010qh}. This requires that the energy transfer does not depend on the total energy of the parton ($E$). The mean energy loss per path length is defined to be the transport coefficient \begin{equation}
+\noindent where $\sigma$ is the interaction cross section, $L$ is the path length through the medium, and $\left<E\right>_{1 scatt}$ is the mean energy transfer of one individual scattering~\cite{Majumder:2010qh}. This requires that the energy transfer does not depend on the total energy of the parton ($E$). The mean energy loss per path length is defined to be the transport coefficient \begin{equation}
 \left< \hat q_\mathrm{el}\right> = \frac{\left< \Delta E\right>}{L}.
 \end{equation}
 
@@ -405,7 +405,7 @@ Similar to QED the simplest energy loss process is elastic QCD scattering off me
 \label{eq:radiative}
 \end{equation}
 
-\noindent where $L$ is the path length through the medium and $T$ is the medium temperature~\cite{Dominguez:2008vd}. The different exponents of $L$ in equations \ref{eq:elastic} and \ref{eq:radiative} indicate that radiative energy loss is dominant over elastic energy loss in a typical heavy-ion collision.
+\noindent where $L$ is again the path length through the medium and $T$ is the medium temperature~\cite{Dominguez:2008vd}. The different exponents of $L$ in equations \ref{eq:elastic} and \ref{eq:radiative} indicate that radiative energy loss is dominant over elastic energy loss in a typical heavy-ion collision.
 
 Several models have been used to attempt describing the mechanism of energy loss. The most used formalisms can be divided into four approaches.
 %
@@ -483,11 +483,11 @@ Let us now look at medium modification of jets in a $\log\left(p\right)-\log\lef
 The region marked as DGLAP is dominated by the primary vacuum splittings explained in section~\ref{sec:shower}. This region is determined by $\theta > \theta_\mathrm{vac}$ with
 
 \begin{equation}
-\theta_\mathrm{vac} \propto \nicefrac{1}{\sqrt{\pt{}}}.
+\theta_\mathrm{vac} \propto \frac{1}{\sqrt{\pt{}}}.
 \end{equation}
 
 
-\noindent Medium-induced parton branching fills the $\log p$-$\log \theta$-plane from the bottom up (in $p$) and from the inside out (in $\theta$). This is because transverse momentum is acquired by Brownian motion in the medium, $k_\perp^2 \propto \hat q t$. The formation time constraint $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{p}{\hat q t}$ implies that medium-induced quanta can be formed in the region $p \leq k_\mathrm{form}$ where
+\noindent Medium-induced parton branching fills the $\log p$-$\log \theta$-plane from the bottom up (in $p$) and from the inside out (in $\theta$). This is because transverse momentum $k_\perp$ is acquired by Brownian motion in the medium, such that it depends on the time $t$ and the transport coefficient $\hat q$, $k_\perp^2 \propto \hat q t$. The formation time constraint $t \geq \nicefrac{p}{k_\perp^2} \approx \nicefrac{p}{\hat q t}$ implies that medium-induced quanta can be formed in the region $p \leq k_\mathrm{form}$ where
 
 \begin{equation}
 k_\mathrm{form}\left(t\right) = \hat q t^2.
@@ -536,7 +536,7 @@ The angular distribution of the medium-induced radiation is driven by two mechan
 \noindent while in the medium cascade region of the phase space this becomes
 
 \begin{equation}
-\theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}
+\theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}.
 \end{equation}
 
 \noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{Moliere:1947zza}. The result is that medium-induced radiation is predominantly located in the bands marked as Brownian motion, where $\theta_\alpha < \theta < \theta_\mathrm{BR}$, and Moli\`ere, where $\theta_\mathrm{BR} < \theta < \theta_\mathrm{Mol}$ in Figure~\ref{fig:cascades}. 
