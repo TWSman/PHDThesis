@@ -250,8 +250,9 @@ The next sections will present more complicated hadronisation models used in Mon
 
 One common implementation in MC generators is the Lund string fragmentation algorithm~\cite{ANDERSSON198331}. This is also used in the \pythia~generator. The string model utilises the colour confinement property of QCD. The strong force between particles is expected to stay constant over large distances~\cite{eventGenerators}. This can be modelled by imagining a colour flux tube being extended between outgoing partons as illustrated in Figure~\ref{fig:fluxtube}(a) for a $\mathrm{q \bar q}$-pair. In the model the tube has a uniform transverse diameter of about \unit[1]{fm} along its length. This leads to a linearly rising potential $V\left(r\right) = \kappa r$ with the string constant $\kappa$ describing the amount of energy per unit length. A value of $\kappa \approx \unit[1]{\GeVfm} \approx\unit[0.2]{GeV^2}$ can be obtained from hadron mass spectroscopy~\cite{eventGenerators}.
 
+\begin{sloppypar}
 The evolution of string fragmentation is illustrated schematically in Figure~\ref{fig:fluxtube}(b). The evolution is shown in the light cone presentation, i.e. the initial quark and antiquark are moving in opposite directions at the speed of light. The horizontal red line illustrates the string between the quark-antiquark pair. The string begins to stretch which continues until the potential energy stored in the string is large enough and it breaks, which forms a new quark-antiquark pair. If the original pair was $\mathrm{q \bar q}$ and the produced pair is $\mathrm{q'\bar q'}$, these form new pairs, $\mathrm{q \bar q'}$ and $\mathrm{q'\bar q}$.
-
+\end{sloppypar}
 Since these produced pairs are also moving away from each other, the strings between them will also stretch and can eventually break, creating even more pairs. This evolution proceeds until the invariant mass of the system becomes small enough and a group of final state mesons is formed. 
 
 \begin{figure}
@@ -384,7 +385,7 @@ Further suppression to low energy photons comes from the destructive interferenc
 \label{fig:bremsstrahlung}
 \end{figure}
 
-\subsubsection*{QCD}
+\subsubsection*{Energy loss in QCD}
 In QCD the radiative energy loss mechanism is given in terms of the transport coefficient $\left<\hat q\right>$, which describes the average momentum transfer between the medium and parton~\cite{jetBroadeningPpb1}. The exact definition of this depends on the theoretical formalism used to describe the energy loss mechanism. 
 
 Similar to QED the simplest energy loss process is elastic QCD scattering off medium partons. In elastic scatterings a part of the energy of the scattered partons is absorbed by the thermal QGP medium and the energy of the initial parton is reduced. The mean energy loss caused by elastic scatterings can be estimated by
@@ -539,7 +540,9 @@ The angular distribution of the medium-induced radiation is driven by two mechan
 \theta_\mathrm{BR}\left(p\right) \approx \left(\frac{T}{p}\right)^{\frac{3}{4}}.
 \end{equation}
 
+\begin{sloppypar}
 \noindent Large angular scales cannot be reached by Brownian motion, but can arise from rare large angle scatterings with partons in the medium, described first by Molière~\cite{Moliere:1947zza}. The result is that medium-induced radiation is predominantly located in the bands marked as Brownian motion, where $\theta_\alpha < \theta < \theta_\mathrm{BR}$, and Moli\`ere, where $\theta_\mathrm{BR} < \theta < \theta_\mathrm{Mol}$ in Figure~\ref{fig:cascades}. 
+\end{sloppypar}
 
 The hard parton will naturally continue radiating after it leaves the medium. As there is no longer kinematic limits set by the time scale, the vacuum radiation can extend to smaller angular scales in the phase space. The results is that the regions, where $\theta<\theta_\alpha$, marked as Late DGLAP in Figure~\ref{fig:cascades} will be dominated by the late time vacuum radiation. Naturally also the splittees from medium-induced radiation will undergo the late stage vacuum radiation phase, filling the triangular region with small $p$ and $\theta < \theta_\mathrm{\alpha}$.
 

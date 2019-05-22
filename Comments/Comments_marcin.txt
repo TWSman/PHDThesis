@@ -1,8 +1,10 @@
 So I think the analysis is very solid and thesis is good. I found only editorial stuff and some tiny physics issues:
 
 page 5: the extrem cases by the theory of GR. Here I would disagree. The main problem with GR is that after quantizing the GR (this you can do no problem) the Higgs loop corrections go to infinite. Some problems with poles in black holes are not problem for particle physics.
+  I modified this so that now it only says that gravity is best described by GR
 
 Eq 2 (and most of the equations). Tomas uses symbols which are not defined. For instance in the eq. 2 m_\pi, f_\pi etc. are not defined.
+  Fixed
 
 page 8: only interact with charger particles -> only couple to charge particles.
   Obsolete
@@ -11,8 +13,10 @@ page 14: Białłas -> Białas
   Fixed
 
 page 14: at the last sentence the b is missigin "->" over it. 
+  obsolete
 
 page 17: "They fly in straight lines untile they reach the detector. " I would delete straight as they are bend by magnetic field.
+  Fixed
 
 page 20: event shape analysis. (sphericity). // remove dot after analysis.
   Obsolete
@@ -21,25 +25,31 @@ page 24: evolution scheme [118-120]: // add ":" after ref.
   Fixed
 
 page 35: in subsubsection caption I would avoid just shortcuts like QCD. 
+  Fixed
 
 page 40: Moliere [175] // this sticks out of the page range.
+  Fixed
 
 page 50: [219] again sticks to much out.
+  Fixed and a couple of other occurences
 
 page 51: Since you quote the Higgs papers for ATLAS and CMS you should cite the lhcb Bs->mumu http://arxiv.org/abs/1703.05747
+  Fixed
 
 page 55: p_T 1-2 GeV. Here is something that I would really fix: units. Sometimes you assume c=1 sometimes you don't. I would make this consistent as f
   Now consistently [p_T] = GeV/c
 
-
 page 65: V0A was defined but V0C not.
+  Fixed 
 
 page 71: electron-electoron => electron-positron
   Fixed
 
 page 75: eq 55. Again not all symbols in equations are not defined. 
+  Add definitions for l and nC in eq 55.
 
 page 77: Toy Monte Carlo: this is jargon. SHould be pseudo-experiment Monte Carlo
+  Fixed
 
 page 79: Figure ?? // broken reference.
-  Obsolete
+  Fixed 

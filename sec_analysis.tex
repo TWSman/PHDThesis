@@ -18,7 +18,7 @@ The $\sqrtSnnE{5.02}$ $\pPb$ ($1.3 \cdot 10^{8}$ events, $\mathcal{L}_{\mathrm{i
 \section{Event selection}
 This analysis uses both a minimum bias trigger and an EMCal based trigger to select the analysed events. 
 %The V0 detector~\cite{forwarddetectorsTdr} provides the information for event triggering. The V0 detector consists of two scintillator hodoscopes that are located on either side of the interaction point along the beam direction. It covers the pseudorapidity region $-3.7 < \eta < -1.7$ (V0C) and $2.8 < \eta < 5.1$ (V0A).
- For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both V0A and V0C. The timing difference between the two stations is also used to reduce the contamination of the data sample from beam-gas events~\cite{alicePerformance}. 
+ For the 2013 $\pPb$ collisions minimum bias events are required to have signals in both sides of V0, V0A (positive $\eta$, lead going side in $\pPb$ collisions) and V0C (negative $\eta$). The timing difference between the two stations is also used to reduce the contamination of the data sample from beam-gas events~\cite{alicePerformance}. 
 
 EMCal is used to provide the jet trigger used in triggered datasets. EMCal can be used to trigger on single shower deposits or energy deposits integrated over a larger area. Latter case is used for jet triggers. The EMCal trigger definition in the 2013 $\pPb$ collisions requires an energy deposit of either \unit[10]{\gev}  for the low threshold trigger or \unit[20]{\gev} for the high threshold trigger in a $32\times32$ patch size. Triggers, V0 and EMCal are discussed in more detail in sections~\ref{sec:forward},~\ref{sec:trigger} and~\ref{sec:emcal}. 
 
@@ -333,7 +333,7 @@ The bayesian (iterative) method is based on the Bayes formula~\cite{ADictionaryo
 P\left(C_i |E_j\right)=\frac{P\left(E_j |C_i\right)P_0\left(C_i\right)}{\sum_{l=1}^{n_C}P\left(E_j |C_l\right)P_0\left(C_l\right)},
 \end{equation}
 
-\noindent i.e. the probability of Cause $C_i$ ("truth") given Effect $E_j$ ("observed") is proportional to the probability of observing $E_j$ given $C_i$, $P\left(E_j |C_i\right)$ (response matrix) and the true distribution $P_0\left(C_i\right)$.
+\noindent i.e. the probability of Cause $C_i$ ("truth") given Effect $E_j$ ("observed"), $P\left(C_i |E_j\right)$, is proportional to the probability of observing $E_j$ given $C_i$, $P\left(E_j |C_i\right)$ (response matrix) and the true distribution $P_0\left(C_i\right)$. In the equation $l$ is a summation variable over the number of causes $n_C$.
 
 In the unfolding procedure $P_0$ is given some starting distribution, either a uniform distribution or some guess of the final distribution. Taking into account the inefficiency this gives 
 
@@ -397,8 +397,8 @@ For errors originating from the measured distribution RooUnfold uses the error p
  
 \noindent where $V\left(P\left(E_j | C_i\right), P\left(E_s | C_r\right) \right)$ can be taken as multinomial, Poisson or other distribution.
  
-\subsection{Toy Monte Carlo} 
-A toy Monte Carlo simulation was performed to see the performance of unfolding in an ideal case.
+\subsection{Pseudo-experiment Monte Carlo} 
+A Monte Carlo pseudo-experiment simulation was performed to see the performance of unfolding in an ideal case.
 The simulation samples jet $\pt{}$ values from the observed $\pt{}$ distribution. Starting from this $\pt{}$ the simulation starts creating tracks with 
 \begin{equation}
 p_{\mathrm{track}} = z_\mathrm{track} \pt{,jet}
@@ -421,7 +421,7 @@ The observed distributions are unfolded using the 2D Bayesian (iterative) algori
 \begin{figure}
 \centering
 \includegraphics[width=0.9\textwidth]{figures/analysis/ToyMCUnfolder_300k_events.pdf}
-\caption{Results from unfolding in Toy Monte Carlo}
+\caption{Results from unfolding in the pseudo-experiment Monte Carlo simulation}
 \label{fig:toymc}
 \end{figure}
 \FloatBarrier
