@@ -111,8 +111,8 @@ Extending the idea of asymptotic freedom Collins predicted in 1975~\cite{Collins
 
 \begin{figure}[htb]
 \centering
-%\includegraphics[width=0.9\textwidth]{pics/qcd_ms_high}
-%\includegraphics[width=0.9\textwidth]{pics/QCDphase2.pdf}
+%\includegraphics[width=0.9\textwidth]{figures/qcd_ms_high}
+%\includegraphics[width=0.9\textwidth]{figures/QCDphase2.pdf}
 \input{figures/tikz/qcdphase}
 \caption[QCD phase diagram]{A schematic illustration of the phase diagram of QCD matter. The $x$-axis, showing the quark chemical potential $\mu$, represents the imbalance between quarks and antiquarks. Along the $x$-axis the temperature is zero. Along the vertical axis the temperature increases, which takes us through the crossover from a hadronic gas to quark-gluon plasma. With low $\mu$ this is the regime explored by high-energy heavy-ion colliders and also the trajectory taken by the universe as it cooled after the Big Bang. The conditions in neutron stars correspond to the lower right corner, with low $T$ and high $\mu$. Figure from~\cite{Rajagopal:2001}.} 
 %Permission needed?/redraw figure
@@ -128,7 +128,7 @@ In $\sqrt{s_{NN}}=\unit[200]{\gev}$ Au--Au collisions at RHIC $\eta/s$ has been 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.9\textwidth]{pics/eta-s-vs-t-tc3}
+\includegraphics[width=0.9\textwidth]{figures/eta-s-vs-t-tc3}
 \caption[$\eta/s$ vs $(T-T_c)/T_c$]{The figure shows \label{fig3}$\eta/s$ as a function of $(T-T_c)/T_c$ for several substances as indicated. The lines are drawn to guide the eye. The $\eta/s=0.09\pm0.015$ value at RHIC is estimated from Au--Au collisions at $\sqrt{s_{NN}}=\unit[200]{\gev}$. The calculations assume a value $T_c = \unit[170]{\mev}$ for nuclear matter. This figure has been reprinted from~\cite{PhysRevLett.98.092301} with kind permission from the American Physical Society.
 }%Permission granted
 \label{fig:etas}
@@ -216,7 +216,7 @@ The impact parameter with the beam direction defines the reaction plane, which h
 %      
 %\end{tikzpicture}
 \input{figures/tikz/geometry}
-%\includegraphics[width=0.6\textwidth]{pics/Definitions}
+%\includegraphics[width=0.6\textwidth]{figures/Definitions}
 \caption[The definitions of the Reaction Plane coordinate systems]{The definition of the impact parameter and the reaction plane. The $x$--$y$ plane represents a coordinate system fixed by the experiment. The dashed circles are the two colliding nuclei. $x_{RP}$ is the reaction plane and $\Psi_\mathrm{RP}$ gives its angle.} %The angle between $x_{RP}$ and $x_{PP}$ is given by Eq. (\ref{eq:partangle}). $y_{PP}$ and $y_{RP}$ are lines perpendicular to the participant and reaction planes. }
 \label{fig:planes}
 \end{figure}
@@ -228,7 +228,7 @@ In practice this definition is provided by dividing events into percentile bins 
 \begin{figure}[tb]
 \centering
 
-               \includegraphics[width=0.9\textwidth]{pics/centrality.png}
+               \includegraphics[width=0.9\textwidth]{figures/centrality.png}
         \caption[An illustration of the multiplicity distribution in ALICE measurement with centrality classes.]{An illustration of the multiplicity distribution which is divided into centrality bins in ALICE measurements. The red line shows the fit of the Glauber calculation to the measurement. Figure from~\cite{PhysRevC.88.044909}.}
         %Creative commons license
         	\label{fig:centrality}
@@ -345,7 +345,7 @@ For most cases the evolution of a heavy-ion event can be separated into four sta
 
 \begin{figure}[htb]
 \centering
-               \includegraphics[width=0.75\textwidth]{pics/HISpaceTime2}
+               \includegraphics[width=0.75\textwidth]{figures/HISpaceTime2}
         \caption[Schematic representation of a heavy-ion collision]{Schematic representation of a heavy-ion collision as a function of time and the longitudinal coordinate $z$. The various stages of the evolution are separated by hyperbolic curves which are defined by fixed proper time $\tau=\sqrt{t^2-z^2}$. Figure from~\cite{Romatschke:2009im}.}
         %Creative commons
         	\label{fig:HISpaceTime}
@@ -367,7 +367,7 @@ In a heavy-ion collision the bulk collective particle production that is emitted
 
 \begin{figure}[b!]
 \centering
-\includegraphics[width=0.6\textwidth]{pics/pT_PbPb}
+\includegraphics[width=0.6\textwidth]{figures/pT_PbPb}
 \caption[Charged particle spectra]{The radial flow is represented by the charged particle spectra for different centrality classes given in the legend. The dashed lines show  proton-proton reference spectra which are scaled by the nuclear overlap function determined for each centrality class.  For clarity the distributions and the reference spectra are offset by arbitrary factors. Figure from~\cite{PRL106032301}.}
 %Creative commons license
 \label{fig:dndpt}
@@ -381,7 +381,6 @@ The geometry of the heavy-ion collision produces an anisotropic component to the
 \centering
         \begin{subfigure}[b]{0.52\textwidth}
                 \centering
-            	%\includegraphics[height=2.4in]{pics/InteractionB}
 	         \includegraphics[height=2.4in]{figures/tikz/central}
 
                 \caption{Peripheral collision}
@@ -389,7 +388,6 @@ The geometry of the heavy-ion collision produces an anisotropic component to the
         \end{subfigure}
         \begin{subfigure}[b]{0.45\textwidth}
                 \centering
-              % \includegraphics[height=2.4in]{pics/InteractionA}
                 \includegraphics[height=2.4in]{figures/tikz/peripheral}
 
                 \caption{Central collision}
@@ -420,20 +418,20 @@ The first one to predict anisotropic flow in heavy-ion collisions was Ollitrault
 \begin{figure}[tb]
 	\centering
 	\begin{subfigure}[t]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{pics/alice_vn_figa.pdf}
+                \includegraphics[width=\textwidth]{figures/alice_vn_figa.pdf}
         %\caption[ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$]{ALICE measurement of $v_2$, $v_3$, $v_4$, $v_5$ as a function of transverse momentum. The flow coefficients are determined by two-particle correlations using different rapidity separations.  The full and open symbols are for $\Delta\eta > 0.2$ and $\Delta\eta > 1.0$. The results are compared to hydrodynamic predictions~\cite{Schenke:2011tv} with different values of $\eta/s$~\cite{PRL107032301}.}
         \label{fig:higherharmonics}
         \end{subfigure}
         \quad
         \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{pics/2012-Jun-06-fig02b}
+        \includegraphics[width=\textwidth]{figures/2012-Jun-06-fig02b}
        % \caption{Amplitude of $v_n$ harmonics as a function of $n$ for the 2\% most central collisions as  measured by ALICE~\cite{Aamodt2012249}.}
         \label{fig:alicepowers}
 
         \end{subfigure} 
         
 %        \begin{subfigure}[t]{\textwidth}
- %               \includegraphics[width=\textwidth]{pics/atlas_powerspectra.png}
+ %               \includegraphics[width=\textwidth]{figures/atlas_powerspectra.png}
 %        \caption{Power spectra of $v_n$ for the 1\% most central collisions measured by ATLAS~\cite{PhysRevC.86.014907}.}
 %        \label{fig:atlaspowers}
  %       \end{subfigure}

@@ -15,16 +15,16 @@ particlearrow/.style={draw=blue, line width=0.75pt, postaction={decorate},
 antiparticlearrow/.style={draw=blue, postaction={decorate},
     decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}},
 particle/.style={draw=blue, line width=0.75pt},
-hadron/.style={draw=red,line width=2pt,postaction={decorate},
-    decoration={markings,mark=at position .9 with {\arrow[draw=red]{>}}}},
+hadron/.style={draw=blue,line width=2pt,postaction={decorate},
+    decoration={markings,mark=at position .9 with {\arrow[draw=blue]{>}}}},
 antiparticle/.style={draw=blue},
-gluon/.style={decorate, draw=magenta, line width=0.75pt,
+gluon/.style={decorate, draw=orange, line width=0.75pt,
     decoration={coil,amplitude=4pt, segment length=5pt}}
  }
 \begin{tikzpicture}
 %\draw[step = 4cm, gray, thin] (-3cm,-3cm) grid(8,4cm);
 
-\node[ellipse,draw=red,fill=red!20, minimum height=1cm, blur shadow = {shadow blur steps=5},minimum width=2cm] (hard) {};
+\node[ellipse,draw=orange,fill=orange!20, minimum height=1cm, blur shadow = {shadow blur steps=5},minimum width=2cm] (hard) {};
 \coordinate[above=1cm of hard, label=Hard Scattering] (label);
 \coordinate[left=1cm of hard] (p1);
 \coordinate[above left=1cm and 1cm of hard] (p2);
@@ -72,7 +72,7 @@ gluon/.style={decorate, draw=magenta, line width=0.75pt,
 \draw[particle] (vertex2_4) -- (vertex3_7);
 \draw[particle] (vertex2_4) -- (vertex3_8);
 
-\node[rectangle,draw=black, fill=red!20, below right=-0.5cm and 0cm of vertex3_1,minimum width=1cm, minimum height=6cm,label={below:Hadronisation},blur shadow = {shadow blur steps=5}] (hadr) {};
+\node[rectangle,draw=orange, fill=orange!20, below right=-0.5cm and 0cm of vertex3_1,minimum width=1cm, minimum height=6cm,label={below:Hadronisation},blur shadow = {shadow blur steps=5}] (hadr) {};
 
 \coordinate[right=0cm of hadr] (hadron1);
 \coordinate[right=2cm of hadron1] (detector1);
