@@ -47,3 +47,4 @@ figures/Figures*
 **/*.aux
 defs.tex
 comments*.txt
+test.py
