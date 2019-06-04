@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[12pt,openany]{book}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{a4paper}                   % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                % Activate for for rotated page geometry
@@ -9,6 +9,7 @@
 \usepackage{epstopdf}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{pict2e}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{epstopdf}
@@ -34,10 +35,13 @@
 \usetikzlibrary{decorations.markings}
 \usepackage{breakcites}
 \usepackage{enumitem}
+\usepackage{etoolbox}
+%\usepackage{fancyhdr} 
+
 
 
 \newcommand \dd[1]  { \,\textrm d{#1}   }
-\pagestyle{plain}
+\pagestyle{empty}
 
 \usepackage{hyperref}
 \usepackage{url}
@@ -61,11 +65,15 @@
 \begin{document}
 \include{cover2}
 %\cleardoublepage
+%\addcontentsline{toc}{chapter}{Acknowledgements}
+\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}Acknowledgements}{}{}}
+
 \include{sec_acknowledgements}
 
 \label{acknowledgment}
-\pagenumbering{arabic}
-\setcounter{page}{0}
+
+
+
 %\maketitle
 \include{sec_introduction}
 \include{sec_jetphenomena}
